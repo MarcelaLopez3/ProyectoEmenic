@@ -3,40 +3,50 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>Inicio</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" />
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" /></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"/></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" /></script>
-
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+    <title>EMENIC-Inicio</title>
+    <!-- Bootstrap core CSS-->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css"/>
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin.css" rel="stylesheet"/>
 </head>
-<body>
+<body class="bg-dark">
     <form id="form1" runat="server"  >
-    <center>
-    <br />
-    <br />
-    <div class="card-body text-primary" style="background-color:lightgrey; border-color:lightgray">
-        <div>
-                <img src="Imagenes/Logo_emenic.png" alt="IMG"/>
-	    </div>   
-        <br />           
-		    <div class="form-group col-md-1">
-                <asp:Label runat="server" ID="lblLogin" Text="Login" Font-Bold="true" ForeColor="Red" Font-Size="X-Large" ></asp:Label>    
-		    </div>
-        <br />
-            <div class="form-group col-md-3">
-                <asp:TextBox runat="server" CssClass="form-control" ID="txtUsuario" placeholder="Usuario"/>
-            </div>        
-            <div class="form-group col-md-3">
-                <asp:TextBox runat="server" CssClass="form-control" ID="txtContrasena" placeholder="Contraseña" TextMode="password"/>
+      <div class="container">
+      <div class="card card-login mx-auto mt-5">
+        <center><div class="card-header">EMENIC - Login</div></center>
+        <div class="card-body">
+            <div class="form-group">
+              <center><div><img src="Imagenes/Logo_emenic.png" alt="IMG"/></div></center>
+              <br />
+              <div class="form-label-group">
+                  <asp:TextBox runat="server" CssClass="form-control" ID="txtUsuario" placeholder="Usuario"/>
+                  <label for="txtUsuario">Usuario</label>
+              </div>
+              <br />
+              <div class="form-label-group">
+                  <asp:TextBox runat="server" CssClass="form-control" ID="txtContrasena" placeholder="Contraseña" TextMode="password" />
+                  <label for="txtContrasena">Contraseña</label>
+              </div>
             </div>
-        <br />					
-		    <div class="form-group col-md-3">
-			    <asp:Button runat="server" CssClass="form-control" Text="Ingresar" BackColor="Black" ForeColor="White" Font-Bold="true"/>
-		    </div>  
-    </div>
-    </center>
+            <div class="form-label-group">
+                  <asp:Button runat="server" CssClass="form-control" Text="Ingresar" BackColor="Red" ForeColor="White" Font-Bold="true"/>
+            </div>
+        </div>
+      </div>
+    </div>             
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
     </form>
 </body>
 </html>
