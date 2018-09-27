@@ -7,5 +7,5 @@
             <asp:ListItem Text="Listado completo de Clientes" Value="2"></asp:ListItem>
     </asp:DropDownList> 
     <br />
-    FORMULARIO
+    FORMULARIOS
 </asp:Content>
