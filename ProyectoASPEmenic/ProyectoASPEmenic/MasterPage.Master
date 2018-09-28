@@ -60,19 +60,19 @@
          <li class="nav-item active">
              <asp:HyperLink CssClass="nav-link" NavigateUrl="~/Paginas/Clientes/RegistroNaturales.aspx" runat="server">
             <i class="fas fa-fw fa-folder"></i>
-            <span>Naturales</span>
+            <span>Personas Naturales</span>
             </asp:HyperLink>
         </li>
           <li class="nav-item active">
              <asp:HyperLink CssClass="nav-link" NavigateUrl="~/Paginas/Clientes/RegistroJuridicos.aspx" runat="server">
             <i class="fas fa-fw fa-folder"></i>
-            <span>Juridicos</span>
+            <span>Personas Juridicas</span>
             </asp:HyperLink>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="fas fa-fw fa-folder"></i>
-            <span>Clientes</span>
+            <span>Personas</span>
           </a>
           <div class="dropdown-menu" aria-labelledby="pagesDropdown">
             <a class="dropdown-item" href="~/Paginas/Clientes/RegistroNaturales.aspx">Registro Naturales</a>
