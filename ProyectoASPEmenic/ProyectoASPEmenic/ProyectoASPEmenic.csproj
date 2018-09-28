@@ -24,6 +24,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -133,8 +134,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="css\" />
-    <Folder Include="js\" />
     <Folder Include="scss\" />
     <Folder Include="vendor\" />
   </ItemGroup>
@@ -142,7 +141,16 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="css\bootstrap.css" />
+    <Content Include="css\flexslider.css" />
+    <Content Include="css\fontawesome-all.css" />
+    <Content Include="css\popup-box.css" />
+    <Content Include="css\simpleLightbox.css" />
+    <Content Include="css\style.css" />
     <Content Include="Default.aspx" />
+    <Content Include="fonts\fa-brands-400.svg" />
+    <Content Include="fonts\fa-regular-400.svg" />
+    <Content Include="fonts\fa-solid-900.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -150,13 +158,76 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Imagenes\b2.jpg" />
+    <Content Include="Imagenes\ban01.jpg" />
+    <Content Include="Imagenes\ban02.jpg" />
+    <Content Include="Imagenes\ban04.jpg" />
+    <Content Include="Imagenes\Emenic1.jpg" />
+    <Content Include="Imagenes\Emenic2.png" />
+    <Content Include="Imagenes\Emenic3.jpg" />
+    <Content Include="Imagenes\f2.jpg" />
+    <Content Include="Imagenes\gal1.jpg" />
+    <Content Include="Imagenes\gal2.jpg" />
+    <Content Include="Imagenes\gal3.jpg" />
+    <Content Include="Imagenes\gal4.jpg" />
+    <Content Include="Imagenes\gal5.jpg" />
+    <Content Include="Imagenes\gal6.jpg" />
+    <Content Include="Imagenes\gal7.jpg" />
+    <Content Include="Imagenes\gal8.jpg" />
+    <Content Include="Imagenes\gal9.jpg" />
     <Content Include="Imagenes\Logo_emenic_2.png" />
+    <Content Include="Imagenes\modal.jpg" />
+    <Content Include="Imagenes\p1.jpg" />
+    <Content Include="Imagenes\p2.jpg" />
+    <Content Include="Imagenes\p3.jpg" />
+    <Content Include="Imagenes\s11.jpg" />
+    <Content Include="Imagenes\ser1.jpg" />
+    <Content Include="Imagenes\ser2.jpg" />
+    <Content Include="Imagenes\ser4.jpg" />
+    <Content Include="Imagenes\service1.jpg" />
+    <Content Include="Imagenes\service2.jpg" />
+    <Content Include="Imagenes\service4.jpg" />
+    <Content Include="Imagenes\services3.jpg" />
+    <Content Include="Imagenes\t1.jpg" />
+    <Content Include="Imagenes\t2.jpg" />
+    <Content Include="Imagenes\t3.jpg" />
+    <Content Include="Imagenes\t4.jpg" />
+    <Content Include="Imagenes\team1.jpg" />
+    <Content Include="Imagenes\team22.jpg" />
+    <Content Include="Imagenes\team4.jpg" />
+    <Content Include="Imagenes\top.png" />
+    <Content Include="js\bars.js" />
+    <Content Include="js\bootstrap.js" />
+    <Content Include="js\easing.js" />
+    <Content Include="js\jquery-2.2.3.min.js" />
+    <Content Include="js\jquery.countup.js" />
+    <Content Include="js\jquery.flexslider.js" />
+    <Content Include="js\jquery.magnific-popup.js" />
+    <Content Include="js\jquery.waypoints.min.js" />
+    <Content Include="js\move-top.js" />
+    <Content Include="js\simpleLightbox.js" />
+    <Content Include="js\SmoothScroll.min.js" />
     <Content Include="MasterPage.Master" />
+    <Content Include="fonts\fa-brands-400.eot" />
+    <Content Include="fonts\fa-brands-400.ttf" />
+    <Content Include="fonts\fa-brands-400.woff" />
+    <Content Include="fonts\fa-brands-400.woff2" />
+    <Content Include="fonts\fa-regular-400.eot" />
+    <Content Include="fonts\fa-regular-400.ttf" />
+    <Content Include="fonts\fa-regular-400.woff" />
+    <Content Include="fonts\fa-regular-400.woff2" />
+    <Content Include="fonts\fa-solid-900.eot" />
+    <Content Include="fonts\fa-solid-900.ttf" />
+    <Content Include="fonts\fa-solid-900.woff" />
+    <Content Include="fonts\fa-solid-900.woff2" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Imagenes\Logo_emenic.png" />
     <Content Include="Paginas\Clientes\ClientesRegistro.aspx" />
+    <Content Include="Paginas\Clientes\RegistroJuridicos.aspx" />
+    <Content Include="Paginas\Clientes\RegistroNaturales.aspx" />
     <Content Include="Paginas\Dashboard.aspx" />
     <Content Include="Paginas\Usuarios\Index.aspx" />
+    <Content Include="Paginas\Publicidad\Index.aspx" />
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -232,6 +303,20 @@
     <Compile Include="Paginas\Clientes\ClientesRegistro.aspx.designer.cs">
       <DependentUpon>ClientesRegistro.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Paginas\Clientes\RegistroJuridicos.aspx.cs">
+      <DependentUpon>RegistroJuridicos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Clientes\RegistroJuridicos.aspx.designer.cs">
+      <DependentUpon>RegistroJuridicos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\Clientes\RegistroNaturales.aspx.cs">
+      <DependentUpon>RegistroNaturales.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Clientes\RegistroNaturales.aspx.designer.cs">
+      <DependentUpon>RegistroNaturales.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Paginas\Dashboard.aspx.cs">
       <DependentUpon>Dashboard.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -244,6 +329,11 @@
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Paginas\Usuarios\Index.aspx.designer.cs">
+    <Compile Include="Paginas\Publicidad\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Publicidad\Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
