@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <center><h1><asp:Label runat="server" ID="lblpersonanatural" Text="Persona Jurídica" style="color:black; font-family:'Times New Roman', Times, serif"></asp:Label></h1></center>
+    <center><h1><asp:Label runat="server" ID="lblpersonanatural" Text="Persona Jurídica" style="color:black; font-family:Verdana"></asp:Label></h1></center>
     <br />
     <div class="card border-primary mb-3">
         <div class="card-header"><h4>Datos Generales</h4></div>
@@ -101,16 +101,38 @@
             </div>
         </div>
     </div>
+    <br />        
+    <div class="card border-primary mb-3">
+        <div class="card-header"><h4>Representante Legal</h4></div>
+        <div class="card-body text-primary">
+            <div class="form-row">
+                <div class="form-group col-md-3">
+                    <asp:Label runat="server" ID="Label15" Text="Seleccionar Representante Legal:" style="color:black"></asp:Label>
+                </div>
+                <div class="form-group col-md-3">
+                    <asp:Button runat="server" ID="btnSeleccionarRepresentante" Text="Seleccionar Representante" CssClass="btn btn-info btn-block" style="color:white; background-color:red; border-color:red; width:auto"></asp:Button>            
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <asp:Label runat="server" ID="Label16" Text="Representante Legal:" style="color:black"></asp:Label>
+                    <asp:TextBox runat="server" ID="txtrepresentantelegal" CssClass="form-control" Enabled="false" Text="-"></asp:TextBox>            
+                </div>
+                <div class="form-group col-md-3">
+                    <asp:Label runat="server" ID="Label17" Text="DUI Representante Legal:" style="color:black"></asp:Label>
+                    <asp:TextBox runat="server" ID="txtDUIrepresentantelegal" CssClass="form-control" Enabled="false" Text="-"></asp:TextBox>            
+                </div>
+                <div class="form-group col-md-3">
+                    <asp:Label runat="server" ID="Label18" Text="NIT Representante Legal:" style="color:black"></asp:Label>
+                    <asp:TextBox runat="server" ID="txtNITrepresentantelegal" CssClass="form-control" Enabled="false" Text="-"></asp:TextBox>            
+                </div>
+            </div>
+        </div>
+    </div>
     <br />
     <div class="card border-primary mb-3">
         <div class="card-header"><h4>Otros</h4></div>
         <div class="card-body text-primary">
-            <div class="form-row">
-                <div class="form-group col-md-12">
-                    <asp:Label runat="server" ID="Label15" Text="Representante Legal:" style="color:black"></asp:Label>
-                    <asp:TextBox runat="server" ID="txtrepresentantelegal" CssClass="form-control"></asp:TextBox>
-                </div>
-            </div>
             <div class="form-row">
                 <div class="form-group col-md-12">
                     <asp:Label runat="server" ID="Label11" Text="Observaciones:" style="color:black"></asp:Label>
@@ -119,4 +141,14 @@
             </div>
         </div>
     </div>
+
+    <div>          
+        <center><asp:Button runat="server" ID="btnGuardarJuridicos" Text="Guardar" CssClass="btn btn-info btn-block" style="color:white; background-color:red; border-color:red; width:auto"></asp:Button></center>             
+   </div>
+   <br />
+
+    <script src="../../vendor/jquery/jquery.min.js"></script>
+    <script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="../../vendor/jquery-easing/jquery.easing.min.js"></script> 
 </asp:Content>
