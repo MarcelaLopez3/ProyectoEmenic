@@ -30,7 +30,7 @@
 
         <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
             <asp:Image ImageUrl="~/Imagenes/Logo_emenic_2.png" Height="60" runat="server"/>&nbsp;&nbsp;&nbsp;
-          <a class="navbar-brand mr-1" href="../Paginas/Dashboard.aspx" style="color:red">EMENIC</a>
+          <a class="navbar-brand mr-1" style="color:red">EMENIC</a>
           <!-- Navbar -->
           <ul class="form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
             <li class="nav-item dropdown no-arrow">
