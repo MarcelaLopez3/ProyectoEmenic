@@ -223,6 +223,8 @@
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Imagenes\Logo_emenic.png" />
     <Content Include="Paginas\Clientes\ClientesRegistro.aspx" />
+    <Content Include="Paginas\Clientes\RegistroJuridicos.aspx" />
+    <Content Include="Paginas\Clientes\RegistroNaturales.aspx" />
     <Content Include="Paginas\Dashboard.aspx" />
     <Content Include="Paginas\Publicidad\Index.aspx" />
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
@@ -299,6 +301,20 @@
     </Compile>
     <Compile Include="Paginas\Clientes\ClientesRegistro.aspx.designer.cs">
       <DependentUpon>ClientesRegistro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\Clientes\RegistroJuridicos.aspx.cs">
+      <DependentUpon>RegistroJuridicos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Clientes\RegistroJuridicos.aspx.designer.cs">
+      <DependentUpon>RegistroJuridicos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\Clientes\RegistroNaturales.aspx.cs">
+      <DependentUpon>RegistroNaturales.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Clientes\RegistroNaturales.aspx.designer.cs">
+      <DependentUpon>RegistroNaturales.aspx</DependentUpon>
     </Compile>
     <Compile Include="Paginas\Dashboard.aspx.cs">
       <DependentUpon>Dashboard.aspx</DependentUpon>
