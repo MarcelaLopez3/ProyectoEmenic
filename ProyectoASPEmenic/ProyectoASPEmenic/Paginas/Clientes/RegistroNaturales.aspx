@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <center><h1><asp:Label runat="server" ID="lblpersonanatural" Text="Persona Natural" style="color:black; font-family:'Times New Roman', Times, serif"></asp:Label></h1></center>
+    <center><h1><asp:Label runat="server" ID="lblpersonanatural" Text="Persona Natural" style="color:black; font-family:Verdana"></asp:Label></h1></center>
     <br />
     <div class="card border-primary mb-3">
         <div class="card-header"><h4>Datos Personales</h4></div>
@@ -115,6 +115,26 @@
             </div>
        </div>
     </div>
+
+    <div class="card border-primary mb-3">  
+       <div class="card-header"><h4>Datos Contacto</h4></div>  
+       <div class="card-body text-primary">
+           <div class="form-row">
+               <div class="form-group col-md-3">
+                   <asp:Label runat="server" ID="Label17" Text="Telefono:" style="color:black"></asp:Label>
+                   <asp:TextBox runat="server" ID="txttelefono" CssClass="form-control"></asp:TextBox>
+               </div>
+               <div class="form-group col-md-3">
+                   <asp:Label runat="server" ID="Label18" Text="Celular:" style="color:black"></asp:Label>
+                   <asp:TextBox runat="server" ID="txtcelular" CssClass="form-control"></asp:TextBox>
+               </div>
+               <div class="form-group col-md-6">
+                   <asp:Label runat="server" ID="Label19" Text="Correo Electrónico:" style="color:black"></asp:Label>
+                   <asp:TextBox runat="server" ID="txtcorreo" CssClass="form-control"></asp:TextBox>
+               </div>
+           </div>
+       </div>      
+    </div>
       
    <div class="card border-primary mb-3">  
        <div class="card-header"><h4>Otros</h4></div>  
@@ -126,8 +146,13 @@
                </div>
            </div>
        </div>      
-    </div>
-   
+    </div> 
+    
+    <div>          
+        <center><asp:Button runat="server" ID="btnGuardarNaturales" Text="Guardar" CssClass="btn btn-info btn-block" style="color:white; background-color:red; border-color:red; width:auto"></asp:Button></center>             
+   </div>
+   <br />
+
     <script src="../../vendor/jquery/jquery.min.js"></script>
     <script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- Core plugin JavaScript-->
