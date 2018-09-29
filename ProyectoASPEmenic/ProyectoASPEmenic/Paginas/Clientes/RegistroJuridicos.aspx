@@ -8,9 +8,24 @@
         <div class="card-header"><h4>Datos Generales</h4></div>
         <div class="card-body text-primary">
             <div class="form-row">
+                <div class="form-group col-md-2">
+                    <asp:CheckBox runat="server" ID="checkCliente" />
+                    <asp:Label runat="server" ID="Label23" Text="Cliente" style="color:black"></asp:Label>
+                </div>
+                <div class="form-group col-md-2">
+                    <asp:CheckBox runat="server" ID="checkProveedor" />
+                    <asp:Label runat="server" ID="Label24" Text="Proveedor" style="color:black"></asp:Label>
+                </div>
+                <div class="form-group col-md-2">
+                    <asp:CheckBox runat="server" ID="checkSocio" />
+                    <asp:Label runat="server" ID="Label25" Text="Socio" style="color:black"></asp:Label>
+                </div>
+            </div>
+            <hr />
+            <div class="form-row">
                 <div class="form-group col-md-3">
-                    <asp:Label runat="server" ID="lblrazonsocial" Text="Razón Social:" style="color:black"></asp:Label>
-                    <asp:TextBox runat="server" ID="txtrazonsocial" CssClass="form-control"></asp:TextBox>    
+                    <asp:Label runat="server" ID="lblnombrelegal" Text="Nombre Legal:" style="color:black"></asp:Label>
+                    <asp:TextBox runat="server" ID="txtnombrelegal" CssClass="form-control"></asp:TextBox>    
                 </div>
                 <div class="form-group col-md-3">    
                     <asp:Label runat="server" ID="lblnombrecomercial" Text="Nombre Comercial:" style="color:black"></asp:Label>
@@ -49,20 +64,36 @@
         </div>
         <div class="form-row">
             <div class="form-group col-md-3">
-                <asp:Label runat="server" ID="Label12" Text="Telefono:" style="color:black"></asp:Label>
-                <asp:TextBox runat="server" ID="txttelefono" CssClass="form-control"></asp:TextBox>
+                <asp:Label runat="server" ID="Label12" Text="Telefono 1:" style="color:black"></asp:Label>
+                <asp:TextBox runat="server" ID="txttelefono1" CssClass="form-control"></asp:TextBox>
+            </div>
+            <div class="form-group col-md-3">
+                <asp:Label runat="server" ID="Label19" Text="Telefono 2:" style="color:black"></asp:Label>
+                <asp:TextBox runat="server" ID="txttelefono2" CssClass="form-control"></asp:TextBox>
+            </div>
+            <div class="form-group col-md-3">
+                <asp:Label runat="server" ID="Label20" Text="Telefono 3:" style="color:black"></asp:Label>
+                <asp:TextBox runat="server" ID="txttelefono3" CssClass="form-control"></asp:TextBox>
             </div>
             <div class="form-group col-md-3">
                 <asp:Label runat="server" ID="Label13" Text="Fax:" style="color:black"></asp:Label>
                 <asp:TextBox runat="server" ID="txtFax" CssClass="form-control"></asp:TextBox>
             </div>
-            <div class="form-group col-md-3">
-                <asp:Label runat="server" ID="Label14" Text="Correo electronico:" style="color:black"></asp:Label>
-                <asp:TextBox runat="server" ID="txtcorreoelectronico" CssClass="form-control"></asp:TextBox>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <asp:Label runat="server" ID="Label14" Text="Correo electronico principal:" style="color:black"></asp:Label>
+                <asp:TextBox runat="server" ID="txtcorreo1" CssClass="form-control"></asp:TextBox>
             </div>
+            <div class="form-group col-md-6">
+                <asp:Label runat="server" ID="Label21" Text="Correo electronico alternativo:" style="color:black"></asp:Label>
+                <asp:TextBox runat="server" ID="txtcorreo2" CssClass="form-control"></asp:TextBox>
+            </div>
+        </div>
+        <div class="form-row">
             <div class="form-group col-md-3">
                 <asp:Label runat="server" ID="Label4" Text="Codigo Postal:" style="color:black"></asp:Label>
-                <asp:TextBox runat="server" ID="txtcodifopostal" CssClass="form-control"></asp:TextBox>
+                <asp:TextBox runat="server" ID="txtcodigopostal" CssClass="form-control"></asp:TextBox>
             </div>
         </div>
         </div>
