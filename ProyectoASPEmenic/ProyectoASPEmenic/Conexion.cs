@@ -15,19 +15,19 @@ namespace ProyectoASPEmenic
         {
 
         }
-
+        public MySqlConnection cnn = new MySqlConnection("Persist Security Info=False;server=localhost;SslMode=none;database=bdd_emenic;uid=root;password=");
         //variables de conexion
-        public MySqlConnection cnn = new MySqlConnection();
+        //public MySqlConnection cnn = new MySqlConnection();
         //MySqlConnection cnn = new MySqlConnection("server=localhost:81;database=bdd_emenic;userid=root2;password=123456;charsetutf8;");
         public MySqlDataReader reg;
-        
+
 
         //funcion que inicia conexion
         public void IniciarConexion()
         {
             try
             {
-                cnn.ConnectionString = (@"Server=localhost;Port=81;Database=bdd_emenic;Uid=root2;Pwd=123456;charsetutf8;");
+                //cnn.ConnectionString = (@"Server=localhost;Port=81;Database=bdd_emenic;Uid=root2;Pwd=123456;charsetutf8;");
                 cnn.Open();
             }
             catch (Exception ex)
