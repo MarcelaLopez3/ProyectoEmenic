@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>.:: EMENIC S.A. de C.V. ::.</title>
+    <title>EMENIC S.A. de C.V.</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
     <script type="application/x-javascript">
@@ -21,7 +21,8 @@
     <link href="../../css/style.css" rel='stylesheet' type='text/css' />
     <link href="../../css/simpleLightbox.css" rel='stylesheet' type='text/css' />
     <link href="../../css/popup-box.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="../../css/fontawesome-all.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <%--    <link href="../../css/fontawesome-all.css" rel="stylesheet">--%>
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
@@ -32,7 +33,7 @@
         <div class="header">
             <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #000000;">
                 <a class="navbar-brand" href="index.aspx">
-                    <asp:Image ID="imglogo" runat="server" ImageUrl="~/Imagenes/Logo_emenic.png" Height="20%" Width="20%" />
+                    <asp:Image ID="imglogo" runat="server" ImageUrl="~/Imagenes/Logo_emenic_2.png" Height="20%" Width="20%" />
                     EMENIC</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -40,26 +41,29 @@
                 <div class="collapse navbar-collapse" id="navbarText">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item active">
-                            <a class="nav-link" href="index.aspx">Home <span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="index.aspx">Inicio <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link scroll" href="#about">About</a>
+                            <a class="nav-link scroll" href="#about">Acerca de nosotros</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link scroll" href="#services">Services</a>
+                            <a class="nav-link scroll" href="#services">Servicios</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link scroll" href="#works">Our Works</a>
+                            <a class="nav-link scroll" href="#mision">Misión</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link scroll" href="#vision">Visión</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link scroll" href="#pricing">Pricing</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link scroll" href="#contact">Contact</a>
+                            <a class="nav-link scroll" href="#contact">Contacto</a>
                         </li>
                     </ul>
                     <div class="navbar-text">
-                        <p class="right-p"><i class="fas fa-phone" aria-hidden="true"></i>098-765-4321</p>
+                        <p class="right-p"><i class="fas fa-phone" aria-hidden="true"></i>(503) 2252-6956</p>
                     </div>
                 </div>
             </nav>
@@ -76,101 +80,60 @@
                     <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
                 </ol>
                 <div class="carousel-inner" role="listbox">
-                    <div class="carousel-item active">
-                        <asp:Image ID="imageEmenic1" runat="server" ImageUrl="~/Imagenes/Emenic1.jpg" />
+                    <div class="carousel-item item1 active">
+                        <%--<asp:Image ID="imageEmenic1" runat="server" ImageUrl="~/Imagenes/Emenic1.jpg" />--%>
                         <div class="carousel-caption">
                             <h3>Transport your cargo everywhere</h3>
                             <p>We offer a diverse range of transportation services from project cargo to international transportation and domestic retail distribution and delivery.</p>
-                            <a href="#" data-toggle="modal" data-target="#exampleModalCenter" role="button">Read More <i class="fa fa-caret-right" aria-hidden="true"></i></a>
+                            <a href="#" data-toggle="modal" data-target="#exampleModalCenter" role="button">Más Detalles <i class="fa fa-caret-right" aria-hidden="true"></i></a>
 
 
                         </div>
                     </div>
-                    <div class="carousel-item">
-                        <asp:Image ID="imageEmenic2" runat="server" ImageUrl="~/Imagenes/Emenic2.png" />
+                    <div class="carousel-item item2">
+                        <%--<asp:Image ID="imageEmenic2" runat="server" ImageUrl="~/Imagenes/Emenic2.png" />--%>
                         <div class="carousel-caption">
                             <h3>World wide transport for everyone</h3>
                             <p>We offer a diverse range of transportation services from project cargo to international transportation and domestic retail distribution and delivery.</p>
-                            <a href="#" data-toggle="modal" data-target="#exampleModalCenter" role="button">Read More <i class="fa fa-caret-right" aria-hidden="true"></i></a>
+                            <a href="#" data-toggle="modal" data-target="#exampleModalCenter" role="button">Más Detalles <i class="fa fa-caret-right" aria-hidden="true"></i></a>
 
 
                         </div>
                     </div>
-                    <div class="carousel-item ">
-                        <asp:Image ID="imageEmenic3" runat="server" ImageUrl="~/Imagenes/Emenic3.jpg" />
+                    <div class="carousel-item item3">
+                        <%--<asp:Image ID="imageEmenic3" runat="server" ImageUrl="~/Imagenes/Emenic3.jpg" />--%>
                         <div class="carousel-caption">
                             <h3>24*7 services provided for Customers</h3>
                             <p>We offer a diverse range of transportation services from project cargo to international transportation and domestic retail distribution and delivery.</p>
-                            <a href="#" data-toggle="modal" data-target="#exampleModalCenter" role="button">Read More <i class="fa fa-caret-right" aria-hidden="true"></i></a>
+                            <a href="#" data-toggle="modal" data-target="#exampleModalCenter" role="button">Más Detalles <i class="fa fa-caret-right" aria-hidden="true"></i></a>
                         </div>
                     </div>
                 </div>
                 <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
+                    <span class="sr-only">Anterior</span>
                 </a>
                 <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
+                    <span class="sr-only">Siguiente</span>
                 </a>
             </div>
             <!-- banner-bottom -->
             <div class="banner-bottom">
                 <div class="container">
-                    <div class="row">
-                        <div class="col-lg-4 agileits_banner_bottom_left">
-                            <div class="agileinfo_banner_bottom_pos">
-                                <div class="w3_agileits_banner_bottom_pos_grid">
-                                    <div class="col-xs-3 wthree_banner_bottom_grid_left">
-                                        <div class="agile_banner_bottom_grid_left_grid hvr-radial-out">
-                                            <span class="fas fa-car" aria-hidden="true"></span>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-9 wthree_banner_bottom_grid_right">
-                                        <h4>ROAD TRANSPORT</h4>
-                                        <p>Morbi viverra lacus commodo felis semper, eu iaculis lectus feugiat.</p>
-
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 agileits_banner_bottom_left">
-                            <div class="agileinfo_banner_bottom_pos">
-                                <div class="w3_agileits_banner_bottom_pos_grid">
-                                    <div class="col-xs-3 wthree_banner_bottom_grid_left">
-                                        <div class="agile_banner_bottom_grid_left_grid hvr-radial-out">
-                                            <span class="fas fa-fighter-jet" aria-hidden="true"></span>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-9 wthree_banner_bottom_grid_right">
-                                        <h4>AIR FREIGHT</h4>
-                                        <p>Morbi viverra lacus commodo felis semper, eu iaculis lectus feugiat.</p>
-
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 agileits_banner_bottom_left">
-                            <div class="agileinfo_banner_bottom_pos">
-                                <div class="w3_agileits_banner_bottom_pos_grid">
-                                    <div class="col-xs-3 wthree_banner_bottom_grid_left">
-                                        <div class="agile_banner_bottom_grid_left_grid hvr-radial-out">
-                                            <span class="fas fa-subway" aria-hidden="true"></span>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-9 wthree_banner_bottom_grid_right">
-                                        <h4>RAILWAY LOGISTICS</h4>
-                                        <p>Morbi viverra lacus commodo felis semper, eu iaculis lectus feugiat.</p>
-
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="clearfix"></div>
+                    <div>
+                        <h3 class="text-center">BIENVENIDO A EMENIC S.A. DE C.V.</h3>
                     </div>
+                    <div class="wthree_banner_bottom_grid_right">
+                        <h4>Nuestro objetivo</h4>
+                        <p>
+                            Como empresa nos comprometemos a prestar excelentes servicios de transporte de carga internacional
+                            y alquiler de equipo de transporte en óptimas condiciones que satisfagan plenamente las necesidades
+                            de nuestros clientes, con el  propósito de ser una de las empresas más grandes y exitosas es seguir
+                            adelante, mejorando y logrando la satisfacción de los clientes.
+                        </p>
+                    </div>
+                    <div class="clearfix"></div>
                 </div>
             </div>
             <!-- //banner-bottom -->
@@ -179,31 +142,21 @@
     </section>
     <!--//banner-->
     <!-- stats -->
-    <div class="stats" id="stats">
+    <div class="stats" id="about">
         <div class="w3-head-all  mb-5">
-            <h3>About us</h3>
+            <h3>Acerca de nosotros</h3>
         </div>
         <div class="container">
             <div class="row">
-                <div class="col-md-3  col-sm-6 w3layouts_stats_left w3_counter_grid">
+                <div class="col-md-6 col-sm-12 w3layouts_stats_left w3_counter_grid1">
                     <span class="fas fa-globe" aria-hidden="true"></span>
-                    <p class="counter">45</p>
-                    <h3>PROJECTS DONE</h3>
+                    <p class="counter">7</p>
+                    <h3>PAÍSES</h3>
                 </div>
-                <div class="col-md-3 col-sm-6 w3layouts_stats_left w3_counter_grid1">
-                    <span class="fas fa-users" aria-hidden="true"></span>
-                    <p class="counter">165</p>
-                    <h3>HAPPY CLIENTS</h3>
-                </div>
-                <div class="col-md-3 col-sm-6 w3layouts_stats_left w3_counter_grid2">
-                    <span class="fas fa-handshake" aria-hidden="true"></span>
-                    <p class="counter">563</p>
-                    <h3>TEAM WORKERS </h3>
-                </div>
-                <div class="col-md-3 col-sm-6 w3layouts_stats_left w3_counter_grid3">
-                    <span class="fa fa-trophy" aria-hidden="true"></span>
-                    <p class="counter">245</p>
-                    <h3>YEARS IN MARKET </h3>
+                <div class="col-md-6 col-sm-12 w3layouts_stats_left w3_counter_grid2">
+                    <span class="fas fa-route" aria-hidden="true"></span>
+                    <p class="counter">3,320</p>
+                    <h3>KILÓMETROS</h3>
                 </div>
                 <div class="clearfix"></div>
             </div>
@@ -211,21 +164,16 @@
     </div>
     <!-- //stats -->
     <!-- services-bottom -->
-    <div class="services-bottom wthree-sub py-5" id="about">
+    <div class="services-bottom wthree-sub py-5" id="mision">
         <div class="container py-md-3">
             <div class="row">
                 <div class="col-sm-6 col-xs-4 services_bottom_grid_left">
-                    <h3>Logistics Solutions</h3>
-                    <p>Lorem ipsum dolor sit amet</p>
-                    <a href="#" data-toggle="modal" data-target="#exampleModalCenter" role="button">Read More</a>
+                    <h3>Misión</h3>
                 </div>
                 <div class="col-sm-6 col-xs-8 services_bottom_grid_right">
-                    <h3>Why <span>Choose Us</span></h3>
-                    <div class='bar_group'>
-                        <div class='bar_group__bar thin elastic' label='100% Safe Delivery' value='230'></div>
-                        <div class='bar_group__bar thin elastic' label='100% support' value='130'></div>
-                        <div class='bar_group__bar thin elastic' label='Fast & On Time' value='160'></div>
-                    </div>
+                    <h4 class="text-white">Satisfacer la necesidad de movilidad de las empresas con un sistema de transporte de carga pesada de calidad, competitivo y adecuado a sus exigencias.
+                        Ser socios estratégicos de nuestros clientes en transporte terrestre a través de una flota en óptimas condiciones para satisfacer sus necesidades de traslado de mercancía.
+                    </h4>
                 </div>
                 <div class="clearfix"></div>
             </div>
@@ -236,7 +184,7 @@
     <div class="testimonials  py-5" id="services">
         <div class="container  py-md-3">
             <div class="w3-head-all  mb-5">
-                <h3>Our Services</h3>
+                <h3>Nuestros Servicios </h3>
             </div>
             <div class="w3_testimonials_grids">
                 <section class="slider">
@@ -250,28 +198,16 @@
                                     </div>
                                     <div class="col-md-6 come">
                                         <div class="about-wel">
-                                            <h5>A Few Words About Our
-												<span>logistics</span>
+                                            <h5>Alquiler de
+												<span>equipo de transporte</span>
                                             </h5>
                                             <p>
-                                                Masagni dolores eoquie int Basmodi temporant, ut laboreas dolore magnam aliquam kuytase uaeraquis autem vel eum iure
-												reprehend.Unicmquam eius, Basmodi temurer sehsMunim.
+                                                Ofrecer un equipo de transporte óptimo para coordinar entregas en el plazo establecido.
                                             </p>
-                                            <ul>
-                                                <li>
-                                                    <i class="fas fa-check"></i>100% satisfied customers</li>
-                                                <li>
-                                                    <i class="fas fa-check"></i>Quality service</li>
-                                                <li>
-                                                    <i class="fas fa-check"></i>Worldwide Locations</li>
-                                                <li>
-                                                    <i class="fas fa-check"></i>Modern Vehicles Fleet</li>
-
-                                            </ul>
                                         </div>
                                         <div class="button-styles">
-                                            <a href="#" data-toggle="modal" data-target="#exampleModalCenter">More Info</a>
-                                            <a href="#contact" class="button2-w3l scroll">Contact Us</a>
+                                            <%--<a href="#" data-toggle="modal" data-target="#exampleModalCenter">More Info</a>--%>
+                                            <a href="#contact" class="button2-w3l scroll">Contactenos</a>
                                         </div>
                                     </div>
 
@@ -284,28 +220,25 @@
                                 <div class="about-top w3ls-agile row">
                                     <div class="col-md-6 come">
                                         <div class="about-wel">
-                                            <h5>A Few Words About Our
-											<span>logistics</span>
+                                            <h5>Servicio de
+											<span>transporte</span>
                                             </h5>
                                             <p>
-                                                Masagni dolores eoquie int Basmodi temporant, ut laboreas dolore magnam aliquam kuytase uaeraquis autem vel eum iure
-											reprehend.Unicmquam eius, Basmodi temurer sehsMunim.
+                                                Satisfacer las necesidades de nuestros clientes a través del servicio transporte de carga internacional, aportando así con la misión empresarial de cada uno.
+                                                Brindar un excelente servicio a empresas que desean trasladar sus productos a Centroamérica y con ello ser aliados de sus operaciones.
                                             </p>
                                             <ul>
                                                 <li>
-                                                    <i class="fas fa-check"></i>100% satisfied customers</li>
+                                                    <i class="fas fa-check"></i>Traslado de productos en Centroamérica</li>
                                                 <li>
-                                                    <i class="fas fa-check"></i>Quality service</li>
+                                                    <i class="fas fa-check"></i>Excelente servicio</li>
                                                 <li>
-                                                    <i class="fas fa-check"></i>Worldwide Locations</li>
-                                                <li>
-                                                    <i class="fas fa-check"></i>Modern Vehicles Fleet</li>
-
+                                                    <i class="fas fa-check"></i>Incluye el equipo de cabezal y furgón con motorista</li>
                                             </ul>
                                         </div>
                                         <div class="button-styles">
-                                            <a href="#" data-toggle="modal" data-target="#exampleModalCenter">More Info</a>
-                                            <a href="#contact" class="button2-w3l scroll">Contact Us</a>
+                                            <%--<a href="#" data-toggle="modal" data-target="#exampleModalCenter">More Info</a>--%>
+                                            <a href="#contact" class="button2-w3l scroll">Contactenos</a>
                                         </div>
                                     </div>
                                     <div class="col-md-6 ser_w3">
@@ -313,77 +246,6 @@
                                     </div>
 
                                 </div>
-                            </li>
-
-                            <li>
-                                <div class="about-top w3ls-agile row">
-                                    <div class="col-md-6 ser_w3">
-                                        <asp:Image ID="imageServices3" runat="server" ImageUrl="~/Imagenes/service3.jpg" CssClass="img-responsive img-fluid" />
-                                    </div>
-                                    <div class="col-md-6 come">
-                                        <div class="about-wel">
-                                            <h5>A Few Words About Our
-							<span>logistics</span>
-                                            </h5>
-                                            <p>
-                                                Masagni dolores eoquie int Basmodi temporant, ut laboreas dolore magnam aliquam kuytase uaeraquis autem vel eum iure
-							reprehend.Unicmquam eius, Basmodi temurer sehsMunim.
-                                            </p>
-                                            <ul>
-                                                <li>
-                                                    <i class="fas fa-check"></i>100% satisfied customers</li>
-                                                <li>
-                                                    <i class="fas fa-check"></i>Quality service</li>
-                                                <li>
-                                                    <i class="fas fa-check"></i>Worldwide Locations</li>
-                                                <li>
-                                                    <i class="fas fa-check"></i>Modern Vehicles Fleet</li>
-
-                                            </ul>
-                                        </div>
-                                        <div class="button-styles">
-                                            <a href="#" data-toggle="modal" data-target="#exampleModalCenter">More Info</a>
-                                            <a href="#contact" class="button2-w3l scroll">Contact Us</a>
-                                        </div>
-                                    </div>
-
-                                </div>
-
-                            </li>
-                            <li>
-                                <div class="about-top w3ls-agile row">
-
-                                    <div class="col-md-6 come">
-                                        <div class="about-wel">
-                                            <h5>A Few Words About Our
-							<span>Transport</span>
-                                            </h5>
-                                            <p>
-                                                Masagni dolores eoquie int Basmodi temporant, ut laboreas dolore magnam aliquam kuytase uaeraquis autem vel eum iure
-							reprehend.Unicmquam eius, Basmodi temurer sehsMunim.
-                                            </p>
-                                            <ul>
-                                                <li>
-                                                    <i class="fas fa-check"></i>100% satisfied customers</li>
-                                                <li>
-                                                    <i class="fas fa-check"></i>Quality service</li>
-                                                <li>
-                                                    <i class="fas fa-check"></i>Worldwide Locations</li>
-                                                <li>
-                                                    <i class="fas fa-check"></i>Modern Vehicles Fleet</li>
-
-                                            </ul>
-                                        </div>
-                                        <div class="button-styles">
-                                            <a href="#" data-toggle="modal" data-target="#exampleModalCenter">More Info</a>
-                                            <a href="#contact" class="button2-w3l scroll">Contact Us</a>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 ser_w3">
-                                        <asp:Image ID="imageService4" runat="server" ImageUrl="~/Imagenes/service4.jpg" CssClass="img-responsive img-fluid" />
-                                    </div>
-                                </div>
-
                             </li>
                         </ul>
                     </div>
@@ -393,73 +255,26 @@
         </div>
     </div>
     <!-- //services-main -->
-    <!-- team -->
-    <div class="team  py-5" id="team">
+    <!-- visión -->
+    <div class="team py-5" id="vision">
         <div class="container py-md-3">
-            <div class="w3-head-all  mb-5">
-                <h3>Our Team</h3>
-            </div>
             <div class="teamgrids row">
-                <div class="col-md-3  col-sm-6 teamgrid1">
-                    <asp:Image ID="imageT1" runat="server" ImageUrl="~/Imagenes/t1.jpg" CssClass="img-responsive img-fluid" />
-                    <div class="teaminfo">
-                        <h3>Franklin</h3>
-                        <div class="team-social">
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fab fa-pinterest-p"></i></a>
-                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                        <p>Manager</p>
-                    </div>
+                <div class="col-sm-6 col-xs-4 services_bottom_grid_left">
+                    <h3>Visión</h3>
                 </div>
-                <div class="col-md-3 col-sm-6 teamgrid1">
-                    <asp:Image ID="imageT2" runat="server" ImageUrl="~/Imagenes/t2.jpg" CssClass="img-responsive img-fluid" />
-                    <div class="teaminfo">
-                        <h3>Guptill</h3>
-                        <div class="team-social">
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fab fa-pinterest-p"></i></a>
-                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                        <p>Shipper</p>
-
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6 teamgrid1">
-                    <asp:Image ID="imageT3" runat="server" ImageUrl="~/Imagenes/t3.jpg" CssClass="img-responsive img-fluid" />
-                    <div class="teaminfo">
-                        <h3>Mitchel</h3>
-                        <div class="team-social">
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fab fa-pinterest-p"></i></a>
-                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                        <p>Transporter</p>
-
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6 teamgrid1">
-                    <asp:Image ID="imageT4" runat="server" ImageUrl="~/Imagenes/t4.jpg" CssClass="img-responsive img-fluid" />
-                    <div class="teaminfo">
-                        <h3>John Paul</h3>
-                        <div class="team-social">
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fab fa-pinterest-p"></i></a>
-                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                        <p>Director</p>
-
-                    </div>
+                <div class="col-sm-6 col-xs-8 services_bottom_grid_right">
+                    <h4 class="text-white">Ser reconocido en el mercado de transporte de carga internacional y establecernos dentro los próximos diez años
+                        dentro de las mejores empresas en el mercado, brindando cada día un mejor servicio, de manera eficiente; estableciendo alianzas estratégicas
+                        comprometidas con las necesidades de nuestros clientes y en la búsqueda de un servicio cada vez más integral 
+                        que nos permita alcanzar un reconocido prestigio a nivel nacional internacional.
+                        Así como de ir de la mano con el dinamismo del mundo actual y las nuevas tendencias del negocio.
+                    </h4>
                 </div>
                 <div class="clearfix"></div>
             </div>
         </div>
     </div>
-    <!-- //team -->
+    <!-- //visión -->
     <!--/Projects-->
     <section class="services  py-5" id="works">
         <div class="container  py-md-3">
@@ -470,7 +285,7 @@
 
                 <div class="col-md-4  proj_gallery_grid" data-aos="zoom-in">
                     <div class="section_1_gallery_grid">
-                        <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="~/Imagenes/gal1.jpg" class="img-fluid">
+                        <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="../../Imagenes/gal1.jpg" class="img-fluid">
                             <div class="section_1_gallery_grid1">
                                 <asp:Image ID="imgGal1" runat="server" ImageUrl="~/Imagenes/gal1.jpg" CssClass="img-responsive img-fluid" />
                                 <div class="proj_gallery_grid1_pos">
@@ -481,7 +296,7 @@
                         </a>
                     </div>
                     <div class="section_1_gallery_grid" data-aos="zoom-in">
-                        <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="~/Imagenes/gal2.jpg" class="img-fluid">
+                        <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="../../Imagenes/gal2.jpg" class="img-fluid">
                             <div class="section_1_gallery_grid1">
                                 <asp:Image ID="imagegal2" runat="server" ImageUrl="~/Imagenes/gal2.jpg" CssClass="img-responsive img-fluid" />
                                 <div class="proj_gallery_grid1_pos">
@@ -492,7 +307,7 @@
                         </a>
                     </div>
                     <div class="section_1_gallery_grid" data-aos="zoom-in">
-                        <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="~/Imagenes/gal3.jpg" class="img-fluid">
+                        <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="../../Imagenes/gal3.jpg" class="img-fluid">
                             <div class="section_1_gallery_grid1">
                                 <asp:Image ID="imageGal3" runat="server" ImageUrl="~/Imagenes/gal3.jpg" CssClass="img-responsive img-fluid" />
                                 <div class="proj_gallery_grid1_pos">
@@ -505,7 +320,7 @@
                 </div>
                 <div class="col-md-4  proj_gallery_grid" data-aos="zoom-in">
                     <div class="section_1_gallery_grid">
-                        <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="~/Imagenes/gal4.jpg" class="img-fluid">
+                        <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="../../Imagenes/gal4.jpg" class="img-fluid">
                             <div class="section_1_gallery_grid1">
                                 <asp:Image ID="imageGal4" runat="server" ImageUrl="~/Imagenes/gal4.jpg" CssClass="img-responsive img-fluid" />
                                 <div class="proj_gallery_grid1_pos">
@@ -516,7 +331,7 @@
                         </a>
                     </div>
                     <div class="section_1_gallery_grid" data-aos="zoom-in">
-                        <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="~/Imagenes/gal5.jpg" class="img-fluid">
+                        <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="../../Imagenes/gal5.jpg" class="img-fluid">
                             <div class="section_1_gallery_grid1">
                                 <asp:Image ID="imageGal5" runat="server" ImageUrl="~/Imagenes/gal5.jpg" CssClass="img-responsive img-fluid" />
                                 <div class="proj_gallery_grid1_pos">
@@ -527,7 +342,7 @@
                         </a>
                     </div>
                     <div class="section_1_gallery_grid" data-aos="zoom-in">
-                        <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="~/Imagenes/gal6.jpg" class="img-fluid">
+                        <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="../../Imagenes/gal6.jpg" class="img-fluid">
                             <div class="section_1_gallery_grid1">
                                 <asp:Image ID="imageGal6" runat="server" ImageUrl="~/Imagenes/gal6.jpg" CssClass="img-responsive img-fluid" />
                                 <div class="proj_gallery_grid1_pos">
@@ -540,7 +355,7 @@
                 </div>
                 <div class="col-md-4  proj_gallery_grid" data-aos="zoom-in">
                     <div class="section_1_gallery_grid">
-                        <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="~/Imagenes/gal7.jpg" class="img-fluid">
+                        <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="../../Imagenes/gal7.jpg" class="img-fluid">
                             <div class="section_1_gallery_grid1">
                                 <asp:Image ID="imageGal7" runat="server" ImageUrl="~/Imagenes/gal7.jpg" CssClass="img-responsive img-fluid" />
                                 <div class="proj_gallery_grid1_pos">
@@ -551,7 +366,7 @@
                         </a>
                     </div>
                     <div class="section_1_gallery_grid" data-aos="zoom-in">
-                        <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="~/Imagenes/gal8.jpg" class="img-fluid">
+                        <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="../../Imagenes/gal8.jpg" class="img-fluid">
                             <div class="section_1_gallery_grid1">
                                 <asp:Image ID="imageGal8" runat="server" ImageUrl="~/Imagenes/gal8.jpg" CssClass="img-responsive img-fluid" />
                                 <div class="proj_gallery_grid1_pos">
@@ -562,7 +377,7 @@
                         </a>
                     </div>
                     <div class="section_1_gallery_grid" data-aos="zoom-in">
-                        <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="images/gal9.jpg" class="img-fluid">
+                        <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="../../Imagenes/gal9.jpg" class="img-fluid">
                             <div class="section_1_gallery_grid1">
                                 <asp:Image ID="imageGal9" runat="server" ImageUrl="~/Imagenes/gal9.jpg" CssClass="img-responsive img-fluid" />
                                 <div class="proj_gallery_grid1_pos">
@@ -654,20 +469,21 @@
                         </li>
 
                     </ul>
+                </section>
             </div>
         </div>
     </div>
-    </section>
-			<!-- main pricing table -->
+
+    <!-- main pricing table -->
     <!-- /contact us -->
     <div class="w3-contact py-5" id="contact">
         <div class="container py-md-3">
             <div class="w3-head-all  mb-5">
-                <h3>Contact us</h3>
+                <h3>Contactanos</h3>
             </div>
             <div class="w3-contact1">
                 <h1>100%</h1>
-                <h2>The Best Shipping Services</h2>
+                <h2>El mejor servicio de transporte</h2>
                 <p><a class="book popup-with-zoom-anim button-isi zoomIn animated" data-wow-delay=".5s" href="#small-dialog"><span class="fa fa-paper-plane-o"></span>Contact Us</a></p>
             </div>
         </div>
@@ -675,20 +491,23 @@
     <!-- //contact us -->
     <!-- map -->
     <div class="w3l-map">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d10446319.224363243!2d-101.53641366492933!3d40.52127641868563!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1509778660321" style="border: 0" allowfullscreen></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d62023.4249827418!2d-89.14606767881887!3d13.690320433014982!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2ssv!4v1538197319980" style="border:0" allowfullscreen></iframe>
     </div>
     <!-- Newsletter -->
     <section class="newsletter text-center py-5">
         <div class="container py-md-3">
-            <h3 class="heading text-center text-uppercase mb-5">FOR BEST PRICE AND SERVICE </h3>
+            <h3 class="heading text-center text-uppercase mb-5">PARA MEJOR PRECIO Y SERVICIO</h3>
             <div class="w3l_header_contact_details_agile">
-                <p>Give us a Call</p>
-                <a class="w3l_header_contact_details_agile-info_inner"><span><i class="fas fa-phone"></i></span>919-993-1000-001 </a>
+                <p>Llamanos</p>
+                <a class="w3l_header_contact_details_agile-info_inner"><span><i class="fas fa-phone"></i></span>(503) 2252-6956</a>
             </div>
 
             <div class="subscribe_inner">
-                <p class="mb-4">Maecenas ac euismod eros. Aliquam a suscipit nibh. Aliquam iaculis erat porta mauris fermentum lacinia. </p>
-                <div class="social mt-sm-5 mt-3">
+                <div>
+                    <h2 class="text-white">Ubicacion</h2>
+                    <p class="mb-4">Residencial Bosques de la Paz, calle 22 poniente, No. 28, Ilopango, San Salvador, El Salvador.</p>
+                </div>
+               <%-- <div class="social mt-sm-5 mt-3">
                     <h4>Follow us</h4>
                     <ul class="d-flex mt-3 justify-content-center">
                         <li class="mx-2"><a href="#"><span class="fab fa-facebook"></span></a></li>
@@ -697,7 +516,7 @@
                         <li class="mx-2"><a href="#"><span class="fab fa-linkedin"></span></a></li>
                         <li class="mx-2"><a href="#"><span class="fab fa-google-plus-square"></span></a></li>
                     </ul>
-                </div>
+                </div>--%>
             </div>
 
         </div>
@@ -705,7 +524,7 @@
     <footer>
         <div class="container py-3 py-md-4">
             <div class="footer">
-                <p class="text-center">© 2018 Transload. All Rights Reserved | Design by <a href="http://www.W3Layouts.com" target="_blank">W3Layouts</a></p>
+                <p class="text-center">© 2018 Emenic. All Rights Reserved | Design by <a href="http://www.W3Layouts.com" target="_blank">W3Layouts</a></p>
             </div>
         </div>
     </footer>
@@ -762,7 +581,8 @@
     <!-- //Modal2 -->
 
     <!-- /magnific-popup -->
-    <div class="pop-up">
+    <form action="#" method="post" runat="server">
+        <div class="pop-up">
         <div id="small-dialog" class="mfp-hide book-form">
             <h3 class="sub-head-w3-agileits subscribe_us text-center py-3 head_size_con">Contact us </h3>
             <!-- banner -->
@@ -777,21 +597,22 @@
                                 <input type="email" name="Email" placeholder="Email" required="" />
                                 <h3>Shipping address</h3>
                                 <div class="left-w3-agile">
-                                    <select class="form-control form2-color">
-                                        <option>Choose your country</option>
-                                        <option>Argentina</option>
-                                        <option>Georgia</option>
-                                        <option>Dominica</option>
-                                        <option>Lithuania</option>
-                                        <option>Monaco</option>
-                                    </select>
+                                    <asp:DropDownList ID="ddlPaises" runat="server" CssClass="form-control form2-color">
+                                        <asp:ListItem>Elija el pais</asp:ListItem>
+                                        <asp:ListItem>Guatemala</asp:ListItem>
+                                        <asp:ListItem>El Salvador</asp:ListItem>
+                                        <asp:ListItem>Honduras</asp:ListItem>
+                                        <asp:ListItem>Nicaragua</asp:ListItem>
+                                        <asp:ListItem>Costa Rica</asp:ListItem>
+                                        <asp:ListItem>Panamá</asp:ListItem>
+                                    </asp:DropDownList>
                                     <input type="text" name="Region" placeholder="State/province/region" required="" />
                                 </div>
                                 <div class="right-agileits">
                                     <input type="text" name="City" placeholder="City" required="" />
                                     <input type="text" name="Zip/postal code" placeholder="Zip/postal code" required="" />
                                 </div>
-                                <textarea name="message" value="Address" placeholder="Street address"></textarea>
+                                <textarea name="message" placeholder="Street address"></textarea>
                                 <input type="submit" value="Submit">
                             </form>
                         </div>
@@ -803,6 +624,8 @@
         </div>
     </div>
     <!-- //magnific-popup -->
+    </form>
+    
 
     <!-- js -->
     <script type="text/javascript" src="../../js/jquery-2.2.3.min.js"></script>
