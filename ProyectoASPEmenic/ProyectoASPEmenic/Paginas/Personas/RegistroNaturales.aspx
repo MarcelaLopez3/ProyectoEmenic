@@ -123,7 +123,7 @@
                 </div>
                 <div class="form-group col-md-3">
                     <asp:Label runat="server" ID="Label15" Text="No. Licencia:" style="color:black"></asp:Label>
-                    <asp:TextBox runat="server" ID="txtlicencia" CssClass="form-control"></asp:TextBox>
+                    <asp:TextBox runat="server" ID="txtnumerolicencia" CssClass="form-control"></asp:TextBox>
                 </div>
                 <div class="form-group col-md-3">
                     <asp:Label runat="server" ID="Label6" Text="Pasaporte:" style="color:black"></asp:Label>
@@ -137,7 +137,7 @@
                 </div>
                 <div class="form-group col-md-6">
                     <asp:Label runat="server" ID="Label8" Text="No. Otro:" style="color:black"></asp:Label>
-                    <asp:TextBox runat="server" ID="txtotro" CssClass="form-control"></asp:TextBox>
+                    <asp:TextBox runat="server" ID="txtnumerootro" CssClass="form-control"></asp:TextBox>
                 </div>
             </div>
        </div>
@@ -167,11 +167,11 @@
            <div class="form-row">
                <div class="form-group col-md-6">
                    <asp:Label runat="server" ID="Label19" Text="Correo Electrónico Principal:" style="color:black"></asp:Label>
-                   <asp:TextBox runat="server" ID="txtcorreo1" CssClass="form-control"></asp:TextBox>
+                   <asp:TextBox runat="server" ID="txtemail1" CssClass="form-control"></asp:TextBox>
                </div>
                <div class="form-group col-md-6">
                    <asp:Label runat="server" ID="Label22" Text="Correo Electrónico Alterno:" style="color:black"></asp:Label>
-                   <asp:TextBox runat="server" ID="txtcorreo2" CssClass="form-control"></asp:TextBox>
+                   <asp:TextBox runat="server" ID="txtemail2" CssClass="form-control"></asp:TextBox>
                </div>
            </div>
        </div>      
@@ -190,7 +190,7 @@
     </div> 
     
     <div>          
-        <center><asp:Button runat="server" ID="btnGuardarNaturales" Text="Guardar" CssClass="btn btn-info btn-block" style="color:white; background-color:red; border-color:red; width:auto"></asp:Button></center>             
+        <center><asp:Button runat="server" ID="btnGuardarNaturales" Text="Guardar" CssClass="btn btn-info btn-block" style="color:white; background-color:red; border-color:red; width:auto" OnClick="btnGuardarNaturales_Click"></asp:Button></center>             
    </div>
    <br />
 

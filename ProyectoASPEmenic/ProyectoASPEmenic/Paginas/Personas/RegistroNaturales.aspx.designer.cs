@@ -427,13 +427,13 @@ namespace ProyectoASPEmenic.Paginas.Clientes {
         protected global::System.Web.UI.WebControls.Label Label15;
         
         /// <summary>
-        /// Control txtlicencia.
+        /// Control txtnumerolicencia.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtlicencia;
+        protected global::System.Web.UI.WebControls.TextBox txtnumerolicencia;
         
         /// <summary>
         /// Control Label6.
@@ -481,13 +481,13 @@ namespace ProyectoASPEmenic.Paginas.Clientes {
         protected global::System.Web.UI.WebControls.Label Label8;
         
         /// <summary>
-        /// Control txtotro.
+        /// Control txtnumerootro.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtotro;
+        protected global::System.Web.UI.WebControls.TextBox txtnumerootro;
         
         /// <summary>
         /// Control Label17.
@@ -571,13 +571,13 @@ namespace ProyectoASPEmenic.Paginas.Clientes {
         protected global::System.Web.UI.WebControls.Label Label19;
         
         /// <summary>
-        /// Control txtcorreo1.
+        /// Control txtemail1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtcorreo1;
+        protected global::System.Web.UI.WebControls.TextBox txtemail1;
         
         /// <summary>
         /// Control Label22.
@@ -589,13 +589,13 @@ namespace ProyectoASPEmenic.Paginas.Clientes {
         protected global::System.Web.UI.WebControls.Label Label22;
         
         /// <summary>
-        /// Control txtcorreo2.
+        /// Control txtemail2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtcorreo2;
+        protected global::System.Web.UI.WebControls.TextBox txtemail2;
         
         /// <summary>
         /// Control Label16.
