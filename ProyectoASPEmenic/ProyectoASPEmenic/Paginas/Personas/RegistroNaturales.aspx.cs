@@ -30,7 +30,7 @@ namespace ProyectoASPEmenic.Paginas.Clientes
             string DireccionResidencia = txtdireccionresidencia.Text;
             string DepartamentoResidencia = txtdepartamentoresidencia.Text;
             string MunicipioResidencia = txtmunicipioresidencia.Text;
-            DateTime FechaNacimiento = DateTime.Parse(txtfechanacimiento.Text);
+            string FechaNacimiento = txtfechanacimiento.Text;
             string DepartamentoNacimiento = txtdepartamentonacimiento.Text;
             string MunicipioNacimiento = txtmunicipionacimiento.Text;
             string DUI = txtDUI.Text;

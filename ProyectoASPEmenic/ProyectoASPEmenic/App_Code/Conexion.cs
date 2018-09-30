@@ -17,7 +17,7 @@ namespace ProyectoASPEmenic
         }
 
         //variables de conexion
-        public MySqlConnection cnn = new MySqlConnection();
+        public MySqlConnection cnn;
         //MySqlConnection cnn = new MySqlConnection("server=localhost:81;database=bdd_emenic;userid=root2;password=123456;charsetutf8;");
         public MySqlDataReader reg;
         
@@ -27,7 +27,16 @@ namespace ProyectoASPEmenic
         {
             try
             {
-                cnn.ConnectionString = (@"Server=localhost;Port=81;Database=bdd_emenic;Uid=root2;Pwd=123456;charsetutf8;");
+                MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();
+                builder.Server = "localhost";
+                builder.UserID = "root";
+                builder.Password = "";
+                builder.Port = 3306;
+                builder.Database = "bdd_emenic";
+                builder.SslMode = 0;
+                builder.PersistSecurityInfo = false;
+                //cnn.ConnectionString = "datasource=localhost;port=3307;username=root;password=root";
+                cnn = new MySqlConnection(builder.ToString());
                 cnn.Open();
             }
             catch (Exception ex)
@@ -55,7 +64,7 @@ namespace ProyectoASPEmenic
         public MySqlDataReader RecibeQuery(string query)
         {
             MySqlCommand con = new MySqlCommand(query, cnn);
-            con.ExecuteNonQuery();
+            con.ExecuteNonQuery(); 
             reg = con.ExecuteReader();
             return reg;
         }
@@ -75,6 +84,16 @@ namespace ProyectoASPEmenic
             {
                 throw ex;
             }
+        }
+
+
+        public DataSet llena(string texto)
+        {
+            MySqlCommand con = new MySqlCommand(texto, cnn);
+            MySqlDataAdapter sda = new MySqlDataAdapter(con);
+            DataSet ds = new DataSet();
+            sda.Fill(ds);
+            return ds;
         }
     }
 }
