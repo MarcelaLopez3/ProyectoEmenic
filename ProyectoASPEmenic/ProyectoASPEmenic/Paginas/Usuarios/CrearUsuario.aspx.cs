@@ -12,12 +12,12 @@ namespace ProyectoASPEmenic.Paginas.Usuarios
         Conexion cn = new Conexion();
         protected void Page_Load(object sender, EventArgs e)
         {
-            cn.IniciarConexion();
-            ddlUsers.DataSource = cn.llena("SELECT idPersona,PrimerNombre FROM `persona` WHERE PersonaNatural=1");
-            ddlUsers.DataTextField = "PrimerNombre";
-            ddlUsers.DataValueField = "idPersona";
-            ddlUsers.DataBind();
-            cn.CerrarConexion();
+            //cn.IniciarConexion();
+            //ddlUsers.DataSource = cn.llena("SELECT idPersona,PrimerNombre FROM `persona` WHERE PersonaNatural=1");
+            //ddlUsers.DataTextField = "PrimerNombre";
+            //ddlUsers.DataValueField = "idPersona";
+            //ddlUsers.DataBind();
+            //cn.CerrarConexion();
         }
     }
 }
