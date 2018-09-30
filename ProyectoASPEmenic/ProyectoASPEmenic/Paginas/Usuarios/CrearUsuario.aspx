@@ -2,21 +2,36 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div id="content-wrapper">
-        <div class="container-fluid">
-            <h3>
-              Usuarios
-              <small class="text-muted">Agregar Credenciales</small>
-            </h3>
-            <div class="card border-primary mb-3">
-                <div class="card-header"><h4>Credenciales de Usuario</h4></div>
-                <div class="card-body text-primary">
-                    <div class="form-row">
-                        </div>
-                    </div>
+    <center><h3>
+        Usuarios
+        <small class="text-muted">Agregar Credenciales</small>
+    </h3></center>
+    <div class="card border-primary mb-3">
+        <div class="card-header"><h4>Credenciales de Usuario</h4></div>
+        <div class="card-body text-primary">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <asp:Label ID="lblUsuario" Text="Ingrese su Usuario" runat="server" style="color:black"></asp:Label>
+                    <asp:TextBox ID="txtUsuario" CssClass="form-control" runat="server"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="* Ingrese un Usuario" ControlToValidate="txtUsuario" ForeColor="MediumVioletRed"></asp:RequiredFieldValidator>
                 </div>
-            <%--<asp:Label Text="Prueba dropdownlist" runat="server"  ></asp:Label>
-            <asp:DropDownList runat="server" ID="ddlUsers" CssClass="form-control" ></asp:DropDownList>--%>
+                <div class="form-group col-md-3">
+                    <asp:Label ID="lblContra" Text="Ingrese su Contraseña" runat="server" style="color:black"></asp:Label>
+                    <asp:TextBox ID="txtContra" CssClass="form-control" runat="server" MaxLength="20" TextMode="Password"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="* Ingrese contraseña" ControlToValidate="txtContra" ForeColor="MediumVioletRed"></asp:RequiredFieldValidator>
+                </div>
+                <div class="form-group col-md-3">
+                    <asp:Label ID="lblConfCon" Text="Confirme su Contraseña" runat="server" style="color:black"></asp:Label>
+                    <asp:TextBox ID="txtConfirmContra" CssClass="form-control" runat="server" MaxLength="20" TextMode="Password"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="* Confirme contraseña" ControlToValidate="txtConfirmContra" ForeColor="MediumVioletRed"></asp:RequiredFieldValidator>
+                </div>
+                </div>
+            </div>
         </div>
-    </div>
+    <center><asp:Label runat="server" id="lblNotificacion" CssClass="alert alert-danger"  Visible="false"></asp:Label></center><br />
+    <center><asp:Button runat="server" ID="btnGuardarUsuario" Text="Guardar" CssClass="btn btn-info btn-block" style="color:white; background-color:red; border-color:red; width:auto" OnClick="btnGuardarUsuario_Click"></asp:Button></center>
+    <script src="../../vendor/jquery/jquery.min.js"></script>
+    <script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="../../vendor/jquery-easing/jquery.easing.min.js"></script>   
 </asp:Content>
