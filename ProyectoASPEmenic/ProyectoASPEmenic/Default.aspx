@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <meta name="description" content=""/>
     <meta name="author" content=""/>
-    <title>EMENIC-Inicio</title>
+    <title>.:: EMENIC | Login ::.</title>
     <!-- Bootstrap core CSS-->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
     <!-- Custom fonts for this template-->
@@ -25,19 +25,20 @@
             <div class="form-group">
               <center><div><img src="Imagenes/Logo_emenic.png" alt="IMG"/></div></center>
               <br />
+                <center><asp:Label ID="lblNotificacion" runat="server" CssClass="alert alert-danger " Visible="false"></asp:Label></center><br />
               <div class="form-label-group">
                   <asp:TextBox runat="server" CssClass="form-control" ID="txtUsuario" placeholder="Usuario"/>
                   <label for="txtUsuario">Usuario</label>
+                  <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="* Ingrese su Usuario" ControlToValidate="txtUsuario" ForeColor="OrangeRed"></asp:RequiredFieldValidator>
               </div>
               <br />
               <div class="form-label-group">
                   <asp:TextBox runat="server" CssClass="form-control" ID="txtContrasena" placeholder="Contraseña" TextMode="password" />
                   <label for="txtContrasena">Contraseña</label>
+                  <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="* Ingrese su Contraseña" ControlToValidate="txtContrasena" ForeColor="OrangeRed"></asp:RequiredFieldValidator>
               </div>
             </div>
-            <div class="form-label-group">
-                  <asp:Button runat="server" CssClass="form-control" Text="Ingresar" BackColor="Red" ForeColor="White" Font-Bold="true"/>
-            </div>
+                  <asp:Button runat="server" CssClass="btn btn-info btn-block" Text="Ingresar" BackColor="Red" ForeColor="White" Font-Bold="true" ID="btnLogin" OnClick="btnLogin_Click"/>
         </div>
       </div>
     </div>             
