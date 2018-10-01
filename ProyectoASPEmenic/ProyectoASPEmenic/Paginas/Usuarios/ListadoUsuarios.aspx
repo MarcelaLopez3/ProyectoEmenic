@@ -2,11 +2,13 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <asp:HiddenField ID="hfIdPersona" runat="server" />
     <center><h3>
         Usuarios
         <small class="text-muted">Listado de Usuarios</small>
     </h3></center>
-    <asp:GridView ID="GridListadoUsuarios" runat="server" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal" >
+    <div class="table-responsive">
+    <asp:GridView ID="dataTable" runat="server" CssClass="table table-bordered" OnSelectedIndexChanged="dataTable_SelectedIndexChanged" >
             <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
             <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
             <PagerStyle BackColor="White" ForeColor="Black" HorizontalAlign="Right" />
@@ -16,10 +18,11 @@
             <SortedDescendingCellStyle BackColor="#E5E5E5" />
             <SortedDescendingHeaderStyle BackColor="#242121" />
             <Columns>
-                 <asp:CommandField SelectText="Cambiar Contraseña" ShowSelectButton="True" ButtonType="Button"  ControlStyle-CssClass="btn btn-info"/>
+                 <asp:CommandField SelectText="Actualizar" ShowSelectButton="True" ButtonType="Button" ControlStyle-CssClass="btn btn-info"/>
             </Columns>
         </asp:GridView>
     </center>
+        </div>
     <script src="../../vendor/jquery/jquery.min.js"></script>
     <script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- Core plugin JavaScript-->
