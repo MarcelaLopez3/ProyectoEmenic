@@ -73,7 +73,7 @@
             <span>Usuarios</span>
           </a>
           <div class="dropdown-menu" aria-labelledby="usersDropdown">
-              <asp:HyperLink runat="server" CssClass="dropdown-item" NavigateUrl="~/Paginas/Usuarios/CrearUsuario.aspx" Text="Personas Naturales"></asp:HyperLink>
+              <asp:HyperLink runat="server" CssClass="dropdown-item" NavigateUrl="~/Paginas/Usuarios/CrearUsuario.aspx" Text="Crear Usuario"></asp:HyperLink>
           </div>
         </li>         
       </ul>
