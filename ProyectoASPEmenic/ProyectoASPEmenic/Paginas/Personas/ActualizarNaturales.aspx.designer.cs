@@ -130,24 +130,6 @@ namespace ProyectoASPEmenic.Paginas.Personas {
         protected global::System.Web.UI.WebControls.Label Label28;
         
         /// <summary>
-        /// Control checkRepresentanteLegal.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox checkRepresentanteLegal;
-        
-        /// <summary>
-        /// Control Label26.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label26;
-        
-        /// <summary>
         /// Control lblprimernombre.
         /// </summary>
         /// <remarks>
@@ -641,14 +623,5 @@ namespace ProyectoASPEmenic.Paginas.Personas {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnActualizarNaturales;
-        
-        /// <summary>
-        /// Control btnCancelarNaturales.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCancelarNaturales;
     }
 }

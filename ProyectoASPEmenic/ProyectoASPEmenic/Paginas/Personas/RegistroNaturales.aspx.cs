@@ -49,7 +49,6 @@ namespace ProyectoASPEmenic.Paginas.Clientes
             Boolean Usuario = checkUsuario.Checked;
             Boolean Empleado = checkEmpleado.Checked;
             Boolean Cliente = checkCliente.Checked;
-            Boolean RepresentanteLegal = checkRepresentanteLegal.Checked;
             Boolean Proveedor = checkProveedor.Checked;
             Boolean Socio = checkSocio.Checked;
             Boolean PersonaNatural = true;
@@ -60,13 +59,13 @@ namespace ProyectoASPEmenic.Paginas.Clientes
                 "Genero,EstadoCivil,ProfesionOficio,DireccionResidencia,DepartamentoResidencia,MunicipioResidencia," +
                 "FechaNacimiento,DepartamentoNacimiento,MunicipioNacimiento,DUI,NIT,NumeroLicencia,Pasaporte,NombreOtro," +
                 "NumeroOtro,Telefono1,Telefono2,Telefono3,Celular,Email1,Email2,Observaciones,Usuario,Empleado,Cliente," +
-                "RepresentanteLegal,Proveedor,Socio,PersonaNatural,Activo) VALUES ('" + PrimerNombre +"','" + SegundoNombre + "','" +
+                "Proveedor,Socio,PersonaNatural,Activo) VALUES ('" + PrimerNombre +"','" + SegundoNombre + "','" +
                 PrimerApellido + "','" + SegundoApellido + "'," + Edad +",'" + Genero + "','" + EstadoCivil + "','" + ProfesionOficio + 
                 "','" + DireccionResidencia + "','" + DepartamentoResidencia + "','" + MunicipioResidencia + "','" + FechaNacimiento + 
                 "','" +  DepartamentoNacimiento + "','" + MunicipioNacimiento + "','" + DUI + "','" + NIT + "','" + NumeroLicencia + 
                 "','" + Pasaporte + "','" + NombreOtro + "','" + NumeroOtro + "','" + Telefono1 + "','" + Telefono2 + "','" + Telefono3 +
                 "','" + Celular + "','" + Email1 + "','" + Email2 + "','" + Observaciones + "'," + Usuario + "," + Empleado + 
-                "," + Cliente + "," + RepresentanteLegal + "," + Proveedor + "," + Socio + "," + PersonaNatural + "," + Activo + ")";
+                "," + Cliente + "," + Proveedor + "," + Socio + "," + PersonaNatural + "," + Activo + ")";
 
             //enviar consulta a Mysql
             conexion.IniciarConexion();
@@ -109,7 +108,6 @@ namespace ProyectoASPEmenic.Paginas.Clientes
             checkUsuario.Checked = false;
             checkEmpleado.Checked = false;
             checkCliente.Checked = false;
-            checkRepresentanteLegal.Checked = false;
             checkProveedor.Checked = false;
             checkSocio.Checked = false;
         }

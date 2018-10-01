@@ -33,10 +33,6 @@
                     <asp:CheckBox runat="server" ID="checkUsuario" />
                     <asp:Label runat="server" ID="Label28" Text="Usuario" style="color:black"></asp:Label>
                 </div>
-                <div class="form-group col-md-2">
-                    <asp:CheckBox runat="server" ID="checkRepresentanteLegal" />
-                    <asp:Label runat="server" ID="Label26" Text="Representante Legal" style="color:black"></asp:Label>
-                </div>
             </div>
             <hr />
             <div class="form-row">
@@ -196,11 +192,8 @@
     
     <div style="align-content:center">    
         <div class="form-row">
-            <div class="form-group col-md-6">      
+            <div class="form-group col-md-12">      
                 <center><asp:Button runat="server" ID="btnActualizarNaturales" Text="Actualizar" CssClass="btn btn-info btn-block" style="color:white; background-color:red; border-color:red; width:auto" OnClick="btnActualizarNaturales_Click" ></asp:Button></center>   
-            </div>
-            <div class="form-group col-md-6">
-                <center><asp:Button runat="server" ID="btnCancelarNaturales" Text="Cancelar" CssClass="btn btn-info btn-block" style="color:white; background-color:red; border-color:red; width:auto" ></asp:Button></center>          
             </div>
         </div>
    </div>
