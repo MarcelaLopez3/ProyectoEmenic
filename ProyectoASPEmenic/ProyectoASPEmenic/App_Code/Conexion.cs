@@ -17,9 +17,8 @@ namespace ProyectoASPEmenic
         }
 
         //variables de conexion
-        private MySqlConnection cnn;
-        public MySqlDataReader reg;
-        
+        public MySqlConnection cnn;
+        public MySqlDataReader reg;        
 
         //funcion que inicia conexion
         public void IniciarConexion()
@@ -42,7 +41,6 @@ namespace ProyectoASPEmenic
             {
                 throw ex;
             }
-
         }
 
         //funcion que cierra conexion existente

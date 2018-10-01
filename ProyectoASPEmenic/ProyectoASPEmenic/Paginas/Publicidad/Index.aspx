@@ -44,7 +44,7 @@
                             <a class="nav-link" href="index.aspx">Inicio <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link scroll" href="#about">Acerca de nosotros</a>
+                            <a class="nav-link scroll" href="#about">Acerca de Nosotros</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link scroll" href="#services">Servicios</a>
@@ -90,19 +90,13 @@
                         <div class="carousel-caption">
                             <h3>Estamos para brindarte el mejor servicio de transporte de carga pesada a nivel internacional</h3>
                             <p>.</p>
-                            <a href="#" data-toggle="modal" data-target="#exampleModalCenter" role="button">Más Detalles <i class="fa fa-caret-right" aria-hidden="true"></i></a>
-
-
-                        </div>
+                          </div>
                     </div>
                     <div class="carousel-item item2">
                         <%--<asp:Image ID="imageEmenic2" runat="server" ImageUrl="~/Imagenes/Emenic2.png" />--%>
                         <div class="carousel-caption">
                             <h3>Estamos para brindarte el mejor servicio de transporte de carga pesada a nivel internacional</h3>
                             <p>.</p>
-                            <a href="#" data-toggle="modal" data-target="#exampleModalCenter" role="button">Más Detalles <i class="fa fa-caret-right" aria-hidden="true"></i></a>
-
-
                         </div>
                     </div>
                     <div class="carousel-item item3">
@@ -110,8 +104,7 @@
                         <div class="carousel-caption">
                             <h3>Estamos para brindarte el mejor servicio de transporte de carga pesada a nivel internacional</h3>
                             <p>.</p>
-                            <a href="#" data-toggle="modal" data-target="#exampleModalCenter" role="button">Más Detalles <i class="fa fa-caret-right" aria-hidden="true"></i></a>
-                        </div>
+                             </div>
                     </div>
                 </div>
                 <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -141,7 +134,7 @@
                         <h3 class="text-center">BIENVENIDO A EMENIC S.A. DE C.V.</h3>
                     </div>
                     <div class="wthree_banner_bottom_grid_right">
-                        <h4>Nuestro objetivo</h4>
+                        <h4>Nuestro Objetivo</h4>
                         <p>
                             Como empresa nos comprometemos a prestar excelentes servicios de transporte de carga internacional
                             y alquiler de equipo de transporte en óptimas condiciones que satisfagan plenamente las necesidades
@@ -153,7 +146,7 @@
                 </div>
             </div>
         <div class="container">
-            <h3>Nuestro alcance</h3>
+            <h3>Nuestro Alcance</h3>
             <div class="row">
 
                 <div class="col-md-6 col-sm-12 w3layouts_stats_left w3_counter_grid1">
@@ -237,7 +230,7 @@
                                         </div>
                                         <div class="button-styles">
                                             <%--<a href="#" data-toggle="modal" data-target="#exampleModalCenter">More Info</a>--%>
-                                            <a href="#contact" class="button2-w3l scroll">Contactenos</a>
+                                            <a href="#contact" class="button2-w3l scroll">Contáctanos</a>
                                         </div>
                                     </div>
 
@@ -268,7 +261,7 @@
                                         </div>
                                         <div class="button-styles">
                                             <%--<a href="#" data-toggle="modal" data-target="#exampleModalCenter">More Info</a>--%>
-                                            <a href="#contact" class="button2-w3l scroll">Contactenos</a>
+                                            <a href="#contact" class="button2-w3l scroll">Contáctanos</a>
                                         </div>
                                     </div>
                                     <div class="col-md-6 ser_w3">
@@ -286,7 +279,7 @@
     </div>
     <!-- //services-main -->
     
-    <!--/Projects-->
+    <!--/Projects
     <section class="services  py-5" id="works">
         <div class="container  py-md-3">
             <div class="w3-head-all  mb-5">
@@ -401,7 +394,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
     <!--//Projects-->
     <!--main pricing table
     <div class="main  py-5" id="pricing">
@@ -490,12 +483,12 @@
     <div class="w3-contact py-5" id="contact">
         <div class="container py-md-3">
             <div class="w3-head-all  mb-5">
-                <h3>Contactanos</h3>
+                <h3>Contáctanos</h3>
             </div>
             <div class="w3-contact1">
                
                 <h2>Contamos con furgones de</h2><h1> 53</h1><h2> pies para alquiler</h2> 
-                <p><a class="book popup-with-zoom-anim button-isi zoomIn animated" data-wow-delay=".5s" href="#small-dialog"><span class="fa fa-paper-plane-o"></span>Contactenos</a></p>
+                <p><a class="book popup-with-zoom-anim button-isi zoomIn animated" data-wow-delay=".5s" href="#small-dialog"><span class="fa fa-paper-plane-o"></span>Contáctanos</a></p>
             </div>
         </div>
     </div>
@@ -515,8 +508,8 @@
             -->
             <div class="subscribe_inner">
                 <div>
-                    <h2 class="text-white">Ubicacion</h2>
-                    <p class="mb-4">Residencial Bosques de la Paz, calle 22 poniente, No. 28, Ilopango, San Salvador, El Salvador.</p>
+                    <h2 class="text-white">Nuestra Ubicación</h2>
+                    <p class="mb-4">Residencial Bosques de la Paz, calle 22 Poniente, No. 28, Ilopango, San Salvador, El Salvador.</p>
                 </div>
                <%-- <div class="social mt-sm-5 mt-3">
                     <h4>Follow us</h4>
@@ -600,27 +593,30 @@
             <div class="video" data-vide-bg="video/ship">
                 <div class="center-container">
                      <!--desde aqui -->
-                    <div class="services-bottom wthree-sub py-5" >
+        <div class="services-bottom wthree-sub py-5" >
+
         <div class="team py-5">
             <div class="row">
                 <div class="col-sm-6 col-xs-4 services_bottom_grid_left">
-                    <h3>Llámenos </h3>
+                    <h3>Llámanos </h3>
                     <h4 class="text-white ">
                         (503) 2252-6956,
                         <br />   (503) 7842-4611,
                         <br />   (503) 7506-6828
                         </h4>
                 </div>
+                
                 <div class="col-sm-6 col-xs-8 services_bottom_grid_right">
-                    <h3>Escríbanos a</h3>
-                    <h4 class="text-white"> 
+                    <h3>Escríbenos </h3>
+                    <br /><h4 class="text-white"> Nuestro correo: 
                         alvaradostrucking295@gmail.com.
                     </h4>
-                    <h3>O Búsquenos en Facebook como:</h3>
-                    <h4 class="text-white"> Alvarado's trucking
+                   <br /> <h4 class="text-white"> O en Facebook como: <br />
+                        Alvarado's trucking
                         
                     </h4>
                 </div>
+                    
                 <div class="clearfix"></div>
             </div>
         </div>
