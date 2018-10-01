@@ -238,6 +238,7 @@
     <Content Include="Paginas\Servicios\ServicioContratado.aspx" />
     <Content Include="Paginas\Servicios\Transporte.aspx" />
     <Content Include="Paginas\Usuarios\CrearUsuario.aspx" />
+    <Content Include="Paginas\Usuarios\ListadoUsuarios.aspx" />
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -404,6 +405,13 @@
     </Compile>
     <Compile Include="Paginas\Usuarios\CrearUsuario.aspx.designer.cs">
       <DependentUpon>CrearUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\Usuarios\ListadoUsuarios.aspx.cs">
+      <DependentUpon>ListadoUsuarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Usuarios\ListadoUsuarios.aspx.designer.cs">
+      <DependentUpon>ListadoUsuarios.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">

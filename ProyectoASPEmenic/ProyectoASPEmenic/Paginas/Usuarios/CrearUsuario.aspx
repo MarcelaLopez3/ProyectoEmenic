@@ -6,8 +6,24 @@
         Usuarios
         <small class="text-muted">Agregar Credenciales</small>
     </h3></center>
+    <asp:HiddenField runat="server" ID="hfIdPersona" /><!-- Variable para almacenar idpersona-->
     <div class="card border-primary mb-3">
-        <div class="card-header"><h4>Credenciales de Usuario</h4></div>
+        <div class="card-header"><h3>Datos personales</h3></div>
+        <div class="card-body text-primary">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="lblNombre"><b>Nombre</b></label>
+                    <asp:Label ID="lblNombre" runat="server" CssClass="form-control"></asp:Label>
+                    </div>
+                <div class="form-group col-md-6">
+                    <label for="lblEmail"><b>Correo electrónico</b></label>
+                    <asp:Label ID="lblEmail" runat="server" CssClass="form-control"></asp:Label>
+                </div>
+            </div>
+            </div>
+        </div>
+    <div class="card border-primary mb-3">
+        <div class="card-header"><h3>Credenciales de Usuario</h3></div>
         <div class="card-body text-primary">
             <div class="form-row">
                 <div class="form-group col-md-6">
