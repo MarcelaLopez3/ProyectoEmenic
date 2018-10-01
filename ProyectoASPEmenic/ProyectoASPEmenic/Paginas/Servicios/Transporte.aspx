@@ -22,21 +22,27 @@
             </div>
             <hr />
             <div class="form-row">
-                <div class="form-group col-md-3">
+                <div class="form-group col-md-6">
                     <asp:Label runat="server" ID="lblplaca" Text="Placa del vehículo:" Style="color: black"></asp:Label>
-                    <asp:TextBox runat="server" ID="txtPlaca" CssClass="form-control"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RFVPlaca" runat="server" ControlToValidate="txtPlaca" Text="*" ErrorMessage="Este campo es requerido" ForeColor="Red"></asp:RequiredFieldValidator><br />
+                    <asp:TextBox runat="server" ID="txtPlaca" CssClass="form-control" MaxLength="7"></asp:TextBox>
+                    <asp:RegularExpressionValidator ID="REVPlaca" runat="server" ControlToValidate="txtPlaca" Text="Solo se admiten Letras y Numeros con una longitud de 7 caracteres" ErrorMessage="No coincide con el formato" Display="Dynamic" ValidationExpression="[a-zA-Z0-9]+"></asp:RegularExpressionValidator>
                 </div>
 
-                <div class="form-group col-md-3">
+                <div class="form-group col-md-6">
                     <asp:Label runat="server" ID="lbvehiculoequipo" Text="Tipo de equipo:" Style="color: black"></asp:Label>
-                    <asp:TextBox runat="server" ID="txtvehiculoequipo" CssClass="form-control"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RFVEquipo" runat="server" ControlToValidate="txtvehiculoequipo" Text="*" ErrorMessage="Este campo es requerido" ForeColor="Red"></asp:RequiredFieldValidator><br />
+                    <asp:TextBox runat="server" ID="txtvehiculoequipo" CssClass="form-control" MaxLength="30"></asp:TextBox>
+                    <asp:RegularExpressionValidator ID="REVEquipo" runat="server" ControlToValidate="txtvehiculoequipo" Text="Solo se admiten Letras" ErrorMessage="No coincide con el formato" Display="Dynamic" ValidationExpression="[a-zA-ZñÑáéíóúÁÉÍÓÚ\ ]+"></asp:RegularExpressionValidator>
                 </div>
 
 
             </div>
-            <div class="form-group col-md-3">
+            <div class="form-group col-md-12">
                 <asp:Label runat="server" ID="lbvehiculoDescrip" Text="Descripcion del vehículo:" Style="color: black"></asp:Label>
-                <asp:TextBox runat="server" ID="txtDescripcion" CssClass="form-control" Height="208px" TextMode="MultiLine" Width="491px" />
+                <asp:RequiredFieldValidator ID="RFVDescripcion" runat="server" ControlToValidate="txtDescripcion" Text="*" ErrorMessage="Este campo es requerido" ForeColor="Red"></asp:RequiredFieldValidator><br />
+                <asp:TextBox runat="server" ID="txtDescripcion" CssClass="form-control" TextMode="MultiLine" Height="150px" MaxLength="100" />
+                <asp:CustomValidator ID="CustomValidator1" runat="server" ErrorMessage="Introduzca 100 caracteres como maximo" ControlToValidate="txtDescripcion" ClientValidationFunction="VerificarCantidad"></asp:CustomValidator>
             </div>
 
         </div>
@@ -59,4 +65,9 @@
     <script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- Core plugin JavaScript-->
     <script src="../../vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script type="text/javascript">
+    function VerificarCantidad(sender, args) {
+        args.IsValid = (args.Value.length <= 100);
+    }
+    </script>
 </asp:Content>

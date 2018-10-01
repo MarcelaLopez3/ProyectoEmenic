@@ -82,18 +82,22 @@
               <asp:HyperLink runat="server" CssClass="dropdown-item" NavigateUrl="~/Paginas/Clientes/ListadoClientes.aspx" Text="Listado Clientes"></asp:HyperLink>
           </div>
         </li>
+          <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="pagesDropdownTransporte" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-fw fa-folder"></i>
+            <span>Transporte</span>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+              <asp:HyperLink runat="server" CssClass="dropdown-item" NavigateUrl="~/Paginas/Servicios/Transporte.aspx" Text="Registro de Transporte"></asp:HyperLink>
+              <asp:HyperLink runat="server" CssClass="dropdown-item" NavigateUrl="~/Paginas/Servicios/ListadoTransporte.aspx" Text="Listado de Transporte"></asp:HyperLink>
+          </div>
+        </li>
         <li class="nav-item ">
             <asp:HyperLink NavigateUrl="~/Paginas/Usuarios/ListadoUsuarios.aspx" runat="server" CssClass="nav-link">
             <i class="fas fa-fw fa-users"></i>
             <span>Usuarios</span>
             </asp:HyperLink>
         </li> 
-         <li class="nav-item ">
-            <asp:HyperLink NavigateUrl="~/Paginas/Servicios/Transporte.aspx" runat="server" CssClass="nav-link">
-            <i class="fas fa-fw fa-folder"></i>
-            <span>Transporte</span>
-            </asp:HyperLink>
-        </li>     
       </ul>
 
       <div id="content-wrapper">
