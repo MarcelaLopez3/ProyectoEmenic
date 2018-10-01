@@ -28,11 +28,15 @@
 <body id="page-top">
     <form id="form1" runat="server">
 
-        <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
-            <asp:Image ImageUrl="~/Imagenes/Logo_emenic_2.png" Height="60" runat="server"/>&nbsp;&nbsp;&nbsp;
-          <a class="navbar-brand mr-1" style="color:red">EMENIC</a>
+        <nav class="navbar navbar-expand navbar-dark bg-dark static-top" >
+            <asp:HyperLink runat="server" NavigateUrl="~/Paginas/Dashboard.aspx" CssClass="navbar-brand mr-1" style="color:red">
+            <asp:Image ImageUrl="~/Imagenes/Logo_emenic_2.png" Height="50" runat="server"/>&nbsp;&nbsp;
+            EMENIC</asp:HyperLink>
           <!-- Navbar -->
           <ul class="nav navbar-nav ml-auto" >
+              <li class="nav-item">
+                  <asp:Label runat="server" ID="lblUserSession" style="color:white;" CssClass="font-weight-bold"></asp:Label>&nbsp;&nbsp;
+                  </li>
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="fas fa-user-circle fa-fw"></i>
@@ -60,11 +64,12 @@
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="fas fa-fw fa-folder"></i>
-            <span>Registro</span>
+            <span>Personas</span>
           </a>
           <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-              <asp:HyperLink runat="server" CssClass="dropdown-item" NavigateUrl="~/Paginas/Personas/RegistroNaturales.aspx" Text="Personas Naturales"></asp:HyperLink>
-              <asp:HyperLink runat="server" CssClass="dropdown-item" NavigateUrl="~/Paginas/Personas/RegistroJuridicos.aspx" Text="Personas Jurídicas"></asp:HyperLink>
+              <asp:HyperLink runat="server" CssClass="dropdown-item" NavigateUrl="~/Paginas/Personas/RegistroNaturales.aspx" Text="Registro Naturales"></asp:HyperLink>
+              <asp:HyperLink runat="server" CssClass="dropdown-item" NavigateUrl="~/Paginas/Personas/RegistroJuridicos.aspx" Text="Registro Jurídicas"></asp:HyperLink>
+              <asp:HyperLink runat="server" CssClass="dropdown-item" NavigateUrl="~/Paginas/Personas/ListadoNaturales.aspx" Text="Listado Naturales"></asp:HyperLink>
           </div>
         </li>
           <li class="nav-item dropdown">
@@ -95,7 +100,7 @@
         <footer class="sticky-footer">
           <div class="container my-auto">
             <div class="copyright text-center my-auto">
-              <span>Copyright © Emenic 2018</span>
+              <span>Copyright © Emenic <%=DateTime.Now.Year%></span>
             </div>
           </div>
         </footer>
@@ -120,7 +125,7 @@
           <div class="modal-body">Cerar Sesión completamente en el boton Salir.</div>
           <div class="modal-footer">
             <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
-            <a class="btn btn-primary" href="login.html">Salir</a>
+              <asp:Button runat="server" ID="btnCerrarSesion" CssClass="btn btn-primary" Text="Salir" OnClick="btnCerrarSesion_Click"  />
           </div>
         </div>
       </div>

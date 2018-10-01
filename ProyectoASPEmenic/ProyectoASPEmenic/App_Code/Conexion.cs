@@ -18,9 +18,7 @@ namespace ProyectoASPEmenic
 
         //variables de conexion
         public MySqlConnection cnn;
-        //MySqlConnection cnn = new MySqlConnection("server=localhost:81;database=bdd_emenic;userid=root2;password=123456;charsetutf8;");
-        public MySqlDataReader reg;
-        
+        public MySqlDataReader reg;        
 
         //funcion que inicia conexion
         public void IniciarConexion()
@@ -43,24 +41,22 @@ namespace ProyectoASPEmenic
             {
                 throw ex;
             }
-            //using (cnn)
-            //{
-            //    cnn.Open();
-            //}
-
         }
 
+        //funcion que cierra conexion existente
         public void CerrarConexion()
         {
             cnn.Close();
         }
 
+        //funcion que envia query para ser ejecutada, y no devuelve datos (insert,update, delete)
         public void EnviarQuery(string query)
         {
             MySqlCommand con = new MySqlCommand(query, cnn);
             con.ExecuteNonQuery();
         }
 
+        //funcion que envia 
         public MySqlDataReader RecibeQuery(string query)
         {
             MySqlCommand con = new MySqlCommand(query, cnn);
