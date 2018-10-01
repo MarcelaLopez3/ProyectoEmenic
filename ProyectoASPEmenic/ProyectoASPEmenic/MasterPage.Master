@@ -61,11 +61,12 @@
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="fas fa-fw fa-folder"></i>
-            <span>Registro</span>
+            <span>Personas</span>
           </a>
           <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-              <asp:HyperLink runat="server" CssClass="dropdown-item" NavigateUrl="~/Paginas/Personas/RegistroNaturales.aspx" Text="Personas Naturales"></asp:HyperLink>
-              <asp:HyperLink runat="server" CssClass="dropdown-item" NavigateUrl="~/Paginas/Personas/RegistroJuridicos.aspx" Text="Personas Jurídicas"></asp:HyperLink>
+              <asp:HyperLink runat="server" CssClass="dropdown-item" NavigateUrl="~/Paginas/Personas/RegistroNaturales.aspx" Text="Registro Naturales"></asp:HyperLink>
+              <asp:HyperLink runat="server" CssClass="dropdown-item" NavigateUrl="~/Paginas/Personas/RegistroJuridicos.aspx" Text="Registro Jurídicas"></asp:HyperLink>
+              <asp:HyperLink runat="server" CssClass="dropdown-item" NavigateUrl="~/Paginas/Personas/ListadoNaturales.aspx" Text="Listado Naturales"></asp:HyperLink>
           </div>
         </li>
           <li class="nav-item dropdown">
