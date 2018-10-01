@@ -16,7 +16,7 @@
             <SortedDescendingCellStyle BackColor="#E5E5E5" />
             <SortedDescendingHeaderStyle BackColor="#242121" />
             <Columns>
-                 <asp:CommandField SelectText="Cambiar Contraseña" ShowSelectButton="True" ButtonType="Button"  />
+                 <asp:CommandField SelectText="Cambiar Contraseña" ShowSelectButton="True" ButtonType="Button"  ControlStyle-CssClass="btn btn-info"/>
             </Columns>
         </asp:GridView>
     </center>
