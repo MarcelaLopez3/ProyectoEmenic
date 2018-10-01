@@ -224,6 +224,8 @@
     <Content Include="fonts\fa-solid-900.woff2" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Imagenes\Logo_emenic.png" />
+    <Content Include="Paginas\Personas\ActualizarNaturales.aspx" />
+    <Content Include="Paginas\Personas\ListadoNaturales.aspx" />
     <Content Include="Paginas\Personas\RegistroJuridicos.aspx" />
     <Content Include="Paginas\Personas\RegistroNaturales.aspx" />
     <Content Include="Paginas\Dashboard.aspx" />
@@ -282,7 +284,7 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Conexion.cs" />
+    <Compile Include="App_Code\Conexion.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -299,6 +301,20 @@
     </Compile>
     <Compile Include="MasterPage.Master.designer.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\Personas\ActualizarNaturales.aspx.cs">
+      <DependentUpon>ActualizarNaturales.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Personas\ActualizarNaturales.aspx.designer.cs">
+      <DependentUpon>ActualizarNaturales.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\Personas\ListadoNaturales.aspx.cs">
+      <DependentUpon>ListadoNaturales.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Personas\ListadoNaturales.aspx.designer.cs">
+      <DependentUpon>ListadoNaturales.aspx</DependentUpon>
     </Compile>
     <Compile Include="Paginas\Personas\RegistroJuridicos.aspx.cs">
       <DependentUpon>RegistroJuridicos.aspx</DependentUpon>

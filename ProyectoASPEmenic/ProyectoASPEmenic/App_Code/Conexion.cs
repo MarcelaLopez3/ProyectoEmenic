@@ -15,47 +15,54 @@ namespace ProyectoASPEmenic
         {
 
         }
-        public MySqlConnection cnn = new MySqlConnection("Persist Security Info=False;server=localhost;SslMode=none;database=bdd_emenic;uid=root;password=");
-        //variables de conexion
-        //public MySqlConnection cnn = new MySqlConnection();
-        //MySqlConnection cnn = new MySqlConnection("server=localhost:81;database=bdd_emenic;userid=root2;password=123456;charsetutf8;");
-        public MySqlDataReader reg;
 
+        //variables de conexion
+        public MySqlConnection cnn;
+        public MySqlDataReader reg;
+        
 
         //funcion que inicia conexion
         public void IniciarConexion()
         {
             try
             {
-                //cnn.ConnectionString = (@"Server=localhost;Port=81;Database=bdd_emenic;Uid=root2;Pwd=123456;charsetutf8;");
+                MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();
+                builder.Server = "localhost";
+                builder.UserID = "root";
+                builder.Password = "";
+                builder.Port = 3306;
+                builder.Database = "bdd_emenic";
+                builder.SslMode = 0;
+                builder.PersistSecurityInfo = false;
+                //cnn.ConnectionString = "datasource=localhost;port=3307;username=root;password=root";
+                cnn = new MySqlConnection(builder.ToString());
                 cnn.Open();
             }
             catch (Exception ex)
             {
                 throw ex;
             }
-            //using (cnn)
-            //{
-            //    cnn.Open();
-            //}
 
         }
 
+        //funcion que cierra conexion existente
         public void CerrarConexion()
         {
             cnn.Close();
         }
 
+        //funcion que envia query para ser ejecutada, y no devuelve datos (insert,update, delete)
         public void EnviarQuery(string query)
         {
             MySqlCommand con = new MySqlCommand(query, cnn);
             con.ExecuteNonQuery();
         }
 
+        //funcion que envia 
         public MySqlDataReader RecibeQuery(string query)
         {
             MySqlCommand con = new MySqlCommand(query, cnn);
-            con.ExecuteNonQuery();
+            con.ExecuteNonQuery(); 
             reg = con.ExecuteReader();
             return reg;
         }
@@ -75,6 +82,16 @@ namespace ProyectoASPEmenic
             {
                 throw ex;
             }
+        }
+
+
+        public DataSet llena(string texto)
+        {
+            MySqlCommand con = new MySqlCommand(texto, cnn);
+            MySqlDataAdapter sda = new MySqlDataAdapter(con);
+            DataSet ds = new DataSet();
+            sda.Fill(ds);
+            return ds;
         }
     }
 }
