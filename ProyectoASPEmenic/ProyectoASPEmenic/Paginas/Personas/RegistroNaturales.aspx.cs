@@ -52,7 +52,7 @@ namespace ProyectoASPEmenic.Paginas.Clientes
             Boolean Proveedor = checkProveedor.Checked;
             Boolean Socio = checkSocio.Checked;
             Boolean PersonaNatural = true;
-            Boolean Activo = true;
+            Boolean Activo = false; //hasta que cree un usuario estaría activo 
 
             //consulta que se ingresa a la base de datos
             string query = "INSERT INTO persona(PrimerNombre,SegundoNombre,PrimerApellido,SegundoApellido,Edad," +
@@ -70,8 +70,24 @@ namespace ProyectoASPEmenic.Paginas.Clientes
             //enviar consulta a Mysql
             conexion.IniciarConexion();
             conexion.EnviarQuery(query);
-            conexion.CerrarConexion();
-
+            if (Usuario)
+            {
+                //Obtiene el último id del usuario agregado
+                int idUsuario = 0;
+                query = "SELECT max(IdPersona) FROM persona";
+                conexion.RecibeQuery(query);
+                while (conexion.reg.Read())
+                {
+                    idUsuario = conexion.reg.GetInt32(0);
+                }
+                conexion.reg.Close();
+                conexion.CerrarConexion();
+                Response.Redirect("~/Paginas/Usuarios/CrearUsuario.aspx?id=" + idUsuario); ///redirige a formulario de usuario
+            }
+            else
+            {
+                conexion.CerrarConexion();
+            }
             ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Se ha insertado con exito.')", true);
             
         }

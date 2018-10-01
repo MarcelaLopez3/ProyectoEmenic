@@ -17,7 +17,7 @@ namespace ProyectoASPEmenic
         }
 
         //variables de conexion
-        public MySqlConnection cnn;
+        private MySqlConnection cnn;
         public MySqlDataReader reg;
         
 
