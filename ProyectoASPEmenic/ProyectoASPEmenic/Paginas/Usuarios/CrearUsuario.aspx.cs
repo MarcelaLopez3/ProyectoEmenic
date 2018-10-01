@@ -78,11 +78,8 @@ namespace ProyectoASPEmenic.Paginas.Usuarios
                     else
                     {
                         cn.reg.Close();
-                        query = "insert into usuario(IdPersona,NombreUsuario,ContrasenaUsuario) values("+hfIdPersona.Value+
-                            ",'" + usuario + "',SHA1('" + password + "'))";
-                        cn.EnviarQuery(query);
-                        //si crea un usuario, sus credenciales estarán activas
-                        query = "update persona set activo=1 where idpersona=" + hfIdPersona.Value;
+                        query = "insert into usuario(IdPersona,NombreUsuario,ContrasenaUsuario,Estado) values("+hfIdPersona.Value+
+                            ",'" + usuario + "',SHA1('" + password + "'),1)";
                         cn.EnviarQuery(query);
                         cn.CerrarConexion();
                         lblNotificacion.CssClass = "alert alert-success";
