@@ -229,7 +229,17 @@ namespace ProyectoASPEmenic.Paginas.Personas
             Boolean Activo = checkActivo.Checked;
 
             //consulta que se ingresa a la base de datos
-            string query = "";
+            string query = "UPDATE persona  SET NombreLegal ='" + NombreLegal + "',NombreComercial = '" + NombreComercial +
+                "', Giro = '" + Giro + "', Tamano = '" + Tamano + "', Ubicacion = '" + DireccionUbicacion + "', MunicipioCiudad = '" + 
+                MunicipioCiudad+ "', DepartamentoEstado = '" + DepartamentoEstado + "', Pais = '" + Pais + "', Telefono1 = '" + 
+                Telefono1 + "', Telefono2 = '" + Telefono2 + "', Telefono3 = '" + Telefono3 + "', Fax = '" + Fax +"', Email1 = '" +
+                Email1 + "', Email2 = '" + Email2 + "', CodigoPostal = '" + CodigoPostal + "', NIT = '" + NIT + "', FechaExpedicionNIT = '" + 
+                FechaExpedicionNIT+ "', NombreSegunNIT = '" + NombreSegunNIT + "', NRC = '" + NRC + "', FechaExpedicionNRC = '" + 
+                FechaExpedicionNRC + "', NombreSegunNRC = '" + NombreSegunNRC + "', NombreContacto = '" + NombreContacto + 
+                "', DUIContacto = '" + DUIContacto + "', NITContacto = '" + NITContacto + "', EmailContacto = '" + EmailContacto + 
+                "', TelefonoContacto = '" + TelefonoContacto + "', CelularContacto = '" + CelularContacto + "', Observaciones = '" + 
+                Observaciones + "', Cliente = " + Cliente + ", Proveedor = " + Proveedor + ", Socio = " + Socio + ", Activo = " + 
+                Activo + " WHERE IdPersona like " + VarAct;
 
             //enviar consulta a Mysql
             conexion.IniciarConexion();
