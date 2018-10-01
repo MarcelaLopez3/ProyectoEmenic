@@ -233,6 +233,8 @@
     <Content Include="Paginas\Personas\RegistroNaturales.aspx" />
     <Content Include="Paginas\Dashboard.aspx" />
     <Content Include="Paginas\Publicidad\Index.aspx" />
+    <Content Include="Paginas\Servicios\RegistroCartaporte.aspx" />
+    <Content Include="Paginas\Servicios\RegistroContrato.aspx" />
     <Content Include="Paginas\Servicios\ServicioContratado.aspx" />
     <Content Include="Paginas\Servicios\Transporte.aspx" />
     <Content Include="Paginas\Usuarios\CrearUsuario.aspx" />
@@ -367,6 +369,20 @@
     </Compile>
     <Compile Include="Paginas\Publicidad\Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\Servicios\RegistroCartaporte.aspx.cs">
+      <DependentUpon>RegistroCartaporte.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Servicios\RegistroCartaporte.aspx.designer.cs">
+      <DependentUpon>RegistroCartaporte.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\Servicios\RegistroContrato.aspx.cs">
+      <DependentUpon>RegistroContrato.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Servicios\RegistroContrato.aspx.designer.cs">
+      <DependentUpon>RegistroContrato.aspx</DependentUpon>
     </Compile>
     <Compile Include="Paginas\Servicios\ServicioContratado.aspx.cs">
       <DependentUpon>ServicioContratado.aspx</DependentUpon>
