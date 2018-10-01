@@ -21,10 +21,6 @@
                     <asp:Label runat="server" ID="Label25" Text="Socio" style="color:black"></asp:Label>
                 </div>
                 <div class="form-group col-md-2">
-                    <asp:CheckBox runat="server" ID="checkRepresentanteLegal" />
-                    <asp:Label runat="server" ID="Label26" Text="Representante Legal" style="color:black"></asp:Label>
-                </div>
-                <div class="form-group col-md-2">
                     <asp:CheckBox runat="server" ID="checkEmpleado" />
                     <asp:Label runat="server" ID="Label27" Text="Empleado" style="color:black"></asp:Label>
                 </div>

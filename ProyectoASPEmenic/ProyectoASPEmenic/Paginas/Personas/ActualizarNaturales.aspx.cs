@@ -21,7 +21,7 @@ namespace ProyectoASPEmenic.Paginas.Personas
                     "Edad,Genero,EstadoCivil,ProfesionOficio,DireccionResidencia,DepartamentoResidencia," +
                     "MunicipioResidencia,FechaNacimiento,DepartamentoNacimiento,MunicipioNacimiento,DUI,NIT," +
                     "NumeroLicencia,Pasaporte,NombreOtro,NumeroOtro,Telefono1,Telefono2,Telefono3,Celular," +
-                    "Email1,Email2,Observaciones,Usuario,Empleado,Cliente,RepresentanteLegal,Proveedor,Socio,Activo " +
+                    "Email1,Email2,Observaciones,Usuario,Empleado,Cliente,Proveedor,Socio,Activo " +
                     "FROM persona WHERE IdPersona=" + VarAct;
                 conexion.IniciarConexion();
                 conexion.RecibeQuery(query);
@@ -163,7 +163,6 @@ namespace ProyectoASPEmenic.Paginas.Personas
                     checkUsuario.Checked = conexion.reg.GetBoolean(27);
                     checkEmpleado.Checked = conexion.reg.GetBoolean(28);
                     checkCliente.Checked = conexion.reg.GetBoolean(29);
-                    checkRepresentanteLegal.Checked = conexion.reg.GetBoolean(30);
                     checkProveedor.Checked = conexion.reg.GetBoolean(31);
                     checkSocio.Checked = conexion.reg.GetBoolean(32);
                     checkActivo.Checked = conexion.reg.GetBoolean(33);
@@ -208,7 +207,6 @@ namespace ProyectoASPEmenic.Paginas.Personas
             Boolean Usuario = checkUsuario.Checked;
             Boolean Empleado = checkEmpleado.Checked;
             Boolean Cliente = checkCliente.Checked;
-            Boolean RepresentanteLegal = checkRepresentanteLegal.Checked;
             Boolean Proveedor = checkProveedor.Checked;
             Boolean Socio = checkSocio.Checked;
             Boolean Activo = checkActivo.Checked;
@@ -224,8 +222,8 @@ namespace ProyectoASPEmenic.Paginas.Personas
                 Pasaporte + "', NombreOtro = '" + NombreOtro +"', NumeroOtro = '" + NumeroOtro + "', Telefono1 = '" + Telefono1 +
                 "', Telefono2 = '" + Telefono2 + "', Telefono3 = '" + Telefono3 + "', Celular = '" + Celular + "', Email1 = '" + 
                 Email1 + "', Email2 = '" + Email2 + "', Observaciones = '" + Observaciones + "', Usuario = " + Usuario + 
-                ", Empleado = " + Empleado + ", Cliente = " + Cliente + ", RepresentanteLegal = " + RepresentanteLegal + 
-                ", Proveedor = " + Proveedor + ", Socio = " + Socio + ", Activo = " + Activo + " WHERE IdPersona like " + VarAct;
+                ", Empleado = " + Empleado + ", Cliente = " + Cliente + ", Proveedor = " + Proveedor + ", Socio = " + Socio + 
+                ", Activo = " + Activo + " WHERE IdPersona like " + VarAct;
 
             //enviar consulta a Mysql
             conexion.IniciarConexion();

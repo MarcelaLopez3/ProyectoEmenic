@@ -13,5 +13,11 @@ namespace ProyectoASPEmenic.Paginas.Clientes
         {
 
         }
+
+        protected void btnGuardarJuridicos_Click(object sender, EventArgs e)
+        {
+            //recuperando entradas
+
+        }
     }
 }
