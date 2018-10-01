@@ -52,7 +52,7 @@ namespace ProyectoASPEmenic.Paginas.Clientes
             Boolean Proveedor = checkProveedor.Checked;
             Boolean Socio = checkSocio.Checked;
             Boolean PersonaNatural = true;
-            Boolean Activo = false; //hasta que cree un usuario estaría activo 
+            Boolean Activo = true;
 
             //consulta que se ingresa a la base de datos
             string query = "INSERT INTO persona(PrimerNombre,SegundoNombre,PrimerApellido,SegundoApellido,Edad," +
@@ -70,6 +70,7 @@ namespace ProyectoASPEmenic.Paginas.Clientes
             //enviar consulta a Mysql
             conexion.IniciarConexion();
             conexion.EnviarQuery(query);
+            ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Se ha insertado con exito.')", true);
             if (Usuario)
             {
                 //Obtiene el último id del usuario agregado
@@ -88,8 +89,6 @@ namespace ProyectoASPEmenic.Paginas.Clientes
             {
                 conexion.CerrarConexion();
             }
-            ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Se ha insertado con exito.')", true);
-            
         }
 
         protected void LimpiarNaturales()
