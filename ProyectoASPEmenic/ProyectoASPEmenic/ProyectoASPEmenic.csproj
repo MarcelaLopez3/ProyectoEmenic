@@ -230,6 +230,8 @@
     <Content Include="Paginas\Personas\RegistroNaturales.aspx" />
     <Content Include="Paginas\Dashboard.aspx" />
     <Content Include="Paginas\Publicidad\Index.aspx" />
+    <Content Include="Paginas\Servicios\ServicioContratado.aspx" />
+    <Content Include="Paginas\Servicios\Transporte.aspx" />
     <Content Include="Paginas\Usuarios\CrearUsuario.aspx" />
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
@@ -341,6 +343,20 @@
     </Compile>
     <Compile Include="Paginas\Publicidad\Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\Servicios\ServicioContratado.aspx.cs">
+      <DependentUpon>ServicioContratado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Servicios\ServicioContratado.aspx.designer.cs">
+      <DependentUpon>ServicioContratado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\Servicios\Transporte.aspx.cs">
+      <DependentUpon>Transporte.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Servicios\Transporte.aspx.designer.cs">
+      <DependentUpon>Transporte.aspx</DependentUpon>
     </Compile>
     <Compile Include="Paginas\Usuarios\CrearUsuario.aspx.cs">
       <DependentUpon>CrearUsuario.aspx</DependentUpon>
