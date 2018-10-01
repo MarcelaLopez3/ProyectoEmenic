@@ -7,112 +7,117 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace ProyectoASPEmenic.Paginas.Usuarios {
+namespace ProyectoASPEmenic.Paginas.Servicios {
     
     
-    public partial class CrearUsuario {
+    public partial class Transporte {
         
         /// <summary>
-
-        /// Control lblUsuario.
-
+        /// Control lbTransporte.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-
-        protected global::System.Web.UI.WebControls.Label lblUsuario;
+        protected global::System.Web.UI.WebControls.Label lbTransporte;
         
         /// <summary>
-        /// Control txtUsuario.
+        /// Control checkCabezal.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtUsuario;
+        protected global::System.Web.UI.WebControls.CheckBox checkCabezal;
         
         /// <summary>
-        /// Control RequiredFieldValidator1.
+        /// Control lbCabezal.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
+        protected global::System.Web.UI.WebControls.Label lbCabezal;
         
         /// <summary>
-        /// Control lblContra.
+        /// Control checkFurgon.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblContra;
+        protected global::System.Web.UI.WebControls.CheckBox checkFurgon;
         
         /// <summary>
-        /// Control txtContra.
+        /// Control lbFurgon.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtContra;
+        protected global::System.Web.UI.WebControls.Label lbFurgon;
         
         /// <summary>
-        /// Control RequiredFieldValidator2.
+        /// Control lblplaca.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
+        protected global::System.Web.UI.WebControls.Label lblplaca;
         
         /// <summary>
-        /// Control lblConfCon.
+        /// Control txtPlaca.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblConfCon;
+        protected global::System.Web.UI.WebControls.TextBox txtPlaca;
         
         /// <summary>
-        /// Control txtConfirmContra.
+        /// Control lbvehiculoequipo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtConfirmContra;
+        protected global::System.Web.UI.WebControls.Label lbvehiculoequipo;
         
         /// <summary>
-        /// Control RequiredFieldValidator3.
+        /// Control txtvehiculoequipo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator3;
+        protected global::System.Web.UI.WebControls.TextBox txtvehiculoequipo;
         
         /// <summary>
-        /// Control lblNotificacion.
+        /// Control lbvehiculoDescrip.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblNotificacion;
+        protected global::System.Web.UI.WebControls.Label lbvehiculoDescrip;
         
         /// <summary>
-        /// Control btnGuardarUsuario.
+        /// Control txtDescripcion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnGuardarUsuario;
-
+        protected global::System.Web.UI.WebControls.TextBox txtDescripcion;
+        
+        /// <summary>
+        /// Control btnGuardarTransporte.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnGuardarTransporte;
     }
 }
