@@ -17,7 +17,7 @@
     </script>
     <link rel="stylesheet" href="../../css/bootstrap.css">
     <!-- Bootstrap-Core-CSS -->
-    <!-- comentario -->
+    <!-- comentario 2 -->
 
     <link href="../../css/style.css" rel='stylesheet' type='text/css' />
     <link href="../../css/simpleLightbox.css" rel='stylesheet' type='text/css' />
