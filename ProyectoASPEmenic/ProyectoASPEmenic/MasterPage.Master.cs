@@ -14,7 +14,7 @@ namespace ProyectoASPEmenic
             if (Session["Usuario"] == null)
             {
                 //Si no ha iniciado sesión o la sesión expiro, redirige al login
-                Response.Redirect("~/Default.aspx");
+                Response.Redirect("~/Login.aspx");
             }
             else
             {
@@ -25,7 +25,7 @@ namespace ProyectoASPEmenic
         protected void btnCerrarSesion_Click(object sender, EventArgs e)
         {
             Session["Usuario"] = null;
-            Response.Redirect("~/Paginas/Publicidad/Index.aspx");
+            Response.Redirect("~/Default.aspx");
         }
     }
 }
