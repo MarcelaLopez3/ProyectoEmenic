@@ -76,24 +76,6 @@ namespace ProyectoASPEmenic.Paginas.Clientes {
         protected global::System.Web.UI.WebControls.Label Label25;
         
         /// <summary>
-        /// Control checkRepresentanteLegal.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox checkRepresentanteLegal;
-        
-        /// <summary>
-        /// Control Label26.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label26;
-        
-        /// <summary>
         /// Control checkEmpleado.
         /// </summary>
         /// <remarks>

@@ -33,10 +33,6 @@
                     <asp:CheckBox runat="server" ID="checkUsuario" />
                     <asp:Label runat="server" ID="Label28" Text="Usuario" style="color:black"></asp:Label>
                 </div>
-                <div class="form-group col-md-2">
-                    <asp:CheckBox runat="server" ID="checkRepresentanteLegal" />
-                    <asp:Label runat="server" ID="Label26" Text="Representante Legal" style="color:black"></asp:Label>
-                </div>
             </div>
             <hr />
             <div class="form-row">
