@@ -25,7 +25,7 @@
                 </div>
                
                 <div class="form-group col-md-3">
-                    <asp:Label runat="server" ID="lbvehiculoequipo" Text="Equipo del vehículo:" style="color:black"></asp:Label>
+                    <asp:Label runat="server" ID="lbvehiculoequipo" Text="Tipo de equipo:" style="color:black"></asp:Label>
                     <asp:TextBox runat="server" ID="txtvehiculoequipo" CssClass="form-control"></asp:TextBox>    
                 </div>
                 
@@ -38,8 +38,18 @@
 
         </div>
             </div>
+    <div style="align-content:center">    
+        <div class="form-row">
+            <div class="form-group col-md-6">      
+                <center><asp:Button runat="server" ID="btnGuardarTransporte" Text="Guardar" CssClass="btn btn-info btn-block" style="color:white; background-color:red; border-color:red; width:auto" OnClick="btnGuardarTransporte_Click"></asp:Button></center>             
+            </div>
+            <div class="form-group col-md-6">
+                <center><asp:Button runat="server" ID="btnLimpiarTransporte" Text="Limpiar" CssClass="btn btn-info btn-block" style="color:white; background-color:red; border-color:red; width:auto" OnClick="btnLimpiarTransporte_Click"></asp:Button></center>          
+            </div>
+        </div>
+   </div>
     <div>          
-        <center><asp:Button runat="server" ID="btnGuardarTransporte" Text="Guardar" CssClass="btn btn-info btn-block" style="color:white; background-color:red; border-color:red; width:auto" ></asp:Button></center>             
+        
    </div>
    <br />
 
