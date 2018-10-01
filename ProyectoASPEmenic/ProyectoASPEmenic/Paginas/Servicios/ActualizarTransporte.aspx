@@ -1,9 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="Transporte.aspx.cs" Inherits="ProyectoASPEmenic.Paginas.Servicios.Transporte" %>
-
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="ActualizarTransporte.aspx.cs" Inherits="ProyectoASPEmenic.Paginas.Servicios.ActualizarTransporte" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <center><h1><asp:Label runat="server" ID="lbTransporte" Text="Transportes" style="color:black; font-family:Verdana"></asp:Label></h1></center>
+    <center><h1><asp:Label runat="server" ID="lbTransporte" Text="Actualizar Transportes" style="color:black; font-family:Verdana"></asp:Label></h1></center>
     <br />
     <div class="card border-primary mb-3">
         <div class="card-header">
@@ -43,20 +42,11 @@
     </div>
     <div style="align-content: center">
         <div class="form-row">
-            <div class="form-group col-md-6">
-                <center><asp:Button runat="server" ID="btnGuardarTransporte" Text="Guardar" CssClass="btn btn-info btn-block" style="color:white; background-color:red; border-color:red; width:auto" OnClick="btnGuardarTransporte_Click"></asp:Button></center>
-            </div>
-            <div class="form-group col-md-6">
-                <center><asp:Button runat="server" ID="btnLimpiarTransporte" Text="Limpiar" CssClass="btn btn-info btn-block" style="color:white; background-color:red; border-color:red; width:auto" OnClick="btnLimpiarTransporte_Click"></asp:Button></center>
+            <div class="form-group col-md-12">
+                <center><asp:Button runat="server" ID="btnActualizarTransporte" Text="Actualizar" CssClass="btn btn-info btn-block" style="color:white; background-color:red; border-color:red; width:auto" OnClick="btnActualizarTransporte_Click"></asp:Button></center>
             </div>
         </div>
     </div>
     <div>
     </div>
-    <br />
-
-    <script src="../../vendor/jquery/jquery.min.js"></script>
-    <script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <!-- Core plugin JavaScript-->
-    <script src="../../vendor/jquery-easing/jquery.easing.min.js"></script>
 </asp:Content>

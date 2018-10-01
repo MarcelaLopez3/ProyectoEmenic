@@ -22,7 +22,7 @@ namespace ProyectoASPEmenic.Paginas.Servicios
         {
             GridViewRow row = GridListadoTransporte.SelectedRow;
             HFIdTransporte.Value = row.Cells[1].Text;
-            Response.Redirect("~/Paginas/Personas/ActualizarNaturales.aspx?act=" + HFIdTransporte.Value);
+            Response.Redirect("~/Paginas/Servicios/ActualizarTransporte.aspx?act=" + HFIdTransporte.Value);
         }
     }
 }
