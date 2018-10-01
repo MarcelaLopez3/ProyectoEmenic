@@ -10,7 +10,7 @@
 namespace ProyectoASPEmenic.Paginas.Servicios {
     
     
-    public partial class Transporte {
+    public partial class ActualizarTransporte {
         
         /// <summary>
         /// Control lbTransporte.
@@ -166,21 +166,12 @@ namespace ProyectoASPEmenic.Paginas.Servicios {
         protected global::System.Web.UI.WebControls.CustomValidator CustomValidator1;
         
         /// <summary>
-        /// Control btnGuardarTransporte.
+        /// Control btnActualizarTransporte.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnGuardarTransporte;
-        
-        /// <summary>
-        /// Control btnLimpiarTransporte.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnLimpiarTransporte;
+        protected global::System.Web.UI.WebControls.Button btnActualizarTransporte;
     }
 }
