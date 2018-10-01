@@ -7,10 +7,10 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace ProyectoASPEmenic.Paginas.Clientes {
+namespace ProyectoASPEmenic.Paginas.Personas {
     
     
-    public partial class RegistroJuridicos {
+    public partial class ActualizarJuridicos {
         
         /// <summary>
         /// Control lblpersonanatural.
@@ -20,6 +20,24 @@ namespace ProyectoASPEmenic.Paginas.Clientes {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblpersonanatural;
+        
+        /// <summary>
+        /// Control checkActivo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox checkActivo;
+        
+        /// <summary>
+        /// Control Label29.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label29;
         
         /// <summary>
         /// Control checkCliente.
@@ -580,21 +598,12 @@ namespace ProyectoASPEmenic.Paginas.Clientes {
         protected global::System.Web.UI.WebControls.TextBox txtobservaciones;
         
         /// <summary>
-        /// Control btnGuardarJuridicos.
+        /// Control btnActualizarJuridicos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnGuardarJuridicos;
-        
-        /// <summary>
-        /// Control btnLimpiarJuridicos.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnLimpiarJuridicos;
+        protected global::System.Web.UI.WebControls.Button btnActualizarJuridicos;
     }
 }
