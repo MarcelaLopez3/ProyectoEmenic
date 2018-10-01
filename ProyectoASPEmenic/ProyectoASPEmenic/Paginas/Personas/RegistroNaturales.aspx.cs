@@ -13,7 +13,7 @@ namespace ProyectoASPEmenic.Paginas.Clientes
         
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         protected void btnGuardarNaturales_Click(object sender, EventArgs e)
@@ -53,25 +53,70 @@ namespace ProyectoASPEmenic.Paginas.Clientes
             Boolean Proveedor = checkProveedor.Checked;
             Boolean Socio = checkSocio.Checked;
             Boolean PersonaNatural = true;
+            Boolean Activo = true;
 
             //consulta que se ingresa a la base de datos
             string query = "INSERT INTO persona(PrimerNombre,SegundoNombre,PrimerApellido,SegundoApellido,Edad," +
                 "Genero,EstadoCivil,ProfesionOficio,DireccionResidencia,DepartamentoResidencia,MunicipioResidencia," +
                 "FechaNacimiento,DepartamentoNacimiento,MunicipioNacimiento,DUI,NIT,NumeroLicencia,Pasaporte,NombreOtro," +
                 "NumeroOtro,Telefono1,Telefono2,Telefono3,Celular,Email1,Email2,Observaciones,Usuario,Empleado,Cliente," +
-                "RepresentanteLegal,Proveedor,Socio,PersonaNatural) VALUES ('" + PrimerNombre +"','" + SegundoNombre + "','" +
+                "RepresentanteLegal,Proveedor,Socio,PersonaNatural,Activo) VALUES ('" + PrimerNombre +"','" + SegundoNombre + "','" +
                 PrimerApellido + "','" + SegundoApellido + "'," + Edad +",'" + Genero + "','" + EstadoCivil + "','" + ProfesionOficio + 
                 "','" + DireccionResidencia + "','" + DepartamentoResidencia + "','" + MunicipioResidencia + "','" + FechaNacimiento + 
                 "','" +  DepartamentoNacimiento + "','" + MunicipioNacimiento + "','" + DUI + "','" + NIT + "','" + NumeroLicencia + 
                 "','" + Pasaporte + "','" + NombreOtro + "','" + NumeroOtro + "','" + Telefono1 + "','" + Telefono2 + "','" + Telefono3 +
                 "','" + Celular + "','" + Email1 + "','" + Email2 + "','" + Observaciones + "'," + Usuario + "," + Empleado + 
-                "," + Cliente + "," + RepresentanteLegal + "," + Proveedor + "," + Socio + "," + PersonaNatural +")";
+                "," + Cliente + "," + RepresentanteLegal + "," + Proveedor + "," + Socio + "," + PersonaNatural + "," + Activo + ")";
 
             //enviar consulta a Mysql
             conexion.IniciarConexion();
             conexion.EnviarQuery(query);
             conexion.CerrarConexion();
 
+            ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Se ha insertado con exito.')", true);
+            
+        }
+
+        protected void LimpiarNaturales()
+        {
+            txtprimernombre.Text = "";
+            txtsegundonombre.Text = "";
+            txtprimerapellido.Text = "";
+            txtsegundoapellido.Text = "";
+            txtedad.Text = "";
+            ddlgenero.SelectedValue = "Femenino";
+            ddlestadocivil.SelectedValue = "Soltero";
+            txtprofesionoficio.Text = "";
+            txtdireccionresidencia.Text = "";
+            txtdepartamentoresidencia.Text = "";
+            txtmunicipioresidencia.Text = "";
+            txtfechanacimiento.Text = "";
+            txtdepartamentonacimiento.Text = "";
+            txtmunicipionacimiento.Text = "";
+            txtDUI.Text = "";
+            txtNIT.Text = "";
+            txtnumerolicencia.Text = "";
+            txtpasaporte.Text = "";
+            txtnombreotro.Text = "";
+            txtnumerootro.Text = "";
+            txttelefono1.Text = "";
+            txttelefono2.Text = "";
+            txttelefono3.Text = "";
+            txtcelular.Text = "";
+            txtemail1.Text = "";
+            txtemail2.Text = "";
+            txtobservaciones.Text = "";
+            checkUsuario.Checked = false;
+            checkEmpleado.Checked = false;
+            checkCliente.Checked = false;
+            checkRepresentanteLegal.Checked = false;
+            checkProveedor.Checked = false;
+            checkSocio.Checked = false;
+        }
+
+        protected void btnLimpiarNaturales_Click(object sender, EventArgs e)
+        {
+            LimpiarNaturales();
         }
     }
 }

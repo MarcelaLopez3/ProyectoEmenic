@@ -1,14 +1,19 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="RegistroNaturales.aspx.cs" Inherits="ProyectoASPEmenic.Paginas.Clientes.RegistroNaturales" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="ActualizarNaturales.aspx.cs" Inherits="ProyectoASPEmenic.Paginas.Personas.ActualizarNaturales" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <center><h1><asp:Label runat="server" ID="lblpersonanatural" Text=" Registro Persona Natural" style="color:black; font-family:Verdana"></asp:Label></h1></center>
+    
+    <center><h1><asp:Label runat="server" ID="lblpersonanatural" Text=" Actualizar Persona Natural" style="color:black; font-family:Verdana"></asp:Label></h1></center>
     <br />
     <div class="card border-primary mb-3">
         <div class="card-header"><h4>Datos Personales</h4></div>
         <div class="card-body text-primary">
             <div class="form-row">
-                <div class="form-group col-md-2">
+                <div class="form-group col-md-1">
+                    <asp:CheckBox runat="server" ID="checkActivo" />
+                    <asp:Label runat="server" ID="Label29" Text="Activo" style="color:black"></asp:Label>
+                </div>
+                <div class="form-group col-md-1">
                     <asp:CheckBox runat="server" ID="checkCliente" />
                     <asp:Label runat="server" ID="Label23" Text="Cliente" style="color:black"></asp:Label>
                 </div>
@@ -16,21 +21,21 @@
                     <asp:CheckBox runat="server" ID="checkProveedor" />
                     <asp:Label runat="server" ID="Label24" Text="Proveedor" style="color:black"></asp:Label>
                 </div>
-                <div class="form-group col-md-2">
+                <div class="form-group col-md-1">
                     <asp:CheckBox runat="server" ID="checkSocio" />
                     <asp:Label runat="server" ID="Label25" Text="Socio" style="color:black"></asp:Label>
-                </div>
-                <div class="form-group col-md-2">
-                    <asp:CheckBox runat="server" ID="checkRepresentanteLegal" />
-                    <asp:Label runat="server" ID="Label26" Text="Representante Legal" style="color:black"></asp:Label>
                 </div>
                 <div class="form-group col-md-2">
                     <asp:CheckBox runat="server" ID="checkEmpleado" />
                     <asp:Label runat="server" ID="Label27" Text="Empleado" style="color:black"></asp:Label>
                 </div>
-                <div class="form-group col-md-2">
+                <div class="form-group col-md-1">
                     <asp:CheckBox runat="server" ID="checkUsuario" />
                     <asp:Label runat="server" ID="Label28" Text="Usuario" style="color:black"></asp:Label>
+                </div>
+                <div class="form-group col-md-2">
+                    <asp:CheckBox runat="server" ID="checkRepresentanteLegal" />
+                    <asp:Label runat="server" ID="Label26" Text="Representante Legal" style="color:black"></asp:Label>
                 </div>
             </div>
             <hr />
@@ -95,7 +100,7 @@
         <div class="form-row">
             <div class="form-group col-md-6">
                 <asp:Label runat="server" ID="Label9" Text="Fecha Nacimiento:" style="color:black"></asp:Label>
-                <asp:TextBox runat="server" ID="txtfechanacimiento" CssClass="form-control" TextMode="Date"></asp:TextBox>
+                <asp:TextBox runat="server" ID="txtfechanacimiento" CssClass="form-control" ></asp:TextBox>
             </div>
             <div class="form-group col-md-3">
                 <asp:Label runat="server" ID="Label10" Text="Departamento Nacimiento:" style="color:black"></asp:Label>
@@ -192,10 +197,10 @@
     <div style="align-content:center">    
         <div class="form-row">
             <div class="form-group col-md-6">      
-                <center><asp:Button runat="server" ID="btnGuardarNaturales" Text="Guardar" CssClass="btn btn-info btn-block" style="color:white; background-color:red; border-color:red; width:auto" OnClick="btnGuardarNaturales_Click"></asp:Button></center>   
+                <center><asp:Button runat="server" ID="btnActualizarNaturales" Text="Actualizar" CssClass="btn btn-info btn-block" style="color:white; background-color:red; border-color:red; width:auto" OnClick="btnActualizarNaturales_Click" ></asp:Button></center>   
             </div>
             <div class="form-group col-md-6">
-                <center><asp:Button runat="server" ID="btnLimpiarNaturales" Text="Limpiar" CssClass="btn btn-info btn-block" style="color:white; background-color:red; border-color:red; width:auto" OnClick="btnLimpiarNaturales_Click"></asp:Button></center>          
+                <center><asp:Button runat="server" ID="btnCancelarNaturales" Text="Cancelar" CssClass="btn btn-info btn-block" style="color:white; background-color:red; border-color:red; width:auto" ></asp:Button></center>          
             </div>
         </div>
    </div>
@@ -205,4 +210,5 @@
     <script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- Core plugin JavaScript-->
     <script src="../../vendor/jquery-easing/jquery.easing.min.js"></script>   
+    
 </asp:Content>
