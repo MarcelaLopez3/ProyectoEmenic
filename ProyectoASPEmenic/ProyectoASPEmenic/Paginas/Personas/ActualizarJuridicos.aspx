@@ -1,13 +1,17 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="RegistroJuridicos.aspx.cs" Inherits="ProyectoASPEmenic.Paginas.Clientes.RegistroJuridicos" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="ActualizarJuridicos.aspx.cs" Inherits="ProyectoASPEmenic.Paginas.Personas.ActualizarJuridicos" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <center><h1><asp:Label runat="server" ID="lblpersonanatural" Text=" Registro Persona Jurídica" style="color:black; font-family:Verdana"></asp:Label></h1></center>
+    <center><h1><asp:Label runat="server" ID="lblpersonanatural" Text=" Actualizar Persona Jurídica" style="color:black; font-family:Verdana"></asp:Label></h1></center>
     <br />
     <div class="card border-primary mb-3">
         <div class="card-header"><h4>Datos Generales</h4></div>
         <div class="card-body text-primary">
             <div class="form-row">
+                <div class="form-group col-md-1">
+                    <asp:CheckBox runat="server" ID="checkActivo" />
+                    <asp:Label runat="server" ID="Label29" Text="Activo" style="color:black"></asp:Label>
+                </div>
                 <div class="form-group col-md-2">
                     <asp:CheckBox runat="server" ID="checkCliente" />
                     <asp:Label runat="server" ID="Label23" Text="Cliente" style="color:black"></asp:Label>
@@ -109,7 +113,7 @@
                 </div>
                 <div class="form-group col-md-3">
                     <asp:Label runat="server" ID="Label6" Text="Fecha expedición NIT:" style="color:black"></asp:Label>
-                    <asp:TextBox runat="server" ID="txtfechaexpedicionNIT" CssClass="form-control" TextMode="Date"></asp:TextBox>
+                    <asp:TextBox runat="server" ID="txtfechaexpedicionNIT" CssClass="form-control" ></asp:TextBox>
                 </div>
                 <div class="form-group col-md-6">
                     <asp:Label runat="server" ID="Label7" Text="Nombre según NIT:" style="color:black"></asp:Label>
@@ -123,7 +127,7 @@
                 </div>
                 <div class="form-group col-md-3">
                     <asp:Label runat="server" ID="Label9" Text="Fecha expedición NRC:" style="color:black"></asp:Label>
-                    <asp:TextBox runat="server" ID="txtfechaexpedicionNRC" CssClass="form-control" TextMode="Date"></asp:TextBox>
+                    <asp:TextBox runat="server" ID="txtfechaexpedicionNRC" CssClass="form-control" ></asp:TextBox>
                 </div>
                 <div class="form-group col-md-6">
                     <asp:Label runat="server" ID="Label10" Text="Nombre según NRC:" style="color:black"></asp:Label>
@@ -181,11 +185,8 @@
 
     <div style="align-content:center">    
         <div class="form-row">
-        <div class="form-group col-md-6">          
-            <center><asp:Button runat="server" ID="btnGuardarJuridicos" Text="Guardar" CssClass="btn btn-info btn-block" style="color:white; background-color:red; border-color:red; width:auto" OnClick="btnGuardarJuridicos_Click"></asp:Button></center>             
-       </div>
-        <div class="form-group col-md-6">          
-            <center><asp:Button runat="server" ID="btnLimpiarJuridicos" Text="Limpiar" CssClass="btn btn-info btn-block" style="color:white; background-color:red; border-color:red; width:auto"></asp:Button></center>             
+        <div class="form-group col-md-12">          
+            <center><asp:Button runat="server" ID="btnActualizarJuridicos" Text="Actualizar" CssClass="btn btn-info btn-block" style="color:white; background-color:red; border-color:red; width:auto" ></asp:Button></center>             
        </div>
        </div>
     </div>
@@ -194,5 +195,5 @@
     <script src="../../vendor/jquery/jquery.min.js"></script>
     <script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- Core plugin JavaScript-->
-    <script src="../../vendor/jquery-easing/jquery.easing.min.js"></script> 
+    <script src="../../vendor/jquery-easing/jquery.easing.min.js"></script>
 </asp:Content>
