@@ -49,21 +49,25 @@
                         <li class="nav-item">
                             <a class="nav-link scroll" href="#services">Servicios</a>
                         </li>
-                        <li class="nav-item">
+                      <!--  <li class="nav-item">
                             <a class="nav-link scroll" href="#mision">Misión</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link scroll" href="#vision">Visión</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link scroll" href="#pricing">Pricing</a>
-                        </li>
+                        </li> -->
                         <li class="nav-item">
                             <a class="nav-link scroll" href="#contact">Contacto</a>
                         </li>
                     </ul>
                     <div class="navbar-text">
                         <p class="right-p"><i class="fas fa-phone" aria-hidden="true"></i>(503) 2252-6956</p>
+                    </div>
+                    <div>
+                        <ul class="navbar-nav mr-auto">
+                          <li class="nav-item">
+                            <a class="fas fa-user" href="../../Default.aspx"> Login</a>
+                        </li>
+                            </ul>
                     </div>
                 </div>
             </nav>
@@ -72,6 +76,7 @@
     <!--/banner-->
     <section class="banner-top">
         <div class="banner">
+            
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
                     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -83,8 +88,8 @@
                     <div class="carousel-item item1 active">
                         <%--<asp:Image ID="imageEmenic1" runat="server" ImageUrl="~/Imagenes/Emenic1.jpg" />--%>
                         <div class="carousel-caption">
-                            <h3>Transport your cargo everywhere</h3>
-                            <p>We offer a diverse range of transportation services from project cargo to international transportation and domestic retail distribution and delivery.</p>
+                            <h3>Estamos para brindarte el mejor servicio de transporte de carga pesada a nivel internacional</h3>
+                            <p>.</p>
                             <a href="#" data-toggle="modal" data-target="#exampleModalCenter" role="button">Más Detalles <i class="fa fa-caret-right" aria-hidden="true"></i></a>
 
 
@@ -93,8 +98,8 @@
                     <div class="carousel-item item2">
                         <%--<asp:Image ID="imageEmenic2" runat="server" ImageUrl="~/Imagenes/Emenic2.png" />--%>
                         <div class="carousel-caption">
-                            <h3>World wide transport for everyone</h3>
-                            <p>We offer a diverse range of transportation services from project cargo to international transportation and domestic retail distribution and delivery.</p>
+                            <h3>Estamos para brindarte el mejor servicio de transporte de carga pesada a nivel internacional</h3>
+                            <p>.</p>
                             <a href="#" data-toggle="modal" data-target="#exampleModalCenter" role="button">Más Detalles <i class="fa fa-caret-right" aria-hidden="true"></i></a>
 
 
@@ -103,8 +108,8 @@
                     <div class="carousel-item item3">
                         <%--<asp:Image ID="imageEmenic3" runat="server" ImageUrl="~/Imagenes/Emenic3.jpg" />--%>
                         <div class="carousel-caption">
-                            <h3>24*7 services provided for Customers</h3>
-                            <p>We offer a diverse range of transportation services from project cargo to international transportation and domestic retail distribution and delivery.</p>
+                            <h3>Estamos para brindarte el mejor servicio de transporte de carga pesada a nivel internacional</h3>
+                            <p>.</p>
                             <a href="#" data-toggle="modal" data-target="#exampleModalCenter" role="button">Más Detalles <i class="fa fa-caret-right" aria-hidden="true"></i></a>
                         </div>
                     </div>
@@ -119,6 +124,17 @@
                 </a>
             </div>
             <!-- banner-bottom -->
+            <
+            <!-- //banner-bottom -->
+
+        </div>
+    </section>
+    <!--//banner-->
+    <!-- stats -->
+    <div class="stats" id="about">
+        <div class="w3-head-all  mb-5">
+            <h3>Acerca de nosotros</h3>
+        </div>
             <div class="banner-bottom">
                 <div class="container">
                     <div>
@@ -136,19 +152,12 @@
                     <div class="clearfix"></div>
                 </div>
             </div>
-            <!-- //banner-bottom -->
-
-        </div>
-    </section>
-    <!--//banner-->
-    <!-- stats -->
-    <div class="stats" id="about">
-        <div class="w3-head-all  mb-5">
-            <h3>Acerca de nosotros</h3>
-        </div>
         <div class="container">
+            <h3>Nuestro alcance</h3>
             <div class="row">
+
                 <div class="col-md-6 col-sm-12 w3layouts_stats_left w3_counter_grid1">
+                    
                     <span class="fas fa-globe" aria-hidden="true"></span>
                     <p class="counter">7</p>
                     <h3>PAÍSES</h3>
@@ -161,10 +170,8 @@
                 <div class="clearfix"></div>
             </div>
         </div>
-    </div>
-    <!-- //stats -->
-    <!-- services-bottom -->
-    <div class="services-bottom wthree-sub py-5" id="mision">
+         <!-- services-bottom -->
+    <div class="team py-5" id="mision">
         <div class="container py-md-3">
             <div class="row">
                 <div class="col-sm-6 col-xs-4 services_bottom_grid_left">
@@ -180,6 +187,29 @@
         </div>
     </div>
     <!-- //services-bottom -->
+        <!-- visión -->
+    <div class="team py-5" id="vision">
+        <div class="container py-md-3">
+            <div class="teamgrids row">
+                <div class="col-sm-6 col-xs-4 services_bottom_grid_left">
+                    <h3>Visión</h3>
+                </div>
+                <div class="col-sm-6 col-xs-8 services_bottom_grid_right">
+                    <h4 class="text-white">Ser reconocido en el mercado de transporte de carga internacional y establecernos dentro los próximos diez años
+                        dentro de las mejores empresas en el mercado, brindando cada día un mejor servicio, de manera eficiente; estableciendo alianzas estratégicas
+                        comprometidas con las necesidades de nuestros clientes y en la búsqueda de un servicio cada vez más integral 
+                        que nos permita alcanzar un reconocido prestigio a nivel nacional internacional.
+                        Así como de ir de la mano con el dinamismo del mundo actual y las nuevas tendencias del negocio.
+                    </h4>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+    <!-- //visión -->
+    </div>
+    <!-- //stats -->
+   
     <!-- services-main -->
     <div class="testimonials  py-5" id="services">
         <div class="container  py-md-3">
@@ -255,26 +285,7 @@
         </div>
     </div>
     <!-- //services-main -->
-    <!-- visión -->
-    <div class="team py-5" id="vision">
-        <div class="container py-md-3">
-            <div class="teamgrids row">
-                <div class="col-sm-6 col-xs-4 services_bottom_grid_left">
-                    <h3>Visión</h3>
-                </div>
-                <div class="col-sm-6 col-xs-8 services_bottom_grid_right">
-                    <h4 class="text-white">Ser reconocido en el mercado de transporte de carga internacional y establecernos dentro los próximos diez años
-                        dentro de las mejores empresas en el mercado, brindando cada día un mejor servicio, de manera eficiente; estableciendo alianzas estratégicas
-                        comprometidas con las necesidades de nuestros clientes y en la búsqueda de un servicio cada vez más integral 
-                        que nos permita alcanzar un reconocido prestigio a nivel nacional internacional.
-                        Así como de ir de la mano con el dinamismo del mundo actual y las nuevas tendencias del negocio.
-                    </h4>
-                </div>
-                <div class="clearfix"></div>
-            </div>
-        </div>
-    </div>
-    <!-- //visión -->
+    
     <!--/Projects-->
     <section class="services  py-5" id="works">
         <div class="container  py-md-3">
@@ -392,7 +403,7 @@
         </div>
     </section>
     <!--//Projects-->
-    <!--main pricing table-->
+    <!--main pricing table
     <div class="main  py-5" id="pricing">
         <div class="container py-md-3">
             <div class="w3-head-all  mb-5">
@@ -473,7 +484,7 @@
             </div>
         </div>
     </div>
-
+    -->
     <!-- main pricing table -->
     <!-- /contact us -->
     <div class="w3-contact py-5" id="contact">
@@ -482,9 +493,9 @@
                 <h3>Contactanos</h3>
             </div>
             <div class="w3-contact1">
-                <h1>100%</h1>
-                <h2>El mejor servicio de transporte</h2>
-                <p><a class="book popup-with-zoom-anim button-isi zoomIn animated" data-wow-delay=".5s" href="#small-dialog"><span class="fa fa-paper-plane-o"></span>Contact Us</a></p>
+               
+                <h2>Contamos con furgones de</h2><h1> 53</h1><h2> pies para alquiler</h2> 
+                <p><a class="book popup-with-zoom-anim button-isi zoomIn animated" data-wow-delay=".5s" href="#small-dialog"><span class="fa fa-paper-plane-o"></span>Contactenos</a></p>
             </div>
         </div>
     </div>
@@ -497,11 +508,11 @@
     <section class="newsletter text-center py-5">
         <div class="container py-md-3">
             <h3 class="heading text-center text-uppercase mb-5">PARA MEJOR PRECIO Y SERVICIO</h3>
-            <div class="w3l_header_contact_details_agile">
+          <!--  <div class="w3l_header_contact_details_agile">
                 <p>Llamanos</p>
                 <a class="w3l_header_contact_details_agile-info_inner"><span><i class="fas fa-phone"></i></span>(503) 2252-6956</a>
             </div>
-
+            -->
             <div class="subscribe_inner">
                 <div>
                     <h2 class="text-white">Ubicacion</h2>
@@ -584,39 +595,36 @@
     <form action="#" method="post" runat="server">
         <div class="pop-up">
         <div id="small-dialog" class="mfp-hide book-form">
-            <h3 class="sub-head-w3-agileits subscribe_us text-center py-3 head_size_con">Contact us </h3>
+            <h3 class="sub-head-w3-agileits subscribe_us text-center py-3 head_size_con">Nuestros Contactos</h3>
             <!-- banner -->
             <div class="video" data-vide-bg="video/ship">
                 <div class="center-container">
-                    <div class="bg-agile">
-                        <h3>Order Contact</h3>
-                        <div class="login-form">
-                            <form action="#" method="post">
-                                <input type="text" name="Name" placeholder="Full name" required="" />
-                                <input type="text" name="Number" placeholder="Phone number" required="" />
-                                <input type="email" name="Email" placeholder="Email" required="" />
-                                <h3>Shipping address</h3>
-                                <div class="left-w3-agile">
-                                    <asp:DropDownList ID="ddlPaises" runat="server" CssClass="form-control form2-color">
-                                        <asp:ListItem>Elija el pais</asp:ListItem>
-                                        <asp:ListItem>Guatemala</asp:ListItem>
-                                        <asp:ListItem>El Salvador</asp:ListItem>
-                                        <asp:ListItem>Honduras</asp:ListItem>
-                                        <asp:ListItem>Nicaragua</asp:ListItem>
-                                        <asp:ListItem>Costa Rica</asp:ListItem>
-                                        <asp:ListItem>Panamá</asp:ListItem>
-                                    </asp:DropDownList>
-                                    <input type="text" name="Region" placeholder="State/province/region" required="" />
-                                </div>
-                                <div class="right-agileits">
-                                    <input type="text" name="City" placeholder="City" required="" />
-                                    <input type="text" name="Zip/postal code" placeholder="Zip/postal code" required="" />
-                                </div>
-                                <textarea name="message" placeholder="Street address"></textarea>
-                                <input type="submit" value="Submit">
-                            </form>
-                        </div>
-                    </div>
+                     <!--desde aqui -->
+                    <div class="services-bottom wthree-sub py-5" >
+        <div class="team py-5">
+            <div class="row">
+                <div class="col-sm-6 col-xs-4 services_bottom_grid_left">
+                    <h3>Llámenos </h3>
+                    <h4 class="text-white ">
+                        (503) 2252-6956,
+                        <br />   (503) 7842-4611,
+                        <br />   (503) 7506-6828
+                        </h4>
+                </div>
+                <div class="col-sm-6 col-xs-8 services_bottom_grid_right">
+                    <h3>Escríbanos a</h3>
+                    <h4 class="text-white"> 
+                        alvaradostrucking295@gmail.com.
+                    </h4>
+                    <h3>O Búsquenos en Facebook como:</h3>
+                    <h4 class="text-white"> Alvarado's trucking
+                        
+                    </h4>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
                     <!-- //banner -->
 
                 </div>

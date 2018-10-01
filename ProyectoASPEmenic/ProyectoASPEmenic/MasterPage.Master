@@ -29,8 +29,9 @@
     <form id="form1" runat="server">
 
         <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
-            <asp:Image ImageUrl="~/Imagenes/Logo_emenic_2.png" Height="60" runat="server"/>&nbsp;&nbsp;&nbsp;
-          <a class="navbar-brand mr-1" style="color:red">EMENIC</a>
+            <asp:HyperLink runat="server" NavigateUrl="~/Paginas/Dashboard.aspx" CssClass="navbar-brand mr-1" style="color:red">
+            <asp:Image ImageUrl="~/Imagenes/Logo_emenic_2.png" Height="50" runat="server"/>&nbsp;&nbsp;
+            EMENIC</asp:HyperLink>
           <!-- Navbar -->
           <ul class="nav navbar-nav ml-auto" >
             <li class="nav-item dropdown no-arrow">
@@ -96,7 +97,7 @@
         <footer class="sticky-footer">
           <div class="container my-auto">
             <div class="copyright text-center my-auto">
-              <span>Copyright © Emenic 2018</span>
+              <span>Copyright © Emenic <%=DateTime.Now.Year%></span>
             </div>
           </div>
         </footer>
