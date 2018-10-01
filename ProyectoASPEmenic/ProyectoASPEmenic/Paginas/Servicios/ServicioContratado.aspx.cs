@@ -11,7 +11,38 @@ namespace ProyectoASPEmenic.Paginas.Servicios
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            CargandoServicio();
+        }
 
+        protected void CargandoServicio()
+        {
+            if (checkTransporte.Checked == true)
+            {
+                btnCartaPorte.Visible = true;
+            }
+            else 
+            {
+                btnCartaPorte.Visible = false;
+            }
+
+            if (checkAlquiler.Checked == true)
+            {
+                btnContrato.Visible = true;
+            }
+            else
+            {
+                btnContrato.Visible = false;
+            }
+        }
+
+        protected void btnCartaPorte_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Paginas/Servicios/RegistroCartaporte.aspx");
+        }
+
+        protected void btnContrato_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Paginas/Servicios/RegistroContrato.aspx");
         }
     }
 }

@@ -135,7 +135,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Paginas\Clientes\" />
     <Folder Include="scss\" />
     <Folder Include="vendor\" />
   </ItemGroup>
@@ -225,6 +224,7 @@
     <Content Include="fonts\fa-solid-900.woff2" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Imagenes\Logo_emenic.png" />
+    <Content Include="Paginas\Clientes\ListadoClientes.aspx" />
     <Content Include="Paginas\Personas\ActualizarJuridicos.aspx" />
     <Content Include="Paginas\Personas\ActualizarNaturales.aspx" />
     <Content Include="Paginas\Personas\ListadoJuridicos.aspx" />
@@ -314,6 +314,13 @@
     </Compile>
     <Compile Include="MasterPage.Master.designer.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\Clientes\ListadoClientes.aspx.cs">
+      <DependentUpon>ListadoClientes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Clientes\ListadoClientes.aspx.designer.cs">
+      <DependentUpon>ListadoClientes.aspx</DependentUpon>
     </Compile>
     <Compile Include="Paginas\Personas\ActualizarJuridicos.aspx.cs">
       <DependentUpon>ActualizarJuridicos.aspx</DependentUpon>

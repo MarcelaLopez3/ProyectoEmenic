@@ -2,19 +2,25 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <center><h1><asp:Label runat="server" ID="lblpersonanatural" Text="Contratos de servicios" style="color:black; font-family:Verdana"></asp:Label></h1></center>
+    <center><h1><asp:Label runat="server" ID="lbltitulo" Text="Contratos de servicios" style="color:black; font-family:Verdana"></asp:Label></h1></center>
     <br />
     <div class="card border-primary mb-3">
         <div class="card-header"><h4>Datos del servicio</h4></div>
         <div class="card-body text-primary">
             <div class="form-row">
                 <div class="form-group col-md-2">
-                    <asp:CheckBox runat="server" ID="checkTransporte" ValidationGroup="1" />
-                    <asp:Label runat="server" ID="lbcheckTransporte" Text="Transporte" style="color:black"></asp:Label>
+                    <asp:CheckBox runat="server" ID="checkTransporte" AutoPostBack="true" />
+                    <asp:Label runat="server" ID="lbcheckTransporte" Text="Transporte" style="color:black"></asp:Label>                  
                 </div>
                 <div class="form-group col-md-2">
-                    <asp:CheckBox runat="server" ID="checkAlquiler" ValidationGroup="1" />
+                    <asp:Button runat="server" ID="btnCartaPorte" Text="Carta Porte" CssClass="btn btn-info btn-block" style="color:white; background-color:red; border-color:red; width:auto" Visible ="false" OnClick="btnCartaPorte_Click"></asp:Button>
+                </div>
+                <div class="form-group col-md-2">
+                    <asp:CheckBox runat="server" ID="checkAlquiler" AutoPostBack="true" />
                     <asp:Label runat="server" ID="lbcheckAlquiler" Text="Alquiler" style="color:black"></asp:Label>
+                </div>
+                <div class="form-group col-md-2">
+                    <asp:Button runat="server" ID="btnContrato" Text="Contrato" CssClass="btn btn-info btn-block" style="color:white; background-color:red; border-color:red; width:auto" Visible ="false" OnClick="btnContrato_Click"></asp:Button>
                 </div>
             </div>
             <hr />
