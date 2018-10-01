@@ -225,7 +225,9 @@
     <Content Include="fonts\fa-solid-900.woff2" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Imagenes\Logo_emenic.png" />
+    <Content Include="Paginas\Personas\ActualizarJuridicos.aspx" />
     <Content Include="Paginas\Personas\ActualizarNaturales.aspx" />
+    <Content Include="Paginas\Personas\ListadoJuridicos.aspx" />
     <Content Include="Paginas\Personas\ListadoNaturales.aspx" />
     <Content Include="Paginas\Personas\RegistroJuridicos.aspx" />
     <Content Include="Paginas\Personas\RegistroNaturales.aspx" />
@@ -310,12 +312,26 @@
     <Compile Include="MasterPage.Master.designer.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
     </Compile>
+    <Compile Include="Paginas\Personas\ActualizarJuridicos.aspx.cs">
+      <DependentUpon>ActualizarJuridicos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Personas\ActualizarJuridicos.aspx.designer.cs">
+      <DependentUpon>ActualizarJuridicos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Paginas\Personas\ActualizarNaturales.aspx.cs">
       <DependentUpon>ActualizarNaturales.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Paginas\Personas\ActualizarNaturales.aspx.designer.cs">
       <DependentUpon>ActualizarNaturales.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\Personas\ListadoJuridicos.aspx.cs">
+      <DependentUpon>ListadoJuridicos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Personas\ListadoJuridicos.aspx.designer.cs">
+      <DependentUpon>ListadoJuridicos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Paginas\Personas\ListadoNaturales.aspx.cs">
       <DependentUpon>ListadoNaturales.aspx</DependentUpon>

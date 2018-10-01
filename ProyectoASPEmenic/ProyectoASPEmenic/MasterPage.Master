@@ -70,6 +70,7 @@
               <asp:HyperLink runat="server" CssClass="dropdown-item" NavigateUrl="~/Paginas/Personas/RegistroNaturales.aspx" Text="Registro Naturales"></asp:HyperLink>
               <asp:HyperLink runat="server" CssClass="dropdown-item" NavigateUrl="~/Paginas/Personas/RegistroJuridicos.aspx" Text="Registro Jurídicas"></asp:HyperLink>
               <asp:HyperLink runat="server" CssClass="dropdown-item" NavigateUrl="~/Paginas/Personas/ListadoNaturales.aspx" Text="Listado Naturales"></asp:HyperLink>
+              <asp:HyperLink runat="server" CssClass="dropdown-item" NavigateUrl="~/Paginas/Personas/ListadoJuridicos.aspx" Text="Listado Jurídicas"></asp:HyperLink>
           </div>
         </li>
           <li class="nav-item dropdown">

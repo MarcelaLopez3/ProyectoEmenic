@@ -163,9 +163,11 @@ namespace ProyectoASPEmenic.Paginas.Personas
                     checkUsuario.Checked = conexion.reg.GetBoolean(27);
                     checkEmpleado.Checked = conexion.reg.GetBoolean(28);
                     checkCliente.Checked = conexion.reg.GetBoolean(29);
-                    checkProveedor.Checked = conexion.reg.GetBoolean(31);
-                    checkSocio.Checked = conexion.reg.GetBoolean(32);
-                    checkActivo.Checked = conexion.reg.GetBoolean(33);
+                    checkProveedor.Checked = conexion.reg.GetBoolean(30);
+                    checkSocio.Checked = conexion.reg.GetBoolean(31);
+                    checkActivo.Checked = conexion.reg.GetBoolean(32);
+
+                    
 
                 }
                 conexion.CerrarConexion();
