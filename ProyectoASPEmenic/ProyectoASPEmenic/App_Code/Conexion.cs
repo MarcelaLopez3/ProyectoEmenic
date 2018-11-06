@@ -56,7 +56,7 @@ namespace ProyectoASPEmenic
             con.ExecuteNonQuery();
         }
 
-        //funcion que envia 
+        //funcion que envia query para ser ejecutada y devuelve filas
         public MySqlDataReader RecibeQuery(string query)
         {
             MySqlCommand con = new MySqlCommand(query, cnn);
