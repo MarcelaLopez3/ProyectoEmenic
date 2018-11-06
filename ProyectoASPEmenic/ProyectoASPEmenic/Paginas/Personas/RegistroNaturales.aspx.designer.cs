@@ -130,6 +130,24 @@ namespace ProyectoASPEmenic.Paginas.Clientes {
         protected global::System.Web.UI.WebControls.TextBox txtprimernombre;
         
         /// <summary>
+        /// Control RequiredFieldValidator1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
+        
+        /// <summary>
+        /// Control RegularExpressionValidator1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator1;
+        
+        /// <summary>
         /// Control lblsegundonombre.
         /// </summary>
         /// <remarks>
@@ -146,6 +164,15 @@ namespace ProyectoASPEmenic.Paginas.Clientes {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtsegundonombre;
+        
+        /// <summary>
+        /// Control RegularExpressionValidator2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator2;
         
         /// <summary>
         /// Control lblprimerapellido.
@@ -166,6 +193,24 @@ namespace ProyectoASPEmenic.Paginas.Clientes {
         protected global::System.Web.UI.WebControls.TextBox txtprimerapellido;
         
         /// <summary>
+        /// Control RequiredFieldValidator2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
+        
+        /// <summary>
+        /// Control RegularExpressionValidator3.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator3;
+        
+        /// <summary>
         /// Control lblsegundoapellido.
         /// </summary>
         /// <remarks>
@@ -184,6 +229,15 @@ namespace ProyectoASPEmenic.Paginas.Clientes {
         protected global::System.Web.UI.WebControls.TextBox txtsegundoapellido;
         
         /// <summary>
+        /// Control RegularExpressionValidator4.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator4;
+        
+        /// <summary>
         /// Control lbledad.
         /// </summary>
         /// <remarks>
@@ -200,6 +254,24 @@ namespace ProyectoASPEmenic.Paginas.Clientes {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtedad;
+        
+        /// <summary>
+        /// Control RequiredFieldValidator3.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator3;
+        
+        /// <summary>
+        /// Control RegularExpressionValidator5.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator5;
         
         /// <summary>
         /// Control Label1.
@@ -256,6 +328,15 @@ namespace ProyectoASPEmenic.Paginas.Clientes {
         protected global::System.Web.UI.WebControls.TextBox txtprofesionoficio;
         
         /// <summary>
+        /// Control RegularExpressionValidator6.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator6;
+        
+        /// <summary>
         /// Control Label12.
         /// </summary>
         /// <remarks>
@@ -292,6 +373,15 @@ namespace ProyectoASPEmenic.Paginas.Clientes {
         protected global::System.Web.UI.WebControls.TextBox txtdepartamentoresidencia;
         
         /// <summary>
+        /// Control RegularExpressionValidator7.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator7;
+        
+        /// <summary>
         /// Control Label14.
         /// </summary>
         /// <remarks>
@@ -308,6 +398,15 @@ namespace ProyectoASPEmenic.Paginas.Clientes {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtmunicipioresidencia;
+        
+        /// <summary>
+        /// Control RegularExpressionValidator8.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator8;
         
         /// <summary>
         /// Control Label9.
@@ -328,6 +427,15 @@ namespace ProyectoASPEmenic.Paginas.Clientes {
         protected global::System.Web.UI.WebControls.TextBox txtfechanacimiento;
         
         /// <summary>
+        /// Control RegularExpressionValidator11.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator11;
+        
+        /// <summary>
         /// Control Label10.
         /// </summary>
         /// <remarks>
@@ -346,6 +454,15 @@ namespace ProyectoASPEmenic.Paginas.Clientes {
         protected global::System.Web.UI.WebControls.TextBox txtdepartamentonacimiento;
         
         /// <summary>
+        /// Control RegularExpressionValidator9.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator9;
+        
+        /// <summary>
         /// Control Label11.
         /// </summary>
         /// <remarks>
@@ -362,6 +479,15 @@ namespace ProyectoASPEmenic.Paginas.Clientes {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtmunicipionacimiento;
+        
+        /// <summary>
+        /// Control RegularExpressionValidator10.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator10;
         
         /// <summary>
         /// Control Label4.
@@ -490,6 +616,24 @@ namespace ProyectoASPEmenic.Paginas.Clientes {
         protected global::System.Web.UI.WebControls.TextBox txttelefono1;
         
         /// <summary>
+        /// Control RequiredFieldValidator4.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator4;
+        
+        /// <summary>
+        /// Control RegularExpressionValidator12.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator12;
+        
+        /// <summary>
         /// Control Label20.
         /// </summary>
         /// <remarks>
@@ -506,6 +650,15 @@ namespace ProyectoASPEmenic.Paginas.Clientes {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txttelefono2;
+        
+        /// <summary>
+        /// Control RegularExpressionValidator13.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator13;
         
         /// <summary>
         /// Control Label21.
@@ -526,6 +679,15 @@ namespace ProyectoASPEmenic.Paginas.Clientes {
         protected global::System.Web.UI.WebControls.TextBox txttelefono3;
         
         /// <summary>
+        /// Control RegularExpressionValidator14.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator14;
+        
+        /// <summary>
         /// Control Label18.
         /// </summary>
         /// <remarks>
@@ -542,6 +704,15 @@ namespace ProyectoASPEmenic.Paginas.Clientes {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtcelular;
+        
+        /// <summary>
+        /// Control RegularExpressionValidator15.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator15;
         
         /// <summary>
         /// Control Label19.
@@ -562,6 +733,24 @@ namespace ProyectoASPEmenic.Paginas.Clientes {
         protected global::System.Web.UI.WebControls.TextBox txtemail1;
         
         /// <summary>
+        /// Control RequiredFieldValidator5.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator5;
+        
+        /// <summary>
+        /// Control RegularExpressionValidator16.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator16;
+        
+        /// <summary>
         /// Control Label22.
         /// </summary>
         /// <remarks>
@@ -578,6 +767,15 @@ namespace ProyectoASPEmenic.Paginas.Clientes {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtemail2;
+        
+        /// <summary>
+        /// Control RegularExpressionValidator17.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator17;
         
         /// <summary>
         /// Control Label16.
