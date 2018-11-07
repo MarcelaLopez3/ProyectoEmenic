@@ -197,7 +197,7 @@ namespace ProyectoASPEmenic.Paginas.Clientes
                 }
                 else
                 {
-                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Debe haber al menos un documento de identificación.')", true);
+                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Debe haber al menos un documento de identificación de la empresa.')", true);
                 }
             }
             else
