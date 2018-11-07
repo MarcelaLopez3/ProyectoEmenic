@@ -9,7 +9,7 @@
         <asp:HiddenField runat="server" ID="HFIdPersona"/>
         
 
-        <asp:GridView ID="GridListadoNaturales" runat="server" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal" OnSelectedIndexChanged="GridListadoNaturales_SelectedIndexChanged">
+        <asp:GridView ID="GridListadoNaturales" runat="server" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal" OnRowEditing="GridListadoNaturales_RowEditing" OnRowDeleting="GridListadoNaturales_RowDeleting" >
             <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
             <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
             <PagerStyle BackColor="White" ForeColor="Black" HorizontalAlign="Right" />
@@ -19,7 +19,9 @@
             <SortedDescendingCellStyle BackColor="#E5E5E5" />
             <SortedDescendingHeaderStyle BackColor="#242121" />
             <Columns>
-                 <asp:CommandField SelectText="Actualizar" ShowSelectButton="True" ButtonType="Button" ControlStyle-CssClass="btn btn-info" />
+                 <asp:CommandField SelectText="" ButtonType="Button" ControlStyle-CssClass="btn btn-info" CausesValidation="False" InsertVisible="False" ShowCancelButton="False" ShowDeleteButton="False" ShowEditButton="True" >
+                <ControlStyle CssClass="btn btn-info" BackColor="Red"></ControlStyle>
+                 </asp:CommandField>                
             </Columns>
         </asp:GridView>
     </center>

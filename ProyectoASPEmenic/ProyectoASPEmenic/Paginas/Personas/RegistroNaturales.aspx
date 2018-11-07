@@ -2,12 +2,6 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <script src="../../Scripts/jquery-1.10.2.min.js"></script>
-    <script src="../../Scripts/jquery.maskedinput.min.js"></script>
-    <script type='text/javascript'>
-        
-
-    </script>
     <center><h1><asp:Label runat="server" ID="lblpersonanatural" Text=" Registro Persona Natural" style="color:black; font-family:Verdana"></asp:Label></h1></center>
     <br />
     <div class="card border-primary mb-3">
@@ -237,11 +231,8 @@
     
     <div style="align-content:center">    
         <div class="form-row">
-            <div class="form-group col-md-6">      
+            <div class="form-group col-md-12">      
                 <center><asp:Button runat="server" ID="btnGuardarNaturales" Text="Guardar" CssClass="btn btn-info btn-block" style="color:white; background-color:red; border-color:red; width:auto" OnClick="btnGuardarNaturales_Click"></asp:Button></center>   
-            </div>
-            <div class="form-group col-md-6">
-                <center><asp:Button runat="server" ID="btnLimpiarNaturales" Text="Limpiar" CssClass="btn btn-info btn-block" style="color:white; background-color:red; border-color:red; width:auto" OnClick="btnLimpiarNaturales_Click"></asp:Button></center>          
             </div>
         </div>
    </div>
