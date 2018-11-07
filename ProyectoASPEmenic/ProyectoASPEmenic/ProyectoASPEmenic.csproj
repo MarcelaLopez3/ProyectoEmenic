@@ -225,6 +225,7 @@
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Imagenes\Logo_emenic.png" />
     <Content Include="Paginas\Clientes\ListadoClientes.aspx" />
+    <Content Include="Paginas\Emenic\ListadoEmenic.aspx" />
     <Content Include="Paginas\Personas\ActualizarJuridicos.aspx" />
     <Content Include="Paginas\Personas\ActualizarNaturales.aspx" />
     <Content Include="Paginas\Personas\ListadoJuridicos.aspx" />
@@ -326,6 +327,13 @@
     </Compile>
     <Compile Include="Paginas\Clientes\ListadoClientes.aspx.designer.cs">
       <DependentUpon>ListadoClientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\Emenic\ListadoEmenic.aspx.cs">
+      <DependentUpon>ListadoEmenic.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Emenic\ListadoEmenic.aspx.designer.cs">
+      <DependentUpon>ListadoEmenic.aspx</DependentUpon>
     </Compile>
     <Compile Include="Paginas\Personas\ActualizarJuridicos.aspx.cs">
       <DependentUpon>ActualizarJuridicos.aspx</DependentUpon>
