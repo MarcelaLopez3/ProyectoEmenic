@@ -17,7 +17,7 @@
             </div>
        </div>        
 
-        <asp:GridView ID="GridListadoJuridicas" runat="server" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal" OnSelectedIndexChanged="GridListadoJuridicas_SelectedIndexChanged" >
+        <asp:GridView ID="GridListadoJuridicas" runat="server" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal" OnSelectedIndexChanged="GridListadoJuridicas_SelectedIndexChanged" OnRowEditing="GridListadoJuridicas_RowEditing" >
             <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
             <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
             <PagerStyle BackColor="White" ForeColor="Black" HorizontalAlign="Right" />
@@ -27,8 +27,9 @@
             <SortedDescendingCellStyle BackColor="#E5E5E5" />
             <SortedDescendingHeaderStyle BackColor="#242121" />
             <Columns>
-                 <asp:CommandField SelectText="Actualizar" ShowSelectButton="True" ButtonType="Button" ControlStyle-CssClass="btn btn-info" />
-            
+                 <asp:CommandField SelectText="" ButtonType="Button" ControlStyle-CssClass="btn btn-info" CausesValidation="False" InsertVisible="False" ShowCancelButton="False" ShowEditButton="True" >
+                 <ControlStyle CssClass="btn btn-info" BackColor="Red"></ControlStyle>
+                 </asp:CommandField>
             </Columns>
         </asp:GridView>
     </center>

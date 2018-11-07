@@ -23,14 +23,22 @@ namespace ProyectoASPEmenic.Paginas.Personas
 
         protected void GridListadoJuridicas_SelectedIndexChanged(object sender, EventArgs e)
         {
-            GridViewRow row = GridListadoJuridicas.SelectedRow;
-            HFIdPersona.Value = row.Cells[1].Text;
-            Response.Redirect("~/Paginas/Personas/ActualizarJuridicos.aspx?act=" + HFIdPersona.Value);
+            //GridViewRow row = GridListadoJuridicas.SelectedRow;
+            //HFIdPersona.Value = row.Cells[1].Text;
+            //Response.Redirect("~/Paginas/Personas/ActualizarJuridicos.aspx?act=" + HFIdPersona.Value);
         }
 
         protected void btnAgregarRegistro_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/Paginas/Personas/RegistroJuridicos.aspx");
+        }
+
+        protected void GridListadoJuridicas_RowEditing(object sender, GridViewEditEventArgs e)
+        {
+            //IdPersona de la tabla que selecciona
+            HFIdPersona.Value = GridListadoJuridicas.Rows[e.NewEditIndex].Cells[1].Text;
+            //Envia IdPersona a formulario de actualizar   
+            Response.Redirect("~/Paginas/Personas/ActualizarJuridicos.aspx?act=" + HFIdPersona.Value);
         }
     }
 }

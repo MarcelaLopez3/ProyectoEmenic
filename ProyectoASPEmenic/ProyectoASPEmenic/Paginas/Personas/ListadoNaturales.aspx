@@ -28,7 +28,7 @@
             <SortedDescendingHeaderStyle BackColor="#242121" />
             <Columns>
                  <asp:CommandField SelectText="" ButtonType="Button" ControlStyle-CssClass="btn btn-info" CausesValidation="False" InsertVisible="False" ShowCancelButton="False" ShowDeleteButton="False" ShowEditButton="True" >
-                <ControlStyle CssClass="btn btn-info" BackColor="Red"></ControlStyle>
+                 <ControlStyle CssClass="btn btn-info" BackColor="Red"></ControlStyle>
                  </asp:CommandField>                
             </Columns>
         </asp:GridView>
