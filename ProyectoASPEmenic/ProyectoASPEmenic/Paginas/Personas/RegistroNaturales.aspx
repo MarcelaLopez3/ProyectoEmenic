@@ -176,26 +176,26 @@
                    <asp:TextBox runat="server" ID="txttelefono1" CssClass="form-control"></asp:TextBox>
                    <asp:RequiredFieldValidator ID="RequiredFieldValidator4"  Display="Dynamic" SetFocusOnError="True" 
                    CssClass="alert-text" runat="server" ControlToValidate="txttelefono1" ErrorMessage="* Valor Requerido"></asp:RequiredFieldValidator>
-                   <asp:RegularExpressionValidator ID="RegularExpressionValidator12" runat="server" CssClass="alert-text"
-                   ErrorMessage="* Numero no valido" Display="Dynamic" SetFocusOnError="True" ControlToValidate="txttelefono1" ValidationExpression="^([7|6|2][0-9]{3})+(-){0,1}[0-9]{4}"></asp:RegularExpressionValidator>
+                   <%--<asp:RegularExpressionValidator ID="RegularExpressionValidator12" runat="server" CssClass="alert-text"
+                   ErrorMessage="* Numero no valido" Display="Dynamic" SetFocusOnError="True" ControlToValidate="txttelefono1" ValidationExpression="^([7|6|2][0-9]{3})+(-){0,1}[0-9]{4}"></asp:RegularExpressionValidator>--%>
                </div>
                <div class="form-group col-md-3">
                    <asp:Label runat="server" ID="Label20" Text="Telefono 2:" style="color:black"></asp:Label>
                    <asp:TextBox runat="server" ID="txttelefono2" CssClass="form-control"></asp:TextBox>
-                   <asp:RegularExpressionValidator ID="RegularExpressionValidator13" runat="server" CssClass="alert-text"
-                   ErrorMessage="* Numero no valido" Display="Dynamic" SetFocusOnError="True" ControlToValidate="txttelefono2" ValidationExpression="^([7|6|2][0-9]{3})+(-){0,1}[0-9]{4}"></asp:RegularExpressionValidator>
+                   <%--<asp:RegularExpressionValidator ID="RegularExpressionValidator13" runat="server" CssClass="alert-text"
+                   ErrorMessage="* Numero no valido" Display="Dynamic" SetFocusOnError="True" ControlToValidate="txttelefono2" ValidationExpression="^([7|6|2][0-9]{3})+(-){0,1}[0-9]{4}"></asp:RegularExpressionValidator>--%>
                </div>
                <div class="form-group col-md-3">
                    <asp:Label runat="server" ID="Label21" Text="Telefono 3:" style="color:black"></asp:Label>
                    <asp:TextBox runat="server" ID="txttelefono3" CssClass="form-control"></asp:TextBox>
-                   <asp:RegularExpressionValidator ID="RegularExpressionValidator14" runat="server" CssClass="alert-text"
-                   ErrorMessage="* Numero no valido" Display="Dynamic" SetFocusOnError="True" ControlToValidate="txttelefono3" ValidationExpression="^([7|6|2][0-9]{3})+(-){0,1}[0-9]{4}"></asp:RegularExpressionValidator>
+                   <%--<asp:RegularExpressionValidator ID="RegularExpressionValidator14" runat="server" CssClass="alert-text"
+                   ErrorMessage="* Numero no valido" Display="Dynamic" SetFocusOnError="True" ControlToValidate="txttelefono3" ValidationExpression="^([7|6|2][0-9]{3})+(-){0,1}[0-9]{4}"></asp:RegularExpressionValidator>--%>
                </div>
                <div class="form-group col-md-3">
                    <asp:Label runat="server" ID="Label18" Text="Celular:" style="color:black"></asp:Label>
                    <asp:TextBox runat="server" ID="txtcelular" CssClass="form-control"></asp:TextBox>
-                   <asp:RegularExpressionValidator ID="RegularExpressionValidator15" runat="server" CssClass="alert-text"
-                   ErrorMessage="* Numero no valido" Display="Dynamic" SetFocusOnError="True" ControlToValidate="txtcelular" ValidationExpression="^([7|6|2][0-9]{3})+(-){0,1}[0-9]{4}"></asp:RegularExpressionValidator>
+                   <%--<asp:RegularExpressionValidator ID="RegularExpressionValidator15" runat="server" CssClass="alert-text"
+                   ErrorMessage="* Numero no valido" Display="Dynamic" SetFocusOnError="True" ControlToValidate="txtcelular" ValidationExpression="^([7|6|2][0-9]{3})+(-){0,1}[0-9]{4}"></asp:RegularExpressionValidator>--%>
                </div>
            </div>
            <div class="form-row">
