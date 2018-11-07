@@ -7,28 +7,46 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace ProyectoASPEmenic.Paginas.Personas {
+namespace ProyectoASPEmenic.Paginas.Emenic {
     
     
-    public partial class ListadoJuridicos {
+    public partial class ListadoEmenic {
         
         /// <summary>
-        /// Control lblpersonajuridica.
+        /// Control lblpersonanatural.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblpersonajuridica;
+        protected global::System.Web.UI.WebControls.Label lblpersonanatural;
         
         /// <summary>
-        /// Control HFIdPersona.
+        /// Control btnDashboard.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField HFIdPersona;
+        protected global::System.Web.UI.WebControls.Button btnDashboard;
+        
+        /// <summary>
+        /// Control Label1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label1;
+        
+        /// <summary>
+        /// Control GridListadoEmenic1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView GridListadoEmenic1;
         
         /// <summary>
         /// Control Label2.
@@ -40,21 +58,12 @@ namespace ProyectoASPEmenic.Paginas.Personas {
         protected global::System.Web.UI.WebControls.Label Label2;
         
         /// <summary>
-        /// Control btnAgregarRegistro.
+        /// Control GridListadoEmenic2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAgregarRegistro;
-        
-        /// <summary>
-        /// Control GridListadoJuridicas.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridListadoJuridicas;
+        protected global::System.Web.UI.WebControls.GridView GridListadoEmenic2;
     }
 }
