@@ -213,9 +213,7 @@ namespace ProyectoASPEmenic.Paginas.Clientes
 
             //inicia el insert del registro
             if (bandera_dui == true && bandera_nit == true && bandera_licencia == true && bandera_pasaporte == true && bandera_otro == true)
-            {
-                
-
+            {           
                 if (contenido_dui == true || contenido_nit == true || contenido_licencia == true || contenido_pasaporte == true || contenido_otro == true)
                 {
                     //consulta que se ingresa a la base de datos
@@ -261,51 +259,8 @@ namespace ProyectoASPEmenic.Paginas.Clientes
             }
             else
             {
-                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('No se ha podido ingresar registro, verificar documentos de identificación son correctos.')", true);
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('No se ha podido ingresar registro, verificar que los documentos de identificación son correctos.')", true);
             }
         }
-
-        protected void LimpiarNaturales()
-        {
-            txtprimernombre.Text = "";
-            txtsegundonombre.Text = "";
-            txtprimerapellido.Text = "";
-            txtsegundoapellido.Text = "";
-            txtedad.Text = "";
-            ddlgenero.SelectedValue = "Femenino";
-            ddlestadocivil.SelectedValue = "Soltero";
-            txtprofesionoficio.Text = "";
-            txtdireccionresidencia.Text = "";
-            txtdepartamentoresidencia.Text = "";
-            txtmunicipioresidencia.Text = "";
-            txtfechanacimiento.Text = "";
-            txtdepartamentonacimiento.Text = "";
-            txtmunicipionacimiento.Text = "";
-            txtDUI.Text = "";
-            txtNIT.Text = "";
-            txtnumerolicencia.Text = "";
-            txtpasaporte.Text = "";
-            txtnombreotro.Text = "";
-            txtnumerootro.Text = "";
-            txttelefono1.Text = "";
-            txttelefono2.Text = "";
-            txttelefono3.Text = "";
-            txtcelular.Text = "";
-            txtemail1.Text = "";
-            txtemail2.Text = "";
-            txtobservaciones.Text = "";
-            checkUsuario.Checked = false;
-            checkEmpleado.Checked = false;
-            checkCliente.Checked = false;
-            checkProveedor.Checked = false;
-            checkSocio.Checked = false;
-        }
-
-        protected void btnLimpiarNaturales_Click(object sender, EventArgs e)
-        {
-            LimpiarNaturales();
-        }
-
-        
     }
 }
