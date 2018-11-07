@@ -8,6 +8,14 @@
     <center>
         <asp:HiddenField runat="server" ID="HFIdPersona"/>
         
+        <div class="form-row">
+            <div class="form-group col-md-3">
+                    <asp:Label runat="server" ID="Label2" Text="Para agregar un nuevo registro:" style="color:black"></asp:Label>                
+            </div>
+            <div class="form-group col-md-2">
+                <asp:Button ID="btnAgregarRegistro" runat="server" CssClass="form-control" class="form-control" Text="Agregar Nuevo" BackColor="Red" ForeColor="White" OnClick="btnAgregarRegistro_Click"></asp:Button> 
+            </div>
+       </div>
 
         <asp:GridView ID="GridListadoNaturales" runat="server" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal" OnRowEditing="GridListadoNaturales_RowEditing" OnRowDeleting="GridListadoNaturales_RowDeleting" >
             <FooterStyle BackColor="#CCCC99" ForeColor="Black" />

@@ -9,15 +9,15 @@
         <asp:HiddenField runat="server" ID="HFIdPersona"/>
         
         <div class="form-row">
-        <div class="form-group col-md-2">
-                <asp:Label runat="server" ID="Label2" Text="Tipo Persona:" style="color:black"></asp:Label>                
-        </div>
-        <div class="form-group col-md-3">
-            <asp:DropDownList ID="ddltipopersona" runat="server" CssClass="form-control" class="form-control" AutoPostBack="true">
-                    <asp:ListItem Text="Persona Natural" Value="PersonaNatural"></asp:ListItem>
-                    <asp:ListItem Text="Persona Juridica" Value="PersonaJuridica"></asp:ListItem>
-            </asp:DropDownList> 
-        </div>
+            <div class="form-group col-md-2">
+                    <asp:Label runat="server" ID="Label2" Text="Tipo Persona:" style="color:black"></asp:Label>                
+            </div>
+            <div class="form-group col-md-3">
+                <asp:DropDownList ID="ddltipopersona" runat="server" CssClass="form-control" class="form-control" AutoPostBack="true">
+                        <asp:ListItem Text="Persona Natural" Value="PersonaNatural"></asp:ListItem>
+                        <asp:ListItem Text="Persona Juridica" Value="PersonaJuridica"></asp:ListItem>
+                </asp:DropDownList> 
+            </div>
        </div>
         <br />
         <asp:GridView ID="GridListadoClientes" runat="server" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal" OnRowDeleting="GridListadoClientes_RowDeleting" OnRowEditing="GridListadoClientes_RowEditing" >

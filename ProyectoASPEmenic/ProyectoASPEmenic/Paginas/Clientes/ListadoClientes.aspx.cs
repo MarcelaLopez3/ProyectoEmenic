@@ -60,9 +60,40 @@ namespace ProyectoASPEmenic.Paginas.Clientes
 
         protected void GridListadoClientes_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
+            int Resultado_servicio = 0;
             //IdPersona de la tabla que selecciona
             HFIdPersona.Value = GridListadoClientes.Rows[e.RowIndex].Cells[1].Text;
-            ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Se eliminará al cliente "+ HFIdPersona.Value+"')", true);
+
+            //Verificar si la persona posee o ha tenido servicios contratados de emenic
+            query = "SELECT IF( EXISTS(SELECT * FROM serviciocontratado WHERE IdCliente = '" + HFIdPersona.Value + "'), 1, 0) as Resultado";
+            conexion.IniciarConexion();
+            conexion.RecibeQuery(query);
+            while (conexion.reg.Read())
+            {
+                 Resultado_servicio = conexion.reg.GetInt32(0);                
+            }
+            conexion.reg.Close();
+            conexion.CerrarConexion();
+
+            //verificar si es o no eliminado
+            if (Resultado_servicio == 1)
+            {
+                //no puede ser eliminado porque tiene registros hijos
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Cliente NO puede ser eliminado, tiene servicios contratados.')", true);
+            }
+            else
+            {
+                //si puede ser eliminado
+                query = "UPDATE persona SET Cliente = 0 WHERE IdPersona = " + HFIdPersona.Value;
+                conexion.IniciarConexion();
+                conexion.EnviarQuery(query);
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Se eliminó al cliente " + HFIdPersona.Value + "')", true);
+                conexion.CerrarConexion();
+                Response.Redirect("~/Paginas/Clientes/ListadoClientes.aspx");
+            }
+
+            HFIdPersona.Value = "";
+            
         }
     }
 }

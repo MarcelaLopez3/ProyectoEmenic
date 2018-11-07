@@ -15,6 +15,7 @@ namespace ProyectoASPEmenic.Paginas.Personas
         string query = "";
         bool bandera_dui = false, bandera_nit = false, bandera_licencia = false, bandera_pasaporte = false, bandera_otro = false;
         bool contenido_dui = false, contenido_nit = false, contenido_licencia = false, contenido_pasaporte = false, contenido_otro = false;
+        int Resultado_servicio = 0;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -215,6 +216,27 @@ namespace ProyectoASPEmenic.Paginas.Personas
             Boolean Socio = checkSocio.Checked;
             Boolean Activo = checkActivo.Checked;
 
+            //Verificar si la persona posee o ha tenido servicios contratados de emenic
+            if (Cliente == false)
+            {
+                query = "SELECT IF( EXISTS(SELECT * FROM serviciocontratado WHERE IdCliente = '" + VarAct + "'), 1, 0) as Resultado";
+                conexion.IniciarConexion();
+                conexion.RecibeQuery(query);
+                while (conexion.reg.Read())
+                {
+                    Resultado_servicio = conexion.reg.GetInt32(0);
+                }
+                conexion.reg.Close();
+                conexion.CerrarConexion();
+
+                //verificar si es o no eliminado
+                if (Resultado_servicio == 1)
+                {
+                    //no puede ser eliminado porque tiene registros hijos
+                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Este registro es cliente activo, tiene registros de servicios contratados, NO puede desactivar la bandera Cliente.')", true);
+                }
+            }
+            
             //validando dui
             if (txtDUI.Text.Length > 0 && txtDUI.Text != " ")
             {

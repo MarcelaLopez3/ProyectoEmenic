@@ -33,5 +33,10 @@ namespace ProyectoASPEmenic.Paginas.Personas
         {
             
         }
+
+        protected void btnAgregarRegistro_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Paginas/Personas/RegistroNaturales.aspx");
+        }
     }
 }
