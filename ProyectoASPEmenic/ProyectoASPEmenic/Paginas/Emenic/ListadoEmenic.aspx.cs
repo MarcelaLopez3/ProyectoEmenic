@@ -28,6 +28,8 @@ namespace ProyectoASPEmenic.Paginas.Emenic
             }
         }
 
+        //Debo cambiar los eventos
+
         protected void GridListadoEmenic1_RowEditing(object sender, GridViewEditEventArgs e)
         {
             //Ir a formulario de Ver detalles de emenic
