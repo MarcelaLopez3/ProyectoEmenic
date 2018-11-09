@@ -9,13 +9,17 @@ namespace ProyectoASPEmenic.Paginas.Servicios
 {
     public partial class ServicioContratado : System.Web.UI.Page
     {
+        Conexion conexion = new Conexion();
+        string query = "";
+
         protected void Page_Load(object sender, EventArgs e)
         {
             MVServicios.SetActiveView(VNuevoServicio);
-            CargandoServicio();
+            CargandoDocumentoServicio();
+            CargandoTablaServicio();
         }
 
-        protected void CargandoServicio()
+        protected void CargandoDocumentoServicio()
         {
             if (checkTransporte.Checked == true)
             {
@@ -36,6 +40,46 @@ namespace ProyectoASPEmenic.Paginas.Servicios
             }
         }
 
+        protected void CargandoTablaServicio()
+        {
+            if (IsPostBack)
+            {
+                TipoServicio(ddltiposervicio.SelectedValue);
+            }
+            else if (!IsPostBack)
+            {
+                ddltiposervicio.SelectedValue = "Transporte";
+                TipoServicio(ddltiposervicio.SelectedValue);
+            }
+        }
+
+        protected void TipoServicio(string tipo)
+        {
+            //recuperando el IdCliente
+            string VarSer = Request.QueryString["ser"];
+
+            //Seleccionar tipo
+            if (tipo == "Alquiler")
+            {
+                query = "SELECT Id,PagoEmpresa,FechaAdquisicion,FechaVencimiento,Descripcion" +
+                " FROM serviciocontratado WHERE IdCliente = "+ VarSer + " AND Alquiler = 1;";
+                EjecutarGridServicio(query);
+            }
+            else if (tipo == "Transporte")
+            {
+                query = "SELECT Id,PagoEmpresa,FechaAdquisicion,FechaVencimiento,Descripcion" +
+               " FROM serviciocontratado WHERE IdCliente = " + VarSer + " AND Transporte = 1;";
+                EjecutarGridServicio(query);
+            }
+        }
+
+        protected void EjecutarGridServicio(string query)
+        {
+            conexion.IniciarConexion();
+            conexion.TablasQuery(query, this.GridListadoServicio);
+            conexion.CerrarConexion();
+        }
+
         protected void btnCartaPorte_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/Paginas/Servicios/RegistroCartaporte.aspx");
@@ -44,6 +88,28 @@ namespace ProyectoASPEmenic.Paginas.Servicios
         protected void btnContrato_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/Paginas/Servicios/RegistroContrato.aspx");
+        }
+
+        protected void btnAgregarServicioContra_Click(object sender, EventArgs e)
+        {
+            //recuperando entradas
+            bool Transporte = checkTransporte.Checked;
+            bool Alquiler = checkAlquiler.Checked;
+            string FechaAdquisicion = txtfechaAdquisicion.Text;
+            string FechaVencimiento = txtfechaVencimiento.Text;
+            string Descripcion = txtDescripcion.Text;
+            string PeriodoCobro = txtperiodocobro.Text;
+            bool Retorno = false;
+            if (ddlretorno.SelectedValue == "Si")
+            {
+                Retorno = true;
+            }
+            string Destino = ddlDestinoConsignatario.SelectedValue;
+            string PagoEmpresa = txtpagoempresa.Text;
+            string PagoEstadia = txtpagoestadia.Text;
+            string PagoGuardia = txtpagoguardia.Text;
+            string ViaticosMotorista = txtviaticos.Text;
+            string Galones = txtgalones.Text;            
         }
     }
 }
