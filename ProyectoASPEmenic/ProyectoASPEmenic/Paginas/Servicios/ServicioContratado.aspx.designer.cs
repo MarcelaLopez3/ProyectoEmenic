@@ -22,6 +22,24 @@ namespace ProyectoASPEmenic.Paginas.Servicios {
         protected global::System.Web.UI.WebControls.Label lbltitulo;
         
         /// <summary>
+        /// Control MVServicios.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.MultiView MVServicios;
+        
+        /// <summary>
+        /// Control VNuevoServicio.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.View VNuevoServicio;
+        
+        /// <summary>
         /// Control checkTransporte.
         /// </summary>
         /// <remarks>
@@ -76,40 +94,40 @@ namespace ProyectoASPEmenic.Paginas.Servicios {
         protected global::System.Web.UI.WebControls.Button btnContrato;
         
         /// <summary>
-        /// Control lblCliente.
+        /// Control lbSalida.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCliente;
+        protected global::System.Web.UI.WebControls.Label lbSalida;
         
         /// <summary>
-        /// Control txtCliente.
+        /// Control ddlSalida.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCliente;
+        protected global::System.Web.UI.WebControls.DropDownList ddlSalida;
         
         /// <summary>
-        /// Control lbDescripcion.
+        /// Control lbDestino.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbDescripcion;
+        protected global::System.Web.UI.WebControls.Label lbDestino;
         
         /// <summary>
-        /// Control txtDescripcion.
+        /// Control ddlDestino.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDescripcion;
+        protected global::System.Web.UI.WebControls.DropDownList ddlDestino;
         
         /// <summary>
         /// Control lbPeriodoCobro.
@@ -130,58 +148,40 @@ namespace ProyectoASPEmenic.Paginas.Servicios {
         protected global::System.Web.UI.WebControls.TextBox txtperiodocobro;
         
         /// <summary>
-        /// Control lbSalida.
+        /// Control lblRetorno.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbSalida;
+        protected global::System.Web.UI.WebControls.Label lblRetorno;
         
         /// <summary>
-        /// Control txtSalida.
+        /// Control ddlretorno.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtSalida;
+        protected global::System.Web.UI.WebControls.DropDownList ddlretorno;
         
         /// <summary>
-        /// Control lbretorno.
+        /// Control lbDescripcion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbretorno;
+        protected global::System.Web.UI.WebControls.Label lbDescripcion;
         
         /// <summary>
-        /// Control txtretorno.
+        /// Control txtDescripcion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtretorno;
-        
-        /// <summary>
-        /// Control lbDestino.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbDestino;
-        
-        /// <summary>
-        /// Control txtDestino.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDestino;
+        protected global::System.Web.UI.WebControls.TextBox txtDescripcion;
         
         /// <summary>
         /// Control lbfechaAdquisicion.
@@ -220,13 +220,13 @@ namespace ProyectoASPEmenic.Paginas.Servicios {
         protected global::System.Web.UI.WebControls.TextBox txtfechaVencimiento;
         
         /// <summary>
-        /// Control lbpagoempresa.
+        /// Control lblpagoempresa.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbpagoempresa;
+        protected global::System.Web.UI.WebControls.Label lblpagoempresa;
         
         /// <summary>
         /// Control txtpagoempresa.
@@ -310,12 +310,57 @@ namespace ProyectoASPEmenic.Paginas.Servicios {
         protected global::System.Web.UI.WebControls.TextBox txtgalones;
         
         /// <summary>
-        /// Control btnGuardarServicioContra.
+        /// Control btnAgregarServicioContra.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnGuardarServicioContra;
+        protected global::System.Web.UI.WebControls.Button btnAgregarServicioContra;
+        
+        /// <summary>
+        /// Control lbllistadoservicio.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbllistadoservicio;
+        
+        /// <summary>
+        /// Control Label2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label2;
+        
+        /// <summary>
+        /// Control ddltipopersona.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddltipopersona;
+        
+        /// <summary>
+        /// Control GridListadoServicio.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView GridListadoServicio;
+        
+        /// <summary>
+        /// Control V.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.View V;
     }
 }
