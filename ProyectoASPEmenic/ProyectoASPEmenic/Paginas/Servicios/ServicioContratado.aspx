@@ -27,27 +27,26 @@
                 </div>
                 <hr />
                 <div class="form-row">
-                    <div class="form-group col-md-3">    
-                            <asp:Label runat="server" ID="lbSalida" Text="Salida:"  style="color:black"></asp:Label>
-                            <asp:DropDownList runat="server" ID="ddlSalida" CssClass="form-control" >
-                            </asp:DropDownList>
-                    </div>
                     <div class="form-group col-md-3">
-                        <asp:Label runat="server" ID="lbDestino" Text="Lugar de destino:" style="color:black"></asp:Label>
-                        <asp:DropDownList runat="server" ID="ddlDestino" CssClass="form-control" >
+                        <asp:Label runat="server" ID="lbDestino" Text="Destino/Consignatario:" style="color:black"></asp:Label>
+                        <asp:DropDownList runat="server" ID="ddlDestinoConsignatario" CssClass="form-control" >
                             </asp:DropDownList>
-                    </div>                                       
-                    <div class="form-group col-md-3">
-                        <asp:Label runat="server" ID="lbPeriodoCobro" Text="Periodo de cobro:" style="color:black"></asp:Label>
-                        <asp:TextBox runat="server" ID="txtperiodocobro" CssClass="form-control"></asp:TextBox>    
-                    </div> 
+                    </div>   
                     <div class="form-group col-md-3">
                         <asp:Label runat="server" ID="lblRetorno" Text="Retorno:" style="color:black"></asp:Label>
                         <asp:DropDownList runat="server" ID="ddlretorno" CssClass="form-control">
                             <asp:ListItem Text="Si" Value="1"></asp:ListItem>
                             <asp:ListItem Text="No" Value="0"></asp:ListItem>
                         </asp:DropDownList>
+                    </div>                                     
+                    <div class="form-group col-md-3">
+                        <asp:Label runat="server" ID="lbPeriodoCobro" Text="Periodo de cobro:" style="color:black"></asp:Label>
+                        <asp:TextBox runat="server" ID="txtperiodocobro" CssClass="form-control"></asp:TextBox>    
                     </div> 
+                    <div class="form-group col-md-3">
+                        <asp:Label runat="server" ID="lbgalones" Text="Galones:" style="color:black"></asp:Label>
+                        <asp:TextBox runat="server" ID="txtgalones" CssClass="form-control"></asp:TextBox>
+                    </div>                    
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-6">    
@@ -81,15 +80,9 @@
                         <asp:TextBox runat="server" ID="txtviaticos" CssClass="form-control"></asp:TextBox>
                     </div>
                 </div>
-                <div class="form-row">                      
-                    <div class="form-group col-md-3">
-                        <asp:Label runat="server" ID="lbgalones" Text="Galones:" style="color:black"></asp:Label>
-                        <asp:TextBox runat="server" ID="txtgalones" CssClass="form-control"></asp:TextBox>
-                    </div>
-                </div>
             </div>
             <div>          
-            <center><asp:Button runat="server" ID="btnAgregarServicioContra" Text="Agregar" CssClass="btn btn-info btn-block" style="color:white; background-color:red; border-color:red; width:auto" ></asp:Button></center>             
+            <center><asp:Button runat="server" ID="btnAgregarServicioContra" Text="Agregar" CssClass="btn btn-info btn-block" style="color:white; background-color:red; border-color:red; width:auto" OnClick="btnAgregarServicioContra_Click" ></asp:Button></center>             
             </div>
             <hr />
             </div>
@@ -100,12 +93,14 @@
                             <asp:Label runat="server" ID="Label2" Text="Tipo Servicio:" style="color:black"></asp:Label>                
                     </div>
                     <div class="form-group col-md-3">
-                        <asp:DropDownList ID="ddltipopersona" runat="server" CssClass="form-control" class="form-control" AutoPostBack="true">
+                        <asp:DropDownList ID="ddltiposervicio" runat="server" CssClass="form-control" class="form-control" AutoPostBack="true">
                                 <asp:ListItem Text="Alquiler" Value="Alquiler"></asp:ListItem>
                                 <asp:ListItem Text="Transporte" Value="Transporte"></asp:ListItem>
                         </asp:DropDownList> 
                     </div>
                </div>
+            <center>
+            <div>
                <asp:GridView ID="GridListadoServicio" runat="server" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal" >
                     <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
                     <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
@@ -116,11 +111,13 @@
                     <SortedDescendingCellStyle BackColor="#E5E5E5" />
                     <SortedDescendingHeaderStyle BackColor="#242121" />
                     <Columns>
-                         <asp:CommandField SelectText="Editar" ButtonType="Button" ControlStyle-CssClass="btn btn-info" CausesValidation="False" InsertVisible="False" ShowCancelButton="False" ShowEditButton="False" >
+                         <asp:CommandField SelectText="Editar" ButtonType="Button" ControlStyle-CssClass="btn btn-info" CausesValidation="False" InsertVisible="False" ShowCancelButton="False" ShowEditButton="False" ShowSelectButton="True" >
                          <ControlStyle CssClass="btn btn-info" BackColor="Red"></ControlStyle>
                          </asp:CommandField>
                     </Columns>
                 </asp:GridView>
+            </div>
+            </center>
         </asp:View>
 
         <asp:View runat="server" ID="V">
