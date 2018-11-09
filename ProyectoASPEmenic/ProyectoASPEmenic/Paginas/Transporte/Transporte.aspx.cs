@@ -36,7 +36,7 @@ namespace ProyectoASPEmenic.Paginas.Servicios
             conexion.EnviarQuery(query);
             conexion.CerrarConexion();
             ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Se ha insertado con exito.')", true);
-            Response.Redirect("~/Paginas/Servicios/ListadoTransporte.aspx");
+            Response.Redirect("~/Paginas/Transporte/ListadoTransporte.aspx");
         }
 
         protected void LimpiarTransporte()
