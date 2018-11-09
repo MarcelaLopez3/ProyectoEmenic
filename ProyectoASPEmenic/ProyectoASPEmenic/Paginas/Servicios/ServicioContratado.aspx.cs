@@ -11,6 +11,7 @@ namespace ProyectoASPEmenic.Paginas.Servicios
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            MVServicios.SetActiveView(VNuevoServicio);
             CargandoServicio();
         }
 
