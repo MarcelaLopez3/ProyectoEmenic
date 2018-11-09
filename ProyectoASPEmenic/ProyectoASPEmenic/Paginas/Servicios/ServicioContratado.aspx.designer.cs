@@ -94,24 +94,6 @@ namespace ProyectoASPEmenic.Paginas.Servicios {
         protected global::System.Web.UI.WebControls.Button btnContrato;
         
         /// <summary>
-        /// Control lbSalida.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbSalida;
-        
-        /// <summary>
-        /// Control ddlSalida.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlSalida;
-        
-        /// <summary>
         /// Control lbDestino.
         /// </summary>
         /// <remarks>
@@ -121,13 +103,31 @@ namespace ProyectoASPEmenic.Paginas.Servicios {
         protected global::System.Web.UI.WebControls.Label lbDestino;
         
         /// <summary>
-        /// Control ddlDestino.
+        /// Control ddlDestinoConsignatario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlDestino;
+        protected global::System.Web.UI.WebControls.DropDownList ddlDestinoConsignatario;
+        
+        /// <summary>
+        /// Control lblRetorno.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblRetorno;
+        
+        /// <summary>
+        /// Control ddlretorno.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlretorno;
         
         /// <summary>
         /// Control lbPeriodoCobro.
@@ -148,22 +148,22 @@ namespace ProyectoASPEmenic.Paginas.Servicios {
         protected global::System.Web.UI.WebControls.TextBox txtperiodocobro;
         
         /// <summary>
-        /// Control lblRetorno.
+        /// Control lbgalones.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblRetorno;
+        protected global::System.Web.UI.WebControls.Label lbgalones;
         
         /// <summary>
-        /// Control ddlretorno.
+        /// Control txtgalones.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlretorno;
+        protected global::System.Web.UI.WebControls.TextBox txtgalones;
         
         /// <summary>
         /// Control lbDescripcion.
@@ -290,24 +290,6 @@ namespace ProyectoASPEmenic.Paginas.Servicios {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtviaticos;
-        
-        /// <summary>
-        /// Control lbgalones.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbgalones;
-        
-        /// <summary>
-        /// Control txtgalones.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtgalones;
         
         /// <summary>
         /// Control btnAgregarServicioContra.
