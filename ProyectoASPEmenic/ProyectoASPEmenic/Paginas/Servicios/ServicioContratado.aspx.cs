@@ -17,6 +17,7 @@ namespace ProyectoASPEmenic.Paginas.Servicios
             MVServicios.SetActiveView(VNuevoServicio);
             CargandoDocumentoServicio();
             CargandoTablaServicio();
+            cargarDestinos();
         }
 
         protected void CargandoDocumentoServicio()
@@ -71,6 +72,18 @@ namespace ProyectoASPEmenic.Paginas.Servicios
                " FROM serviciocontratado WHERE IdCliente = " + VarSer + " AND Transporte = 1;";
                 EjecutarGridServicio(query);
             }
+        }
+
+        //Función para llenar combobox
+        protected void cargarDestinos()
+        {
+            string query = "SELECT IdPersona,NombreComercial from persona where PersonaJuridica=1 and Activo=1";
+            conexion.IniciarConexion();
+            ddlDestinoConsignatario.DataSource = conexion.llena(query);
+            conexion.CerrarConexion();
+            ddlDestinoConsignatario.DataTextField = "NombreComercial";
+            ddlDestinoConsignatario.DataValueField = "IdPersona";
+            ddlDestinoConsignatario.DataBind();            
         }
 
         protected void EjecutarGridServicio(string query)

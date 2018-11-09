@@ -22,6 +22,15 @@ namespace ProyectoASPEmenic.Paginas.Servicios {
         protected global::System.Web.UI.WebControls.Label lbltitulo;
         
         /// <summary>
+        /// Control ScriptManager1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.ScriptManager ScriptManager1;
+        
+        /// <summary>
         /// Control MVServicios.
         /// </summary>
         /// <remarks>
@@ -109,7 +118,7 @@ namespace ProyectoASPEmenic.Paginas.Servicios {
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlDestinoConsignatario;
+        protected global::AjaxControlToolkit.ComboBox ddlDestinoConsignatario;
         
         /// <summary>
         /// Control lblRetorno.

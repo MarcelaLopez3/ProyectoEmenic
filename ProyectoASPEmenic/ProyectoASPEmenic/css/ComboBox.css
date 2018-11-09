@@ -1,0 +1,24 @@
+﻿.WindowsStyle .ajax__combobox_inputcontainer .ajax__combobox_textboxcontainer input
+    {
+        margin: 0;
+        border: solid 1px #7F9DB9;
+        border-right: 0px none;
+        padding: 1px 0px 0px 5px;
+        font-size: 13px;
+        height: 18px;
+        position: relative;       
+    }
+    .WindowsStyle .ajax__combobox_inputcontainer .ajax__combobox_buttoncontainer button
+    {
+        margin: 0;
+        padding: 0;
+        background-image: url(windows-arrow.gif);
+        background-position: top left;
+        border: 0px none;
+        height: 21px;
+        width: 21px;
+    }
+    .WindowsStyle .ajax__combobox_itemlist
+    {
+        border-color: #7F9DB9;
+    }
