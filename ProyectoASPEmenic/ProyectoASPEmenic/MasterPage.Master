@@ -96,8 +96,8 @@
             <span>Transporte</span>
           </a>
           <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-              <asp:HyperLink runat="server" CssClass="dropdown-item" NavigateUrl="~/Paginas/Servicios/Transporte.aspx" Text="Registro de Transporte"></asp:HyperLink>
-              <asp:HyperLink runat="server" CssClass="dropdown-item" NavigateUrl="~/Paginas/Servicios/ListadoTransporte.aspx" Text="Listado de Transporte"></asp:HyperLink>
+              <asp:HyperLink runat="server" CssClass="dropdown-item" NavigateUrl="~/Paginas/Transporte/Transporte.aspx" Text="Registro de Transporte"></asp:HyperLink>
+              <asp:HyperLink runat="server" CssClass="dropdown-item" NavigateUrl="~/Paginas/Transporte/ListadoTransporte.aspx" Text="Listado de Transporte"></asp:HyperLink>
           </div>
         </li>
         
