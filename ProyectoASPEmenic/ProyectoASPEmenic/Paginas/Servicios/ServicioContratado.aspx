@@ -82,7 +82,7 @@
                 </div>
             </div>
             <div>          
-            <center><asp:Button runat="server" ID="btnAgregarServicioContra" Text="Agregar" CssClass="btn btn-info btn-block" style="color:white; background-color:red; border-color:red; width:auto" ></asp:Button></center>             
+            <center><asp:Button runat="server" ID="btnAgregarServicioContra" Text="Agregar" CssClass="btn btn-info btn-block" style="color:white; background-color:red; border-color:red; width:auto" OnClick="btnAgregarServicioContra_Click" ></asp:Button></center>             
             </div>
             <hr />
             </div>
@@ -93,12 +93,14 @@
                             <asp:Label runat="server" ID="Label2" Text="Tipo Servicio:" style="color:black"></asp:Label>                
                     </div>
                     <div class="form-group col-md-3">
-                        <asp:DropDownList ID="ddltipopersona" runat="server" CssClass="form-control" class="form-control" AutoPostBack="true">
+                        <asp:DropDownList ID="ddltiposervicio" runat="server" CssClass="form-control" class="form-control" AutoPostBack="true">
                                 <asp:ListItem Text="Alquiler" Value="Alquiler"></asp:ListItem>
                                 <asp:ListItem Text="Transporte" Value="Transporte"></asp:ListItem>
                         </asp:DropDownList> 
                     </div>
                </div>
+            <center>
+            <div>
                <asp:GridView ID="GridListadoServicio" runat="server" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal" >
                     <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
                     <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
@@ -109,11 +111,13 @@
                     <SortedDescendingCellStyle BackColor="#E5E5E5" />
                     <SortedDescendingHeaderStyle BackColor="#242121" />
                     <Columns>
-                         <asp:CommandField SelectText="Editar" ButtonType="Button" ControlStyle-CssClass="btn btn-info" CausesValidation="False" InsertVisible="False" ShowCancelButton="False" ShowEditButton="False" >
+                         <asp:CommandField SelectText="Editar" ButtonType="Button" ControlStyle-CssClass="btn btn-info" CausesValidation="False" InsertVisible="False" ShowCancelButton="False" ShowEditButton="False" ShowSelectButton="True" >
                          <ControlStyle CssClass="btn btn-info" BackColor="Red"></ControlStyle>
                          </asp:CommandField>
                     </Columns>
                 </asp:GridView>
+            </div>
+            </center>
         </asp:View>
 
         <asp:View runat="server" ID="V">
