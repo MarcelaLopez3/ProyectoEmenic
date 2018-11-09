@@ -34,7 +34,8 @@
                 <div class="form-group col-md-3">
                     <asp:Label ID="lblContra" Text="Ingrese su Contraseña" runat="server" style="color:black"></asp:Label>
                     <asp:TextBox ID="txtContra" CssClass="form-control" runat="server" MaxLength="20" TextMode="Password"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="* Ingrese contraseña" ControlToValidate="txtContra" ForeColor="MediumVioletRed"></asp:RequiredFieldValidator>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="* Ingrese contraseña" ControlToValidate="txtContra" ForeColor="MediumVioletRed"></asp:RequiredFieldValidator><br />
+                    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="* Contraseña invalida" ForeColor="MediumVioletRed" ControlToValidate="txtContra" ValidationExpression="((?=.*\d)(?=.*[a-z])(?=.*[\W]).{8,15})"></asp:RegularExpressionValidator>
                 </div>
                 <div class="form-group col-md-3">
                     <asp:Label ID="lblConfCon" Text="Confirme su Contraseña" runat="server" style="color:black"></asp:Label>

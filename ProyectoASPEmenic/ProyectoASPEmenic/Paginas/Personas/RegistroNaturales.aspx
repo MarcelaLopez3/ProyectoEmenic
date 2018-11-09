@@ -113,7 +113,7 @@
         <div class="form-row">
             <div class="form-group col-md-6">
                 <asp:Label runat="server" ID="Label9" Text="Fecha Nacimiento(yyyy-mm-dd):" style="color:black"></asp:Label>
-                <asp:TextBox runat="server" ID="txtfechanacimiento" CssClass="form-control" Text="yyyy-mm-dd"/>     
+                <asp:TextBox runat="server" ID="txtfechanacimiento" CssClass="form-control" Text="yyyy-mm-dd" TextMode="Date"/>     
                 <asp:RegularExpressionValidator ID="RegularExpressionValidator11" runat="server" CssClass="alert-text"
                 ErrorMessage="* Fecha invalida" Display="Dynamic" SetFocusOnError="True" ControlToValidate="txtfechanacimiento" ValidationExpression="^\d{4}\-(0?[1-9]|1[012])\-(0?[1-9]|[12][0-9]|3[01])$"></asp:RegularExpressionValidator>          
             </div>
