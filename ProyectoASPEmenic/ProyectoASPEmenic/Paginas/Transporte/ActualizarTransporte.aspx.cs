@@ -37,8 +37,8 @@ namespace ProyectoASPEmenic.Paginas.Servicios
                         txtvehiculoequipo.Text = conexion.reg.GetString(2);
                     else
                         txtvehiculoequipo.Text = "";
-                    checkCabezal.Checked = conexion.reg.GetBoolean(3);
-                    checkFurgon.Checked = conexion.reg.GetBoolean(4);
+                    checkFurgon.Checked = conexion.reg.GetBoolean(3);
+                    checkCabezal.Checked = conexion.reg.GetBoolean(4);
                 }
                 conexion.CerrarConexion();
             }
@@ -68,7 +68,7 @@ namespace ProyectoASPEmenic.Paginas.Servicios
             conexion.CerrarConexion();
 
             ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Se ha actualizado con exito.')", true);
-            Response.Redirect("~/Paginas/Servicios/ListadoTransporte.aspx");
+            Response.Redirect("~/Paginas/Transporte/ListadoTransporte.aspx");
         }
     }
 }
