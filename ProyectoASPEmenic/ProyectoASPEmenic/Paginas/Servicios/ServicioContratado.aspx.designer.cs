@@ -103,6 +103,24 @@ namespace ProyectoASPEmenic.Paginas.Servicios {
         protected global::System.Web.UI.WebControls.Button btnContrato;
         
         /// <summary>
+        /// Control checkRetorno.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox checkRetorno;
+        
+        /// <summary>
+        /// Control lblRetorno.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblRetorno;
+        
+        /// <summary>
         /// Control lbDestino.
         /// </summary>
         /// <remarks>
@@ -119,24 +137,6 @@ namespace ProyectoASPEmenic.Paginas.Servicios {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::AjaxControlToolkit.ComboBox ddlDestinoConsignatario;
-        
-        /// <summary>
-        /// Control lblRetorno.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblRetorno;
-        
-        /// <summary>
-        /// Control ddlretorno.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlretorno;
         
         /// <summary>
         /// Control lbPeriodoCobro.

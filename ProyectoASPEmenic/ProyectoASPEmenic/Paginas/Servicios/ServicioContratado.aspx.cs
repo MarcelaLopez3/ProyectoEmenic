@@ -105,6 +105,9 @@ namespace ProyectoASPEmenic.Paginas.Servicios
 
         protected void btnAgregarServicioContra_Click(object sender, EventArgs e)
         {
+            //recuperando el IdCliente
+            string VarSer = Request.QueryString["ser"];
+
             //recuperando entradas
             bool Transporte = checkTransporte.Checked;
             bool Alquiler = checkAlquiler.Checked;
@@ -112,17 +115,24 @@ namespace ProyectoASPEmenic.Paginas.Servicios
             string FechaVencimiento = txtfechaVencimiento.Text;
             string Descripcion = txtDescripcion.Text;
             string PeriodoCobro = txtperiodocobro.Text;
-            bool Retorno = false;
-            if (ddlretorno.SelectedValue == "Si")
-            {
-                Retorno = true;
-            }
-            string Destino = ddlDestinoConsignatario.SelectedValue;
+            bool Retorno = checkRetorno.Checked;            
+            int IdConsigatario = Int32.Parse(ddlDestinoConsignatario.SelectedValue);
             string PagoEmpresa = txtpagoempresa.Text;
             string PagoEstadia = txtpagoestadia.Text;
             string PagoGuardia = txtpagoguardia.Text;
-            string ViaticosMotorista = txtviaticos.Text;
-            string Galones = txtgalones.Text;            
+            string Galones = txtgalones.Text;
+            string ViaticosMotorista = txtviaticos.Text;           
+
+            query = "INSERT INTO serviciocontratado(IdCliente,IdConsignatorio,Transporte,Alquiler,"+
+                "FechaAdquisicion,Descripcion,PeriodoCobro,Retorno,FechaVencimiento,PagoEmpresa,"+
+                "PagoEstadia,PagoGuardia,ViaticosMotorista,Galones) VALUES (" + VarSer + "," + IdConsigatario + 
+                "," + Transporte + "," + Alquiler + ",'" + FechaAdquisicion + "','" + Descripcion + "','" + PeriodoCobro +
+                "'," + Retorno + ",'" + FechaVencimiento + "'," + PagoEmpresa + "," + PagoEstadia + 
+                "," + PagoGuardia + "," + ViaticosMotorista + "," + Galones + ")";
+            //enviar consulta a Mysql
+            conexion.IniciarConexion();
+            conexion.EnviarQuery(query);
+            ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Se ha insertado con exito.')", true);
         }
     }
 }
