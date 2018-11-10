@@ -34,7 +34,7 @@
                </div>
         </div>
              <div>          
-        <center><asp:Button runat="server" ID="btnGuardarContrato" Text="Guardar" CssClass="btn btn-info btn-block" style="color:white; background-color:red; border-color:red; width:auto" ></asp:Button></center>             
+        <center><asp:Button runat="server" ID="btnGuardarContrato" Text="Guardar" CssClass="btn btn-info btn-block" style="color:white; background-color:red; border-color:red; width:auto" OnClick="btnGuardarContrato_Click" ></asp:Button></center>             
    </div>
    <br />
 

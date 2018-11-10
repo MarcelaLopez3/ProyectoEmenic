@@ -38,5 +38,10 @@ namespace ProyectoASPEmenic.Paginas.Personas
         {
             Response.Redirect("~/Paginas/Personas/RegistroNaturales.aspx");
         }
+
+        protected void GridListadoNaturales_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

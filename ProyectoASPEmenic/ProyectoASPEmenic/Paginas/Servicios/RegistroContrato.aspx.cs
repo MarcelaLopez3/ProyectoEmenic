@@ -13,5 +13,10 @@ namespace ProyectoASPEmenic.Paginas.Servicios
         {
 
         }
+
+        protected void btnGuardarContrato_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
