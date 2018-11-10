@@ -48,27 +48,47 @@ namespace ProyectoASPEmenic.Paginas.Servicios
         {
             string VarAct = Request.QueryString["act"];
             int idTransporte=Convert.ToInt32(VarAct);
+
             //recuperando entradas
             Boolean Cabezal = checkCabezal.Checked;
             Boolean Furgon = checkFurgon.Checked;
             string Placa = txtPlaca.Text;
             string Equipo = txtvehiculoequipo.Text;
             string Descripcion = txtDescripcion.Text;
-            //consulta que se ingresa a la base de datos
-            string query = "UPDATE `transporte` " +
-                "SET `Placa`='"+Placa+"'," +
-                "`Descripcion`='"+Descripcion+"'," +
-                "`Equipo`='"+Equipo+"'," +
-                "`Furgon` = " + Furgon+"," +
-                "`Cabezal` = "+Cabezal+" " +
-                "WHERE `transporte`.`IdTransporte` ="+ idTransporte + ";";
-            //enviar consulta a Mysql
-            conexion.IniciarConexion();
-            conexion.EnviarQuery(query);
-            conexion.CerrarConexion();
+            int Resultado_placa = 0;
 
-            ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Se ha actualizado con exito.')", true);
-            Response.Redirect("~/Paginas/Transporte/ListadoTransporte.aspx");
+            string query = "SELECT COUNT(Placa) FROM transporte WHERE Placa = '" + Placa + "'";
+            conexion.IniciarConexion();
+            conexion.RecibeQuery(query);
+            while (conexion.reg.Read())
+            {
+                Resultado_placa = conexion.reg.GetInt32(0);
+
+            }
+            conexion.reg.Close();
+            conexion.CerrarConexion();
+            if (Resultado_placa == 1)
+            {
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('El numero de Placa ya existente.')", true);
+            }
+            else
+            {
+                //consulta que se ingresa a la base de datos
+                query = "UPDATE `transporte` " +
+                "SET `Placa`='" + Placa + "'," +
+                "`Descripcion`='" + Descripcion + "'," +
+                "`Equipo`='" + Equipo + "'," +
+                "`Furgon` = " + Furgon + "," +
+                "`Cabezal` = " + Cabezal + " " +
+                "WHERE `transporte`.`IdTransporte` =" + idTransporte + ";";
+                //enviar consulta a Mysql
+                conexion.IniciarConexion();
+                conexion.EnviarQuery(query);
+                conexion.CerrarConexion();
+
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Se ha actualizado con exito.')", true);
+                Response.Redirect("~/Paginas/Transporte/ListadoTransporte.aspx");
+            }
         }
     }
 }
