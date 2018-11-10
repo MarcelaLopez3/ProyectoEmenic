@@ -20,7 +20,7 @@
             </div>
        </div>
         <br />
-        <asp:GridView ID="GridListadoClientes" runat="server" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal" OnRowDeleting="GridListadoClientes_RowDeleting" OnRowEditing="GridListadoClientes_RowEditing" >
+        <asp:GridView ID="GridListadoClientesNatural" AutoGenerateColumns="false" runat="server" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal" OnRowCommand="GridListadoClientesNatural_RowCommand" >
             <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
             <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
             <PagerStyle BackColor="White" ForeColor="Black" HorizontalAlign="Right" />
@@ -30,9 +30,78 @@
             <SortedDescendingCellStyle BackColor="#E5E5E5" />
             <SortedDescendingHeaderStyle BackColor="#242121" />
             <Columns>
-                 <asp:CommandField SelectText="" ButtonType="Button" ControlStyle-CssClass="btn btn-info" CausesValidation="False" InsertVisible="False" ShowCancelButton="False" ShowDeleteButton="True" ShowEditButton="True" EditText="Servicios" >
-                <ControlStyle CssClass="btn btn-info" BackColor="Red"></ControlStyle>
-                 </asp:CommandField>   
+                <asp:BoundField DataField="IdPersona" DataFormatString="{0}" HeaderText="Id">
+                                        <ItemStyle HorizontalAlign="Left" />
+                </asp:BoundField>
+                <asp:BoundField DataField="PrimerNombre" DataFormatString="{0}" HeaderText="Primer Nombre">
+                                        <ItemStyle HorizontalAlign="Left" />
+                </asp:BoundField>
+                <asp:BoundField DataField="SegundoNombre" DataFormatString="{0}" HeaderText="Segundo Nombre">
+                                        <ItemStyle HorizontalAlign="Left" />
+                </asp:BoundField>
+                <asp:BoundField DataField="PrimerApellido" DataFormatString="{0}" HeaderText="Primer Apellido">
+                                        <ItemStyle HorizontalAlign="Left" />
+                </asp:BoundField>
+                <asp:BoundField DataField="SegundoApellido" DataFormatString="{0}" HeaderText="Segundo Apellido">
+                                        <ItemStyle HorizontalAlign="Left" />
+                </asp:BoundField>
+                <asp:BoundField DataField="DUI" DataFormatString="{0}" HeaderText="DUI">
+                                        <ItemStyle HorizontalAlign="Left" />
+                </asp:BoundField>
+                <asp:BoundField DataField="NIT" DataFormatString="{0}" HeaderText="NIT">
+                                        <ItemStyle HorizontalAlign="Left" />
+                </asp:BoundField>
+                <asp:CheckBoxField DataField="Activo" HeaderText="Activo">
+                                        <ItemStyle HorizontalAlign="Left" />
+                </asp:CheckBoxField>
+                <asp:TemplateField HeaderText="Opciones" ItemStyle-Width="150px">
+                                        <ItemTemplate>
+                                            <asp:LinkButton ID="lkBOpcionActualizar" runat="server" ToolTip="Servicios" CssClass="btn btn-success" CommandName="Servicios" CommandArgument='<%# Eval("IdPersona")%>'><i class="fa fa-truck-loading" aria-hidden="true"></i></i></asp:LinkButton>
+                                            <asp:LinkButton ID="lkbOpcionEliminar" runat="server" ToolTip="Eliminar" CssClass="btn btn-danger" CommandName="Eliminar" CommandArgument='<%# Eval("IdPersona")%>' OnClientClick="return confirm('¿Está seguro de eliminar cliente?');"><i class="fa fa-trash-alt" aria-hidden="true"></i></i></asp:LinkButton>
+                                         </ItemTemplate>
+                    </asp:TemplateField> 
+            </Columns>
+        </asp:GridView>
+        <asp:GridView ID="GridListadoClientesJuridico" runat="server" BackColor="White" Visible="false" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal" AutoGenerateColumns="false" OnRowCommand="GridListadoClientesJuridico_RowCommand" >
+            <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
+            <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
+            <PagerStyle BackColor="White" ForeColor="Black" HorizontalAlign="Right" />
+            <SelectedRowStyle BackColor="#CC3333" Font-Bold="True" ForeColor="White" />
+            <SortedAscendingCellStyle BackColor="#F7F7F7" />
+            <SortedAscendingHeaderStyle BackColor="#4B4B4B" />
+            <SortedDescendingCellStyle BackColor="#E5E5E5" />
+            <SortedDescendingHeaderStyle BackColor="#242121" />
+            <Columns>
+                <asp:BoundField DataField="IdPersona" DataFormatString="{0}" HeaderText="Id">
+                                        <ItemStyle HorizontalAlign="Left" />
+                </asp:BoundField>
+                <asp:BoundField DataField="NombreLegal" DataFormatString="{0}" HeaderText="Nombre Legal">
+                                        <ItemStyle HorizontalAlign="Left" />
+                </asp:BoundField>
+                <asp:BoundField DataField="Tamano" DataFormatString="{0}" HeaderText="Tamaño">
+                                        <ItemStyle HorizontalAlign="Left" />
+                </asp:BoundField>
+                <asp:BoundField DataField="Ubicacion" DataFormatString="{0}" HeaderText="Ubicación">
+                                        <ItemStyle HorizontalAlign="Left" />
+                </asp:BoundField>
+                <asp:BoundField DataField="Pais" DataFormatString="{0}" HeaderText="País">
+                                        <ItemStyle HorizontalAlign="Left" />
+                </asp:BoundField>
+                <asp:BoundField DataField="Giro" DataFormatString="{0}" HeaderText="Giro">
+                                        <ItemStyle HorizontalAlign="Left" />
+                </asp:BoundField>
+                <asp:BoundField DataField="NombreContacto" DataFormatString="{0}" HeaderText="Contacto">
+                                        <ItemStyle HorizontalAlign="Left" />
+                </asp:BoundField>
+                <asp:CheckBoxField DataField="Activo" HeaderText="Activo">
+                                        <ItemStyle HorizontalAlign="Left" />
+                </asp:CheckBoxField>
+             <asp:TemplateField HeaderText="Opciones" ItemStyle-Width="150px">
+                                        <ItemTemplate>
+                                            <asp:LinkButton ID="lkBOpcionActualizar" runat="server" ToolTip="Servicios" CssClass="btn btn-success" CommandName="Servicios" CommandArgument='<%# Eval("IdPersona")%>'><i class="fa fa-truck-loading" aria-hidden="true"></i></i></asp:LinkButton>
+                                            <asp:LinkButton ID="lkbOpcionEliminar" runat="server" ToolTip="Eliminar" CssClass="btn btn-danger" CommandName="Eliminar" CommandArgument='<%# Eval("IdPersona")%>' OnClientClick="return confirm('¿Está seguro de eliminar cliente?');"><i class="fa fa-trash-alt" aria-hidden="true"></i></i></asp:LinkButton>
+                                         </ItemTemplate>
+                    </asp:TemplateField> 
             </Columns>
         </asp:GridView>
     </center>

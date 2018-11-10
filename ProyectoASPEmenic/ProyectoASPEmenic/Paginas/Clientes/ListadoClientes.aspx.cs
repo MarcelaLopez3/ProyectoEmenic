@@ -30,39 +30,58 @@ namespace ProyectoASPEmenic.Paginas.Clientes
             //Seleccionar tipo
             if (TipoPersona == "PersonaNatural")
             {
+                GridListadoClientesNatural.Visible = true;
+                GridListadoClientesJuridico.Visible = false;
                 query = "SELECT IdPersona,PrimerNombre,SegundoNombre,PrimerApellido,SegundoApellido," +
                 "DUI,NIT,Activo FROM persona WHERE PersonaNatural = 1 AND Activo = 1 AND Cliente = 1;";
-                EjecutarGridCliente(query);
+                EjecutarGridCliente(query,GridListadoClientesNatural);
             }
             else if (TipoPersona == "PersonaJuridica")
             {
+                GridListadoClientesNatural.Visible = false;
+                GridListadoClientesJuridico.Visible = true;
                 query = "SELECT IdPersona,NombreLegal,Tamano,Ubicacion,Pais,Giro," +
                "NombreContacto,Activo FROM persona WHERE PersonaJuridica = 1 AND Activo = 1 AND Cliente = 1;";
-                EjecutarGridCliente(query);
+                EjecutarGridCliente(query,GridListadoClientesJuridico);
             }            
         }
 
-        protected void EjecutarGridCliente(string query)
+        protected void EjecutarGridCliente(string query, GridView gv)
         {
             conexion.IniciarConexion();
-            conexion.TablasQuery(query, this.GridListadoClientes);
+            conexion.TablasQuery(query, gv);
             conexion.CerrarConexion();
         }        
-
-        protected void GridListadoClientes_RowEditing(object sender, GridViewEditEventArgs e)
+        
+        protected void GridListadoClientesNatural_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            //Boton para agregar un nuevo servicio al cliente
-            //IdPersona de la tabla que selecciona
-            HFIdPersona.Value = GridListadoClientes.Rows[e.NewEditIndex].Cells[1].Text;
-            //Envia IdPersona a formulario de servicios       
-            Response.Redirect("~/Paginas/Servicios/ServicioContratado.aspx?ser=" + HFIdPersona.Value);
+            if (e.CommandName == "Servicios")
+            {      
+                Response.Redirect("~/Paginas/Servicios/ServicioContratado.aspx?ser=" + e.CommandArgument);
+            }
+            else if(e.CommandName=="Eliminar")
+            {
+                Eliminar(e.CommandArgument.ToString());
+            }
         }
 
-        protected void GridListadoClientes_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        protected void GridListadoClientesJuridico_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            if (e.CommandName == "Servicios")
+            {
+                Response.Redirect("~/Paginas/Servicios/ServicioContratado.aspx?ser=" + e.CommandArgument);
+            }
+            else if (e.CommandName == "Eliminar")
+            {
+                Eliminar(e.CommandArgument.ToString());
+            }
+        }
+
+        protected void Eliminar(string e)
         {
             int Resultado_servicio = 0;
             //IdPersona de la tabla que selecciona
-            HFIdPersona.Value = GridListadoClientes.Rows[e.RowIndex].Cells[1].Text;
+            HFIdPersona.Value = e;
 
             //Verificar si la persona posee o ha tenido servicios contratados de emenic
             query = "SELECT IF( EXISTS(SELECT * FROM serviciocontratado WHERE IdCliente = '" + HFIdPersona.Value + "'), 1, 0) as Resultado";
@@ -70,7 +89,7 @@ namespace ProyectoASPEmenic.Paginas.Clientes
             conexion.RecibeQuery(query);
             while (conexion.reg.Read())
             {
-                 Resultado_servicio = conexion.reg.GetInt32(0);                
+                Resultado_servicio = conexion.reg.GetInt32(0);
             }
             conexion.reg.Close();
             conexion.CerrarConexion();
@@ -93,7 +112,8 @@ namespace ProyectoASPEmenic.Paginas.Clientes
             }
 
             HFIdPersona.Value = "";
-            
         }
+
+        
     }
 }
