@@ -28,23 +28,18 @@
                         <div class="form-group col-md-2">
                             <asp:Button ID="btnContrato" runat="server" CssClass="btn btn-info btn-block" OnClick="btnContrato_Click" style="color:white; background-color:red; border-color:red; width:auto" Text="Contrato" Visible="false" />
                         </div>
+                        <div class="form-group col-md-2">
+                            <asp:CheckBox ID="checkRetorno" runat="server"  />
+                            <asp:Label ID="lblRetorno" runat="server" style="color:black" Text="Retorno"></asp:Label>                            
+                        </div>
                     </div>
                     <hr />
                     <div class="form-row">
-                        <div class="form-group col-md-3">
+                        <div class="form-group col-md-6">
                             <asp:Label ID="lbDestino" runat="server" style="color:black" Text="Destino/Consignatario:"></asp:Label>
-                            <%--<asp:DropDownList runat="server" ID="ddlDestinoConsignatario" CssClass="form-control" >
-                            </asp:DropDownList>--%>
-                            <ajaxToolkit:ComboBox ID="ddlDestinoConsignatario" runat="server" AutoCompleteMode="SuggestAppend" CssClass="dropdown" DropDownStyle="DropDownList">
+                            <ajaxToolkit:ComboBox ID="ddlDestinoConsignatario" runat="server" AutoCompleteMode="SuggestAppend" CssClass="dropdown" DropDownStyle="DropDownList" ListItemHoverCssClass="form-control" BorderStyle="Double" Width="470px">
                             </ajaxToolkit:ComboBox>
-                        </div>
-                        <div class="form-group col-md-3">
-                            <asp:Label ID="lblRetorno" runat="server" style="color:black" Text="Retorno:"></asp:Label>
-                            <asp:DropDownList ID="ddlretorno" runat="server" CssClass="form-control">
-                                <asp:ListItem Text="Si" Value="1"></asp:ListItem>
-                                <asp:ListItem Text="No" Value="0"></asp:ListItem>
-                            </asp:DropDownList>
-                        </div>
+                        </div>                        
                         <div class="form-group col-md-3">
                             <asp:Label ID="lbPeriodoCobro" runat="server" style="color:black" Text="Periodo de cobro:"></asp:Label>
                             <asp:TextBox ID="txtperiodocobro" runat="server" CssClass="form-control"></asp:TextBox>
