@@ -151,7 +151,7 @@ namespace ProyectoASPEmenic.Paginas.Servicios
                 while (conexion.reg.Read())
                 {
                     if (conexion.reg.GetValue(0) != null || conexion.reg.GetValue(0).ToString() != "")
-                        ddlDestinoConsignatario.DataValueField = conexion.reg.GetValue(0).ToString();
+                        ddlDestinoConsignatario.SelectedValue = ddlDestinoConsignatario.Items.FindByValue(conexion.reg.GetValue(0).ToString()).Value;
                     else
                         ddlDestinoConsignatario.Text = "";
 
@@ -232,7 +232,7 @@ namespace ProyectoASPEmenic.Paginas.Servicios
             checkAlquiler.Checked = false;
             checkRetorno.Checked = false;
             checkTransporte.Checked = false;
-            ddlDestinoConsignatario.Text = "";
+            //ddlDestinoConsignatario.Text = "";
             txtperiodocobro.Text = "";
             txtgalones.Text = "";
             txtDescripcion.Text = "";
