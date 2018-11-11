@@ -9,8 +9,22 @@ namespace ProyectoASPEmenic.Paginas.Servicios
 {
     public partial class ServicioContratado : System.Web.UI.Page
     {
+        //Variables globales
         Conexion conexion = new Conexion();
         string query = "";
+
+        //Propiedades
+        public int IdDestinatario
+        {
+            set
+            {
+                this.hfIdDestinatario.Value = value.ToString();
+            }
+            get
+            {
+                return string.IsNullOrEmpty(this.hfIdDestinatario.Value) ? 0 : int.Parse(hfIdDestinatario.Value);
+            }
+        }
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -107,36 +121,43 @@ namespace ProyectoASPEmenic.Paginas.Servicios
         {
             if (btnAgregarServicioContra.Text == "Agregar")
             {
-                //recuperando el IdCliente
-                string VarSer = Request.QueryString["ser"];
+                if (!string.IsNullOrEmpty(ddlDestinoConsignatario.SelectedValue))
+                {
+                    //recuperando el IdCliente
+                    string VarSer = Request.QueryString["ser"];
 
-                //recuperando entradas
-                bool Transporte = checkTransporte.Checked;
-                bool Alquiler = checkAlquiler.Checked;
-                string FechaAdquisicion = txtfechaAdquisicion.Text;
-                string FechaVencimiento = txtfechaVencimiento.Text;
-                string Descripcion = txtDescripcion.Text;
-                string PeriodoCobro = txtperiodocobro.Text;
-                bool Retorno = checkRetorno.Checked;
-                int IdConsigatario = Int32.Parse(ddlDestinoConsignatario.SelectedValue);
-                string PagoEmpresa = txtpagoempresa.Text;
-                string PagoEstadia = txtpagoestadia.Text;
-                string PagoGuardia = txtpagoguardia.Text;
-                string Galones = txtgalones.Text;
-                string ViaticosMotorista = txtviaticos.Text;
+                    //recuperando entradas
+                    bool Transporte = checkTransporte.Checked;
+                    bool Alquiler = checkAlquiler.Checked;
+                    string FechaAdquisicion = txtfechaAdquisicion.Text;
+                    string FechaVencimiento = txtfechaVencimiento.Text;
+                    string Descripcion = txtDescripcion.Text;
+                    string PeriodoCobro = txtperiodocobro.Text;
+                    bool Retorno = checkRetorno.Checked;
+                    int IdConsigatario = Int32.Parse(ddlDestinoConsignatario.SelectedValue);
+                    string PagoEmpresa = txtpagoempresa.Text;
+                    string PagoEstadia = txtpagoestadia.Text;
+                    string PagoGuardia = txtpagoguardia.Text;
+                    string Galones = txtgalones.Text;
+                    string ViaticosMotorista = txtviaticos.Text;
 
-                query = "INSERT INTO serviciocontratado(IdCliente,IdConsignatorio,Transporte,Alquiler," +
-                    "FechaAdquisicion,Descripcion,PeriodoCobro,Retorno,FechaVencimiento,PagoEmpresa," +
-                    "PagoEstadia,PagoGuardia,ViaticosMotorista,Galones) VALUES (" + VarSer + "," + IdConsigatario +
-                    "," + Transporte + "," + Alquiler + ",'" + FechaAdquisicion + "','" + Descripcion + "','" + PeriodoCobro +
-                    "'," + Retorno + ",'" + FechaVencimiento + "'," + PagoEmpresa + "," + PagoEstadia +
-                    "," + PagoGuardia + "," + ViaticosMotorista + "," + Galones + ")";
-                //enviar consulta a Mysql
-                conexion.IniciarConexion();
-                conexion.EnviarQuery(query);
-                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Se ha insertado con exito.')", true);
-                CargandoTablaServicio();
-                LimpiarFormulario();
+                    query = "INSERT INTO serviciocontratado(IdCliente,IdConsignatorio,Transporte,Alquiler," +
+                        "FechaAdquisicion,Descripcion,PeriodoCobro,Retorno,FechaVencimiento,PagoEmpresa," +
+                        "PagoEstadia,PagoGuardia,ViaticosMotorista,Galones) VALUES (" + VarSer + "," + IdConsigatario +
+                        "," + Transporte + "," + Alquiler + ",'" + FechaAdquisicion + "','" + Descripcion + "','" + PeriodoCobro +
+                        "'," + Retorno + ",'" + FechaVencimiento + "'," + PagoEmpresa + "," + PagoEstadia +
+                        "," + PagoGuardia + "," + ViaticosMotorista + "," + Galones + ")";
+                    //enviar consulta a Mysql
+                    conexion.IniciarConexion();
+                    conexion.EnviarQuery(query);
+                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Se ha insertado con exito.')", true);
+                    CargandoTablaServicio();
+                    LimpiarFormulario();
+                }
+                else
+                {
+                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Seleccione un destinatario.')", true);
+                }
             }
             else if (btnAgregarServicioContra.Text == "Actualizar")
             {
@@ -148,7 +169,7 @@ namespace ProyectoASPEmenic.Paginas.Servicios
                 string Descripcion = txtDescripcion.Text;
                 string PeriodoCobro = txtperiodocobro.Text;
                 bool Retorno = checkRetorno.Checked;
-                int IdConsigatario = Int32.Parse(ddlDestinoConsignatario.SelectedValue);
+                int IdConsigatario = string.IsNullOrEmpty(ddlDestinoConsignatario.SelectedValue) ? IdDestinatario : Int32.Parse(ddlDestinoConsignatario.SelectedValue);
                 string PagoEmpresa = txtpagoempresa.Text;
                 string PagoEstadia = txtpagoestadia.Text;
                 string PagoGuardia = txtpagoguardia.Text;
@@ -185,7 +206,10 @@ namespace ProyectoASPEmenic.Paginas.Servicios
                 while (conexion.reg.Read())
                 {
                     if (conexion.reg.GetValue(0) != null || conexion.reg.GetValue(0).ToString() != "")
+                    {
                         ddlDestinoConsignatario.SelectedValue = ddlDestinoConsignatario.Items.FindByValue(conexion.reg.GetValue(0).ToString()).Value;
+                        IdDestinatario = int.Parse(ddlDestinoConsignatario.SelectedValue);
+                    }
                     else
                         ddlDestinoConsignatario.Text = "";
 

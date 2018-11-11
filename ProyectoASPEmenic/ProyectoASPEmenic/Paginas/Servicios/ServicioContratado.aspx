@@ -4,6 +4,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <center><h1><asp:Label runat="server" ID="lbltitulo" Text="Servicios" style="color:black; font-family:Verdana"></asp:Label></h1></center>
     <br />
+    <asp:HiddenField ID="hfIdDestinatario" runat="server" />
     <asp:ScriptManager ID="ScriptManager1" runat="server">
     </asp:ScriptManager>
     <asp:HiddenField runat="server" ID="HFUpdateId"/>
