@@ -55,9 +55,19 @@ namespace ProyectoASPEmenic.Paginas.Servicios
             string Placa = txtPlaca.Text;
             string Equipo = txtvehiculoequipo.Text;
             string Descripcion = txtDescripcion.Text;
-            
+
+            if (Cabezal == false && Furgon == false)
+            {
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Debe seleccionar una opción')", true);
+            }
+            else if (Cabezal == true && Furgon == true)
+            {
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Debe seleccionar solo una opción')", true);
+            }
+            else
+            {
                 //consulta que se ingresa a la base de datos
-               string query = "UPDATE `transporte` " +
+                string query = "UPDATE `transporte` " +
                 "SET `Placa`='" + Placa + "'," +
                 "`Descripcion`='" + Descripcion + "'," +
                 "`Equipo`='" + Equipo + "'," +
@@ -71,6 +81,7 @@ namespace ProyectoASPEmenic.Paginas.Servicios
 
                 ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Se ha actualizado con exito.')", true);
                 Response.Redirect("~/Paginas/Transporte/ListadoTransporte.aspx");
+            }
             
         }
     }
