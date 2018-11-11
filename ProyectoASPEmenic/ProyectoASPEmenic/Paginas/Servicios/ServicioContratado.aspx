@@ -108,7 +108,7 @@
             </div>
             <center>
                 <div>
-                    <asp:GridView ID="GridListadoServicio" runat="server" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal">
+                    <asp:GridView ID="GridListadoServicio" runat="server" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal" AutoGenerateColumns="false" OnRowCommand="GridListadoServicio_RowCommand">
                         <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
                         <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
                         <PagerStyle BackColor="White" ForeColor="Black" HorizontalAlign="Right" />
@@ -118,19 +118,32 @@
                         <SortedDescendingCellStyle BackColor="#E5E5E5" />
                         <SortedDescendingHeaderStyle BackColor="#242121" />
                         <Columns>
-                            <asp:CommandField ButtonType="Button" CausesValidation="False" ControlStyle-CssClass="btn btn-info" InsertVisible="False" SelectText="Editar" ShowCancelButton="False" ShowEditButton="False" ShowSelectButton="True">
-                            <ControlStyle BackColor="Red" CssClass="btn btn-info" />
-                            </asp:CommandField>
-                        </Columns>
-                    </asp:GridView>
+                        <asp:BoundField DataField="Id" DataFormatString="{0}" HeaderText="Id">
+                                                <ItemStyle HorizontalAlign="Left" />
+                        </asp:BoundField>
+                        <asp:BoundField DataField="PagoEmpresa" DataFormatString="{0}" HeaderText="Pago Empresa">
+                                                <ItemStyle HorizontalAlign="Left" />
+                        </asp:BoundField>
+                        <asp:BoundField DataField="FechaAdquisicion" DataFormatString="{0:MM/dd/yyyy}" HeaderText="Fecha Adquisicion">
+                                                <ItemStyle HorizontalAlign="Left" />
+                        </asp:BoundField>
+                        <asp:BoundField DataField="FechaVencimiento" DataFormatString="{0:MM/dd/yyyy}" HeaderText="Fecha Vencimiento">
+                                                <ItemStyle HorizontalAlign="Left" />
+                        </asp:BoundField>
+                        <asp:BoundField DataField="Descripcion" DataFormatString="{0}" HeaderText="Descripcion">
+                                                <ItemStyle HorizontalAlign="Left" />
+                        </asp:BoundField>
+                        <asp:TemplateField HeaderText="Opciones" ItemStyle-Width="150px">
+                               <ItemTemplate>
+                                      <asp:LinkButton ID="lkBOpcionActualizar" runat="server" ToolTip="Editar" CssClass="btn btn-success" CommandName="Editar" CommandArgument='<%# Eval("Id")%>'><i class="fa fa-edit" aria-hidden="true"></i></i></asp:LinkButton>
+                               </ItemTemplate>
+                        </asp:TemplateField> 
+                    </Columns>
+                </asp:GridView>
                 </div>
             </center>
         </asp:View>
 
-        <asp:View runat="server" ID="V">
-            
-           
-        </asp:View>
     </asp:MultiView>        
     <script src="../../vendor/jquery/jquery.min.js"></script>
     <script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

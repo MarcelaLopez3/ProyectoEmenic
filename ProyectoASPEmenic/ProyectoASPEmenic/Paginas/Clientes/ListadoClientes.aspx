@@ -55,11 +55,11 @@
                                         <ItemStyle HorizontalAlign="Left" />
                 </asp:CheckBoxField>
                 <asp:TemplateField HeaderText="Opciones" ItemStyle-Width="150px">
-                                        <ItemTemplate>
-                                            <asp:LinkButton ID="lkBOpcionActualizar" runat="server" ToolTip="Servicios" CssClass="btn btn-success" CommandName="Servicios" CommandArgument='<%# Eval("IdPersona")%>'><i class="fa fa-truck-loading" aria-hidden="true"></i></i></asp:LinkButton>
-                                            <asp:LinkButton ID="lkbOpcionEliminar" runat="server" ToolTip="Eliminar" CssClass="btn btn-danger" CommandName="Eliminar" CommandArgument='<%# Eval("IdPersona")%>' OnClientClick="return confirm('¿Está seguro de eliminar cliente?');"><i class="fa fa-trash-alt" aria-hidden="true"></i></i></asp:LinkButton>
-                                         </ItemTemplate>
-                    </asp:TemplateField> 
+                       <ItemTemplate>
+                            <asp:LinkButton ID="lkBOpcionActualizar" runat="server" ToolTip="Servicios" CssClass="btn btn-success" CommandName="Servicios" CommandArgument='<%# Eval("IdPersona")%>'><i class="fa fa-truck-loading" aria-hidden="true"></i></i></asp:LinkButton>
+                            <asp:LinkButton ID="lkbOpcionEliminar" runat="server" ToolTip="Eliminar" CssClass="btn btn-danger" CommandName="Eliminar" CommandArgument='<%# Eval("IdPersona")%>' OnClientClick="return confirm('¿Está seguro de eliminar cliente?');"><i class="fa fa-trash-alt" aria-hidden="true"></i></i></asp:LinkButton>
+                       </ItemTemplate>
+                 </asp:TemplateField> 
             </Columns>
         </asp:GridView>
         <asp:GridView ID="GridListadoClientesJuridico" runat="server" BackColor="White" Visible="false" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal" AutoGenerateColumns="false" OnRowCommand="GridListadoClientesJuridico_RowCommand" >
