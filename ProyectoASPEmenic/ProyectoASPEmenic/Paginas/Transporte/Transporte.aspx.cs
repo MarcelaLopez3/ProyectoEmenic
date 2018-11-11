@@ -31,6 +31,8 @@ namespace ProyectoASPEmenic.Paginas.Servicios
             string Placa = txtPlaca.Text;
             string Equipo = txtvehiculoequipo.Text;
             string Descripcion = txtDescripcion.Text;
+            int Resultado_placa = 0;
+            string query;
 
             if (Cabezal == false && Furgon == false)
             {
@@ -42,15 +44,32 @@ namespace ProyectoASPEmenic.Paginas.Servicios
             }
             else
             {
-                //consulta que se ingresa a la base de datos
-                string query = "INSERT INTO `transporte` (`Placa`, `Descripcion`, `Equipo`, `Furgon`, `Cabezal`, `IdEmenic`) " +
-                    "VALUES('" + Placa + "','" + Descripcion + "','" + Equipo + "'," + Furgon + "," + Cabezal + ", 1)";
-                //enviar consulta a Mysql
+                query = "SELECT COUNT(Placa) FROM transporte WHERE Placa = '" + Placa + "'";
                 conexion.IniciarConexion();
-                conexion.EnviarQuery(query);
+                conexion.RecibeQuery(query);
+                while (conexion.reg.Read())
+                {
+                    Resultado_placa = conexion.reg.GetInt32(0);
+
+                }
+                conexion.reg.Close();
                 conexion.CerrarConexion();
-                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Se ha insertado con exito.')", true);
-                Response.Redirect("~/Paginas/Transporte/ListadoTransporte.aspx");
+                if (Resultado_placa == 1)
+                {
+                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('El numero de Placa ya existente.')", true);
+                }
+                else
+                {
+                    //consulta que se ingresa a la base de datos
+                    query = "INSERT INTO `transporte` (`Placa`, `Descripcion`, `Equipo`, `Furgon`, `Cabezal`, `IdEmenic`) " +
+                    "VALUES('" + Placa + "','" + Descripcion + "','" + Equipo + "'," + Furgon + "," + Cabezal + ", 1)";
+                    //enviar consulta a Mysql
+                    conexion.IniciarConexion();
+                    conexion.EnviarQuery(query);
+                    conexion.CerrarConexion();
+                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Se ha insertado con exito.')", true);
+                    Response.Redirect("~/Paginas/Transporte/ListadoTransporte.aspx");
+                }
             }
         }
 
