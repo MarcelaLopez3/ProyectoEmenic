@@ -17,7 +17,7 @@
             </div>
        </div>
 
-        <asp:GridView ID="GridListadoNaturales" runat="server" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal" OnRowEditing="GridListadoNaturales_RowEditing" OnRowDeleting="GridListadoNaturales_RowDeleting" OnSelectedIndexChanged="GridListadoNaturales_SelectedIndexChanged" >
+        <asp:GridView ID="GridListadoNaturales" runat="server" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal" OnRowEditing="GridListadoNaturales_RowEditing" OnRowDeleting="GridListadoNaturales_RowDeleting" OnSelectedIndexChanged="GridListadoNaturales_SelectedIndexChanged" AutoGenerateColumns="false" OnRowCommand="GridListadoNaturales_RowCommand" >
             <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
             <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
             <PagerStyle BackColor="White" ForeColor="Black" HorizontalAlign="Right" />
@@ -27,9 +27,35 @@
             <SortedDescendingCellStyle BackColor="#E5E5E5" />
             <SortedDescendingHeaderStyle BackColor="#242121" />
             <Columns>
-                 <asp:CommandField SelectText="" ButtonType="Button" ControlStyle-CssClass="btn btn-info" CausesValidation="False" InsertVisible="False" ShowCancelButton="False" ShowDeleteButton="False" ShowEditButton="True" >
-                 <ControlStyle CssClass="btn btn-info" BackColor="Red"></ControlStyle>
-                 </asp:CommandField>                
+                <asp:BoundField DataField="IdPersona" DataFormatString="{0}" HeaderText="Id">
+                                        <ItemStyle HorizontalAlign="Left" />
+                </asp:BoundField>
+                <asp:BoundField DataField="PrimerNombre" DataFormatString="{0}" HeaderText="Primer Nombre">
+                                        <ItemStyle HorizontalAlign="Left" />
+                </asp:BoundField>
+                <asp:BoundField DataField="SegundoNombre" DataFormatString="{0}" HeaderText="Segundo Nombre">
+                                        <ItemStyle HorizontalAlign="Left" />
+                </asp:BoundField>
+                <asp:BoundField DataField="PrimerApellido" DataFormatString="{0}" HeaderText="Primer Apellido">
+                                        <ItemStyle HorizontalAlign="Left" />
+                </asp:BoundField>
+                <asp:BoundField DataField="SegundoApellido" DataFormatString="{0}" HeaderText="Segundo Apellido">
+                                        <ItemStyle HorizontalAlign="Left" />
+                </asp:BoundField>
+                <asp:BoundField DataField="DUI" DataFormatString="{0}" HeaderText="DUI">
+                                        <ItemStyle HorizontalAlign="Left" />
+                </asp:BoundField>
+                <asp:BoundField DataField="NIT" DataFormatString="{0}" HeaderText="NIT">
+                                        <ItemStyle HorizontalAlign="Left" />
+                </asp:BoundField>
+                <asp:CheckBoxField DataField="Activo" HeaderText="Activo">
+                                        <ItemStyle HorizontalAlign="Left" />
+                </asp:CheckBoxField>
+                <asp:TemplateField HeaderText="Opciones" ItemStyle-Width="150px">
+                       <ItemTemplate>
+                            <asp:LinkButton ID="lkBOpcionActualizar" runat="server" ToolTip="Actualizar" CssClass="btn btn-success" CommandName="Actualizar" CommandArgument='<%# Eval("IdPersona")%>'><i class="fa fa-edit" aria-hidden="true"></i></i></asp:LinkButton>
+                       </ItemTemplate>
+                 </asp:TemplateField> 
             </Columns>
         </asp:GridView>
     </center>

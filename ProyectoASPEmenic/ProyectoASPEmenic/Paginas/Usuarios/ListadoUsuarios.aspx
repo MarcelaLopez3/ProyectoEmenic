@@ -2,13 +2,20 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <center><h3>
-        Usuarios
-        <small class="text-muted">Listado de Usuarios</small>
-    </h3></center>
+    <center><h1><asp:Label runat="server" ID="lbltitulo" Text="Listado Usuarios" style="color:black; font-family:Verdana"></asp:Label></h1></center>
+    <br />
     <div class="table-responsive">
-    <asp:GridView ID="dataTable" runat="server" CssClass="table table-bordered" OnSelectedIndexChanged="dataTable_SelectedIndexChanged" AutoGenerateColumns="False" OnRowCommand="dataTable_RowCommand" DataKeyNames="Id" >
-            <Columns>
+    <center>
+    <asp:GridView ID="dataTable" runat="server" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal" OnSelectedIndexChanged="dataTable_SelectedIndexChanged" AutoGenerateColumns="False" OnRowCommand="dataTable_RowCommand" DataKeyNames="Id" >
+     <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
+     <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
+     <PagerStyle BackColor="White" ForeColor="Black" HorizontalAlign="Right" />
+     <SelectedRowStyle BackColor="#CC3333" Font-Bold="True" ForeColor="White" />
+     <SortedAscendingCellStyle BackColor="#F7F7F7" />
+     <SortedAscendingHeaderStyle BackColor="#4B4B4B" />
+     <SortedDescendingCellStyle BackColor="#E5E5E5" />
+     <SortedDescendingHeaderStyle BackColor="#242121" />
+               <Columns>
                 <asp:BoundField DataField="Id" DataFormatString="{0}" HeaderText="Id">
                                         <ItemStyle HorizontalAlign="Left" />
                 </asp:BoundField>
@@ -39,6 +46,7 @@
             <SortedDescendingCellStyle BackColor="#E5E5E5" />
             <SortedDescendingHeaderStyle BackColor="#242121" />              
         </asp:GridView>
+    
     </center>
         </div>
     <script src="../../vendor/jquery/jquery.min.js"></script>

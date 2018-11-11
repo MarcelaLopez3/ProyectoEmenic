@@ -23,10 +23,10 @@ namespace ProyectoASPEmenic.Paginas.Personas
 
         protected void GridListadoNaturales_RowEditing(object sender, GridViewEditEventArgs e)
         {
-            //IdPersona de la tabla que selecciona
-            HFIdPersona.Value = GridListadoNaturales.Rows[e.NewEditIndex].Cells[1].Text;
-            //Envia IdPersona a formulario de actualizar       
-            Response.Redirect("~/Paginas/Personas/ActualizarNaturales.aspx?act=" + HFIdPersona.Value);
+            ////IdPersona de la tabla que selecciona
+            //HFIdPersona.Value = GridListadoNaturales.Rows[e.NewEditIndex].Cells[1].Text;
+            ////Envia IdPersona a formulario de actualizar       
+            //Response.Redirect("~/Paginas/Personas/ActualizarNaturales.aspx?act=" + HFIdPersona.Value);
         }
 
         protected void GridListadoNaturales_RowDeleting(object sender, GridViewDeleteEventArgs e)
@@ -42,6 +42,14 @@ namespace ProyectoASPEmenic.Paginas.Personas
         protected void GridListadoNaturales_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        protected void GridListadoNaturales_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            if (e.CommandName == "Actualizar")
+            {
+                Response.Redirect("~/Paginas/Personas/ActualizarNaturales.aspx?act=" + e.CommandArgument);
+            }
         }
     }
 }
