@@ -55,26 +55,9 @@ namespace ProyectoASPEmenic.Paginas.Servicios
             string Placa = txtPlaca.Text;
             string Equipo = txtvehiculoequipo.Text;
             string Descripcion = txtDescripcion.Text;
-            int Resultado_placa = 0;
-
-            string query = "SELECT COUNT(Placa) FROM transporte WHERE Placa = '" + Placa + "'";
-            conexion.IniciarConexion();
-            conexion.RecibeQuery(query);
-            while (conexion.reg.Read())
-            {
-                Resultado_placa = conexion.reg.GetInt32(0);
-
-            }
-            conexion.reg.Close();
-            conexion.CerrarConexion();
-            if (Resultado_placa == 1)
-            {
-                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('El numero de Placa ya existente.')", true);
-            }
-            else
-            {
+            
                 //consulta que se ingresa a la base de datos
-                query = "UPDATE `transporte` " +
+               string query = "UPDATE `transporte` " +
                 "SET `Placa`='" + Placa + "'," +
                 "`Descripcion`='" + Descripcion + "'," +
                 "`Equipo`='" + Equipo + "'," +
@@ -88,7 +71,7 @@ namespace ProyectoASPEmenic.Paginas.Servicios
 
                 ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Se ha actualizado con exito.')", true);
                 Response.Redirect("~/Paginas/Transporte/ListadoTransporte.aspx");
-            }
+            
         }
     }
 }

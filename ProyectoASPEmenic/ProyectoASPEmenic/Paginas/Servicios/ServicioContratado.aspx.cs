@@ -17,6 +17,7 @@ namespace ProyectoASPEmenic.Paginas.Servicios
             MVServicios.SetActiveView(VNuevoServicio);
             CargandoDocumentoServicio();
             CargandoTablaServicio();
+            cargarDestinos();
         }
 
         protected void CargandoDocumentoServicio()
@@ -73,6 +74,18 @@ namespace ProyectoASPEmenic.Paginas.Servicios
             }
         }
 
+        //Función para llenar combobox
+        protected void cargarDestinos()
+        {
+            string query = "SELECT IdPersona,NombreComercial from persona where PersonaJuridica=1 and Activo=1";
+            conexion.IniciarConexion();
+            ddlDestinoConsignatario.DataSource = conexion.llena(query);
+            conexion.CerrarConexion();
+            ddlDestinoConsignatario.DataTextField = "NombreComercial";
+            ddlDestinoConsignatario.DataValueField = "IdPersona";
+            ddlDestinoConsignatario.DataBind();            
+        }
+
         protected void EjecutarGridServicio(string query)
         {
             conexion.IniciarConexion();
@@ -92,6 +105,9 @@ namespace ProyectoASPEmenic.Paginas.Servicios
 
         protected void btnAgregarServicioContra_Click(object sender, EventArgs e)
         {
+            //recuperando el IdCliente
+            string VarSer = Request.QueryString["ser"];
+
             //recuperando entradas
             bool Transporte = checkTransporte.Checked;
             bool Alquiler = checkAlquiler.Checked;
@@ -99,17 +115,24 @@ namespace ProyectoASPEmenic.Paginas.Servicios
             string FechaVencimiento = txtfechaVencimiento.Text;
             string Descripcion = txtDescripcion.Text;
             string PeriodoCobro = txtperiodocobro.Text;
-            bool Retorno = false;
-            if (ddlretorno.SelectedValue == "Si")
-            {
-                Retorno = true;
-            }
-            string Destino = ddlDestinoConsignatario.SelectedValue;
+            bool Retorno = checkRetorno.Checked;            
+            int IdConsigatario = Int32.Parse(ddlDestinoConsignatario.SelectedValue);
             string PagoEmpresa = txtpagoempresa.Text;
             string PagoEstadia = txtpagoestadia.Text;
             string PagoGuardia = txtpagoguardia.Text;
-            string ViaticosMotorista = txtviaticos.Text;
-            string Galones = txtgalones.Text;            
+            string Galones = txtgalones.Text;
+            string ViaticosMotorista = txtviaticos.Text;           
+
+            query = "INSERT INTO serviciocontratado(IdCliente,IdConsignatorio,Transporte,Alquiler,"+
+                "FechaAdquisicion,Descripcion,PeriodoCobro,Retorno,FechaVencimiento,PagoEmpresa,"+
+                "PagoEstadia,PagoGuardia,ViaticosMotorista,Galones) VALUES (" + VarSer + "," + IdConsigatario + 
+                "," + Transporte + "," + Alquiler + ",'" + FechaAdquisicion + "','" + Descripcion + "','" + PeriodoCobro +
+                "'," + Retorno + ",'" + FechaVencimiento + "'," + PagoEmpresa + "," + PagoEstadia + 
+                "," + PagoGuardia + "," + ViaticosMotorista + "," + Galones + ")";
+            //enviar consulta a Mysql
+            conexion.IniciarConexion();
+            conexion.EnviarQuery(query);
+            ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Se ha insertado con exito.')", true);
         }
     }
 }

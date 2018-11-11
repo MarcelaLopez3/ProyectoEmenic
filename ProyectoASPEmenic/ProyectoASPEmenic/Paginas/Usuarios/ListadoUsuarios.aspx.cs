@@ -13,7 +13,7 @@ namespace ProyectoASPEmenic.Paginas.Usuarios
         protected void Page_Load(object sender, EventArgs e)
         {
             string query = "SELECT persona.IdPersona as Id,concat(PrimerNombre,' ',SegundoNombre)" +
-                " as Nombres,concat(PrimerApellido,' ',SegundoApellido) as Apellidos,NombreUsuario as Usuario,estado" +
+                " as Nombres,concat(PrimerApellido,' ',SegundoApellido) as Apellidos,NombreUsuario as Usuario,estado as Estado" +
                 " FROM persona left join usuario on persona.IdPersona=usuario.IdPersona where PersonaNatural=1 and usuario=1";
             cn.IniciarConexion();
             cn.TablasQuery(query, this.dataTable);
@@ -22,24 +22,31 @@ namespace ProyectoASPEmenic.Paginas.Usuarios
 
         protected void dataTable_SelectedIndexChanged(object sender, EventArgs e)
         {
-            GridViewRow row = dataTable.SelectedRow;
-            hfIdPersona.Value = row.Cells[1].Text;
-            int existeUsuario = 0;
-            string query = "select count(idusuario) from usuario where idpersona=" + hfIdPersona.Value;
-            cn.IniciarConexion();
-            cn.RecibeQuery(query);
-            if (cn.reg.Read())
+        }
+
+        protected void dataTable_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            if (e.CommandName == "Actualizar")
             {
-                existeUsuario = cn.reg.GetInt32(0);
-            }
-            cn.CerrarConexion();
-            if (existeUsuario == 0)
-            {
-                Response.Redirect("~/Paginas/Usuarios/CrearUsuario.aspx?id=" + hfIdPersona.Value);
-            }
-            else
-            {
-                Response.Redirect("~/Paginas/Usuarios/ActualizarUsuario.aspx?id=" + hfIdPersona.Value);
+                string ID = e.CommandArgument.ToString();
+                int existeUsuario = 0;
+                string query = "select count(idusuario) from usuario where idpersona=" + ID;
+                cn.IniciarConexion();
+                cn.RecibeQuery(query);
+                if (cn.reg.Read())
+                {
+                    existeUsuario = cn.reg.GetInt32(0);
+                }
+                cn.CerrarConexion();
+                if (existeUsuario == 0)
+                {
+                    Response.Redirect("~/Paginas/Usuarios/CrearUsuario.aspx?id=" + ID);
+                }
+                else
+                {
+                    Response.Redirect("~/Paginas/Usuarios/ActualizarUsuario.aspx?id=" + ID);
+                }
+
             }
         }
     }
