@@ -6,19 +6,37 @@
         Usuarios
         <small class="text-muted">Agregar Credenciales</small>
     </h3></center>
+    <asp:HiddenField runat="server" ID="hfIdPersona" /><!-- Variable para almacenar idpersona-->
     <div class="card border-primary mb-3">
-        <div class="card-header"><h4>Credenciales de Usuario</h4></div>
+        <div class="card-header"><h3>Datos personales</h3></div>
+        <div class="card-body text-primary">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="lblNombre"><b>Nombre</b></label>
+                    <asp:Label ID="lblNombre" runat="server" CssClass="form-control"></asp:Label>
+                    </div>
+                <div class="form-group col-md-6">
+                    <label for="lblEmail"><b>Correo electrónico</b></label>
+                    <asp:Label ID="lblEmail" runat="server" CssClass="form-control"></asp:Label>
+                </div>
+            </div>
+            </div>
+        </div>
+    <div class="card border-primary mb-3">
+        <div class="card-header"><h3>Credenciales de Usuario</h3></div>
         <div class="card-body text-primary">
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <asp:Label ID="lblUsuario" Text="Ingrese su Usuario" runat="server" style="color:black"></asp:Label>
-                    <asp:TextBox ID="txtUsuario" CssClass="form-control" runat="server"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="* Ingrese un Usuario" ControlToValidate="txtUsuario" ForeColor="MediumVioletRed"></asp:RequiredFieldValidator>
+                    <asp:TextBox ID="txtUsuario" CssClass="form-control" runat="server" ></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="* Ingrese un Usuario" ControlToValidate="txtUsuario" ForeColor="MediumVioletRed"></asp:RequiredFieldValidator><br />
+                    <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ErrorMessage="* Username invalido" ForeColor="MediumVioletRed" ControlToValidate="txtUsuario" ValidationExpression="[A-Za-z][A-Za-z0-9._]{5,25}"></asp:RegularExpressionValidator>
                 </div>
                 <div class="form-group col-md-3">
                     <asp:Label ID="lblContra" Text="Ingrese su Contraseña" runat="server" style="color:black"></asp:Label>
                     <asp:TextBox ID="txtContra" CssClass="form-control" runat="server" MaxLength="20" TextMode="Password"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="* Ingrese contraseña" ControlToValidate="txtContra" ForeColor="MediumVioletRed"></asp:RequiredFieldValidator>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="* Ingrese contraseña" ControlToValidate="txtContra" ForeColor="MediumVioletRed"></asp:RequiredFieldValidator><br />
+                    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="* Contraseña invalida" ForeColor="MediumVioletRed" ControlToValidate="txtContra" ValidationExpression="((?=.*\d)(?=.*[a-z])(?=.*[\W]).{8,15})"></asp:RegularExpressionValidator>
                 </div>
                 <div class="form-group col-md-3">
                     <asp:Label ID="lblConfCon" Text="Confirme su Contraseña" runat="server" style="color:black"></asp:Label>

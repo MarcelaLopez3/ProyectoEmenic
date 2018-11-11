@@ -44,6 +44,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=18.1.1.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <HintPath>..\packages\AjaxControlToolkit.18.1.1\lib\net40\AjaxControlToolkit.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
       <Private>True</Private>
@@ -135,7 +139,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Paginas\Clientes\" />
     <Folder Include="scss\" />
     <Folder Include="vendor\" />
   </ItemGroup>
@@ -144,6 +147,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="css\bootstrap.css" />
+    <Content Include="css\ComboBox.css" />
     <Content Include="css\flexslider.css" />
     <Content Include="css\fontawesome-all.css" />
     <Content Include="css\popup-box.css" />
@@ -225,21 +229,32 @@
     <Content Include="fonts\fa-solid-900.woff2" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Imagenes\Logo_emenic.png" />
+    <Content Include="Paginas\Clientes\ListadoClientes.aspx" />
+    <Content Include="Paginas\Emenic\ListadoEmenic.aspx" />
+    <Content Include="Paginas\Personas\ActualizarJuridicos.aspx" />
     <Content Include="Paginas\Personas\ActualizarNaturales.aspx" />
+    <Content Include="Paginas\Personas\ListadoJuridicos.aspx" />
     <Content Include="Paginas\Personas\ListadoNaturales.aspx" />
     <Content Include="Paginas\Personas\RegistroJuridicos.aspx" />
     <Content Include="Paginas\Personas\RegistroNaturales.aspx" />
     <Content Include="Paginas\Dashboard.aspx" />
     <Content Include="Paginas\Publicidad\Index.aspx" />
+    <Content Include="Paginas\Transporte\ActualizarTransporte.aspx" />
+    <Content Include="Paginas\Transporte\ListadoTransporte.aspx" />
+    <Content Include="Paginas\Servicios\RegistroCartaporte.aspx" />
+    <Content Include="Paginas\Servicios\RegistroContrato.aspx" />
     <Content Include="Paginas\Servicios\ServicioContratado.aspx" />
-    <Content Include="Paginas\Servicios\Transporte.aspx" />
+    <Content Include="Paginas\Transporte\Transporte.aspx" />
+    <Content Include="Paginas\Usuarios\ActualizarUsuario.aspx" />
     <Content Include="Paginas\Usuarios\CrearUsuario.aspx" />
+    <Content Include="Paginas\Usuarios\ListadoUsuarios.aspx" />
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\jquery.maskedinput.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
@@ -264,9 +279,9 @@
     <Content Include="Scripts\WebForms\WebForms.js" />
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
-    <Content Include="Scripts\_references.js" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <None Include="Scripts\_references.js" />
     <Content Include="Site.Master" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
@@ -286,6 +301,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Code\Conexion.cs" />
+    <Compile Include="Clases\Validacion.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -310,12 +326,40 @@
     <Compile Include="MasterPage.Master.designer.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
     </Compile>
+    <Compile Include="Paginas\Clientes\ListadoClientes.aspx.cs">
+      <DependentUpon>ListadoClientes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Clientes\ListadoClientes.aspx.designer.cs">
+      <DependentUpon>ListadoClientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\Emenic\ListadoEmenic.aspx.cs">
+      <DependentUpon>ListadoEmenic.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Emenic\ListadoEmenic.aspx.designer.cs">
+      <DependentUpon>ListadoEmenic.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\Personas\ActualizarJuridicos.aspx.cs">
+      <DependentUpon>ActualizarJuridicos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Personas\ActualizarJuridicos.aspx.designer.cs">
+      <DependentUpon>ActualizarJuridicos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Paginas\Personas\ActualizarNaturales.aspx.cs">
       <DependentUpon>ActualizarNaturales.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Paginas\Personas\ActualizarNaturales.aspx.designer.cs">
       <DependentUpon>ActualizarNaturales.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\Personas\ListadoJuridicos.aspx.cs">
+      <DependentUpon>ListadoJuridicos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Personas\ListadoJuridicos.aspx.designer.cs">
+      <DependentUpon>ListadoJuridicos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Paginas\Personas\ListadoNaturales.aspx.cs">
       <DependentUpon>ListadoNaturales.aspx</DependentUpon>
@@ -352,6 +396,34 @@
     <Compile Include="Paginas\Publicidad\Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Paginas\Transporte\ActualizarTransporte.aspx.cs">
+      <DependentUpon>ActualizarTransporte.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Transporte\ActualizarTransporte.aspx.designer.cs">
+      <DependentUpon>ActualizarTransporte.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\Transporte\ListadoTransporte.aspx.cs">
+      <DependentUpon>ListadoTransporte.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Transporte\ListadoTransporte.aspx.designer.cs">
+      <DependentUpon>ListadoTransporte.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\Servicios\RegistroCartaporte.aspx.cs">
+      <DependentUpon>RegistroCartaporte.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Servicios\RegistroCartaporte.aspx.designer.cs">
+      <DependentUpon>RegistroCartaporte.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\Servicios\RegistroContrato.aspx.cs">
+      <DependentUpon>RegistroContrato.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Servicios\RegistroContrato.aspx.designer.cs">
+      <DependentUpon>RegistroContrato.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Paginas\Servicios\ServicioContratado.aspx.cs">
       <DependentUpon>ServicioContratado.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -359,12 +431,19 @@
     <Compile Include="Paginas\Servicios\ServicioContratado.aspx.designer.cs">
       <DependentUpon>ServicioContratado.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Paginas\Servicios\Transporte.aspx.cs">
+    <Compile Include="Paginas\Transporte\Transporte.aspx.cs">
       <DependentUpon>Transporte.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Paginas\Servicios\Transporte.aspx.designer.cs">
+    <Compile Include="Paginas\Transporte\Transporte.aspx.designer.cs">
       <DependentUpon>Transporte.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\Usuarios\ActualizarUsuario.aspx.cs">
+      <DependentUpon>ActualizarUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Usuarios\ActualizarUsuario.aspx.designer.cs">
+      <DependentUpon>ActualizarUsuario.aspx</DependentUpon>
     </Compile>
     <Compile Include="Paginas\Usuarios\CrearUsuario.aspx.cs">
       <DependentUpon>CrearUsuario.aspx</DependentUpon>
@@ -372,6 +451,13 @@
     </Compile>
     <Compile Include="Paginas\Usuarios\CrearUsuario.aspx.designer.cs">
       <DependentUpon>CrearUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\Usuarios\ListadoUsuarios.aspx.cs">
+      <DependentUpon>ListadoUsuarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Usuarios\ListadoUsuarios.aspx.designer.cs">
+      <DependentUpon>ListadoUsuarios.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">

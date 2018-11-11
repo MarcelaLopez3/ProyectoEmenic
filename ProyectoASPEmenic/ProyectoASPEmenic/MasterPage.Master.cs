@@ -18,7 +18,7 @@ namespace ProyectoASPEmenic
             }
             else
             {
-                lblUserSession.Text = "¡Bienvenido " + Session["Usuario"].ToString() +"!";
+                lblUserSession.Text = "¡Bienvenid@ " + Session["Usuario"].ToString() +"!";
             }
         }
 

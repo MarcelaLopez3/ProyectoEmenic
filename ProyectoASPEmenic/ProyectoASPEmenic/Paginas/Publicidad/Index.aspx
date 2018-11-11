@@ -50,12 +50,7 @@
                         <li class="nav-item">
                             <a class="nav-link scroll" href="#services">Servicios</a>
                         </li>
-                      <!--  <li class="nav-item">
-                            <a class="nav-link scroll" href="#mision">Misión</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link scroll" href="#vision">Visión</a>
-                        </li> -->
+
                         <li class="nav-item">
                             <a class="nav-link scroll" href="#contact">Contacto</a>
                         </li>
