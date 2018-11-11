@@ -12,6 +12,8 @@ namespace ProyectoASPEmenic.Paginas.Servicios
         //Variables globales
         Conexion conexion = new Conexion();
         string query = "";
+        DateTime Hoy = DateTime.Today;
+        bool bandera_ser = false;
 
         //Propiedades
         public int IdDestinatario
@@ -141,18 +143,51 @@ namespace ProyectoASPEmenic.Paginas.Servicios
                     string Galones = txtgalones.Text;
                     string ViaticosMotorista = txtviaticos.Text;
 
-                    query = "INSERT INTO serviciocontratado(IdCliente,IdConsignatorio,Transporte,Alquiler," +
-                        "FechaAdquisicion,Descripcion,PeriodoCobro,Retorno,FechaVencimiento,PagoEmpresa," +
-                        "PagoEstadia,PagoGuardia,ViaticosMotorista,Galones) VALUES (" + VarSer + "," + IdConsigatario +
-                        "," + Transporte + "," + Alquiler + ",'" + FechaAdquisicion + "','" + Descripcion + "','" + PeriodoCobro +
-                        "'," + Retorno + ",'" + FechaVencimiento + "'," + PagoEmpresa + "," + PagoEstadia +
-                        "," + PagoGuardia + "," + ViaticosMotorista + "," + Galones + ")";
-                    //enviar consulta a Mysql
-                    conexion.IniciarConexion();
-                    conexion.EnviarQuery(query);
-                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Se ha insertado con exito.')", true);
-                    CargandoTablaServicio();
-                    LimpiarFormulario();
+                    //Verificar que haya 1 bandera activa (transporte o alquiler) pero que no esten vacias y que no esten ambas
+                    if (Transporte == true && Alquiler == true)
+                    {
+                        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Solo puede ser un tipo de servicio a la vez, Alquiler o Transporte.')", true);
+                    }
+                    else if (Transporte == false && Alquiler == false)
+                    {
+                        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Debe marcar un servicio, Alquiler o Transporte.')", true);
+                    }
+                    else
+                    {
+                        bandera_ser = true;
+                    }
+
+                    //verificando el contenido de las fechas, si no tiene nada entonces se le coloca la fecha de hoy
+                    if (FechaAdquisicion == "" || FechaAdquisicion == " ")
+                    {
+                        FechaAdquisicion = FormatoFecha(Hoy.ToShortDateString());
+                    }
+
+                    if (FechaVencimiento == "" || FechaVencimiento == " ")
+                    {
+                        FechaVencimiento = FormatoFecha(Hoy.ToShortDateString());
+                    }
+
+                    //inicio insert de servicio
+                    if (bandera_ser == true)
+                    {
+                        query = "INSERT INTO serviciocontratado(IdCliente,IdConsignatorio,Transporte,Alquiler," +
+                            "FechaAdquisicion,Descripcion,PeriodoCobro,Retorno,FechaVencimiento,PagoEmpresa," +
+                            "PagoEstadia,PagoGuardia,ViaticosMotorista,Galones) VALUES (" + VarSer + "," + IdConsigatario +
+                            "," + Transporte + "," + Alquiler + ",'" + FechaAdquisicion + "','" + Descripcion + "','" + PeriodoCobro +
+                            "'," + Retorno + ",'" + FechaVencimiento + "'," + PagoEmpresa + "," + PagoEstadia +
+                            "," + PagoGuardia + "," + ViaticosMotorista + "," + Galones + ")";
+                        //enviar consulta a Mysql
+                        conexion.IniciarConexion();
+                        conexion.EnviarQuery(query);
+                        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Se ha insertado con exito.')", true);
+                        CargandoTablaServicio();
+                        LimpiarFormulario();
+                    }
+                    else
+                    {
+                        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('No se ha podido ingresar registro.')", true);
+                    }
                 }
                 else
                 {
@@ -176,19 +211,53 @@ namespace ProyectoASPEmenic.Paginas.Servicios
                 string Galones = txtgalones.Text;
                 string ViaticosMotorista = txtviaticos.Text;
 
-                query = "UPDATE serviciocontratado SET Transporte = " + Transporte + ", Alquiler = " + Alquiler + 
-                    ", FechaAdquisicion = '" + FechaAdquisicion + "', FechaVencimiento = '" + FechaVencimiento + 
-                    "', Descripcion = '" + Descripcion + "', PeriodoCobro = '" + PeriodoCobro + "', Retorno = " + 
-                    Retorno + ", IdConsignatorio = " + IdConsigatario + ", PagoEmpresa = " + PagoEmpresa + 
-                    ", PagoEstadia = " + PagoEstadia + ", PagoGuardia = " + PagoGuardia + ", Galones = '" + 
-                    Galones + "' WHERE Id = " + HFUpdateId.Value;
+                //Verificar que haya 1 bandera activa (transporte o alquiler) pero que no esten vacias y que no esten ambas
+                if (Transporte == true && Alquiler == true)
+                {
+                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Solo puede ser un tipo de servicio a la vez, Alquiler o Transporte.')", true);
+                }
+                else if (Transporte == false && Alquiler == false)
+                {
+                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Debe marcar un servicio, Alquiler o Transporte.')", true);
+                }
+                else
+                {
+                    bandera_ser = true;
+                }
 
-                conexion.IniciarConexion();
-                conexion.EnviarQuery(query);
-                conexion.CerrarConexion();
-                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Se ha actualizado con exito.')", true);
-                btnAgregarServicioContra.Text = "Agregar";
-                LimpiarFormulario();
+                //verificando el contenido de las fechas, si no tiene nada entonces se le coloca la fecha de hoy
+                if (FechaAdquisicion == "" || FechaAdquisicion == " ")
+                {
+                    FechaAdquisicion = FormatoFecha(Hoy.ToShortDateString());
+                }
+
+                if (FechaVencimiento == "" || FechaVencimiento == " ")
+                {
+                    FechaVencimiento = FormatoFecha(Hoy.ToShortDateString());
+                }
+
+                if (bandera_ser == true)
+                {
+                    query = "UPDATE serviciocontratado SET Transporte = " + Transporte + ", Alquiler = " + Alquiler +
+                        ", FechaAdquisicion = '" + FechaAdquisicion + "', FechaVencimiento = '" + FechaVencimiento +
+                        "', Descripcion = '" + Descripcion + "', PeriodoCobro = '" + PeriodoCobro + "', Retorno = " +
+                        Retorno + ", IdConsignatorio = " + IdConsigatario + ", PagoEmpresa = " + PagoEmpresa +
+                        ", PagoEstadia = " + PagoEstadia + ", PagoGuardia = " + PagoGuardia + ", Galones = '" +
+                        Galones + "', ViaticosMotorista = " + ViaticosMotorista + " WHERE Id = " + HFUpdateId.Value;
+
+                    conexion.IniciarConexion();
+                    conexion.EnviarQuery(query);
+                    conexion.CerrarConexion();
+                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Se ha actualizado con exito.')", true);
+                    btnAgregarServicioContra.Text = "Agregar";
+                    LimpiarFormulario();
+                    CargandoTablaServicio();
+                    CargandoDocumentoServicio();
+                }
+                else
+                {
+                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('No se ha podido ingresar registro.')", true);
+                }
             }
         }
 
@@ -301,6 +370,7 @@ namespace ProyectoASPEmenic.Paginas.Servicios
             txtpagoempresa.Text = "";
             txtpagoestadia.Text = "";
             txtpagoguardia.Text = "";
+            txtviaticos.Text = "";
         }
     }
 }
