@@ -105,36 +105,70 @@ namespace ProyectoASPEmenic.Paginas.Servicios
 
         protected void btnAgregarServicioContra_Click(object sender, EventArgs e)
         {
-            //recuperando el IdCliente
-            string VarSer = Request.QueryString["ser"];
+            if (btnAgregarServicioContra.Text == "Agregar")
+            {
+                //recuperando el IdCliente
+                string VarSer = Request.QueryString["ser"];
 
-            //recuperando entradas
-            bool Transporte = checkTransporte.Checked;
-            bool Alquiler = checkAlquiler.Checked;
-            string FechaAdquisicion = txtfechaAdquisicion.Text;
-            string FechaVencimiento = txtfechaVencimiento.Text;
-            string Descripcion = txtDescripcion.Text;
-            string PeriodoCobro = txtperiodocobro.Text;
-            bool Retorno = checkRetorno.Checked;            
-            int IdConsigatario = Int32.Parse(ddlDestinoConsignatario.SelectedValue);
-            string PagoEmpresa = txtpagoempresa.Text;
-            string PagoEstadia = txtpagoestadia.Text;
-            string PagoGuardia = txtpagoguardia.Text;
-            string Galones = txtgalones.Text;
-            string ViaticosMotorista = txtviaticos.Text;           
+                //recuperando entradas
+                bool Transporte = checkTransporte.Checked;
+                bool Alquiler = checkAlquiler.Checked;
+                string FechaAdquisicion = txtfechaAdquisicion.Text;
+                string FechaVencimiento = txtfechaVencimiento.Text;
+                string Descripcion = txtDescripcion.Text;
+                string PeriodoCobro = txtperiodocobro.Text;
+                bool Retorno = checkRetorno.Checked;
+                int IdConsigatario = Int32.Parse(ddlDestinoConsignatario.SelectedValue);
+                string PagoEmpresa = txtpagoempresa.Text;
+                string PagoEstadia = txtpagoestadia.Text;
+                string PagoGuardia = txtpagoguardia.Text;
+                string Galones = txtgalones.Text;
+                string ViaticosMotorista = txtviaticos.Text;
 
-            query = "INSERT INTO serviciocontratado(IdCliente,IdConsignatorio,Transporte,Alquiler,"+
-                "FechaAdquisicion,Descripcion,PeriodoCobro,Retorno,FechaVencimiento,PagoEmpresa,"+
-                "PagoEstadia,PagoGuardia,ViaticosMotorista,Galones) VALUES (" + VarSer + "," + IdConsigatario + 
-                "," + Transporte + "," + Alquiler + ",'" + FechaAdquisicion + "','" + Descripcion + "','" + PeriodoCobro +
-                "'," + Retorno + ",'" + FechaVencimiento + "'," + PagoEmpresa + "," + PagoEstadia + 
-                "," + PagoGuardia + "," + ViaticosMotorista + "," + Galones + ")";
-            //enviar consulta a Mysql
-            conexion.IniciarConexion();
-            conexion.EnviarQuery(query);
-            ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Se ha insertado con exito.')", true);
-            CargandoTablaServicio();
-            LimpiarFormulario();
+                query = "INSERT INTO serviciocontratado(IdCliente,IdConsignatorio,Transporte,Alquiler," +
+                    "FechaAdquisicion,Descripcion,PeriodoCobro,Retorno,FechaVencimiento,PagoEmpresa," +
+                    "PagoEstadia,PagoGuardia,ViaticosMotorista,Galones) VALUES (" + VarSer + "," + IdConsigatario +
+                    "," + Transporte + "," + Alquiler + ",'" + FechaAdquisicion + "','" + Descripcion + "','" + PeriodoCobro +
+                    "'," + Retorno + ",'" + FechaVencimiento + "'," + PagoEmpresa + "," + PagoEstadia +
+                    "," + PagoGuardia + "," + ViaticosMotorista + "," + Galones + ")";
+                //enviar consulta a Mysql
+                conexion.IniciarConexion();
+                conexion.EnviarQuery(query);
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Se ha insertado con exito.')", true);
+                CargandoTablaServicio();
+                LimpiarFormulario();
+            }
+            else if (btnAgregarServicioContra.Text == "Actualizar")
+            {
+                //recuperando entradas de update
+                bool Transporte = checkTransporte.Checked;
+                bool Alquiler = checkAlquiler.Checked;
+                string FechaAdquisicion = txtfechaAdquisicion.Text;
+                string FechaVencimiento = txtfechaVencimiento.Text;
+                string Descripcion = txtDescripcion.Text;
+                string PeriodoCobro = txtperiodocobro.Text;
+                bool Retorno = checkRetorno.Checked;
+                int IdConsigatario = Int32.Parse(ddlDestinoConsignatario.SelectedValue);
+                string PagoEmpresa = txtpagoempresa.Text;
+                string PagoEstadia = txtpagoestadia.Text;
+                string PagoGuardia = txtpagoguardia.Text;
+                string Galones = txtgalones.Text;
+                string ViaticosMotorista = txtviaticos.Text;
+
+                query = "UPDATE serviciocontratado SET Transporte = " + Transporte + ", Alquiler = " + Alquiler + 
+                    ", FechaAdquisicion = '" + FechaAdquisicion + "', FechaVencimiento = '" + FechaVencimiento + 
+                    "', Descripcion = '" + Descripcion + "', PeriodoCobro = '" + PeriodoCobro + "', Retorno = " + 
+                    Retorno + ", IdConsignatorio = " + IdConsigatario + ", PagoEmpresa = " + PagoEmpresa + 
+                    ", PagoEstadia = " + PagoEstadia + ", PagoGuardia = " + PagoGuardia + ", Galones = '" + 
+                    Galones + "' WHERE Id = " + HFUpdateId.Value;
+
+                conexion.IniciarConexion();
+                conexion.EnviarQuery(query);
+                conexion.CerrarConexion();
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Se ha actualizado con exito.')", true);
+                btnAgregarServicioContra.Text = "Agregar";
+                LimpiarFormulario();
+            }
         }
 
         protected void GridListadoServicio_RowCommand(object sender, GridViewCommandEventArgs e)
@@ -144,7 +178,7 @@ namespace ProyectoASPEmenic.Paginas.Servicios
                 //Inicio de update del servicio
                 query = "SELECT IdConsignatorio,Transporte,Alquiler,FechaAdquisicion,Descripcion,"+
                     "PeriodoCobro,Retorno,FechaVencimiento,PagoEmpresa,PagoEstadia,PagoGuardia,"+
-                    "ViaticosMotorista,Galones FROM serviciocontratado WHERE Id = " + e.CommandArgument;
+                    "ViaticosMotorista,Galones,Id FROM serviciocontratado WHERE Id = " + e.CommandArgument;
 
                 conexion.IniciarConexion();
                 conexion.RecibeQuery(query);
@@ -212,9 +246,12 @@ namespace ProyectoASPEmenic.Paginas.Servicios
                     else
                         txtgalones.Text = "";
 
+                    HFUpdateId.Value = conexion.reg.GetValue(13).ToString();
+
                 }
                 ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Puede iniciar la modificación de información.')", true);
                 conexion.CerrarConexion();
+                btnAgregarServicioContra.Text = "Actualizar";
             }
         }
 
