@@ -37,8 +37,8 @@ namespace ProyectoASPEmenic.Paginas.Servicios
                         txtvehiculoequipo.Text = conexion.reg.GetString(2);
                     else
                         txtvehiculoequipo.Text = "";
-                    checkCabezal.Checked = conexion.reg.GetBoolean(3);
-                    checkFurgon.Checked = conexion.reg.GetBoolean(4);
+                    checkFurgon.Checked = conexion.reg.GetBoolean(3);
+                    checkCabezal.Checked = conexion.reg.GetBoolean(4);
                 }
                 conexion.CerrarConexion();
             }
@@ -48,27 +48,41 @@ namespace ProyectoASPEmenic.Paginas.Servicios
         {
             string VarAct = Request.QueryString["act"];
             int idTransporte=Convert.ToInt32(VarAct);
+
             //recuperando entradas
             Boolean Cabezal = checkCabezal.Checked;
             Boolean Furgon = checkFurgon.Checked;
             string Placa = txtPlaca.Text;
             string Equipo = txtvehiculoequipo.Text;
             string Descripcion = txtDescripcion.Text;
-            //consulta que se ingresa a la base de datos
-            string query = "UPDATE `transporte` " +
-                "SET `Placa`='"+Placa+"'," +
-                "`Descripcion`='"+Descripcion+"'," +
-                "`Equipo`='"+Equipo+"'," +
-                "`Furgon` = " + Furgon+"," +
-                "`Cabezal` = "+Cabezal+" " +
-                "WHERE `transporte`.`IdTransporte` ="+ idTransporte + ";";
-            //enviar consulta a Mysql
-            conexion.IniciarConexion();
-            conexion.EnviarQuery(query);
-            conexion.CerrarConexion();
 
-            ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Se ha actualizado con exito.')", true);
-            Response.Redirect("~/Paginas/Servicios/ListadoTransporte.aspx");
+            if (Cabezal == false && Furgon == false)
+            {
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Debe seleccionar una opción')", true);
+            }
+            else if (Cabezal == true && Furgon == true)
+            {
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Debe seleccionar solo una opción')", true);
+            }
+            else
+            {
+                //consulta que se ingresa a la base de datos
+                string query = "UPDATE `transporte` " +
+                "SET `Placa`='" + Placa + "'," +
+                "`Descripcion`='" + Descripcion + "'," +
+                "`Equipo`='" + Equipo + "'," +
+                "`Furgon` = " + Furgon + "," +
+                "`Cabezal` = " + Cabezal + " " +
+                "WHERE `transporte`.`IdTransporte` =" + idTransporte + ";";
+                //enviar consulta a Mysql
+                conexion.IniciarConexion();
+                conexion.EnviarQuery(query);
+                conexion.CerrarConexion();
+
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Se ha actualizado con exito.')", true);
+                Response.Redirect("~/Paginas/Transporte/ListadoTransporte.aspx");
+            }
+            
         }
     }
 }

@@ -24,14 +24,14 @@
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <asp:Label runat="server" ID="lblplaca" Text="Placa del vehículo:" Style="color: black"></asp:Label>
-                    <asp:RequiredFieldValidator ID="RFVPlaca" runat="server" ControlToValidate="txtPlaca" Text="*" ErrorMessage="Este campo es requerido" ForeColor="Red"></asp:RequiredFieldValidator><br />
+                    <asp:RequiredFieldValidator ID="RFVPlaca" runat="server" ControlToValidate="txtPlaca" Text="Campo requerido" ErrorMessage="Este campo es requerido"></asp:RequiredFieldValidator><br />
                     <asp:TextBox runat="server" ID="txtPlaca" CssClass="form-control" MaxLength="7"></asp:TextBox>
                     <asp:RegularExpressionValidator ID="REVPlaca" runat="server" ControlToValidate="txtPlaca" Text="Solo se admiten Letras y Numeros con una longitud de 7 caracteres" ErrorMessage="No coincide con el formato" Display="Dynamic" ValidationExpression="[a-zA-Z0-9]+"></asp:RegularExpressionValidator>
                 </div>
 
                 <div class="form-group col-md-6">
                     <asp:Label runat="server" ID="lbvehiculoequipo" Text="Tipo de equipo:" Style="color: black"></asp:Label>
-                    <asp:RequiredFieldValidator ID="RFVEquipo" runat="server" ControlToValidate="txtvehiculoequipo" Text="*" ErrorMessage="Este campo es requerido" ForeColor="Red"></asp:RequiredFieldValidator><br />
+                    <asp:RequiredFieldValidator ID="RFVEquipo" runat="server" ControlToValidate="txtvehiculoequipo" Text="Campo requerido" ErrorMessage="Este campo es requerido"></asp:RequiredFieldValidator><br />
                     <asp:TextBox runat="server" ID="txtvehiculoequipo" CssClass="form-control" MaxLength="30"></asp:TextBox>
                     <asp:RegularExpressionValidator ID="REVEquipo" runat="server" ControlToValidate="txtvehiculoequipo" Text="Solo se admiten Letras" ErrorMessage="No coincide con el formato" Display="Dynamic" ValidationExpression="[a-zA-ZñÑáéíóúÁÉÍÓÚ\ ]+"></asp:RegularExpressionValidator>
                 </div>
@@ -40,7 +40,7 @@
             </div>
             <div class="form-group col-md-12">
                 <asp:Label runat="server" ID="lbvehiculoDescrip" Text="Descripcion del vehículo:" Style="color: black"></asp:Label>
-                <asp:RequiredFieldValidator ID="RFVDescripcion" runat="server" ControlToValidate="txtDescripcion" Text="*" ErrorMessage="Este campo es requerido" ForeColor="Red"></asp:RequiredFieldValidator><br />
+                <asp:RequiredFieldValidator ID="RFVDescripcion" runat="server" ControlToValidate="txtDescripcion" Text="Campo requerido" ErrorMessage="Este campo es requerido"></asp:RequiredFieldValidator><br />
                 <asp:TextBox runat="server" ID="txtDescripcion" CssClass="form-control" TextMode="MultiLine" Height="150px" MaxLength="100" />
                 <asp:CustomValidator ID="CustomValidator1" runat="server" ErrorMessage="Introduzca 100 caracteres como maximo" ControlToValidate="txtDescripcion" ClientValidationFunction="VerificarCantidad"></asp:CustomValidator>
             </div>
@@ -53,7 +53,7 @@
                 <center><asp:Button runat="server" ID="btnGuardarTransporte" Text="Guardar" CssClass="btn btn-info btn-block" style="color:white; background-color:red; border-color:red; width:auto" OnClick="btnGuardarTransporte_Click"></asp:Button></center>
             </div>
             <div class="form-group col-md-6">
-                <center><asp:Button runat="server" ID="btnLimpiarTransporte" Text="Limpiar" CssClass="btn btn-info btn-block" style="color:white; background-color:red; border-color:red; width:auto" OnClick="btnLimpiarTransporte_Click"></asp:Button></center>
+                <center><asp:Button runat="server" ID="btnLimpiarTransporte" Text="Limpiar" CssClass="btn btn-info btn-block" style="color:white; background-color:red; border-color:red; width:auto" OnClick="btnLimpiarTransporte_Click" ValidationGroup="2"></asp:Button></center>
             </div>
         </div>
     </div>

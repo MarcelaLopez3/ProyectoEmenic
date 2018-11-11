@@ -10,6 +10,9 @@ namespace ProyectoASPEmenic.Paginas.Servicios
     public partial class Transporte : System.Web.UI.Page
     {
         Conexion conexion = new Conexion();
+
+        public object MessageBox { get; private set; }
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -28,15 +31,46 @@ namespace ProyectoASPEmenic.Paginas.Servicios
             string Placa = txtPlaca.Text;
             string Equipo = txtvehiculoequipo.Text;
             string Descripcion = txtDescripcion.Text;
-            //consulta que se ingresa a la base de datos
-            string query = "INSERT INTO `transporte` (`Placa`, `Descripcion`, `Equipo`, `Furgon`, `Cabezal`) " +
-                "VALUES('"+Placa + "','" + Descripcion + "','"+Equipo+"',"+Furgon+","+Cabezal+")";
-            //enviar consulta a Mysql
-            conexion.IniciarConexion();
-            conexion.EnviarQuery(query);
-            conexion.CerrarConexion();
-            ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Se ha insertado con exito.')", true);
-            Response.Redirect("~/Paginas/Transporte/ListadoTransporte.aspx");
+            int Resultado_placa = 0;
+            string query;
+
+            if (Cabezal == false && Furgon == false)
+            {
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Debe seleccionar una opción')", true);
+            }
+            else if (Cabezal == true && Furgon == true)
+            {
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Debe seleccionar solo una opción')", true);
+            }
+            else
+            {
+                query = "SELECT COUNT(Placa) FROM transporte WHERE Placa = '" + Placa + "'";
+                conexion.IniciarConexion();
+                conexion.RecibeQuery(query);
+                while (conexion.reg.Read())
+                {
+                    Resultado_placa = conexion.reg.GetInt32(0);
+
+                }
+                conexion.reg.Close();
+                conexion.CerrarConexion();
+                if (Resultado_placa == 1)
+                {
+                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('El numero de Placa ya existente.')", true);
+                }
+                else
+                {
+                    //consulta que se ingresa a la base de datos
+                    query = "INSERT INTO `transporte` (`Placa`, `Descripcion`, `Equipo`, `Furgon`, `Cabezal`, `IdEmenic`) " +
+                    "VALUES('" + Placa + "','" + Descripcion + "','" + Equipo + "'," + Furgon + "," + Cabezal + ", 1)";
+                    //enviar consulta a Mysql
+                    conexion.IniciarConexion();
+                    conexion.EnviarQuery(query);
+                    conexion.CerrarConexion();
+                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Se ha insertado con exito.')", true);
+                    Response.Redirect("~/Paginas/Transporte/ListadoTransporte.aspx");
+                }
+            }
         }
 
         protected void LimpiarTransporte()
