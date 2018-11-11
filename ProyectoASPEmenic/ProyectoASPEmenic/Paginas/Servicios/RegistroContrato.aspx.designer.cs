@@ -7,11 +7,13 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace ProyectoASPEmenic.Paginas.Servicios {
-    
-    
-    public partial class RegistroContrato {
-        
+namespace ProyectoASPEmenic.Paginas.Servicios
+{
+
+
+    public partial class RegistroContrato
+    {
+
         /// <summary>
         /// Control lbContratos.
         /// </summary>
@@ -20,7 +22,16 @@ namespace ProyectoASPEmenic.Paginas.Servicios {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbContratos;
-        
+
+        /// <summary>
+        /// Control ScriptManager1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.ScriptManager ScriptManager1;
+
         /// <summary>
         /// Control lbIDtransporte.
         /// </summary>
@@ -29,7 +40,7 @@ namespace ProyectoASPEmenic.Paginas.Servicios {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbIDtransporte;
-        
+
         /// <summary>
         /// Control ddlIDtransporte.
         /// </summary>
@@ -37,8 +48,17 @@ namespace ProyectoASPEmenic.Paginas.Servicios {
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlIDtransporte;
-        
+        protected global::AjaxControlToolkit.ComboBox ddlIDtransporte;
+
+        /// <summary>
+        /// Control RFV_transporte.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFV_transporte;
+
         /// <summary>
         /// Control lbIDservicio.
         /// </summary>
@@ -47,7 +67,7 @@ namespace ProyectoASPEmenic.Paginas.Servicios {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbIDservicio;
-        
+
         /// <summary>
         /// Control ddlIDservicio.
         /// </summary>
@@ -55,8 +75,17 @@ namespace ProyectoASPEmenic.Paginas.Servicios {
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlIDservicio;
-        
+        protected global::AjaxControlToolkit.ComboBox ddlIDservicio;
+
+        /// <summary>
+        /// Control RFV_servicio.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFV_servicio;
+
         /// <summary>
         /// Control lblcantidadmeses.
         /// </summary>
@@ -65,7 +94,7 @@ namespace ProyectoASPEmenic.Paginas.Servicios {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblcantidadmeses;
-        
+
         /// <summary>
         /// Control txtcantidadmeses.
         /// </summary>
@@ -74,7 +103,25 @@ namespace ProyectoASPEmenic.Paginas.Servicios {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtcantidadmeses;
-        
+
+        /// <summary>
+        /// Control RFV_cantidadmeses.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFV_cantidadmeses;
+
+        /// <summary>
+        /// Control REV_Meses.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator REV_Meses;
+
         /// <summary>
         /// Control lbfechaemision.
         /// </summary>
@@ -83,7 +130,7 @@ namespace ProyectoASPEmenic.Paginas.Servicios {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbfechaemision;
-        
+
         /// <summary>
         /// Control txtfechaemision.
         /// </summary>
@@ -92,7 +139,25 @@ namespace ProyectoASPEmenic.Paginas.Servicios {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtfechaemision;
-        
+
+        /// <summary>
+        /// Control RFV_fechaemision.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFV_fechaemision;
+
+        /// <summary>
+        /// Control REV_Fecha.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator REV_Fecha;
+
         /// <summary>
         /// Control btnGuardarContrato.
         /// </summary>
