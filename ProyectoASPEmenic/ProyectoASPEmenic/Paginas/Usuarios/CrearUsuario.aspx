@@ -28,8 +28,9 @@
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <asp:Label ID="lblUsuario" Text="Ingrese su Usuario" runat="server" style="color:black"></asp:Label>
-                    <asp:TextBox ID="txtUsuario" CssClass="form-control" runat="server"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="* Ingrese un Usuario" ControlToValidate="txtUsuario" ForeColor="MediumVioletRed"></asp:RequiredFieldValidator>
+                    <asp:TextBox ID="txtUsuario" CssClass="form-control" runat="server" ></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="* Ingrese un Usuario" ControlToValidate="txtUsuario" ForeColor="MediumVioletRed"></asp:RequiredFieldValidator><br />
+                    <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ErrorMessage="* Username invalido" ForeColor="MediumVioletRed" ControlToValidate="txtUsuario" ValidationExpression="[A-Za-z][A-Za-z0-9._]{5,25}"></asp:RegularExpressionValidator>
                 </div>
                 <div class="form-group col-md-3">
                     <asp:Label ID="lblContra" Text="Ingrese su Contraseña" runat="server" style="color:black"></asp:Label>
