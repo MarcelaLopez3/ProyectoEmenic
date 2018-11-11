@@ -232,7 +232,7 @@ namespace ProyectoASPEmenic.Paginas.Servicios
             checkAlquiler.Checked = false;
             checkRetorno.Checked = false;
             checkTransporte.Checked = false;
-            ddlDestinoConsignatario.Text = "";
+             ddlDestinoConsignatario.Text = "";
             txtperiodocobro.Text = "";
             txtgalones.Text = "";
             txtDescripcion.Text = "";

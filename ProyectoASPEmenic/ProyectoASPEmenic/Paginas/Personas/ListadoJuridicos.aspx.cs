@@ -35,10 +35,19 @@ namespace ProyectoASPEmenic.Paginas.Personas
 
         protected void GridListadoJuridicas_RowEditing(object sender, GridViewEditEventArgs e)
         {
-            //IdPersona de la tabla que selecciona
-            HFIdPersona.Value = GridListadoJuridicas.Rows[e.NewEditIndex].Cells[1].Text;
-            //Envia IdPersona a formulario de actualizar   
-            Response.Redirect("~/Paginas/Personas/ActualizarJuridicos.aspx?act=" + HFIdPersona.Value);
+            ////IdPersona de la tabla que selecciona
+            //HFIdPersona.Value = GridListadoJuridicas.Rows[e.NewEditIndex].Cells[1].Text;
+            ////Envia IdPersona a formulario de actualizar   
+            //Response.Redirect("~/Paginas/Personas/ActualizarJuridicos.aspx?act=" + HFIdPersona.Value);
+        }
+
+        protected void GridListadoJuridicas_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            if (e.CommandName == "Actualizar")
+            {
+                //Envia IdPersona a formulario de actualizar   
+                Response.Redirect("~/Paginas/Personas/ActualizarJuridicos.aspx?act=" + e.CommandArgument);
+            }
         }
     }
 }
