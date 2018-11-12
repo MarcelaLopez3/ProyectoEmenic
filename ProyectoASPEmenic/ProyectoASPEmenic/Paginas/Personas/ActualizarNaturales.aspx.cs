@@ -13,9 +13,22 @@ namespace ProyectoASPEmenic.Paginas.Personas
         Conexion conexion = new Conexion();
         Validacion validacion = new Validacion();
         string query = "";
-        bool bandera_dui = false, bandera_nit = false, bandera_licencia = false, bandera_pasaporte = false, bandera_otro = false;
+        bool bandera_dui = false, bandera_nit = false, bandera_licencia = false, bandera_pasaporte = false, bandera_otro = false, bandera_usuario = false;
         bool contenido_dui = false, contenido_nit = false, contenido_licencia = false, contenido_pasaporte = false, contenido_otro = false;
         int Resultado_servicio = 0;
+
+        //Propiedades
+        public bool Usuario
+        {
+            set
+            {
+                this.hfUsuario.Value = value.ToString();
+            }
+            get
+            {
+                return bool.Parse(hfUsuario.Value);
+            }
+        }
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -171,7 +184,9 @@ namespace ProyectoASPEmenic.Paginas.Personas
                     checkCliente.Checked = conexion.reg.GetBoolean(29);
                     checkProveedor.Checked = conexion.reg.GetBoolean(30);
                     checkSocio.Checked = conexion.reg.GetBoolean(31);
-                    checkActivo.Checked = conexion.reg.GetBoolean(32);               
+                    checkActivo.Checked = conexion.reg.GetBoolean(32);
+
+                    Usuario = bool.Parse(checkUsuario.Checked.ToString());              
                 }
                 conexion.CerrarConexion();
             }
@@ -208,13 +223,13 @@ namespace ProyectoASPEmenic.Paginas.Personas
             string Celular = txtcelular.Text;
             string Email1 = txtemail1.Text;
             string Email2 = txtemail2.Text;
-            string Observaciones = txtobservaciones.Text;
-            Boolean Usuario = checkUsuario.Checked;
+            string Observaciones = txtobservaciones.Text;            
             Boolean Empleado = checkEmpleado.Checked;
             Boolean Cliente = checkCliente.Checked;
             Boolean Proveedor = checkProveedor.Checked;
             Boolean Socio = checkSocio.Checked;
             Boolean Activo = checkActivo.Checked;
+            Boolean Usuario = checkUsuario.Checked;            
 
             //Verificar si la persona posee o ha tenido servicios contratados de emenic
             if (Cliente == false)
@@ -384,8 +399,34 @@ namespace ProyectoASPEmenic.Paginas.Personas
                 bandera_otro = true;
             }
 
+            //Validando usuario
+            if (this.Usuario && !Usuario)
+            {
+                query = "SELECT IF(EXISTS(SELECT * FROM usuario where IdPersona=" + VarAct + "),1,0)";
+                conexion.IniciarConexion();
+                conexion.RecibeQuery(query);
+                while (conexion.reg.Read())
+                {
+                    int Resultado_usuario = conexion.reg.GetInt32(0);
+                    if (Resultado_usuario == 1)
+                    {
+                        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Posee un usuario existente.')", true);
+                    }
+                    else
+                    {
+                        bandera_usuario = true;
+                    }
+                }
+                conexion.reg.Close();
+                conexion.CerrarConexion();
+            }
+            else
+            {
+                bandera_usuario = true;
+            }
+
             //inicia el update del registro
-            if (bandera_dui == true && bandera_nit == true && bandera_licencia == true && bandera_pasaporte == true && bandera_otro == true)
+            if (bandera_dui == true && bandera_nit == true && bandera_licencia == true && bandera_pasaporte == true && bandera_otro == true && bandera_usuario == true)
             {
                 if (contenido_dui == true || contenido_nit == true || contenido_licencia == true || contenido_pasaporte == true || contenido_otro == true)
                 {

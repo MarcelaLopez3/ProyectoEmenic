@@ -32,14 +32,12 @@ namespace ProyectoASPEmenic.Paginas.Emenic
 
         protected void GridListadoEmenic1_RowEditing(object sender, GridViewEditEventArgs e)
         {
-            //Ir a formulario de Ver detalles de emenic
-            ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Ver Detalles de Emenic.')", true);
+            
         }
 
         protected void GridListadoEmenic2_RowEditing(object sender, GridViewEditEventArgs e)
         {
-            //Ir a formulario de Ver informacion logistica de emenic
-            ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Ver informacion logistica de Emenic.')", true);
+            
         }
 
         //Informacion de emenic
@@ -53,7 +51,7 @@ namespace ProyectoASPEmenic.Paginas.Emenic
         //Informacion logistica de emenic
         protected void CargarGrid2()
         {
-            query = "SELECT Mision,Vision,Valores,Servicios,Descripcion " +
+            query = "SELECT Id,Mision,Vision,Valores,Servicios,Descripcion " +
                 "FROM emenic WHERE Id = 1;";
             EjecutarGridEmenic(query, this.GridListadoEmenic2);
         }
@@ -68,6 +66,20 @@ namespace ProyectoASPEmenic.Paginas.Emenic
         protected void btnDashboard_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/Paginas/Dashboard.aspx");
+        }
+
+        protected void GridListadoEmenic1_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            //tabla persona
+            //Ir a formulario de Ver detalles de emenic
+            ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Ver Detalles de Emenic.')", true);
+        }
+
+        protected void GridListadoEmenic2_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            //tabla emenic
+            //Ir a formulario de Ver informacion logistica de emenic
+            ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Ver informacion logistica de Emenic.')", true);
         }
     }
 }

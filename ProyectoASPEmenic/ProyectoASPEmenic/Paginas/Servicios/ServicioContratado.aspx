@@ -17,18 +17,12 @@
                 <div class="card-body text-primary">
                     <div class="form-row">
                         <div class="form-group col-md-2">
-                            <asp:CheckBox ID="checkTransporte" runat="server" AutoPostBack="true" />
+                            <asp:CheckBox ID="checkTransporte" runat="server" />
                             <asp:Label ID="lbcheckTransporte" runat="server" style="color:black" Text="Transporte"></asp:Label>
                         </div>
                         <div class="form-group col-md-2">
-                            <asp:Button ID="btnCartaPorte" runat="server" CssClass="btn btn-info btn-block" OnClick="btnCartaPorte_Click" style="color:white; background-color:red; border-color:red; width:auto" Text="Carta Porte" Visible="false" />
-                        </div>
-                        <div class="form-group col-md-2">
-                            <asp:CheckBox ID="checkAlquiler" runat="server" AutoPostBack="true" />
+                            <asp:CheckBox ID="checkAlquiler" runat="server" />
                             <asp:Label ID="lbcheckAlquiler" runat="server" style="color:black" Text="Alquiler"></asp:Label>
-                        </div>
-                        <div class="form-group col-md-2">
-                            <asp:Button ID="btnContrato" runat="server" CssClass="btn btn-info btn-block" OnClick="btnContrato_Click" style="color:white; background-color:red; border-color:red; width:auto" Text="Contrato" Visible="false" />
                         </div>
                         <div class="form-group col-md-2">
                             <asp:CheckBox ID="checkRetorno" runat="server"  />
@@ -49,6 +43,8 @@
                         <div class="form-group col-md-3">
                             <asp:Label ID="lbgalones" runat="server" style="color:black" Text="Galones:"></asp:Label>
                             <asp:TextBox ID="txtgalones" runat="server" CssClass="form-control"></asp:TextBox>
+                            <asp:RegularExpressionValidator ID="RegularExpressionValidator5" runat="server" CssClass="alert-text"
+                            ErrorMessage="* Solo numeros" Display="Dynamic" SetFocusOnError="True" ControlToValidate="txtgalones" ValidationExpression="^\d+$"></asp:RegularExpressionValidator>
                         </div>
                     </div>
                     <div class="form-row">
@@ -57,30 +53,42 @@
                             <asp:TextBox ID="txtDescripcion" runat="server" CssClass="form-control" />
                         </div>
                         <div class="form-group col-md-3">
-                            <asp:Label ID="lbfechaAdquisicion" runat="server" style="color:black" Text="Fecha de adquisición:"></asp:Label>
-                            <asp:TextBox ID="txtfechaAdquisicion" runat="server" CssClass="form-control"></asp:TextBox>
+                            <asp:Label ID="lbfechaAdquisicion" runat="server" style="color:black" Text="Fecha de adquisición:(yyyy-mm-dd)"></asp:Label>
+                            <asp:TextBox ID="txtfechaAdquisicion" runat="server" CssClass="form-control" Text="yyyy-mm-dd" TextMode="Date"></asp:TextBox>
+                            <asp:RegularExpressionValidator ID="RegularExpressionValidator11" runat="server" CssClass="alert-text"
+                            ErrorMessage="* Fecha invalida" Display="Dynamic" SetFocusOnError="True" ControlToValidate="txtfechaAdquisicion" ValidationExpression="^\d{4}\-(0?[1-9]|1[012])\-(0?[1-9]|[12][0-9]|3[01])$"></asp:RegularExpressionValidator>
                         </div>
                         <div class="form-group col-md-3">
-                            <asp:Label ID="lbfechaVencimiento" runat="server" style="color:black" Text="Fecha de vencimiento:"></asp:Label>
-                            <asp:TextBox ID="txtfechaVencimiento" runat="server" CssClass="form-control"></asp:TextBox>
+                            <asp:Label ID="lbfechaVencimiento" runat="server" style="color:black" Text="Fecha de vencimiento:(yyyy-mm-dd)"></asp:Label>
+                            <asp:TextBox ID="txtfechaVencimiento" runat="server" CssClass="form-control" Text="yyyy-mm-dd" TextMode="Date"></asp:TextBox>
+                            <asp:RegularExpressionValidator ID="RegularExpressionValidator6" runat="server" CssClass="alert-text"
+                            ErrorMessage="* Fecha invalida" Display="Dynamic" SetFocusOnError="True" ControlToValidate="txtfechaVencimiento" ValidationExpression="^\d{4}\-(0?[1-9]|1[012])\-(0?[1-9]|[12][0-9]|3[01])$"></asp:RegularExpressionValidator>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-3">
                             <asp:Label ID="lblpagoempresa" runat="server" style="color:black" Text="Pago empresa:"></asp:Label>
                             <asp:TextBox ID="txtpagoempresa" runat="server" CssClass="form-control"></asp:TextBox>
+                            <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" CssClass="alert-text"
+                ErrorMessage="* Solo numeros" Display="Dynamic" SetFocusOnError="True" ControlToValidate="txtpagoempresa" ValidationExpression="^\d+$"></asp:RegularExpressionValidator>
                         </div>
                         <div class="form-group col-md-3">
                             <asp:Label ID="lbpagoestadia" runat="server" style="color:black" Text="Pago de estadia:"></asp:Label>
                             <asp:TextBox ID="txtpagoestadia" runat="server" CssClass="form-control"></asp:TextBox>
+                            <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" CssClass="alert-text"
+                ErrorMessage="* Solo numeros" Display="Dynamic" SetFocusOnError="True" ControlToValidate="txtpagoestadia" ValidationExpression="^\d+$"></asp:RegularExpressionValidator>
                         </div>
                         <div class="form-group col-md-3">
                             <asp:Label ID="lbpagoguardia" runat="server" style="color:black" Text="Pago de guardia:"></asp:Label>
                             <asp:TextBox ID="txtpagoguardia" runat="server" CssClass="form-control"></asp:TextBox>
+                            <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" CssClass="alert-text"
+                ErrorMessage="* Solo numeros" Display="Dynamic" SetFocusOnError="True" ControlToValidate="txtpagoguardia" ValidationExpression="^\d+$"></asp:RegularExpressionValidator>
                         </div>
                         <div class="form-group col-md-3">
                             <asp:Label ID="lbviaticos" runat="server" style="color:black" Text="Viaticos de motorista:"></asp:Label>
                             <asp:TextBox ID="txtviaticos" runat="server" CssClass="form-control"></asp:TextBox>
+                            <asp:RegularExpressionValidator ID="RegularExpressionValidator4" runat="server" CssClass="alert-text"
+                ErrorMessage="* Solo numeros" Display="Dynamic" SetFocusOnError="True" ControlToValidate="txtviaticos" ValidationExpression="^\d+$"></asp:RegularExpressionValidator>
                         </div>
                     </div>
                 </div>
@@ -138,6 +146,7 @@
                         <asp:TemplateField HeaderText="Opciones" ItemStyle-Width="150px">
                                <ItemTemplate>
                                       <asp:LinkButton ID="lkBOpcionActualizar" runat="server" ToolTip="Editar" CssClass="btn btn-success" CommandName="Editar" CommandArgument='<%# Eval("Id")%>'><i class="fa fa-edit" aria-hidden="true"></i></i></asp:LinkButton>
+                                   <asp:LinkButton ID="lkbOpcionDocumento" runat="server" ToolTip="Documento" CssClass="btn btn-info" CommandName="Documento" CommandArgument='<%# Eval("Id")%>'><i class="fas fa-file-alt" aria-hidden="true"></i></asp:LinkButton>
                                </ItemTemplate>
                         </asp:TemplateField> 
                     </Columns>

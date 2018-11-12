@@ -22,7 +22,7 @@ namespace ProyectoASPEmenic
             string pwd = txtContrasena.Text;
             int counter = 0;
             string query = "SELECT count(IdUsuario) from usuario inner join persona on usuario.IdPersona=persona.IdPersona where" +
-                " NombreUsuario = '" + usuario + "' and ContrasenaUsuario = sha1('" + pwd + "') and usuario.estado=true";
+                " NombreUsuario = '" + usuario + "' and ContrasenaUsuario = sha1('" + pwd + "') and usuario.estado=true and persona.activo=true and persona.usuario=true";
             cn.IniciarConexion();
             cn.RecibeQuery(query);
             while (cn.reg.Read())

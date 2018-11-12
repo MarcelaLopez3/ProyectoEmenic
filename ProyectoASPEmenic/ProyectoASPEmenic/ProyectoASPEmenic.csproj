@@ -239,6 +239,8 @@
     <Content Include="Paginas\Personas\RegistroNaturales.aspx" />
     <Content Include="Paginas\Dashboard.aspx" />
     <Content Include="Paginas\Publicidad\Index.aspx" />
+    <Content Include="Paginas\Servicios\ActulizarContrato.aspx" />
+    <Content Include="Paginas\Servicios\ListadoContrato.aspx" />
     <Content Include="Paginas\Transporte\ActualizarTransporte.aspx" />
     <Content Include="Paginas\Transporte\ListadoTransporte.aspx" />
     <Content Include="Paginas\Servicios\RegistroCartaporte.aspx" />
@@ -395,6 +397,20 @@
     </Compile>
     <Compile Include="Paginas\Publicidad\Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\Servicios\ActulizarContrato.aspx.cs">
+      <DependentUpon>ActulizarContrato.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Servicios\ActulizarContrato.aspx.designer.cs">
+      <DependentUpon>ActulizarContrato.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\Servicios\ListadoContrato.aspx.cs">
+      <DependentUpon>ListadoContrato.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Servicios\ListadoContrato.aspx.designer.cs">
+      <DependentUpon>ListadoContrato.aspx</DependentUpon>
     </Compile>
     <Compile Include="Paginas\Transporte\ActualizarTransporte.aspx.cs">
       <DependentUpon>ActualizarTransporte.aspx</DependentUpon>
