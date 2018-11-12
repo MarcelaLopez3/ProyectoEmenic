@@ -85,15 +85,6 @@ namespace ProyectoASPEmenic.Paginas.Servicios {
         protected global::System.Web.UI.WebControls.Label lbcheckTransporte;
         
         /// <summary>
-        /// Control btnCartaPorte.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCartaPorte;
-        
-        /// <summary>
         /// Control checkAlquiler.
         /// </summary>
         /// <remarks>
@@ -110,15 +101,6 @@ namespace ProyectoASPEmenic.Paginas.Servicios {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbcheckAlquiler;
-        
-        /// <summary>
-        /// Control btnContrato.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnContrato;
         
         /// <summary>
         /// Control checkRetorno.

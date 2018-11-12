@@ -31,30 +31,8 @@ namespace ProyectoASPEmenic.Paginas.Servicios
         protected void Page_Load(object sender, EventArgs e)
         {
             MVServicios.SetActiveView(VNuevoServicio);
-            CargandoDocumentoServicio();
             CargandoTablaServicio();
             CargarDestinos();
-        }
-
-        protected void CargandoDocumentoServicio()
-        {
-            if (checkTransporte.Checked == true)
-            {
-                btnCartaPorte.Visible = true;
-            }
-            else 
-            {
-                btnCartaPorte.Visible = false;
-            }
-
-            if (checkAlquiler.Checked == true)
-            {
-                btnContrato.Visible = true;
-            }
-            else
-            {
-                btnContrato.Visible = false;
-            }
         }
 
         protected void CargandoTablaServicio()
@@ -252,7 +230,6 @@ namespace ProyectoASPEmenic.Paginas.Servicios
                     btnAgregarServicioContra.Text = "Agregar";
                     LimpiarFormulario();
                     CargandoTablaServicio();
-                    CargandoDocumentoServicio();
                 }
                 else
                 {
@@ -284,7 +261,6 @@ namespace ProyectoASPEmenic.Paginas.Servicios
 
                     checkTransporte.Checked = conexion.reg.GetBoolean(1);
                     checkAlquiler.Checked = conexion.reg.GetBoolean(2);
-                    CargandoDocumentoServicio();
 
                     if (conexion.reg.GetValue(3) != null || conexion.reg.GetValue(3).ToString() != "")
                     {
@@ -345,6 +321,18 @@ namespace ProyectoASPEmenic.Paginas.Servicios
                 ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Puede iniciar la modificación de información.')", true);
                 conexion.CerrarConexion();
                 btnAgregarServicioContra.Text = "Actualizar";
+            }
+            else if(e.CommandName == "Documento")
+            {
+                if(ddlDestinoConsignatario.SelectedValue == "Transporte")
+                {
+                    //Redirige al formulario de cartaporte
+                    Response.Redirect("~/Paginas/Servicios/RegistroCartaporte.aspx?srv=" + e.CommandArgument);
+                }
+                else if(ddlDestinoConsignatario.SelectedValue == "Alquiler")
+                {
+
+                }
             }
         }
 
