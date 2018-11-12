@@ -324,12 +324,12 @@ namespace ProyectoASPEmenic.Paginas.Servicios
             }
             else if(e.CommandName == "Documento")
             {
-                if(ddlDestinoConsignatario.SelectedValue == "Transporte")
+                if(ddltiposervicio.SelectedValue == "Transporte")
                 {
                     //Redirige al formulario de cartaporte
                     Response.Redirect("~/Paginas/Servicios/RegistroCartaporte.aspx?srv=" + e.CommandArgument);
                 }
-                else if(ddlDestinoConsignatario.SelectedValue == "Alquiler")
+                else if(ddltiposervicio.SelectedValue == "Alquiler")
                 {
 
                 }
