@@ -44,9 +44,6 @@
                 <i class="fas fa-user-circle fa-fw"></i>
               </a>
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="#">Ajustes</a>
-                <a class="dropdown-item" href="#">Actividad</a>
-                <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">Salir</a>
               </div>
             </li>
@@ -63,9 +60,9 @@
             <span>Dashboard</span>
             </asp:HyperLink>
         </li>
-        <li class="nav-item active">
+        <li class="nav-item">
             <asp:HyperLink NavigateUrl="~/Paginas/Emenic/ListadoEmenic.aspx" runat="server" CssClass="nav-link">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <i class="fas fa-user-tie"></i>
             <span>Nosotros</span>
             </asp:HyperLink>
         </li>
@@ -83,7 +80,7 @@
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i class="fas fa-user-tie"></i>
+            <i class="fas fa-address-book"></i>
             <span>Clientes</span>
           </a>
           <div class="dropdown-menu" aria-labelledby="pagesDropdown">
