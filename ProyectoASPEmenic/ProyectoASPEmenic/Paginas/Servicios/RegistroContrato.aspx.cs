@@ -11,10 +11,44 @@ namespace ProyectoASPEmenic.Paginas.Servicios
     {
         Conexion conexion = new Conexion();
         string query = "";
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            LlenarddlIDtransporte();
-            LlenarddlIDservicio();
+            if (!IsPostBack)
+            {
+                string VarServicio = Request.QueryString["srv"];
+                string VarSer = Request.QueryString["ser"];
+                if (String.IsNullOrEmpty(VarServicio))
+                {
+                    if (String.IsNullOrEmpty(VarSer))
+                    {
+                        Response.Redirect("~/Paginas/Clientes/ListadoClientes.aspx");
+                    }
+                    Response.Redirect("~/Paginas/Servicios/ServicioContratado.aspx?ser=" + VarSer);
+                }
+                //else
+                //{
+                //    string queryvalidador = "SELECT `Id` FROM `serviciocontratado` WHERE `Id` = " + VarServicio;
+
+                //    //enviar consulta a Mysql
+                //    conexion.IniciarConexion();
+                //    conexion.RecibeQuery(queryvalidador);
+
+                //    if (conexion.reg.Read())
+                //    {
+                //        conexion.CerrarConexion();
+                //        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('No existe el id.')", true);
+                //        if (String.IsNullOrEmpty(VarSer))
+                //        {
+                //            Response.Redirect("~/Paginas/Clientes/ListadoClientes.aspx");
+                //        }
+                //        Response.Redirect("~/Paginas/Servicios/ServicioContratado.aspx?ser=" + VarSer);
+                //    }
+                //    conexion.CerrarConexion();
+                //}
+                LlenarddlIDtransporte();
+            }
+            //LlenarddlIDservicio();
         }
 
         //Función para llenar ajaxtoolkit-combobox
@@ -48,21 +82,49 @@ namespace ProyectoASPEmenic.Paginas.Servicios
 
             //recuperando entradas
             int IdTransporte = Int32.Parse(ddlIDtransporte.SelectedValue);
-            //string VarAct = Request.QueryString["ser"];
-            //int IdContrato = Convert.ToInt32(VarAct);
-            //int IdServicio = Request.QueryString["act"];
-            //int CantidadMeses = Int32.Parse(txtcantidadmeses.Text);
-            //string FechaEmision = txtfechaemision.Text;
+            //recuperando idcliente para regresar a serviciocontrato
+            string VarSer = Request.QueryString["ser"];
 
-            ////consulta que se ingresa a la base de datos
-            //string query = "INSERT INTO `contrato` (`IdContrato`, `IdTransporte`, `IdServicio`, `FechaEmision`, `CantidadMeses`) " +
-            //    "VALUES(NULL,'" + IdTransporte + "','" + IdServicio + "','" + FechaEmision + "'," + CantidadMeses + ")";
-            ////enviar consulta a Mysql
-            //conexion.IniciarConexion();
-            //conexion.EnviarQuery(query);
-            //conexion.CerrarConexion();
-            //ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Se ha insertado con exito.')", true);
-            //Response.Redirect("~/Paginas/Servicios/ListadoContrato.aspx");
+            string VarServicio = Request.QueryString["srv"];
+            int IdServicio = Convert.ToInt32(VarServicio);
+
+            int CantidadMeses = Int32.Parse(txtcantidadmeses.Text);
+            string FechaEmision = txtfechaemision.Text;
+
+            //consulta con la que se verificara si ya existe un contrato
+            string queryvalidador = "Select contrato.IdServicio FROM contrato WHERE contrato.IdServicio = " + VarServicio;
+
+            //enviar consulta a Mysql
+            conexion.IniciarConexion();
+            conexion.RecibeQuery(queryvalidador);
+
+            if (conexion.reg.Read())
+            {
+                conexion.CerrarConexion();
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Ya existe un registro de contrato para este servicio.')", true);
+                if (String.IsNullOrEmpty(VarSer))
+                {
+                    Response.Redirect("~/Paginas/Clientes/ListadoClientes.aspx");
+                }
+                Response.Redirect("~/Paginas/Servicios/ServicioContratado.aspx?ser=" + VarSer);
+            }
+            else
+            {
+                conexion.CerrarConexion();
+                //consulta que se ingresa a la base de datos
+                query = "INSERT INTO `contrato` (`IdContrato`, `IdTransporte`, `IdServicio`, `FechaEmision`, `CantidadMeses`) " +
+                        "VALUES(NULL,'" + IdTransporte + "','" + IdServicio + "','" + FechaEmision + "'," + CantidadMeses + ")";
+                //enviar consulta a Mysql
+                conexion.IniciarConexion();
+                conexion.EnviarQuery(query);
+                conexion.CerrarConexion();
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Se ha insertado con exito.')", true);
+                if (String.IsNullOrEmpty(VarSer))
+                {
+                    Response.Redirect("~/Paginas/Clientes/ListadoClientes.aspx");
+                }
+                Response.Redirect("~/Paginas/Servicios/ServicioContratado.aspx?ser=" + VarSer);
+            }
         }
     }
 }
