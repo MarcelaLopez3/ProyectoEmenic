@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    
+    <asp:HiddenField ID="hfUsuario" runat="server" />
     <center><h1><asp:Label runat="server" ID="lblpersonanatural" Text=" Actualizar Persona Natural" style="color:black; font-family:Verdana"></asp:Label></h1></center>
     <br />
     <div class="card border-primary mb-3">

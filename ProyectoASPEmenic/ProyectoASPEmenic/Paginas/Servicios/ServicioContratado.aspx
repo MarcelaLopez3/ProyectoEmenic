@@ -17,18 +17,12 @@
                 <div class="card-body text-primary">
                     <div class="form-row">
                         <div class="form-group col-md-2">
-                            <asp:CheckBox ID="checkTransporte" runat="server" AutoPostBack="true" />
+                            <asp:CheckBox ID="checkTransporte" runat="server" />
                             <asp:Label ID="lbcheckTransporte" runat="server" style="color:black" Text="Transporte"></asp:Label>
                         </div>
                         <div class="form-group col-md-2">
-                            <asp:Button ID="btnCartaPorte" runat="server" CssClass="btn btn-info btn-block" OnClick="btnCartaPorte_Click" style="color:white; background-color:red; border-color:red; width:auto" Text="Carta Porte" Visible="false" />
-                        </div>
-                        <div class="form-group col-md-2">
-                            <asp:CheckBox ID="checkAlquiler" runat="server" AutoPostBack="true" />
+                            <asp:CheckBox ID="checkAlquiler" runat="server" />
                             <asp:Label ID="lbcheckAlquiler" runat="server" style="color:black" Text="Alquiler"></asp:Label>
-                        </div>
-                        <div class="form-group col-md-2">
-                            <asp:Button ID="btnContrato" runat="server" CssClass="btn btn-info btn-block" OnClick="btnContrato_Click" style="color:white; background-color:red; border-color:red; width:auto" Text="Contrato" Visible="false" />
                         </div>
                         <div class="form-group col-md-2">
                             <asp:CheckBox ID="checkRetorno" runat="server"  />
@@ -60,13 +54,13 @@
                         </div>
                         <div class="form-group col-md-3">
                             <asp:Label ID="lbfechaAdquisicion" runat="server" style="color:black" Text="Fecha de adquisición:(yyyy-mm-dd)"></asp:Label>
-                            <asp:TextBox ID="txtfechaAdquisicion" runat="server" CssClass="form-control" Text="yyyy-mm-dd"></asp:TextBox>
+                            <asp:TextBox ID="txtfechaAdquisicion" runat="server" CssClass="form-control" Text="yyyy-mm-dd" TextMode="Date"></asp:TextBox>
                             <asp:RegularExpressionValidator ID="RegularExpressionValidator11" runat="server" CssClass="alert-text"
                             ErrorMessage="* Fecha invalida" Display="Dynamic" SetFocusOnError="True" ControlToValidate="txtfechaAdquisicion" ValidationExpression="^\d{4}\-(0?[1-9]|1[012])\-(0?[1-9]|[12][0-9]|3[01])$"></asp:RegularExpressionValidator>
                         </div>
                         <div class="form-group col-md-3">
                             <asp:Label ID="lbfechaVencimiento" runat="server" style="color:black" Text="Fecha de vencimiento:(yyyy-mm-dd)"></asp:Label>
-                            <asp:TextBox ID="txtfechaVencimiento" runat="server" CssClass="form-control" Text="yyyy-mm-dd"></asp:TextBox>
+                            <asp:TextBox ID="txtfechaVencimiento" runat="server" CssClass="form-control" Text="yyyy-mm-dd" TextMode="Date"></asp:TextBox>
                             <asp:RegularExpressionValidator ID="RegularExpressionValidator6" runat="server" CssClass="alert-text"
                             ErrorMessage="* Fecha invalida" Display="Dynamic" SetFocusOnError="True" ControlToValidate="txtfechaVencimiento" ValidationExpression="^\d{4}\-(0?[1-9]|1[012])\-(0?[1-9]|[12][0-9]|3[01])$"></asp:RegularExpressionValidator>
                         </div>
@@ -152,6 +146,7 @@
                         <asp:TemplateField HeaderText="Opciones" ItemStyle-Width="150px">
                                <ItemTemplate>
                                       <asp:LinkButton ID="lkBOpcionActualizar" runat="server" ToolTip="Editar" CssClass="btn btn-success" CommandName="Editar" CommandArgument='<%# Eval("Id")%>'><i class="fa fa-edit" aria-hidden="true"></i></i></asp:LinkButton>
+                                   <asp:LinkButton ID="lkbOpcionDocumento" runat="server" ToolTip="Documento" CssClass="btn btn-info" CommandName="Documento" CommandArgument='<%# Eval("Id")%>'><i class="fas fa-file-alt" aria-hidden="true"></i></asp:LinkButton>
                                </ItemTemplate>
                         </asp:TemplateField> 
                     </Columns>

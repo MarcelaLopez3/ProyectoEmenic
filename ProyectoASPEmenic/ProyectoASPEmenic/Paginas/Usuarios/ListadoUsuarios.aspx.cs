@@ -14,7 +14,7 @@ namespace ProyectoASPEmenic.Paginas.Usuarios
         {
             string query = "SELECT persona.IdPersona as Id,concat(PrimerNombre,' ',SegundoNombre)" +
                 " as Nombres,concat(PrimerApellido,' ',SegundoApellido) as Apellidos,NombreUsuario as Usuario,estado as Estado" +
-                " FROM persona left join usuario on persona.IdPersona=usuario.IdPersona where PersonaNatural=1 and usuario=1";
+                " FROM persona left join usuario on persona.IdPersona=usuario.IdPersona where PersonaNatural=1 and usuario=1 and persona.activo=1";
             cn.IniciarConexion();
             cn.TablasQuery(query, this.dataTable);
             cn.CerrarConexion();
