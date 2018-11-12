@@ -5,13 +5,15 @@
     <center><h1><asp:Label runat="server" ID="lbcartaporte" Text="Carta Porte" style="color:black; font-family:Verdana"></asp:Label></h1></center>
     <br />
     <asp:HiddenField ID="hfIdServicio" runat="server" />
+        <asp:ScriptManager ID="ScriptManager1" runat="server">
+    </asp:ScriptManager>
     <div class="card border-primary mb-3">
         <div class="card-header"><h4>Datos Generales</h4></div>
         <div class="card-body text-primary">
             <div class="form-row">
                 <div class="form-group col-md-6">
                 <asp:Label runat="server" ID="lblConductor" Text="Conductor:" style="color:black"></asp:Label>
-                    <ajaxToolkit:ComboBox ID="ddlConductor" runat="server" AutoCompleteMode="SuggestAppend" DropDownStyle="DropDownList"  ListItemHoverCssClass="form-control" BorderStyle="Double" >
+                    <ajaxToolkit:ComboBox ID="ddlConductor" runat="server" AutoCompleteMode="SuggestAppend" DropDownStyle="DropDownList"  ListItemHoverCssClass="form-control" BorderStyle="Double" Width="470px">
                             </ajaxToolkit:ComboBox>                
             </div>
                 <div class="form-group col-md-2">
@@ -84,19 +86,19 @@
                </div>
                <div class="form-group col-md-3">
                    <asp:Label runat="server" ID="Label18" Text="Peso neto (kg):" style="color:black"></asp:Label>
-                   <asp:TextBox runat="server" ID="txtpesoneto" CssClass="form-control" class='allow_decimal'></asp:TextBox>
+                   <asp:TextBox runat="server" ID="txtpesoneto" CssClass="form-control" onkeypress="return isNumberKey(event,this)"></asp:TextBox>
                </div>          
                <div class="form-group col-md-3">
                    <asp:Label runat="server" ID="Label19" Text="Total de peso bruto (kg):" style="color:black"></asp:Label>
-                   <asp:TextBox runat="server" ID="txttotalpesobruto" CssClass="form-control" class='allow_decimal'></asp:TextBox>
+                   <asp:TextBox runat="server" ID="txttotalpesobruto" CssClass="form-control" onkeypress="return isNumberKey(event,this)" ></asp:TextBox>
                </div>
                <div class="form-group col-md-3">
                    <asp:Label runat="server" ID="Label22" Text="Total de peso neto (kg):" style="color:black"></asp:Label>
-                   <asp:TextBox runat="server" ID="txttotalpesoneto" CssClass="form-control" class='allow_decimal'></asp:TextBox>
+                   <asp:TextBox runat="server" ID="txttotalpesoneto" CssClass="form-control" onkeypress="return isNumberKey(event,this)"></asp:TextBox>
                </div>
                <div class="form-group col-md-3">
                    <asp:Label runat="server" ID="Label23" Text="Flete:" style="color:black"></asp:Label>
-                   <asp:TextBox runat="server" ID="txtflete" CssClass="form-control" class='allow_decimal'></asp:TextBox>
+                   <asp:TextBox runat="server" ID="txtflete" CssClass="form-control" onkeypress="return isNumberKey(event,this)"></asp:TextBox>
                </div>
            </div>
        </div>      
@@ -133,13 +135,19 @@
             return true;
         }
 
-        $(".allow_decimal").on("input", function (evt) {
-            var self = $(this);
-            self.val(self.val().replace(/[^0-9\.]/g, ''));
-            if ((evt.which != 46 || self.val().indexOf('.') != -1) && (evt.which < 48 || evt.which > 57)) {
-                evt.preventDefault();
-            }
-        });
+        function isNumberKey(evt, obj) {
+
+            var charCode = (evt.which) ? evt.which : event.keyCode
+            var value = obj.value;
+            var dotcontains = value.indexOf(".") != -1;
+            if (dotcontains)
+                if (charCode == 46) return false;
+            if (charCode == 46) return true;
+            if (charCode > 31 && (charCode < 48 || charCode > 57))
+                return false;
+            return true;
+        }
+
     </script>
     <script src="../../vendor/jquery/jquery.min.js"></script>
     <script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
