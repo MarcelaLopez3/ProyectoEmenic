@@ -53,14 +53,14 @@
                             <asp:TextBox ID="txtDescripcion" runat="server" CssClass="form-control" />
                         </div>
                         <div class="form-group col-md-3">
-                            <asp:Label ID="lbfechaAdquisicion" runat="server" style="color:black" Text="Fecha de adquisición:(yyyy-mm-dd)"></asp:Label>
-                            <asp:TextBox ID="txtfechaAdquisicion" runat="server" CssClass="form-control" Text="yyyy-mm-dd" TextMode="Date"></asp:TextBox>
+                            <asp:Label ID="lbfechaAdquisicion" runat="server" style="color:black" Text="Fecha adquisición:(yyyy-mm-dd)"></asp:Label>
+                            <asp:TextBox ID="txtfechaAdquisicion" runat="server" CssClass="form-control"  ></asp:TextBox>
                             <asp:RegularExpressionValidator ID="RegularExpressionValidator11" runat="server" CssClass="alert-text"
                             ErrorMessage="* Fecha invalida" Display="Dynamic" SetFocusOnError="True" ControlToValidate="txtfechaAdquisicion" ValidationExpression="^\d{4}\-(0?[1-9]|1[012])\-(0?[1-9]|[12][0-9]|3[01])$"></asp:RegularExpressionValidator>
                         </div>
                         <div class="form-group col-md-3">
-                            <asp:Label ID="lbfechaVencimiento" runat="server" style="color:black" Text="Fecha de vencimiento:(yyyy-mm-dd)"></asp:Label>
-                            <asp:TextBox ID="txtfechaVencimiento" runat="server" CssClass="form-control" Text="yyyy-mm-dd" TextMode="Date"></asp:TextBox>
+                            <asp:Label ID="lbfechaVencimiento" runat="server" style="color:black" Text="Fecha vencimiento:(yyyy-mm-dd)"></asp:Label>
+                            <asp:TextBox ID="txtfechaVencimiento" runat="server" CssClass="form-control" ></asp:TextBox>
                             <asp:RegularExpressionValidator ID="RegularExpressionValidator6" runat="server" CssClass="alert-text"
                             ErrorMessage="* Fecha invalida" Display="Dynamic" SetFocusOnError="True" ControlToValidate="txtfechaVencimiento" ValidationExpression="^\d{4}\-(0?[1-9]|1[012])\-(0?[1-9]|[12][0-9]|3[01])$"></asp:RegularExpressionValidator>
                         </div>
