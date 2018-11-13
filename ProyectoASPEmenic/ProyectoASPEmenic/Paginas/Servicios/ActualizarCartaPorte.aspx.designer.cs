@@ -31,13 +31,13 @@ namespace ProyectoASPEmenic.Paginas.Servicios {
         protected global::System.Web.UI.WebControls.HiddenField hfIdServicio;
         
         /// <summary>
-        /// Control hfIdCliente.
+        /// Control hfIdConductor.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hfIdCliente;
+        protected global::System.Web.UI.WebControls.HiddenField hfIdConductor;
         
         /// <summary>
         /// Control hfIdCartaPorte.
@@ -47,6 +47,15 @@ namespace ProyectoASPEmenic.Paginas.Servicios {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HiddenField hfIdCartaPorte;
+        
+        /// <summary>
+        /// Control hfIdCliente.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hfIdCliente;
         
         /// <summary>
         /// Control ScriptManager1.
