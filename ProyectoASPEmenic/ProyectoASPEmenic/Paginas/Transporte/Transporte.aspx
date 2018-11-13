@@ -32,7 +32,7 @@
                 <div class="form-group col-md-6">
                     <asp:Label runat="server" ID="lbvehiculoequipo" Text="Tipo de equipo:" Style="color: black"></asp:Label>
                     <asp:RequiredFieldValidator ID="RFVEquipo" runat="server" ControlToValidate="txtvehiculoequipo" Text="Campo requerido" ErrorMessage="Este campo es requerido"></asp:RequiredFieldValidator><br />
-                    <asp:TextBox runat="server" ID="txtvehiculoequipo" CssClass="form-control" MaxLength="30"></asp:TextBox>
+                    <asp:TextBox runat="server" ID="txtvehiculoequipo" CssClass="form-control" MaxLength="50"></asp:TextBox>
                     <asp:RegularExpressionValidator ID="REVEquipo" runat="server" ControlToValidate="txtvehiculoequipo" Text="Solo se admiten Letras" ErrorMessage="No coincide con el formato" Display="Dynamic" ValidationExpression="[a-zA-ZñÑáéíóúÁÉÍÓÚ\ ]+"></asp:RegularExpressionValidator>
                 </div>
 

@@ -135,15 +135,41 @@ namespace ProyectoASPEmenic.Paginas.Servicios
                         bandera_ser = true;
                     }
 
-                    //verificando el contenido de las fechas, si no tiene nada entonces se le coloca la fecha de hoy
+                    //verificando el contenido de la fecha, si no tiene nada entonces se le coloca la fecha de hoy
                     if (FechaAdquisicion == "" || FechaAdquisicion == " ")
                     {
                         FechaAdquisicion = FormatoFecha(Hoy.ToShortDateString());
                     }
-
+                    
                     if (FechaVencimiento == "" || FechaVencimiento == " ")
                     {
                         FechaVencimiento = FormatoFecha(Hoy.ToShortDateString());
+                    }
+
+                    //seteando un valor a las variables decimal
+                    if (PagoEmpresa == "" || PagoEmpresa == " ")
+                    {
+                        PagoEmpresa = "0";
+                    }
+
+                    if (PagoEstadia == "" || PagoEstadia == " ")
+                    {
+                        PagoEstadia = "0";
+                    }
+
+                    if (PagoGuardia == "" || PagoGuardia == " ")
+                    {
+                        PagoGuardia = "0";
+                    }
+
+                    if (ViaticosMotorista == "" || ViaticosMotorista == " ")
+                    {
+                        ViaticosMotorista = "0";
+                    }
+
+                    if (Galones == "" || Galones == " ")
+                    {
+                        Galones = "0";
                     }
 
                     //inicio insert de servicio
@@ -213,6 +239,33 @@ namespace ProyectoASPEmenic.Paginas.Servicios
                 {
                     FechaVencimiento = FormatoFecha(Hoy.ToShortDateString());
                 }
+
+                //seteando un valor a las variables decimal
+                if (PagoEmpresa == "" || PagoEmpresa == " ")
+                {
+                    PagoEmpresa = "0";
+                }
+
+                if (PagoEstadia == "" || PagoEstadia == " ")
+                {
+                    PagoEstadia = "0";
+                }
+
+                if (PagoGuardia == "" || PagoGuardia == " ")
+                {
+                    PagoGuardia = "0";
+                }
+
+                if (ViaticosMotorista == "" || ViaticosMotorista == " ")
+                {
+                    ViaticosMotorista = "0";
+                }
+
+                if (Galones == "" || Galones == " ")
+                {
+                    Galones = "0";
+                }
+
 
                 if (bandera_ser == true)
                 {
@@ -324,12 +377,29 @@ namespace ProyectoASPEmenic.Paginas.Servicios
             }
             else if(e.CommandName == "Documento")
             {
-                if(ddlDestinoConsignatario.SelectedValue == "Transporte")
+                if(ddltiposervicio.SelectedValue == "Transporte")
                 {
-                    //Redirige al formulario de cartaporte
-                    Response.Redirect("~/Paginas/Servicios/RegistroCartaporte.aspx?srv=" + e.CommandArgument);
+                    int existe_cp=0;
+                    query = "select if (EXISTS(select * from cartaporte where IdServicio=" + e.CommandArgument + "),1,0)";
+                    conexion.IniciarConexion();
+                    conexion.RecibeQuery(query);
+                    while(conexion.reg.Read())
+                    {
+                        existe_cp = conexion.reg.GetInt32(0);
+                    }
+                    conexion.CerrarConexion();
+                    if (existe_cp == 0)
+                    {
+                        //Redirige al formulario de cartaporte
+                        Response.Redirect("~/Paginas/Servicios/RegistroCartaporte.aspx?srv=" + e.CommandArgument);
+                    }
+                    else
+                    {
+                        Response.Redirect("~/Paginas/Servicios/ActualizarCartaporte.aspx?srv=" + e.CommandArgument);
+                    }
+
                 }
-                else if(ddlDestinoConsignatario.SelectedValue == "Alquiler")
+                else if(ddltiposervicio.SelectedValue == "Alquiler")
                 {
 
                 }
