@@ -26,15 +26,15 @@ namespace ProyectoASPEmenic.Paginas.Servicios
             }
         }
 
-        public int IdCliente
+        public int IdConductor
         {
             set
             {
-                hfIdCliente.Value = value.ToString();
+                hfIdConductor.Value = value.ToString();
             }
             get
             {
-                return int.Parse(hfIdCliente.Value);
+                return int.Parse(hfIdConductor.Value);
             }
         }
 
@@ -47,6 +47,18 @@ namespace ProyectoASPEmenic.Paginas.Servicios
             get
             {
                 return int.Parse(hfIdCartaPorte.Value);
+            }
+        }
+
+        public int IdCliente
+        {
+            set
+            {
+                hfIdCliente.Value = value.ToString();
+            }
+            get
+            {
+                return int.Parse(hfIdCliente.Value);
             }
         }
 
@@ -80,6 +92,7 @@ namespace ProyectoASPEmenic.Paginas.Servicios
                 ddlIDcabezal.SelectedValue = cn.reg.GetInt32(2).ToString();
                 ddlIDfurgon.SelectedValue = cn.reg.GetInt32(3).ToString();
                 ddlConductor.SelectedValue = ddlConductor.Items.FindByValue(cn.reg.GetInt32(4).ToString()).Value;
+                IdConductor = int.Parse(ddlConductor.SelectedValue);
                 ddlTransporte.SelectedValue = cn.reg.GetInt32(5).ToString();
                 txtfechacartaporte.Text = FormatoFecha(cn.reg.GetString(6));
                 txtaduanaentrada.Text = cn.reg.GetString(7);
@@ -228,5 +241,62 @@ namespace ProyectoASPEmenic.Paginas.Servicios
             cargarInformacion();
             cargaCartaPorte();
         }
-    }
+
+        protected void btnGenerarCP_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnGuardarcartaporte_Click(object sender, EventArgs e)
+        {
+            if (ddlConductor.SelectedValue == "")
+            {
+                mensaje("Seleccione un motorista.");
+            }
+            else
+            {
+                int idConductor = string.IsNullOrEmpty(ddlConductor.SelectedValue) ? IdConductor : int.Parse(ddlConductor.SelectedValue);
+                int idCabezal = Int32.Parse(ddlIDcabezal.SelectedValue);
+                int idFurgon = Int32.Parse(ddlIDfurgon.SelectedValue);
+                string fecha = !string.IsNullOrEmpty(txtfechacartaporte.Text) ? DateTime.Parse(txtfechacartaporte.Text).ToString("yyyy-MM-dd") : DateTime.Today.ToString("yyyy-MM-dd");
+                string aduanaIngreso = !string.IsNullOrEmpty(txtaduanaentrada.Text) ? txtaduanaentrada.Text : "";
+                string lugarEmbarque = !string.IsNullOrEmpty(txtlugarembarque.Text) ? txtlugarembarque.Text : "";
+                string aduanaSalida = !string.IsNullOrEmpty(txtaduanasalida.Text) ? txtaduanasalida.Text : "";
+                string lugarDestino = !string.IsNullOrEmpty(txtdestinocartaporte.Text) ? txtdestinocartaporte.Text : "";
+                int idTransporte = Int32.Parse(ddlTransporte.SelectedValue);
+                string codigo = !string.IsNullOrEmpty(txtcodigocartaporte.Text) ? txtcodigocartaporte.Text : "";
+                string contenido = !string.IsNullOrEmpty(txtcontenidocartaporte.Text) ? txtcontenidocartaporte.Text : "";
+                string descripcion = !string.IsNullOrEmpty(txtdestinocartaporte.Text) ? txtdescripcion.Text : "";
+                int cantidad = int.TryParse(txtcantidad.Text, out cantidad) ? int.Parse(txtcantidad.Text) : 0;
+                double pesoNeto = double.TryParse(txtpesoneto.Text, out pesoNeto) ? double.Parse(txtpesoneto.Text) : 0;
+                float totalPesoNeto = float.TryParse(txttotalpesoneto.Text, out totalPesoNeto) ? float.Parse(txttotalpesoneto.Text) : 0;
+                float totalPesoBruto = float.TryParse(txttotalpesobruto.Text, out totalPesoBruto) ? float.Parse(txttotalpesobruto.Text) : 0;
+                float flete = float.TryParse(txtflete.Text, out flete) ? float.Parse(txtflete.Text) : 0;
+                string observaciones = !string.IsNullOrEmpty(txtobservacionescartaporte.Text) ? txtobservacionescartaporte.Text : "";
+
+                query = "UPDATE `cartaporte` SET "
+                    + "`IdCabezal`=" + idCabezal + ",`IdFurgon`=" + idFurgon + ",`IdConductor`=" + idConductor + ",`IdTransporte`=" + idTransporte + ""
+                    + ",`Fecha`='" + fecha + "',`AduanaIngreso`='" + aduanaIngreso + "',`AduanaSalida`='" + aduanaSalida + "',`LugarDestino`='" + lugarDestino
+                    + "',`LugarEmbarque`='" + lugarEmbarque + "',`Codigo`='" + codigo + "',`Cantidad`=" + cantidad + ",`Descripcion`='" + descripcion + "',"
+                    + "`PesoNeto`='" + pesoNeto + "',`Contenido`='" + contenido + "',`TotalPesoBruto`='" + totalPesoBruto + "',`TotalPesoNeto`='" + totalPesoNeto + "'"
+                    + ",`Flete`='" + flete + "',`Observaciones`='" + observaciones + "' WHERE IdCartaPorte=" + IdCartaPorte;
+
+                //Enviando consulta
+                try
+                {
+                    cn.IniciarConexion();
+                    cn.EnviarQuery(query);
+                    cn.CerrarConexion();
+                    btnModificarCP.Text = "Modificar";
+                    mensaje("Carta Porte Actualizada.");
+                    Edit(false);
+                    cargarDatos();
+                }
+                catch(Exception ex)
+                {
+                    mensaje("Ocurrio un error " + ex.ToString());
+                }
+            }
+            }
+        }
 }

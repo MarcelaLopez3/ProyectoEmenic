@@ -5,15 +5,16 @@
     <center><h1><asp:Label runat="server" ID="lbcartaporte" Text="Ver Carta Porte" style="color:black; font-family:Verdana"></asp:Label></h1></center>
     <br />
     <asp:HiddenField ID="hfIdServicio" runat="server" />
-    <asp:HiddenField ID="hfIdCliente" runat="server" />
+    <asp:HiddenField ID="hfIdConductor" runat="server" />
     <asp:HiddenField ID="hfIdCartaPorte" runat="server" />
+    <asp:HiddenField ID="hfIdCliente" runat="server" />
         <asp:ScriptManager ID="ScriptManager1" runat="server">
     </asp:ScriptManager>
     <center>
     <div class="btn-toolbar">    
         <div class="btn-group md-4">
                 <asp:Button runat="server" ID="btnModificarCP" Text="Modificar" CssClass="btn btn-info btn-block" style="color:white; background-color:red; border-color:red; width:auto" OnClick="btnModificarCP_Click" ></asp:Button>&nbsp;&nbsp;
-                <asp:Button runat="server" ID="btnGenerarCP" Text="Generar Carta Porte" CssClass="btn btn-info btn-block" style="color:white; background-color:red; border-color:red; width:auto" ></asp:Button>&nbsp;&nbsp;
+                <asp:Button runat="server" ID="btnGenerarCP" Text="Generar Carta Porte" CssClass="btn btn-info btn-block" style="color:white; background-color:red; border-color:red; width:auto" OnClick="btnGenerarCP_Click" ></asp:Button>&nbsp;&nbsp;
                 <asp:Button runat="server" ID="btnGenerarMC" Text="Generar Manifiesto de Carga" CssClass="btn btn-info btn-block" style="color:white; background-color:red; border-color:red; width:auto" ></asp:Button>            
             </div>
         </div></center>
@@ -94,7 +95,7 @@
                 </div>
                 <div class="form-group col-md-3">
                     <asp:Label runat="server" ID="Label8" Text="Codigo:" style="color:black"></asp:Label>
-                    <asp:TextBox runat="server" ID="txtcodigocartaporte" CssClass="form-control" Enabled="false"></asp:TextBox>
+                    <asp:TextBox runat="server" ID="txtcodigocartaporte" CssClass="form-control" Enabled="false" MaxLength="8"></asp:TextBox>
                 </div>
             </div>
        </div>
@@ -151,7 +152,7 @@
     <div style="align-content:center">    
         <div class="form-row">
             <div class="form-group col-md-12">      
-                <center><asp:Button runat="server" ID="btnGuardarcartaporte" Text="Actualizar" CssClass="btn btn-info btn-block" style="color:white; background-color:red; border-color:red; width:auto"  Visible="false"></asp:Button></center>   
+                <center><asp:Button runat="server" ID="btnGuardarcartaporte" Text="Actualizar" CssClass="btn btn-info btn-block" style="color:white; background-color:red; border-color:red; width:auto"  Visible="false" OnClick="btnGuardarcartaporte_Click"></asp:Button></center>   
             </div>
         </div>
    </div>

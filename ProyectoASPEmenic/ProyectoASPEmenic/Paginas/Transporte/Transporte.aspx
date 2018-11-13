@@ -41,8 +41,8 @@
             <div class="form-group col-md-12">
                 <asp:Label runat="server" ID="lbvehiculoDescrip" Text="Descripcion del vehículo:" Style="color: black"></asp:Label>
                 <asp:RequiredFieldValidator ID="RFVDescripcion" runat="server" ControlToValidate="txtDescripcion" Text="Campo requerido" ErrorMessage="Este campo es requerido"></asp:RequiredFieldValidator><br />
-                <asp:TextBox runat="server" ID="txtDescripcion" CssClass="form-control" TextMode="MultiLine" Height="150px" MaxLength="100" />
-                <asp:CustomValidator ID="CustomValidator1" runat="server" ErrorMessage="Introduzca 100 caracteres como maximo" ControlToValidate="txtDescripcion" ClientValidationFunction="VerificarCantidad"></asp:CustomValidator>
+                <asp:TextBox runat="server" ID="txtDescripcion" CssClass="form-control" TextMode="MultiLine" Height="150px" MaxLength="250" />
+                <asp:CustomValidator ID="CustomValidator1" runat="server" ErrorMessage="Introduzca 250 caracteres como maximo" ControlToValidate="txtDescripcion" ClientValidationFunction="VerificarCantidad"></asp:CustomValidator>
             </div>
 
         </div>
