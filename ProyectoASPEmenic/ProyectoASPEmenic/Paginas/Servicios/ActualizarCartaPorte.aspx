@@ -1,8 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="RegistroCartaporte.aspx.cs" Inherits="ProyectoASPEmenic.Paginas.Servicios.RegistroCartaporte" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="ActualizarCartaPorte.aspx.cs" Inherits="ProyectoASPEmenic.Paginas.Servicios.ActualizarCartaPorte" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <center><h1><asp:Label runat="server" ID="lbcartaporte" Text="Carta Porte" style="color:black; font-family:Verdana"></asp:Label></h1></center>
+    <center><h1><asp:Label runat="server" ID="lbcartaporte" Text="Modificar Carta Porte" style="color:black; font-family:Verdana"></asp:Label></h1></center>
     <br />
     <asp:HiddenField ID="hfIdServicio" runat="server" />
     <asp:HiddenField ID="hfIdCliente" runat="server" />
@@ -139,7 +139,7 @@
     <div style="align-content:center">    
         <div class="form-row">
             <div class="form-group col-md-12">      
-                <center><asp:Button runat="server" ID="btnGuardarcartaporte" Text="Guardar" CssClass="btn btn-info btn-block" style="color:white; background-color:red; border-color:red; width:auto" OnClick="btnGuardarcartaporte_Click" ></asp:Button></center>   
+                <center><asp:Button runat="server" ID="btnGuardarcartaporte" Text="Guardar" CssClass="btn btn-info btn-block" style="color:white; background-color:red; border-color:red; width:auto"  ></asp:Button></center>   
             </div>
         </div>
    </div>

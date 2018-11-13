@@ -239,6 +239,7 @@
     <Content Include="Paginas\Personas\RegistroNaturales.aspx" />
     <Content Include="Paginas\Dashboard.aspx" />
     <Content Include="Paginas\Publicidad\Index.aspx" />
+    <Content Include="Paginas\Servicios\ActualizarCartaPorte.aspx" />
     <Content Include="Paginas\Servicios\ActulizarContrato.aspx" />
     <Content Include="Paginas\Servicios\ListadoContrato.aspx" />
     <Content Include="Paginas\Transporte\ActualizarTransporte.aspx" />
@@ -397,6 +398,13 @@
     </Compile>
     <Compile Include="Paginas\Publicidad\Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\Servicios\ActualizarCartaPorte.aspx.cs">
+      <DependentUpon>ActualizarCartaPorte.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Servicios\ActualizarCartaPorte.aspx.designer.cs">
+      <DependentUpon>ActualizarCartaPorte.aspx</DependentUpon>
     </Compile>
     <Compile Include="Paginas\Servicios\ActulizarContrato.aspx.cs">
       <DependentUpon>ActulizarContrato.aspx</DependentUpon>

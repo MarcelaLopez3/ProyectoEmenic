@@ -326,8 +326,25 @@ namespace ProyectoASPEmenic.Paginas.Servicios
             {
                 if(ddltiposervicio.SelectedValue == "Transporte")
                 {
-                    //Redirige al formulario de cartaporte
-                    Response.Redirect("~/Paginas/Servicios/RegistroCartaporte.aspx?srv=" + e.CommandArgument);
+                    int existe_cp=0;
+                    query = "select if (EXISTS(select * from cartaporte where IdServicio=" + e.CommandArgument + "),1,0)";
+                    conexion.IniciarConexion();
+                    conexion.RecibeQuery(query);
+                    while(conexion.reg.Read())
+                    {
+                        existe_cp = conexion.reg.GetInt32(0);
+                    }
+                    conexion.CerrarConexion();
+                    if (existe_cp == 0)
+                    {
+                        //Redirige al formulario de cartaporte
+                        Response.Redirect("~/Paginas/Servicios/RegistroCartaporte.aspx?srv=" + e.CommandArgument);
+                    }
+                    else
+                    {
+                        Response.Redirect("~/Paginas/Servicios/ActualizarCartaporte.aspx?srv=" + e.CommandArgument);
+                    }
+
                 }
                 else if(ddltiposervicio.SelectedValue == "Alquiler")
                 {

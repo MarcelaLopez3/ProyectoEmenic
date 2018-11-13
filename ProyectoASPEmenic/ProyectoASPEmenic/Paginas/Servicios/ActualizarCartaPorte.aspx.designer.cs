@@ -10,7 +10,7 @@
 namespace ProyectoASPEmenic.Paginas.Servicios {
     
     
-    public partial class RegistroCartaporte {
+    public partial class ActualizarCartaPorte {
         
         /// <summary>
         /// Control lbcartaporte.
