@@ -26,15 +26,15 @@ namespace ProyectoASPEmenic.Paginas.Servicios
             }
         }
 
-        public int IdCliente
+        public int IdConductor
         {
             set
             {
-                hfIdCliente.Value = value.ToString();
+                hfIdConductor.Value = value.ToString();
             }
             get
             {
-                return int.Parse(hfIdCliente.Value);
+                return int.Parse(hfIdConductor.Value);
             }
         }
 
@@ -50,22 +50,32 @@ namespace ProyectoASPEmenic.Paginas.Servicios
             }
         }
 
+        public int IdCliente
+        {
+            set
+            {
+                hfIdCliente.Value = value.ToString();
+            }
+            get
+            {
+                return int.Parse(hfIdCliente.Value);
+            }
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Request.QueryString["srv"] == null)
+            if (!IsPostBack)
             {
-                mensaje("Seleccione un servicio.");
-                btnGuardarcartaporte.Visible = false;
-            }
-            else
-            {
-                IdServicio = int.Parse(Request.QueryString["srv"].ToString());
-                cargarMotoristas();
-                cargarCabezal();
-                cargarFurgon();
-                cargarTransporte();
-                cargarInformacion();
-                cargaCartaPorte();
+                if (Request.QueryString["srv"] == null)
+                {
+                    mensaje("Seleccione un servicio.");
+                    btnGuardarcartaporte.Visible = false;
+                }
+                else
+                {
+                    IdServicio = int.Parse(Request.QueryString["srv"].ToString());
+                    cargarDatos();
+                }
             }
         }
 
@@ -82,6 +92,7 @@ namespace ProyectoASPEmenic.Paginas.Servicios
                 ddlIDcabezal.SelectedValue = cn.reg.GetInt32(2).ToString();
                 ddlIDfurgon.SelectedValue = cn.reg.GetInt32(3).ToString();
                 ddlConductor.SelectedValue = ddlConductor.Items.FindByValue(cn.reg.GetInt32(4).ToString()).Value;
+                IdConductor = int.Parse(ddlConductor.SelectedValue);
                 ddlTransporte.SelectedValue = cn.reg.GetInt32(5).ToString();
                 txtfechacartaporte.Text = FormatoFecha(cn.reg.GetString(6));
                 txtaduanaentrada.Text = cn.reg.GetString(7);
@@ -139,7 +150,7 @@ namespace ProyectoASPEmenic.Paginas.Servicios
         //Función para cargar transporte
         public void cargarTransporte()
         {
-            query = "SELECT IdPersona as Id,NombreLegal as empresa FROM persona where IdPersona=1 or (Cliente=1 and PersonaJuridica=1)";
+            query = "SELECT IdPersona as Id,NombreLegal as empresa FROM persona where IdPersona=1 or (Socio=1 and PersonaJuridica=1)";
             cn.IniciarConexion();
             ddlTransporte.DataSource = cn.llena(query);
             cn.CerrarConexion();
@@ -174,7 +185,17 @@ namespace ProyectoASPEmenic.Paginas.Servicios
 
         protected void btnModificarCP_Click(object sender, EventArgs e)
         {
-            Edit(true);
+            if (btnModificarCP.Text == "Modificar")
+            {
+                btnModificarCP.Text = "Cancelar";
+                Edit(true);
+            }
+            else if(btnModificarCP.Text=="Cancelar")
+            {
+                btnModificarCP.Text = "Modificar";
+                Edit(false);
+                cargarDatos();
+            }
         }
 
         public void Edit(bool state)
@@ -198,6 +219,8 @@ namespace ProyectoASPEmenic.Paginas.Servicios
             txtflete.Enabled = state;           
             txtobservacionescartaporte.Enabled = state;
             btnGuardarcartaporte.Visible = state;
+            btnGenerarCP.Visible = !state;
+            btnGenerarMC.Visible = !state;
         }
 
         protected string FormatoFecha(string fecha)
@@ -208,5 +231,72 @@ namespace ProyectoASPEmenic.Paginas.Servicios
             string devuelve = words[2] + "-" + words[1] + "-" + words[0];
             return devuelve;
         }
-    }
+
+        public void cargarDatos()
+        {
+            cargarMotoristas();
+            cargarCabezal();
+            cargarFurgon();
+            cargarTransporte();
+            cargarInformacion();
+            cargaCartaPorte();
+        }
+
+        protected void btnGenerarCP_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnGuardarcartaporte_Click(object sender, EventArgs e)
+        {
+            if (ddlConductor.SelectedValue == "")
+            {
+                mensaje("Seleccione un motorista.");
+            }
+            else
+            {
+                int idConductor = string.IsNullOrEmpty(ddlConductor.SelectedValue) ? IdConductor : int.Parse(ddlConductor.SelectedValue);
+                int idCabezal = Int32.Parse(ddlIDcabezal.SelectedValue);
+                int idFurgon = Int32.Parse(ddlIDfurgon.SelectedValue);
+                string fecha = !string.IsNullOrEmpty(txtfechacartaporte.Text) ? DateTime.Parse(txtfechacartaporte.Text).ToString("yyyy-MM-dd") : DateTime.Today.ToString("yyyy-MM-dd");
+                string aduanaIngreso = !string.IsNullOrEmpty(txtaduanaentrada.Text) ? txtaduanaentrada.Text : "";
+                string lugarEmbarque = !string.IsNullOrEmpty(txtlugarembarque.Text) ? txtlugarembarque.Text : "";
+                string aduanaSalida = !string.IsNullOrEmpty(txtaduanasalida.Text) ? txtaduanasalida.Text : "";
+                string lugarDestino = !string.IsNullOrEmpty(txtdestinocartaporte.Text) ? txtdestinocartaporte.Text : "";
+                int idTransporte = Int32.Parse(ddlTransporte.SelectedValue);
+                string codigo = !string.IsNullOrEmpty(txtcodigocartaporte.Text) ? txtcodigocartaporte.Text : "";
+                string contenido = !string.IsNullOrEmpty(txtcontenidocartaporte.Text) ? txtcontenidocartaporte.Text : "";
+                string descripcion = !string.IsNullOrEmpty(txtdestinocartaporte.Text) ? txtdescripcion.Text : "";
+                int cantidad = int.TryParse(txtcantidad.Text, out cantidad) ? int.Parse(txtcantidad.Text) : 0;
+                double pesoNeto = double.TryParse(txtpesoneto.Text, out pesoNeto) ? double.Parse(txtpesoneto.Text) : 0;
+                float totalPesoNeto = float.TryParse(txttotalpesoneto.Text, out totalPesoNeto) ? float.Parse(txttotalpesoneto.Text) : 0;
+                float totalPesoBruto = float.TryParse(txttotalpesobruto.Text, out totalPesoBruto) ? float.Parse(txttotalpesobruto.Text) : 0;
+                float flete = float.TryParse(txtflete.Text, out flete) ? float.Parse(txtflete.Text) : 0;
+                string observaciones = !string.IsNullOrEmpty(txtobservacionescartaporte.Text) ? txtobservacionescartaporte.Text : "";
+
+                query = "UPDATE `cartaporte` SET "
+                    + "`IdCabezal`=" + idCabezal + ",`IdFurgon`=" + idFurgon + ",`IdConductor`=" + idConductor + ",`IdTransporte`=" + idTransporte + ""
+                    + ",`Fecha`='" + fecha + "',`AduanaIngreso`='" + aduanaIngreso + "',`AduanaSalida`='" + aduanaSalida + "',`LugarDestino`='" + lugarDestino
+                    + "',`LugarEmbarque`='" + lugarEmbarque + "',`Codigo`='" + codigo + "',`Cantidad`=" + cantidad + ",`Descripcion`='" + descripcion + "',"
+                    + "`PesoNeto`='" + pesoNeto + "',`Contenido`='" + contenido + "',`TotalPesoBruto`='" + totalPesoBruto + "',`TotalPesoNeto`='" + totalPesoNeto + "'"
+                    + ",`Flete`='" + flete + "',`Observaciones`='" + observaciones + "' WHERE IdCartaPorte=" + IdCartaPorte;
+
+                //Enviando consulta
+                try
+                {
+                    cn.IniciarConexion();
+                    cn.EnviarQuery(query);
+                    cn.CerrarConexion();
+                    btnModificarCP.Text = "Modificar";
+                    mensaje("Carta Porte Actualizada.");
+                    Edit(false);
+                    cargarDatos();
+                }
+                catch(Exception ex)
+                {
+                    mensaje("Ocurrio un error " + ex.ToString());
+                }
+            }
+            }
+        }
 }
