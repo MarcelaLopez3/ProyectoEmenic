@@ -29,17 +29,17 @@
             <div class="form-row">
                 <div class="form-group col-md-6">
                 <asp:Label runat="server" ID="lblConductor" Text="Conductor:" style="color:black"></asp:Label>
-                    <ajaxToolkit:ComboBox ID="ddlConductor" runat="server" AutoCompleteMode="SuggestAppend" DropDownStyle="DropDownList"  ListItemHoverCssClass="form-control" BorderStyle="Double" Width="470px">
+                    <ajaxToolkit:ComboBox ID="ddlConductor" runat="server" AutoCompleteMode="SuggestAppend" DropDownStyle="DropDownList"  ListItemHoverCssClass="form-control" BorderStyle="Double" Width="470px" AutoPostBack="false">
                             </ajaxToolkit:ComboBox>                
             </div>
                 <div class="form-group col-md-2">
                 <asp:Label runat="server" ID="lbIDcabezal" Text="Cabezal:" style="color:black"></asp:Label>
-                <asp:DropDownList ID="ddlIDcabezal" runat="server" CssClass="form-control" class="form-control">   
+                <asp:DropDownList ID="ddlIDcabezal" runat="server" CssClass="form-control" class="form-control" AutoPostBack="false">   
                 </asp:DropDownList> 
             </div>
                <div class="form-group col-md-2">
                 <asp:Label runat="server" ID="lbIDfurgon" Text="Furgon:" style="color:black"></asp:Label>
-                <asp:DropDownList ID="ddlIDfurgon" runat="server" CssClass="form-control" class="form-control">
+                <asp:DropDownList ID="ddlIDfurgon" runat="server" CssClass="form-control" class="form-control" AutoPostBack="false">
                 </asp:DropDownList> 
             </div>                
                 <div class="form-group col-md-2">
@@ -80,11 +80,11 @@
             <div class="form-row">                
                  <div class="form-group col-md-6">
                     <asp:Label runat="server" ID="Label6" Text="Transporte:" style="color:black"></asp:Label>
-                    <asp:DropDownList runat="server" ID="ddlTransporte" CssClass="form-control"></asp:DropDownList>
+                    <asp:DropDownList runat="server" ID="ddlTransporte" CssClass="form-control" AutoPostBack="false"></asp:DropDownList>
                 </div>
                 <div class="form-group col-md-3">
                     <asp:Label runat="server" ID="Label8" Text="Codigo:" style="color:black"></asp:Label>
-                    <asp:TextBox runat="server" ID="txtcodigocartaporte" CssClass="form-control"></asp:TextBox>
+                    <asp:TextBox runat="server" ID="txtcodigocartaporte" CssClass="form-control" MaxLength="8"></asp:TextBox>
                 </div>
             </div>
        </div>

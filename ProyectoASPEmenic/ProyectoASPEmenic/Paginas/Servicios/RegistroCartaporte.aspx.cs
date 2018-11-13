@@ -40,19 +40,22 @@ namespace ProyectoASPEmenic.Paginas.Servicios
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Request.QueryString["srv"] == null)
+            if (!IsPostBack)
             {
-                mensaje("Seleccione un servicio.");
-                btnGuardarcartaporte.Visible = false;
-            }
-            else
-            {
-                IdServicio = int.Parse(Request.QueryString["srv"].ToString());
-                cargarMotoristas();
-                cargarCabezal();
-                cargarFurgon();
-                cargarTransporte();
-                cargarInformacion();                           
+                if (Request.QueryString["srv"] == null)
+                {
+                    mensaje("Seleccione un servicio.");
+                    btnGuardarcartaporte.Visible = false;
+                }
+                else
+                {
+                    IdServicio = int.Parse(Request.QueryString["srv"].ToString());
+                    cargarMotoristas();
+                    cargarCabezal();
+                    cargarFurgon();
+                    cargarTransporte();
+                    cargarInformacion();
+                }
             }
         }
 
@@ -95,7 +98,7 @@ namespace ProyectoASPEmenic.Paginas.Servicios
         //Función para cargar transporte
         public void cargarTransporte()
         {
-            query = "SELECT IdPersona as Id,NombreLegal as empresa FROM persona where IdPersona=1 or (Cliente=1 and PersonaJuridica=1)";
+            query = "SELECT IdPersona as Id,NombreLegal as empresa FROM persona where IdPersona=1 or (Socio=1 and PersonaJuridica=1)";
             cn.IniciarConexion();
             ddlTransporte.DataSource = cn.llena(query);
             cn.CerrarConexion();

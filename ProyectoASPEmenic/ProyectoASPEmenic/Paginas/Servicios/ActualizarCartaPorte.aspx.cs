@@ -52,20 +52,18 @@ namespace ProyectoASPEmenic.Paginas.Servicios
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Request.QueryString["srv"] == null)
+            if (!IsPostBack)
             {
-                mensaje("Seleccione un servicio.");
-                btnGuardarcartaporte.Visible = false;
-            }
-            else
-            {
-                IdServicio = int.Parse(Request.QueryString["srv"].ToString());
-                cargarMotoristas();
-                cargarCabezal();
-                cargarFurgon();
-                cargarTransporte();
-                cargarInformacion();
-                cargaCartaPorte();
+                if (Request.QueryString["srv"] == null)
+                {
+                    mensaje("Seleccione un servicio.");
+                    btnGuardarcartaporte.Visible = false;
+                }
+                else
+                {
+                    IdServicio = int.Parse(Request.QueryString["srv"].ToString());
+                    cargarDatos();
+                }
             }
         }
 
@@ -139,7 +137,7 @@ namespace ProyectoASPEmenic.Paginas.Servicios
         //Función para cargar transporte
         public void cargarTransporte()
         {
-            query = "SELECT IdPersona as Id,NombreLegal as empresa FROM persona where IdPersona=1 or (Cliente=1 and PersonaJuridica=1)";
+            query = "SELECT IdPersona as Id,NombreLegal as empresa FROM persona where IdPersona=1 or (Socio=1 and PersonaJuridica=1)";
             cn.IniciarConexion();
             ddlTransporte.DataSource = cn.llena(query);
             cn.CerrarConexion();
@@ -174,7 +172,17 @@ namespace ProyectoASPEmenic.Paginas.Servicios
 
         protected void btnModificarCP_Click(object sender, EventArgs e)
         {
-            Edit(true);
+            if (btnModificarCP.Text == "Modificar")
+            {
+                btnModificarCP.Text = "Cancelar";
+                Edit(true);
+            }
+            else if(btnModificarCP.Text=="Cancelar")
+            {
+                btnModificarCP.Text = "Modificar";
+                Edit(false);
+                cargarDatos();
+            }
         }
 
         public void Edit(bool state)
@@ -198,6 +206,8 @@ namespace ProyectoASPEmenic.Paginas.Servicios
             txtflete.Enabled = state;           
             txtobservacionescartaporte.Enabled = state;
             btnGuardarcartaporte.Visible = state;
+            btnGenerarCP.Visible = !state;
+            btnGenerarMC.Visible = !state;
         }
 
         protected string FormatoFecha(string fecha)
@@ -207,6 +217,16 @@ namespace ProyectoASPEmenic.Paginas.Servicios
             string[] words = nueva2.Split('/');
             string devuelve = words[2] + "-" + words[1] + "-" + words[0];
             return devuelve;
+        }
+
+        public void cargarDatos()
+        {
+            cargarMotoristas();
+            cargarCabezal();
+            cargarFurgon();
+            cargarTransporte();
+            cargarInformacion();
+            cargaCartaPorte();
         }
     }
 }
