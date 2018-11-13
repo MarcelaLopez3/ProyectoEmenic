@@ -26,7 +26,7 @@ namespace ProyectoASPEmenic.Paginas.Servicios
 
         protected void GridListadoContrato_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            if (e.CommandName == "Actualizar")
+            if (e.CommandName == "Editar")
             {
                 Response.Redirect("~/Paginas/Servicios/ActualizarContrato.aspx?act=" + e.CommandArgument);
             }
