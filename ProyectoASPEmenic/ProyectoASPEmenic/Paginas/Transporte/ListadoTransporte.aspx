@@ -17,7 +17,7 @@
         <asp:HiddenField runat="server" ID="HFIdTransporte"/>
         
 
-        <asp:GridView ID="GridListadoTransporte" runat="server" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal" OnSelectedIndexChanged="GridListadoTransporte_SelectedIndexChanged" OnRowDeleting="GridListadoTransporte_Eliminar">
+        <asp:GridView ID="GridListadoTransporte" runat="server" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal" OnSelectedIndexChanged="GridListadoTransporte_SelectedIndexChanged" OnRowDeleting="GridListadoTransporte_Eliminar" AutoGenerateColumns = "false">
             <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
             <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
             <PagerStyle BackColor="White" ForeColor="Black" HorizontalAlign="Right" />
@@ -27,9 +27,34 @@
             <SortedDescendingCellStyle BackColor="#E5E5E5" />
             <SortedDescendingHeaderStyle BackColor="#242121" />
             <Columns>
-                 <asp:CommandField ControlStyle-BackColor="Red" ShowSelectButton="True" SelectText="Editar" ShowDeleteButton="true" DeleteText="Eliminar" ButtonType="Button" ControlStyle-CssClass="btn btn-info" />
-            </Columns>
+                 <asp:BoundField DataField="IdTransporte" DataFormatString="{0}" HeaderText="Id">
+                                        <ItemStyle HorizontalAlign="Left" />
+                </asp:BoundField>
+                <asp:BoundField DataField="Placa" DataFormatString="{0}" HeaderText="Placa">
+                                        <ItemStyle HorizontalAlign="Left" />
+                                    </asp:BoundField>
+                <asp:BoundField DataField="Descripcion" DataFormatString="{0}" HeaderText="Descripcion">
+                                        <ItemStyle HorizontalAlign="Left" />
+                                    </asp:BoundField>
+                <asp:BoundField DataField="Equipo" DataFormatString="{0}" HeaderText="Equipo">
+                                        <ItemStyle HorizontalAlign="Left" />
+                                    </asp:BoundField>
+                <asp:BoundField DataField="Furgon" DataFormatString="{0}" HeaderText="Furgon">
+                                        <ItemStyle HorizontalAlign="Left" />
+                                    </asp:BoundField>
+                <asp:BoundField DataField="Cabezal" DataFormatString="{0}" HeaderText="Cabezal">
+                                        <ItemStyle HorizontalAlign="Left" />
+                                    </asp:BoundField>
+                  <asp:TemplateField HeaderText="Opciones" ItemStyle-Width="150px">
+                                        <ItemTemplate>
+                                            <asp:LinkButton ID="lkBOpcionActualizar"  CommandArgument='<%# Eval("IdTransporte")%>' runat="server" ToolTip="Actualizar" CssClass="btn btn-success" CommandName="Actualizar"><i class="fa fa-edit" aria-hidden="true" ></i></asp:LinkButton>
+                                            </ItemTemplate>
+                      </asp:TemplateField>
+                </Columns>
         </asp:GridView>
     </center>
-
+    <script src="../../vendor/jquery/jquery.min.js"></script>
+    <script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="../../vendor/jquery-easing/jquery.easing.min.js"></script>   
 </asp:Content>

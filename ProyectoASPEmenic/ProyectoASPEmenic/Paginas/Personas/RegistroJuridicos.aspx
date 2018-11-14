@@ -165,9 +165,9 @@
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <asp:Label runat="server" ID="Label16" Text="Nombre Completo:" style="color:black"></asp:Label>
-                    <asp:TextBox runat="server" ID="txtnombrecontacto" CssClass="form-control"  ></asp:TextBox>    
+                    <asp:TextBox runat="server" ID="txtnombrecontacto" CssClass="form-control"  ></asp:TextBox>                             <!-- [A-Za-z ]*-->
                     <asp:RegularExpressionValidator ID="RegularExpressionValidator8" runat="server" CssClass="alert-text"
-                    ErrorMessage="* Solo letras" Display="Dynamic" SetFocusOnError="True" ControlToValidate="txtnombrecontacto" ValidationExpression="[A-Za-z ]*"></asp:RegularExpressionValidator>        
+                    ErrorMessage="* Solo letras" Display="Dynamic" SetFocusOnError="True" ControlToValidate="txtnombrecontacto" ValidationExpression="[a-zA-ZñÑáéíóúÁÉÍÓÚ\ ]"></asp:RegularExpressionValidator>        
                 </div>
                 <div class="form-group col-md-3">
                     <asp:Label runat="server" ID="Label17" Text="DUI:" style="color:black"></asp:Label>
