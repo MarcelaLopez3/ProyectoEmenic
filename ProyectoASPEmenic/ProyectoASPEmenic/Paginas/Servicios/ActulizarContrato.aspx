@@ -39,7 +39,7 @@
 
                 <div class="form-group col-md-4">
                     <asp:Label runat="server" ID="lbfechaemision" Text="Fecha de emision:" Style="color: black"></asp:Label>
-                    <asp:TextBox runat="server" ID="txtfechaemision" CssClass="form-control" Text="yyyy-mm-dd" TextMode="Date" /><br />
+                    <asp:TextBox runat="server" ID="txtfechaemision" CssClass="form-control"  /><br />
                     <asp:RequiredFieldValidator ID="RFV_fechaemision" Display="Dynamic" SetFocusOnError="True"
                         CssClass="alert-text" runat="server" ControlToValidate="txtcantidadmeses" ErrorMessage="* Valor Requerido"></asp:RequiredFieldValidator>
                     <asp:RegularExpressionValidator ID="REV_Fecha" runat="server" CssClass="alert-text"

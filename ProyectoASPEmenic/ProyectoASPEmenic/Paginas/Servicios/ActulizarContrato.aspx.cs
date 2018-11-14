@@ -20,8 +20,8 @@ namespace ProyectoASPEmenic.Paginas.Servicios
             {
                 LlenarddlIDtransporte();
                 //LlenarddlIDservicio();
-                string VarAct = Request.QueryString["act"];
-                string query = "SELECT `transporte`.`Placa`, `contrato`.`FechaEmision`, `contrato`.`CantidadMeses` " +
+                string VarAct = Request.QueryString["srv"];
+                string query = "SELECT `transporte`.`IdTransporte`, `contrato`.`FechaEmision`, `contrato`.`CantidadMeses` " +
                     "FROM `contrato` " +
                     "INNER JOIN `transporte` ON `contrato`.`IdTransporte` = `transporte`.`IdTransporte` " +
                     "WHERE `contrato`.`IdContrato` = "+VarAct;
@@ -33,7 +33,7 @@ namespace ProyectoASPEmenic.Paginas.Servicios
                     //asignando los valores recuperados de la bdd y validando su contenido
                     if (conexion.reg.GetValue(0) != null || conexion.reg.GetValue(0).ToString() != "")
                     {
-                        ddlIDtransporte.SelectedValue = ddlIDtransporte.Items.FindByText(conexion.reg.GetValue(0).ToString()).Value;
+                        ddlIDtransporte.SelectedValue = ddlIDtransporte.Items.FindByValue(conexion.reg.GetValue(0).ToString()).Value;
                         IdPlaca = int.Parse(ddlIDtransporte.SelectedValue);
                     }
                     else
@@ -52,8 +52,13 @@ namespace ProyectoASPEmenic.Paginas.Servicios
                     else
                         txtfechaemision.Text = "";
 
-                    if (conexion.reg.GetString(2) != null || conexion.reg.GetString(2) != "")
-                        txtcantidadmeses.Text = conexion.reg.GetString(2);
+                    //if (conexion.reg.GetValue(2) != null || conexion.reg.GetValue(2).ToString() != "")
+                    //    txtprimerapellido.Text = conexion.reg.GetValue(2).ToString();
+                    //else
+                    //    txtprimerapellido.Text = "";
+
+                    if (conexion.reg.GetValue(2) != null || conexion.reg.GetValue(2).ToString() != "")
+                        txtcantidadmeses.Text = conexion.reg.GetValue(2).ToString();
                     else
                         txtcantidadmeses.Text = "";
                 }
