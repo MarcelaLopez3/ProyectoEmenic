@@ -42,9 +42,8 @@
                         </div>
                         <div class="form-group col-md-3">
                             <asp:Label ID="lbgalones" runat="server" style="color:black" Text="Galones:"></asp:Label>
-                            <asp:TextBox ID="txtgalones" runat="server" CssClass="form-control"></asp:TextBox>
-                            <asp:RegularExpressionValidator ID="RegularExpressionValidator5" runat="server" CssClass="alert-text"
-                            ErrorMessage="* Solo numeros" Display="Dynamic" SetFocusOnError="True" ControlToValidate="txtgalones" ValidationExpression="^\d+$"></asp:RegularExpressionValidator>
+                            <asp:TextBox ID="txtgalones" runat="server" CssClass="form-control" onkeypress="return isNumberKey(event,this)"></asp:TextBox>
+                            
                         </div>
                     </div>
                     <div class="form-row">
@@ -68,27 +67,23 @@
                     <div class="form-row">
                         <div class="form-group col-md-3">
                             <asp:Label ID="lblpagoempresa" runat="server" style="color:black" Text="Pago empresa:"></asp:Label>
-                            <asp:TextBox ID="txtpagoempresa" runat="server" CssClass="form-control"></asp:TextBox>
-                            <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" CssClass="alert-text"
-                ErrorMessage="* Solo numeros" Display="Dynamic" SetFocusOnError="True" ControlToValidate="txtpagoempresa" ValidationExpression="^\d+$"></asp:RegularExpressionValidator>
+                            <asp:TextBox ID="txtpagoempresa" runat="server" CssClass="form-control" onkeypress="return isNumberKey(event,this)"></asp:TextBox>
+                            
                         </div>
                         <div class="form-group col-md-3">
                             <asp:Label ID="lbpagoestadia" runat="server" style="color:black" Text="Pago de estadia:"></asp:Label>
-                            <asp:TextBox ID="txtpagoestadia" runat="server" CssClass="form-control"></asp:TextBox>
-                            <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" CssClass="alert-text"
-                ErrorMessage="* Solo numeros" Display="Dynamic" SetFocusOnError="True" ControlToValidate="txtpagoestadia" ValidationExpression="^\d+$"></asp:RegularExpressionValidator>
+                            <asp:TextBox ID="txtpagoestadia" runat="server" CssClass="form-control" onkeypress="return isNumberKey(event,this)"></asp:TextBox>
+                            
                         </div>
                         <div class="form-group col-md-3">
                             <asp:Label ID="lbpagoguardia" runat="server" style="color:black" Text="Pago de guardia:"></asp:Label>
-                            <asp:TextBox ID="txtpagoguardia" runat="server" CssClass="form-control"></asp:TextBox>
-                            <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" CssClass="alert-text"
-                ErrorMessage="* Solo numeros" Display="Dynamic" SetFocusOnError="True" ControlToValidate="txtpagoguardia" ValidationExpression="^\d+$"></asp:RegularExpressionValidator>
+                            <asp:TextBox ID="txtpagoguardia" runat="server" CssClass="form-control" onkeypress="return isNumberKey(event,this)"></asp:TextBox>
+                            
                         </div>
                         <div class="form-group col-md-3">
                             <asp:Label ID="lbviaticos" runat="server" style="color:black" Text="Viaticos de motorista:"></asp:Label>
-                            <asp:TextBox ID="txtviaticos" runat="server" CssClass="form-control"></asp:TextBox>
-                            <asp:RegularExpressionValidator ID="RegularExpressionValidator4" runat="server" CssClass="alert-text"
-                ErrorMessage="* Solo numeros" Display="Dynamic" SetFocusOnError="True" ControlToValidate="txtviaticos" ValidationExpression="^\d+$"></asp:RegularExpressionValidator>
+                            <asp:TextBox ID="txtviaticos" runat="server" CssClass="form-control" onkeypress="return isNumberKey(event,this)"></asp:TextBox>
+                            
                         </div>
                     </div>
                 </div>
@@ -155,7 +150,33 @@
             </center>
         </asp:View>
 
-    </asp:MultiView>        
+    </asp:MultiView>    
+    
+    <script type="text/javascript">
+        function isNumber(evt) {
+            evt = (evt) ? evt : window.event;
+            var charCode = (evt.which) ? evt.which : evt.keyCode;
+            if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+                return false;
+            }
+            return true;
+        }
+
+        function isNumberKey(evt, obj) {
+
+            var charCode = (evt.which) ? evt.which : event.keyCode
+            var value = obj.value;
+            var dotcontains = value.indexOf(".") != -1;
+            if (dotcontains)
+                if (charCode == 46) return false;
+            if (charCode == 46) return true;
+            if (charCode > 31 && (charCode < 48 || charCode > 57))
+                return false;
+            return true;
+        }
+
+    </script>
+        
     <script src="../../vendor/jquery/jquery.min.js"></script>
     <script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- Core plugin JavaScript-->

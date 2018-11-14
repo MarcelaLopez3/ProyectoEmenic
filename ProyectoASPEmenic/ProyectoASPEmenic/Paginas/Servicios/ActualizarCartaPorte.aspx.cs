@@ -219,8 +219,8 @@ namespace ProyectoASPEmenic.Paginas.Servicios
             txtflete.Enabled = state;           
             txtobservacionescartaporte.Enabled = state;
             btnGuardarcartaporte.Visible = state;
-            btnGenerarCP.Visible = !state;
-            btnGenerarMC.Visible = !state;
+            //btnGenerarCP.Visible = !state;
+            //btnGenerarMC.Visible = !state;
         }
 
         protected string FormatoFecha(string fecha)
