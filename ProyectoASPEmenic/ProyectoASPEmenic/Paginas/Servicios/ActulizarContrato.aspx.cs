@@ -12,7 +12,17 @@ namespace ProyectoASPEmenic.Paginas.Servicios
         Conexion conexion = new Conexion();
 
         //Propiedades
-        public int IdPlaca { get; set; }
+        public int IdPlaca
+        {
+            set
+            {
+                hfIdPlaca.Value = value.ToString();
+            }
+            get
+            {
+                return int.Parse(hfIdPlaca.Value);
+            }
+        }
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -20,11 +30,11 @@ namespace ProyectoASPEmenic.Paginas.Servicios
             {
                 LlenarddlIDtransporte();
                 //LlenarddlIDservicio();
-                string VarAct = Request.QueryString["act"];
-                string query = "SELECT `transporte`.`Placa`, `contrato`.`FechaEmision`, `contrato`.`CantidadMeses` " +
+                string VarAct = Request.QueryString["srv"];
+                string query = "SELECT `transporte`.`IdTransporte`, `contrato`.`FechaEmision`, `contrato`.`CantidadMeses` " +
                     "FROM `contrato` " +
                     "INNER JOIN `transporte` ON `contrato`.`IdTransporte` = `transporte`.`IdTransporte` " +
-                    "WHERE `contrato`.`IdContrato` = "+VarAct;
+                    "WHERE `contrato`.`IdServicio` = "+VarAct;
                 conexion.IniciarConexion();
                 conexion.RecibeQuery(query);
 
@@ -33,7 +43,7 @@ namespace ProyectoASPEmenic.Paginas.Servicios
                     //asignando los valores recuperados de la bdd y validando su contenido
                     if (conexion.reg.GetValue(0) != null || conexion.reg.GetValue(0).ToString() != "")
                     {
-                        ddlIDtransporte.SelectedValue = ddlIDtransporte.Items.FindByText(conexion.reg.GetValue(0).ToString()).Value;
+                        ddlIDtransporte.SelectedValue = ddlIDtransporte.Items.FindByValue(conexion.reg.GetValue(0).ToString()).Value;
                         IdPlaca = int.Parse(ddlIDtransporte.SelectedValue);
                     }
                     else
@@ -52,8 +62,13 @@ namespace ProyectoASPEmenic.Paginas.Servicios
                     else
                         txtfechaemision.Text = "";
 
-                    if (conexion.reg.GetString(2) != null || conexion.reg.GetString(2) != "")
-                        txtcantidadmeses.Text = conexion.reg.GetString(2);
+                    //if (conexion.reg.GetValue(2) != null || conexion.reg.GetValue(2).ToString() != "")
+                    //    txtprimerapellido.Text = conexion.reg.GetValue(2).ToString();
+                    //else
+                    //    txtprimerapellido.Text = "";
+
+                    if (conexion.reg.GetValue(2) != null || conexion.reg.GetValue(2).ToString() != "")
+                        txtcantidadmeses.Text = conexion.reg.GetValue(2).ToString();
                     else
                         txtcantidadmeses.Text = "";
                 }
@@ -89,10 +104,8 @@ namespace ProyectoASPEmenic.Paginas.Servicios
 
         protected void btnActualizarContrato_Click(object sender, EventArgs e)
         {
-            string VarSer = Request.QueryString["ser"];
-
-            string VarAct = Request.QueryString["act"];
-            int IdContrato = Convert.ToInt32(VarAct);
+            string VarSer = Request.QueryString["srv"];
+            int IdServicio = Convert.ToInt32(VarSer);
 
             //recuperando entradas
             int IdTransporte = string.IsNullOrEmpty(ddlIDtransporte.SelectedValue) ? IdPlaca : Int32.Parse(ddlIDtransporte.SelectedValue);
@@ -104,8 +117,8 @@ namespace ProyectoASPEmenic.Paginas.Servicios
             string query = "UPDATE `contrato` " +
             "SET `IdTransporte`='" + IdTransporte + "'," +
             "`CantidadMeses`='" + CantidadMeses + "'," +
-            "`FechaEmision` = " + FechaEmision + " " +
-            "WHERE `contrato`.`IdContrato` =" + IdContrato + ";";
+            "`FechaEmision` ='" + FechaEmision + "' " +
+            "WHERE `contrato`.`IdServicio` =" + IdServicio + ";";
             //enviar consulta a Mysql
             conexion.IniciarConexion();
             conexion.EnviarQuery(query);
@@ -116,7 +129,7 @@ namespace ProyectoASPEmenic.Paginas.Servicios
             {
                 Response.Redirect("~/Paginas/Clientes/ListadoClientes.aspx");
             }
-            Response.Redirect("~/Paginas/Servicios/ServicioContratado.aspx?ser="+ VarSer);
+            Response.Redirect("~/Paginas/Clientes/ListadoClientes.aspx");
         }
 
         protected void btnRegresar_Click(object sender, EventArgs e)
@@ -126,7 +139,7 @@ namespace ProyectoASPEmenic.Paginas.Servicios
             {
                 Response.Redirect("~/Paginas/Clientes/ListadoClientes.aspx");
             }
-            Response.Redirect("~/Paginas/Servicios/ServicioContratado.aspx?ser=" + VarSer);
+            Response.Redirect("~/Paginas/Clientes/ListadoClientes.aspx");
         }
 
         protected string FormatoFecha(string fecha)

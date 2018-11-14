@@ -2,8 +2,9 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <center><h1><asp:Label runat="server" ID="lbContratos" Text="Contratos" style="color:black; font-family:Verdana"></asp:Label></h1></center>
+    <center><h1><asp:Label runat="server" ID="lbContratos" Text="Actualizar Contratos" style="color:black; font-family:Verdana"></asp:Label></h1></center>
     <br />
+    <asp:HiddenField ID="hfIdPlaca" runat="server" />
     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
     <div class="card border-primary mb-3">
         <div class="card-header">
@@ -39,7 +40,7 @@
 
                 <div class="form-group col-md-4">
                     <asp:Label runat="server" ID="lbfechaemision" Text="Fecha de emision:" Style="color: black"></asp:Label>
-                    <asp:TextBox runat="server" ID="txtfechaemision" CssClass="form-control" Text="yyyy-mm-dd" TextMode="Date" /><br />
+                    <asp:TextBox runat="server" ID="txtfechaemision" CssClass="form-control"  /><br />
                     <asp:RequiredFieldValidator ID="RFV_fechaemision" Display="Dynamic" SetFocusOnError="True"
                         CssClass="alert-text" runat="server" ControlToValidate="txtcantidadmeses" ErrorMessage="* Valor Requerido"></asp:RequiredFieldValidator>
                     <asp:RegularExpressionValidator ID="REV_Fecha" runat="server" CssClass="alert-text"
