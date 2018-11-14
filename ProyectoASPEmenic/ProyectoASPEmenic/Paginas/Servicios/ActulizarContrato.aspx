@@ -2,8 +2,9 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <center><h1><asp:Label runat="server" ID="lbContratos" Text="Contratos" style="color:black; font-family:Verdana"></asp:Label></h1></center>
+    <center><h1><asp:Label runat="server" ID="lbContratos" Text="Actualizar Contratos" style="color:black; font-family:Verdana"></asp:Label></h1></center>
     <br />
+    <asp:HiddenField ID="hfIdPlaca" runat="server" />
     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
     <div class="card border-primary mb-3">
         <div class="card-header">
