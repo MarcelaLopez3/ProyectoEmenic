@@ -41,28 +41,28 @@
                     <asp:TextBox runat="server" ID="txtprimernombre" CssClass="form-control"></asp:TextBox>  
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator1"  Display="Dynamic" SetFocusOnError="True" 
                     CssClass="alert-text" runat="server" ControlToValidate="txtprimernombre" ErrorMessage="* Valor Requerido"></asp:RequiredFieldValidator>  <!--  [A-Za-z ]* -->
-                    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" CssClass="alert-text"
-                    ErrorMessage="* Solo letras" Display="Dynamic" SetFocusOnError="True" ControlToValidate="txtprimernombre" ValidationExpression="[a-zA-ZñÑáéíóúÁÉÍÓÚ\ ]"></asp:RegularExpressionValidator>  
+                    <%--<asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" CssClass="alert-text"
+                    ErrorMessage="* Solo letras" Display="Dynamic" SetFocusOnError="True" ControlToValidate="txtprimernombre" ValidationExpression="[a-zA-ZñÑáéíóúÁÉÍÓÚ\ ]"></asp:RegularExpressionValidator>--%>  
                 </div>
                 <div class="form-group col-md-3">    
                     <asp:Label runat="server" ID="lblsegundonombre" Text="Segundo Nombre:" style="color:black"></asp:Label>
                     <asp:TextBox runat="server" ID="txtsegundonombre" CssClass="form-control" /> 
-                    <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" CssClass="alert-text"
-                    ErrorMessage="* Solo letras" Display="Dynamic" SetFocusOnError="True" ControlToValidate="txtsegundonombre" ValidationExpression="[a-zA-ZñÑáéíóúÁÉÍÓÚ\ ]"></asp:RegularExpressionValidator>
+                    <%--<asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" CssClass="alert-text"
+                    ErrorMessage="* Solo letras" Display="Dynamic" SetFocusOnError="True" ControlToValidate="txtsegundonombre" ValidationExpression="[a-zA-ZñÑáéíóúÁÉÍÓÚ\ ]"></asp:RegularExpressionValidator>--%>
                </div>
                 <div class="form-group col-md-3">
                     <asp:Label runat="server" ID="lblprimerapellido" Text="Primer Apellido:" style="color:black"></asp:Label>
                     <asp:TextBox runat="server" ID="txtprimerapellido" CssClass="form-control"></asp:TextBox> 
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator2"  Display="Dynamic" SetFocusOnError="True" 
                     CssClass="alert-text" runat="server" ControlToValidate="txtprimerapellido" ErrorMessage="* Valor Requerido"></asp:RequiredFieldValidator>
-                    <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" CssClass="alert-text"
-                    ErrorMessage="* Solo letras" Display="Dynamic" SetFocusOnError="True" ControlToValidate="txtprimerapellido" ValidationExpression="[a-zA-ZñÑáéíóúÁÉÍÓÚ\ ]"></asp:RegularExpressionValidator>   
+<%--                    <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" CssClass="alert-text"
+                    ErrorMessage="* Solo letras" Display="Dynamic" SetFocusOnError="True" ControlToValidate="txtprimerapellido" ValidationExpression="[a-zA-ZñÑáéíóúÁÉÍÓÚ\ ]"></asp:RegularExpressionValidator>   --%>
                 </div>
                 <div class="form-group col-md-3">    
                     <asp:Label runat="server" ID="lblsegundoapellido" Text="Segundo Apellido:"  style="color:black"></asp:Label>
                     <asp:TextBox runat="server" ID="txtsegundoapellido" CssClass="form-control" /> 
-                    <asp:RegularExpressionValidator ID="RegularExpressionValidator4" runat="server" CssClass="alert-text"
-                    ErrorMessage="* Solo letras" Display="Dynamic" SetFocusOnError="True" ControlToValidate="txtsegundoapellido" ValidationExpression="[a-zA-ZñÑáéíóúÁÉÍÓÚ\ ]"></asp:RegularExpressionValidator>
+<%--                    <asp:RegularExpressionValidator ID="RegularExpressionValidator4" runat="server" CssClass="alert-text"
+                    ErrorMessage="* Solo letras" Display="Dynamic" SetFocusOnError="True" ControlToValidate="txtsegundoapellido" ValidationExpression="[a-zA-ZñÑáéíóúÁÉÍÓÚ\ ]"></asp:RegularExpressionValidator>--%>
                </div>
         </div>
         <div class="form-row">

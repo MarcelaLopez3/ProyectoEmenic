@@ -51,5 +51,10 @@ namespace ProyectoASPEmenic.Paginas.Personas
                 Response.Redirect("~/Paginas/Personas/ActualizarNaturales.aspx?act=" + e.CommandArgument);
             }
         }
+
+        protected void btnGenerarPDF_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Paginas/Reporteria/ReportePersonasNaturales.aspx");
+        }
     }
 }
