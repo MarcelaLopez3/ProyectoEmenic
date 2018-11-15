@@ -15,6 +15,9 @@
             <div class="form-group col-md-2">
                 <asp:Button ID="btnAgregarRegistro" runat="server" CssClass="form-control" class="form-control" Text="Agregar Nuevo" BackColor="Red" ForeColor="White" OnClick="btnAgregarRegistro_Click"></asp:Button> 
             </div>
+            <%--<div class="form-group col-md-2">
+                <asp:Button ID="btnGenerarPDF" runat="server" CssClass="form-control" class="form-control" Text="Generar PDF" BackColor="Red" ForeColor="White" OnClick="btnGenerarPDF_Click"></asp:Button> 
+            </div>--%>
        </div>
 
         <asp:GridView ID="GridListadoNaturales" runat="server" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal" OnRowEditing="GridListadoNaturales_RowEditing" OnRowDeleting="GridListadoNaturales_RowDeleting" OnSelectedIndexChanged="GridListadoNaturales_SelectedIndexChanged" AutoGenerateColumns="false" OnRowCommand="GridListadoNaturales_RowCommand" >
