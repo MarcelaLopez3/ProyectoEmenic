@@ -91,5 +91,18 @@ namespace ProyectoASPEmenic
             sda.Fill(ds);
             return ds;
         }
+
+        //Función prueba para llena dataset con stored procedure
+        public DataSet call_sp(int id)
+        {
+            MySqlDataAdapter da = new MySqlDataAdapter();
+            DataSet ds = new DataSet();
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.CommandText = "sp_getCartaPorte";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@Carta",id);
+            da.Fill(ds);
+            return ds;
+        }
     }
 }
