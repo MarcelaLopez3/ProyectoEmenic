@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Microsoft.Reporting.WebForms;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -74,6 +76,7 @@ namespace ProyectoASPEmenic.Paginas.Servicios
                 else
                 {
                     IdServicio = int.Parse(Request.QueryString["srv"].ToString());
+                    MVCartaPorte.SetActiveView(VActualizar);
                     cargarDatos();
                 }
             }
@@ -244,7 +247,14 @@ namespace ProyectoASPEmenic.Paginas.Servicios
 
         protected void btnGenerarCP_Click(object sender, EventArgs e)
         {
-
+            DataSet ds = cn.call_sp(IdServicio);
+            ReportViewer1.LocalReport.DataSources.Clear();
+            ReportDataSource source = new ReportDataSource();
+            source.Value = ds.Tables[0];
+            source.Name = "DataSet1";
+            ReportViewer1.LocalReport.DataSources.Add(source);
+            ReportViewer1.LocalReport.Refresh();
+            MVCartaPorte.SetActiveView(VCartaPorte);
         }
 
         protected void btnGuardarcartaporte_Click(object sender, EventArgs e)
