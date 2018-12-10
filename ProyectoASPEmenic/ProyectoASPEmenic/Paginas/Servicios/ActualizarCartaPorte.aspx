@@ -162,7 +162,7 @@
    <br />
             </asp:View>       
         <asp:View ID="VCartaPorte" runat="server">
-            <rsweb:ReportViewer ID="ReportViewer1" runat="server" Width="1032px">
+            <rsweb:ReportViewer ID="ReportViewer1" runat="server" Width="1043px" style="margin-right: 15px">
             </rsweb:ReportViewer>
             </asp:View>
         </asp:MultiView>

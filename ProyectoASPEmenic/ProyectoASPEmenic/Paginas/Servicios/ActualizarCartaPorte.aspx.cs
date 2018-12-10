@@ -192,11 +192,13 @@ namespace ProyectoASPEmenic.Paginas.Servicios
             {
                 btnModificarCP.Text = "Cancelar";
                 Edit(true);
+                MVCartaPorte.SetActiveView(VActualizar);
             }
             else if(btnModificarCP.Text=="Cancelar")
             {
                 btnModificarCP.Text = "Modificar";
                 Edit(false);
+                MVCartaPorte.SetActiveView(VActualizar);
                 cargarDatos();
             }
         }
