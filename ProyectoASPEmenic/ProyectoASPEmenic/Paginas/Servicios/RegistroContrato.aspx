@@ -53,8 +53,9 @@
             <center><asp:Button runat="server" ID="btnGuardarContrato" Text="Guardar" CssClass="btn btn-info btn-block" Style="color: white; background-color: red; border-color: red; width: auto" OnClick="btnGuardarContrato_Click"></asp:Button></center>
         </div>
         <br />
-        <script src="../../vendor/jquery/jquery.min.js"></script>
-        <script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-        <!-- Core plugin JavaScript-->
-        <script src="../../vendor/jquery-easing/jquery.easing.min.js"></script>
+       <script src="../../js/sb-admin.min.js"></script>
+    <script src="../../vendor/jquery/jquery.min.js"></script>
+    <script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="../../vendor/jquery-easing/jquery.easing.min.js"></script>
 </asp:Content>
