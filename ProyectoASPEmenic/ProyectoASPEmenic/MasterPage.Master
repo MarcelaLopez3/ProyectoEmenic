@@ -19,9 +19,7 @@
     <!-- Page level plugin CSS-->
     <link href="~/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet"/>
     <!-- Custom styles for this template-->
-    <link href="~/css/sb-admin.css" rel="stylesheet"/>
-    <link href="~css/ComboBox.css" rel="stylesheet" />
-
+    <link href="~/css/sb-admin.css" rel="stylesheet"/>    
 
     <asp:ContentPlaceHolder ID="head" runat="server">
 
@@ -32,9 +30,11 @@
     <form id="form1" runat="server">
 
         <nav class="navbar navbar-expand navbar-dark bg-dark static-top" >
-            <button type="button" class="btn btn-dark" data-toggle="collapse" data-target="#demo"><span class="navbar-toggler-icon"></span></button>
+            <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
+        <i class="fas fa-bars"></i>
+      </button>
             <asp:HyperLink runat="server" NavigateUrl="~/Paginas/Dashboard.aspx" CssClass="navbar-brand mr-1" style="color:red">
-            <asp:Image ImageUrl="~/Imagenes/Logo_emenic_2.png" Height="50" runat="server"/>&nbsp;&nbsp;
+            <asp:Image ImageUrl="~/Imagenes/Logo_emenic_2.png" Height="30" runat="server"/>&nbsp;&nbsp;
             EMENIC</asp:HyperLink>
           <!-- Navbar -->            
           <ul class="nav navbar-nav ml-auto" >
@@ -53,7 +53,6 @@
         </nav>
         
       <div id="wrapper">
-    <div id="demo" class="collapse show">
       <!-- Sidebar -->
       <ul class="sidebar navbar-nav">
         <li class="nav-item active">
@@ -108,8 +107,7 @@
             </asp:HyperLink>
         </li>
       </ul>
-          </div>
-
+          
       <div id="content-wrapper">
         <div class="container-fluid">
           <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
@@ -157,7 +155,7 @@
         </div>
       </div>
     </div>
-
+    
     <!-- Bootstrap core JavaScript-->
     <script src="../vendor/jquery/jquery.min.js"></script>
     <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -168,7 +166,7 @@
     <script src="../vendor/datatables/jquery.dataTables.js"></script>
     <script src="../vendor/datatables/dataTables.bootstrap4.js"></script>
     <!-- Custom scripts for all pages-->
-    <script src="~/js/sb-admin.min.js"></script>
+    <script src="../js/sb-admin.min.js"></script>
     <!-- Demo scripts for this page-->
     <script src="../js/demo/datatables-demo.js"></script>
     <script src="../js/demo/chart-area-demo.js"></script>   

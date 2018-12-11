@@ -2,9 +2,7 @@
 <%@ Register assembly="Microsoft.ReportViewer.WebForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" namespace="Microsoft.Reporting.WebForms" tagprefix="rsweb" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <asp:MultiView runat="server" ID="MVCartaPorte">        
-        <asp:View ID="VActualizar" runat="server">
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">   
     <center><h1><asp:Label runat="server" ID="lbcartaporte" Text="Ver Carta Porte" style="color:black; font-family:Verdana"></asp:Label></h1></center>
     <br />
     <asp:HiddenField ID="hfIdServicio" runat="server" />
@@ -17,11 +15,13 @@
     <div class="btn-toolbar">    
         <div class="btn-group md-4">
                 <asp:Button runat="server" ID="btnModificarCP" Text="Modificar" CssClass="btn btn-info btn-block" style="color:white; background-color:red; border-color:red; width:auto" OnClick="btnModificarCP_Click" ></asp:Button>&nbsp;&nbsp;
-               <%-- <asp:Button runat="server" ID="btnGenerarCP" Text="Generar Carta Porte" CssClass="btn btn-info btn-block" style="color:white; background-color:red; border-color:red; width:auto" OnClick="btnGenerarCP_Click" ></asp:Button>&nbsp;&nbsp;
-                <asp:Button runat="server" ID="btnGenerarMC" Text="Generar Manifiesto de Carga" CssClass="btn btn-info btn-block" style="color:white; background-color:red; border-color:red; width:auto" ></asp:Button>            --%>
+               <asp:Button runat="server" ID="btnGenerarCP" Text="Generar Carta Porte" CssClass="btn btn-info btn-block" style="color:white; background-color:red; border-color:red; width:auto" OnClick="btnGenerarCP_Click" ></asp:Button>&nbsp;&nbsp;
+               <%-- <asp:Button runat="server" ID="btnGenerarMC" Text="Generar Manifiesto de Carga" CssClass="btn btn-info btn-block" style="color:white; background-color:red; border-color:red; width:auto" ></asp:Button>            --%>
             </div>
         </div></center>
     <br />
+     <asp:MultiView runat="server" ID="MVCartaPorte">        
+        <asp:View ID="VActualizar" runat="server">
     <div class="card border-primary mb-3">  
        <div class="card-header"><h4>Información</h4></div>  
        <div class="card-body text-primary">
@@ -162,7 +162,7 @@
    <br />
             </asp:View>       
         <asp:View ID="VCartaPorte" runat="server">
-            <rsweb:ReportViewer ID="ReportViewer1" runat="server" Width="1032px">
+            <rsweb:ReportViewer ID="ReportViewer1" runat="server" Width="1043px" style="margin-right: 15px">
             </rsweb:ReportViewer>
             </asp:View>
         </asp:MultiView>

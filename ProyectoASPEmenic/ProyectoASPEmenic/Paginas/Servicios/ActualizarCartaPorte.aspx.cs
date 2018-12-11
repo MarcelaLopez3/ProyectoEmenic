@@ -192,11 +192,13 @@ namespace ProyectoASPEmenic.Paginas.Servicios
             {
                 btnModificarCP.Text = "Cancelar";
                 Edit(true);
+                MVCartaPorte.SetActiveView(VActualizar);
             }
             else if(btnModificarCP.Text=="Cancelar")
             {
                 btnModificarCP.Text = "Modificar";
                 Edit(false);
+                MVCartaPorte.SetActiveView(VActualizar);
                 cargarDatos();
             }
         }
@@ -247,13 +249,19 @@ namespace ProyectoASPEmenic.Paginas.Servicios
 
         protected void btnGenerarCP_Click(object sender, EventArgs e)
         {
-            DataSet ds = cn.call_sp(IdServicio);
+            ReportViewer1.ProcessingMode = ProcessingMode.Local;
+            ReportViewer1.LocalReport.ReportPath = Server.MapPath("~/ReportCP.rdlc");
+            DSEmenic ds = cn.call_sp(IdServicio, "CartaPorte");
+            ReportDataSource source = new ReportDataSource("DSEmenic",ds.Tables[0]);
             ReportViewer1.LocalReport.DataSources.Clear();
-            ReportDataSource source = new ReportDataSource();
-            source.Value = ds.Tables[0];
-            source.Name = "DataSet1";
             ReportViewer1.LocalReport.DataSources.Add(source);
             ReportViewer1.LocalReport.Refresh();
+            //DataSet ds = cn.call_sp(IdServicio);
+            //
+            //source.Value = ds.Tables[0];
+            //source.Name = "DataSet1";
+            //;
+            //ReportViewer1.LocalReport.Refresh();
             MVCartaPorte.SetActiveView(VCartaPorte);
         }
 
