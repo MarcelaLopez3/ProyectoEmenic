@@ -46,7 +46,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Calle principal a Ingenio Chanmico, frente a cooperativa chanmico.</Value>
+                <Value>=First(Fields!Ubicacion.Value, "DSEmenic")</Value>
                 <Style>
                   <FontStyle>Normal</FontStyle>
                   <FontSize>12pt</FontSize>
@@ -84,7 +84,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Correo: alvaradostrucking295@gmail.com</Value>
+                <Value>=First(Fields!email.Value, "DSEmenic")</Value>
                 <Style>
                   <FontStyle>Normal</FontStyle>
                   <FontSize>12pt</FontSize>
@@ -122,7 +122,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Telefonos: 2252-6956,  7842-4611</Value>
+                <Value>=First(Fields!telefonos.Value, "DSEmenic")</Value>
                 <Style>
                   <FontStyle>Normal</FontStyle>
                   <FontSize>12pt</FontSize>
@@ -2099,6 +2099,18 @@
         </Field>
         <Field Name="Id">
           <DataField>Id</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="email">
+          <DataField>email</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="telefonos">
+          <DataField>telefonos</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Ubicacion">
+          <DataField>Ubicacion</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>

@@ -331,6 +331,12 @@ namespace ProyectoASPEmenic {
             
             private global::System.Data.DataColumn columnId;
             
+            private global::System.Data.DataColumn columnemail;
+            
+            private global::System.Data.DataColumn columntelefonos;
+            
+            private global::System.Data.DataColumn columnUbicacion;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public CartaPorteDataTable() {
@@ -574,6 +580,30 @@ namespace ProyectoASPEmenic {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn emailColumn {
+                get {
+                    return this.columnemail;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn telefonosColumn {
+                get {
+                    return this.columntelefonos;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn UbicacionColumn {
+                get {
+                    return this.columnUbicacion;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -635,7 +665,10 @@ namespace ProyectoASPEmenic {
                         decimal TotalPesoBruto, 
                         decimal Flete, 
                         string Observaciones, 
-                        string Id) {
+                        string Id, 
+                        string email, 
+                        string telefonos, 
+                        string Ubicacion) {
                 CartaPorteRow rowCartaPorteRow = ((CartaPorteRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Fecha,
@@ -663,7 +696,10 @@ namespace ProyectoASPEmenic {
                         TotalPesoBruto,
                         Flete,
                         Observaciones,
-                        Id};
+                        Id,
+                        email,
+                        telefonos,
+                        Ubicacion};
                 rowCartaPorteRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowCartaPorteRow);
                 return rowCartaPorteRow;
@@ -712,6 +748,9 @@ namespace ProyectoASPEmenic {
                 this.columnFlete = base.Columns["Flete"];
                 this.columnObservaciones = base.Columns["Observaciones"];
                 this.columnId = base.Columns["Id"];
+                this.columnemail = base.Columns["email"];
+                this.columntelefonos = base.Columns["telefonos"];
+                this.columnUbicacion = base.Columns["Ubicacion"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -769,6 +808,12 @@ namespace ProyectoASPEmenic {
                 base.Columns.Add(this.columnObservaciones);
                 this.columnId = new global::System.Data.DataColumn("Id", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnId);
+                this.columnemail = new global::System.Data.DataColumn("email", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnemail);
+                this.columntelefonos = new global::System.Data.DataColumn("telefonos", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntelefonos);
+                this.columnUbicacion = new global::System.Data.DataColumn("Ubicacion", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnUbicacion);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1327,6 +1372,54 @@ namespace ProyectoASPEmenic {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string email {
+                get {
+                    try {
+                        return ((string)(this[this.tableCartaPorte.emailColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'email\' de la tabla \'CartaPorte\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCartaPorte.emailColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string telefonos {
+                get {
+                    try {
+                        return ((string)(this[this.tableCartaPorte.telefonosColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'telefonos\' de la tabla \'CartaPorte\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCartaPorte.telefonosColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Ubicacion {
+                get {
+                    try {
+                        return ((string)(this[this.tableCartaPorte.UbicacionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Ubicacion\' de la tabla \'CartaPorte\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCartaPorte.UbicacionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsFechaNull() {
                 return this.IsNull(this.tableCartaPorte.FechaColumn);
             }
@@ -1635,6 +1728,42 @@ namespace ProyectoASPEmenic {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetIdNull() {
                 this[this.tableCartaPorte.IdColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsemailNull() {
+                return this.IsNull(this.tableCartaPorte.emailColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetemailNull() {
+                this[this.tableCartaPorte.emailColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IstelefonosNull() {
+                return this.IsNull(this.tableCartaPorte.telefonosColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SettelefonosNull() {
+                this[this.tableCartaPorte.telefonosColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsUbicacionNull() {
+                return this.IsNull(this.tableCartaPorte.UbicacionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetUbicacionNull() {
+                this[this.tableCartaPorte.UbicacionColumn] = global::System.Convert.DBNull;
             }
         }
         
