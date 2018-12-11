@@ -39,12 +39,12 @@
                 <asp:BoundField DataField="Equipo" DataFormatString="{0}" HeaderText="Equipo">
                                         <ItemStyle HorizontalAlign="Left" />
                                     </asp:BoundField>
-                <asp:BoundField DataField="Furgon" DataFormatString="{0}" HeaderText="Furgon">
+                <asp:CheckBoxField DataField="Furgon" HeaderText="Furgon">
                                         <ItemStyle HorizontalAlign="Left" />
-                                    </asp:BoundField>
-                <asp:BoundField DataField="Cabezal" DataFormatString="{0}" HeaderText="Cabezal">
+                                    </asp:CheckBoxField>
+                <asp:CheckBoxField DataField="Cabezal"  HeaderText="Cabezal">
                                         <ItemStyle HorizontalAlign="Left" />
-                                    </asp:BoundField>
+                                    </asp:CheckBoxField>
                   <asp:TemplateField HeaderText="Opciones" ItemStyle-Width="150px">
                                         <ItemTemplate>
                                             <asp:LinkButton ID="lkBOpcionActualizar"  CommandArgument='<%# Eval("IdTransporte")%>' runat="server" ToolTip="Actualizar" CssClass="btn btn-success" CommandName="Actualizar"><i class="fa fa-edit" aria-hidden="true" ></i></asp:LinkButton>
@@ -52,10 +52,10 @@
                       </asp:TemplateField>
                 </Columns>
         </asp:GridView>
-    </center>
-    <script src="../../js/sb-admin.min.js"></script>
+    </center>    
     <script src="../../vendor/jquery/jquery.min.js"></script>
+    <script src="../../js/sb-admin.min.js"></script>
     <script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- Core plugin JavaScript-->
-    <script src="../../vendor/jquery-easing/jquery.easing.min.js"></script>  
+    <script src="../../vendor/jquery-easing/jquery.easing.min.js"></script>
 </asp:Content>
