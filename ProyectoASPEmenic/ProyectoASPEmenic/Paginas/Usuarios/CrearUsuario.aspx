@@ -49,7 +49,8 @@
     <center><asp:Label runat="server" id="lblNotificacion" CssClass="alert alert-danger"  Visible="false"></asp:Label></center><br />
     <center><asp:Button runat="server" ID="btnGuardarUsuario" Text="Guardar" CssClass="btn btn-info btn-block" style="color:white; background-color:red; border-color:red; width:auto" OnClick="btnGuardarUsuario_Click"></asp:Button></center>
     <script src="../../vendor/jquery/jquery.min.js"></script>
+    <script src="../../js/sb-admin.min.js"></script>
     <script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- Core plugin JavaScript-->
-    <script src="../../vendor/jquery-easing/jquery.easing.min.js"></script>   
+    <script src="../../vendor/jquery-easing/jquery.easing.min.js"></script>
 </asp:Content>

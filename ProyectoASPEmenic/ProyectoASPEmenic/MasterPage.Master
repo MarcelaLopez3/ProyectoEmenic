@@ -32,9 +32,9 @@
         <nav class="navbar navbar-expand navbar-dark bg-dark static-top" >
             <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
         <i class="fas fa-bars"></i>
-      </button>
+      </button>&nbsp;&nbsp;
             <asp:HyperLink runat="server" NavigateUrl="~/Paginas/Dashboard.aspx" CssClass="navbar-brand mr-1" style="color:red">
-            <asp:Image ImageUrl="~/Imagenes/Logo_emenic_2.png" Height="30" runat="server"/>&nbsp;&nbsp;
+            <asp:Image ImageUrl="~/Imagenes/Logo_emenic_2.png" Height="30" runat="server"/>&nbsp;
             EMENIC</asp:HyperLink>
           <!-- Navbar -->            
           <ul class="nav navbar-nav ml-auto" >

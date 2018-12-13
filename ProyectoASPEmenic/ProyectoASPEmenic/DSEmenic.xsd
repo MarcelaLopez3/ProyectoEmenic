@@ -12,7 +12,7 @@
   <xs:element name="DSEmenic" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DSEmenic" msprop:Generator_UserDSName="DSEmenic">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="CartaPorte" msprop:Generator_TableClassName="CartaPorteDataTable" msprop:Generator_TableVarName="tableCartaPorte" msprop:Generator_RowChangedName="CartaPorteRowChanged" msprop:Generator_TablePropName="CartaPorte" msprop:Generator_RowDeletingName="CartaPorteRowDeleting" msprop:Generator_RowChangingName="CartaPorteRowChanging" msprop:Generator_RowEvHandlerName="CartaPorteRowChangeEventHandler" msprop:Generator_RowDeletedName="CartaPorteRowDeleted" msprop:Generator_RowClassName="CartaPorteRow" msprop:Generator_UserTableName="CartaPorte" msprop:Generator_RowEvArgName="CartaPorteRowChangeEvent">
+        <xs:element name="CartaPorte" msprop:Generator_TableClassName="CartaPorteDataTable" msprop:Generator_TableVarName="tableCartaPorte" msprop:Generator_TablePropName="CartaPorte" msprop:Generator_RowDeletingName="CartaPorteRowDeleting" msprop:Generator_RowChangingName="CartaPorteRowChanging" msprop:Generator_RowEvHandlerName="CartaPorteRowChangeEventHandler" msprop:Generator_RowDeletedName="CartaPorteRowDeleted" msprop:Generator_UserTableName="CartaPorte" msprop:Generator_RowChangedName="CartaPorteRowChanged" msprop:Generator_RowEvArgName="CartaPorteRowChangeEvent" msprop:Generator_RowClassName="CartaPorteRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Fecha" msprop:Generator_ColumnVarNameInTable="columnFecha" msprop:Generator_ColumnPropNameInRow="Fecha" msprop:Generator_ColumnPropNameInTable="FechaColumn" msprop:Generator_UserColumnName="Fecha" type="xs:string" minOccurs="0" />
@@ -41,6 +41,9 @@
               <xs:element name="Flete" msprop:Generator_ColumnVarNameInTable="columnFlete" msprop:Generator_ColumnPropNameInRow="Flete" msprop:Generator_ColumnPropNameInTable="FleteColumn" msprop:Generator_UserColumnName="Flete" type="xs:decimal" minOccurs="0" />
               <xs:element name="Observaciones" msprop:Generator_ColumnVarNameInTable="columnObservaciones" msprop:Generator_ColumnPropNameInRow="Observaciones" msprop:Generator_ColumnPropNameInTable="ObservacionesColumn" msprop:Generator_UserColumnName="Observaciones" type="xs:string" minOccurs="0" />
               <xs:element name="Id" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:string" minOccurs="0" />
+              <xs:element name="email" msprop:Generator_ColumnVarNameInTable="columnemail" msprop:Generator_ColumnPropNameInRow="email" msprop:Generator_ColumnPropNameInTable="emailColumn" msprop:Generator_UserColumnName="email" type="xs:string" minOccurs="0" />
+              <xs:element name="telefonos" msprop:Generator_ColumnVarNameInTable="columntelefonos" msprop:Generator_ColumnPropNameInRow="telefonos" msprop:Generator_ColumnPropNameInTable="telefonosColumn" msprop:Generator_UserColumnName="telefonos" type="xs:string" minOccurs="0" />
+              <xs:element name="Ubicacion" msprop:Generator_ColumnVarNameInTable="columnUbicacion" msprop:Generator_ColumnPropNameInRow="Ubicacion" msprop:Generator_ColumnPropNameInTable="UbicacionColumn" msprop:Generator_UserColumnName="Ubicacion" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
