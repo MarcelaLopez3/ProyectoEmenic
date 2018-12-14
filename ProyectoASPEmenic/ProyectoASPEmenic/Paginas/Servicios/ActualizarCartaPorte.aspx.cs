@@ -188,7 +188,7 @@ namespace ProyectoASPEmenic.Paginas.Servicios
 
         protected void btnModificarCP_Click(object sender, EventArgs e)
         {
-            if (btnModificarCP.Text == "Modificar")
+            if (btnModificarCP.Text == "Modificar Carta Porte")
             {
                 btnModificarCP.Text = "Cancelar";
                 Edit(true);
@@ -196,7 +196,7 @@ namespace ProyectoASPEmenic.Paginas.Servicios
             }
             else if(btnModificarCP.Text=="Cancelar")
             {
-                btnModificarCP.Text = "Modificar";
+                btnModificarCP.Text = "Modificar Carta Porte";
                 Edit(false);
                 MVCartaPorte.SetActiveView(VActualizar);
                 cargarDatos();
@@ -251,17 +251,11 @@ namespace ProyectoASPEmenic.Paginas.Servicios
         {
             ReportViewer1.ProcessingMode = ProcessingMode.Local;
             ReportViewer1.LocalReport.ReportPath = Server.MapPath("~/ReportCP.rdlc");
-            DSEmenic ds = cn.call_sp(IdServicio, "CartaPorte");
+            DSEmenic ds = cn.call_sp(IdServicio, 1, "CartaPorte");
             ReportDataSource source = new ReportDataSource("DSEmenic",ds.Tables[0]);
             ReportViewer1.LocalReport.DataSources.Clear();
             ReportViewer1.LocalReport.DataSources.Add(source);
             ReportViewer1.LocalReport.Refresh();
-            //DataSet ds = cn.call_sp(IdServicio);
-            //
-            //source.Value = ds.Tables[0];
-            //source.Name = "DataSet1";
-            //;
-            //ReportViewer1.LocalReport.Refresh();
             MVCartaPorte.SetActiveView(VCartaPorte);
         }
 
@@ -316,5 +310,18 @@ namespace ProyectoASPEmenic.Paginas.Servicios
                 }
             }
             }
+
+        protected void btnGenerarMC_Click(object sender, EventArgs e)
+        {
+            ReportViewer1.ProcessingMode = ProcessingMode.Local;
+            ReportViewer1.LocalReport.ReportPath = Server.MapPath("~/ReportCP.rdlc");
+            //Se utiliza el mismo reporte para manifiesto de carga
+            DSEmenic ds = cn.call_sp(IdServicio, 2, "CartaPorte");
+            ReportDataSource source = new ReportDataSource("DSEmenic", ds.Tables[0]);
+            ReportViewer1.LocalReport.DataSources.Clear();
+            ReportViewer1.LocalReport.DataSources.Add(source);
+            ReportViewer1.LocalReport.Refresh();
+            MVCartaPorte.SetActiveView(VCartaPorte);
         }
+    }
 }
