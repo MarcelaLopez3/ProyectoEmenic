@@ -12,13 +12,20 @@
         <asp:ScriptManager ID="ScriptManager1" runat="server">
     </asp:ScriptManager>
     <center>
-    <div class="btn-toolbar">    
-        <div class="btn-group md-4">
-                <asp:Button runat="server" ID="btnModificarCP" Text="Modificar" CssClass="btn btn-info btn-block" style="color:white; background-color:red; border-color:red; width:auto" OnClick="btnModificarCP_Click" ></asp:Button>&nbsp;&nbsp;
-               <asp:Button runat="server" ID="btnGenerarCP" Text="Generar Carta Porte" CssClass="btn btn-info btn-block" style="color:white; background-color:red; border-color:red; width:auto" OnClick="btnGenerarCP_Click" ></asp:Button>&nbsp;&nbsp;
-               <%-- <asp:Button runat="server" ID="btnGenerarMC" Text="Generar Manifiesto de Carga" CssClass="btn btn-info btn-block" style="color:white; background-color:red; border-color:red; width:auto" ></asp:Button>            --%>
+       <div class="container">
+          <div class="form-row">
+             <div class="col">
+                <asp:Button runat="server" type="button" ID="btnModificarCP" Text="Modificar Carta Porte" CssClass="btn btn-info btn-block" style="color:white; background-color:red; border-color:red; width:auto" OnClick="btnModificarCP_Click" ></asp:Button>
+               </div>
+              <div class="col">
+                 <asp:Button runat="server" type="button" ID="btnGenerarCP" Text="Generar Carta Porte" CssClass="btn btn-info btn-block" style="color:white; background-color:red; border-color:red; width:auto" OnClick="btnGenerarCP_Click" ></asp:Button>
+               </div>
+                <div class="col">
+                  <asp:Button runat="server" type="button" ID="btnGenerarMC" Text="Generar Manifiesto de Carga" CssClass="btn btn-info btn-block" style="color:white; background-color:red; border-color:red; width:auto" ></asp:Button>            
             </div>
-        </div></center>
+              </div>
+           </div>
+        </center>
     <br />
      <asp:MultiView runat="server" ID="MVCartaPorte">        
         <asp:View ID="VActualizar" runat="server">

@@ -85,6 +85,15 @@ namespace ProyectoASPEmenic.Paginas.Servicios {
         protected global::System.Web.UI.WebControls.Button btnGenerarCP;
         
         /// <summary>
+        /// Control btnGenerarMC.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnGenerarMC;
+        
+        /// <summary>
         /// Control MVCartaPorte.
         /// </summary>
         /// <remarks>

@@ -188,7 +188,7 @@ namespace ProyectoASPEmenic.Paginas.Servicios
 
         protected void btnModificarCP_Click(object sender, EventArgs e)
         {
-            if (btnModificarCP.Text == "Modificar")
+            if (btnModificarCP.Text == "Modificar Carta Porte")
             {
                 btnModificarCP.Text = "Cancelar";
                 Edit(true);
@@ -196,7 +196,7 @@ namespace ProyectoASPEmenic.Paginas.Servicios
             }
             else if(btnModificarCP.Text=="Cancelar")
             {
-                btnModificarCP.Text = "Modificar";
+                btnModificarCP.Text = "Modificar Carta Porte";
                 Edit(false);
                 MVCartaPorte.SetActiveView(VActualizar);
                 cargarDatos();
