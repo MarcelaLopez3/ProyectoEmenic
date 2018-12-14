@@ -251,17 +251,11 @@ namespace ProyectoASPEmenic.Paginas.Servicios
         {
             ReportViewer1.ProcessingMode = ProcessingMode.Local;
             ReportViewer1.LocalReport.ReportPath = Server.MapPath("~/ReportCP.rdlc");
-            DSEmenic ds = cn.call_sp(IdServicio, "CartaPorte");
+            DSEmenic ds = cn.call_sp(IdServicio, 1, "CartaPorte");
             ReportDataSource source = new ReportDataSource("DSEmenic",ds.Tables[0]);
             ReportViewer1.LocalReport.DataSources.Clear();
             ReportViewer1.LocalReport.DataSources.Add(source);
             ReportViewer1.LocalReport.Refresh();
-            //DataSet ds = cn.call_sp(IdServicio);
-            //
-            //source.Value = ds.Tables[0];
-            //source.Name = "DataSet1";
-            //;
-            //ReportViewer1.LocalReport.Refresh();
             MVCartaPorte.SetActiveView(VCartaPorte);
         }
 

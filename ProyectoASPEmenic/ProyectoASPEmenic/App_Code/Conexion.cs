@@ -93,7 +93,7 @@ namespace ProyectoASPEmenic
         }
 
         //Función prueba para llena dataset con stored procedure
-        public DSEmenic call_sp(int id,string dt)
+        public DSEmenic call_sp(int id, int opcion, string dt)
         {
             MySqlDataAdapter da = new MySqlDataAdapter();
             DSEmenic ds = new DSEmenic();
@@ -103,7 +103,8 @@ namespace ProyectoASPEmenic
             cmd.Connection = cnn;
             cmd.CommandText = "sp_getCartaPorte";
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@Carta",id);
+            cmd.Parameters.AddWithValue("@Carta", id);
+            cmd.Parameters.AddWithValue("@Opcion", opcion);
             da.SelectCommand = cmd;
             da.Fill(ds,dt);
             CerrarConexion();
