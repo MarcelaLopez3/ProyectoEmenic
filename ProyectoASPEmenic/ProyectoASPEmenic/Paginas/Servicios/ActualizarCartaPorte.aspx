@@ -21,7 +21,7 @@
                  <asp:Button runat="server" type="button" ID="btnGenerarCP" Text="Generar Carta Porte" CssClass="btn btn-info btn-block" style="color:white; background-color:red; border-color:red; width:auto" OnClick="btnGenerarCP_Click" ></asp:Button>
                </div>
                 <div class="col">
-                  <asp:Button runat="server" type="button" ID="btnGenerarMC" Text="Generar Manifiesto de Carga" CssClass="btn btn-info btn-block" style="color:white; background-color:red; border-color:red; width:auto" ></asp:Button>            
+                  <asp:Button runat="server" type="button" ID="btnGenerarMC" Text="Generar Manifiesto de Carga" CssClass="btn btn-info btn-block" style="color:white; background-color:red; border-color:red; width:auto" OnClick="btnGenerarMC_Click" ></asp:Button>            
             </div>
               </div>
            </div>

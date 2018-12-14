@@ -310,5 +310,18 @@ namespace ProyectoASPEmenic.Paginas.Servicios
                 }
             }
             }
+
+        protected void btnGenerarMC_Click(object sender, EventArgs e)
+        {
+            ReportViewer1.ProcessingMode = ProcessingMode.Local;
+            ReportViewer1.LocalReport.ReportPath = Server.MapPath("~/ReportCP.rdlc");
+            //Se utiliza el mismo reporte para manifiesto de carga
+            DSEmenic ds = cn.call_sp(IdServicio, 2, "CartaPorte");
+            ReportDataSource source = new ReportDataSource("DSEmenic", ds.Tables[0]);
+            ReportViewer1.LocalReport.DataSources.Clear();
+            ReportViewer1.LocalReport.DataSources.Add(source);
+            ReportViewer1.LocalReport.Refresh();
+            MVCartaPorte.SetActiveView(VCartaPorte);
         }
+    }
 }
