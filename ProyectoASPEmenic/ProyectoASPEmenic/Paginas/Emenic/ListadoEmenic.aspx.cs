@@ -72,7 +72,12 @@ namespace ProyectoASPEmenic.Paginas.Emenic
         {
             //tabla persona
             //Ir a formulario de Ver detalles de emenic
-            ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Ver Detalles de Emenic.')", true);
+            //ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Ver Detalles de Emenic.')", true);
+            if (e.CommandName == "Actualizar")
+            {
+                //Envia IdPersona emenic a formulario de actualizar   
+                Response.Redirect("~/Paginas/Emenic/ActualizarEmenic.aspx?act=" + e.CommandArgument);
+            }
         }
 
         protected void GridListadoEmenic2_RowCommand(object sender, GridViewCommandEventArgs e)
