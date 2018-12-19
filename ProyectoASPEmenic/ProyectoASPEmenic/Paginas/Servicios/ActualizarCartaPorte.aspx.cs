@@ -97,7 +97,7 @@ namespace ProyectoASPEmenic.Paginas.Servicios
                 ddlConductor.SelectedValue = ddlConductor.Items.FindByValue(cn.reg.GetInt32(4).ToString()).Value;
                 IdConductor = int.Parse(ddlConductor.SelectedValue);
                 ddlTransporte.SelectedValue = cn.reg.GetInt32(5).ToString();
-                txtfechacartaporte.Text = FormatoFecha(cn.reg.GetString(6));
+                txtfechacartaporte.Text = DateTime.Parse(cn.reg.GetString(6)).ToShortDateString();
                 txtaduanaentrada.Text = cn.reg.GetString(7);
                 txtaduanasalida.Text = cn.reg.GetString(8);
                 txtdestinocartaporte.Text = cn.reg.GetString(9);
@@ -299,7 +299,7 @@ namespace ProyectoASPEmenic.Paginas.Servicios
                     cn.IniciarConexion();
                     cn.EnviarQuery(query);
                     cn.CerrarConexion();
-                    btnModificarCP.Text = "Modificar";
+                    btnModificarCP.Text = "Modificar Carta Porte";
                     mensaje("Carta Porte Actualizada.");
                     Edit(false);
                     cargarDatos();

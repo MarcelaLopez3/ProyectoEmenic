@@ -65,10 +65,11 @@
             </div>                
                 <div class="form-group col-md-2">
                     <asp:Label runat="server" ID="lbfechacartaporte" Text="Fecha:" style="color:black"></asp:Label>
-                    <asp:TextBox runat="server" ID="txtfechacartaporte" CssClass="form-control" TextMode="Date" Enabled="false"></asp:TextBox> 
-    <asp:RegularExpressionValidator ID="RegularExpressionValidator6" runat="server" CssClass="alert-text"
-                            ErrorMessage="* Fecha invalida" Display="Dynamic" SetFocusOnError="True" ControlToValidate="txtfechacartaporte" ValidationExpression="^\d{4}\-(0?[1-9]|1[012])\-(0?[1-9]|[12][0-9]|3[01])$"></asp:RegularExpressionValidator>   
-                </div>
+                    <asp:TextBox runat="server" ID="txtfechacartaporte" CssClass="form-control" Enabled="false"></asp:TextBox>
+                    <ajaxToolkit:CalendarExtender ID="CalendarExtender1" runat="server"  TargetControlID="txtfechacartaporte" Format="dd/MM/yyyy"/>
+                    <asp:RegularExpressionValidator ID="RegularExpressionValidator6" runat="server" CssClass="alert-text"
+                            ErrorMessage="* Fecha invalida" Display="Dynamic" SetFocusOnError="True" ControlToValidate="txtfechacartaporte" ValidationExpression="^[0-9]{1,2}/[0-9]{1,2}/[0-9]{4}$"></asp:RegularExpressionValidator>   
+                    </div>
         </div>
         </div>
     </div>

@@ -12,6 +12,30 @@ namespace ProyectoASPEmenic.Paginas.Servicios
         Conexion conexion = new Conexion();
         string query = "";
 
+        private int IdCliente
+        {
+            set
+            {
+                hfCliente.Value = value.ToString();
+            }
+            get
+            {
+                return int.Parse(hfCliente.Value);
+            }
+        }
+
+        private int IdServicio
+        {
+            set
+            {
+                hfServicio.Value = value.ToString();
+            }
+            get
+            {
+                return int.Parse(hfServicio.Value);
+            }
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -26,26 +50,8 @@ namespace ProyectoASPEmenic.Paginas.Servicios
                     }
                     Response.Redirect("~/Paginas/Servicios/ServicioContratado.aspx?ser=" + VarSer);
                 }
-                //else
-                //{
-                //    string queryvalidador = "SELECT `Id` FROM `serviciocontratado` WHERE `Id` = " + VarServicio;
-
-                //    //enviar consulta a Mysql
-                //    conexion.IniciarConexion();
-                //    conexion.RecibeQuery(queryvalidador);
-
-                //    if (conexion.reg.Read())
-                //    {
-                //        conexion.CerrarConexion();
-                //        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('No existe el id.')", true);
-                //        if (String.IsNullOrEmpty(VarSer))
-                //        {
-                //            Response.Redirect("~/Paginas/Clientes/ListadoClientes.aspx");
-                //        }
-                //        Response.Redirect("~/Paginas/Servicios/ServicioContratado.aspx?ser=" + VarSer);
-                //    }
-                //    conexion.CerrarConexion();
-                //}
+                IdServicio = int.Parse(VarServicio);
+                getNombreCliente();
                 LlenarddlIDtransporte();
             }
             //LlenarddlIDservicio();
@@ -61,6 +67,27 @@ namespace ProyectoASPEmenic.Paginas.Servicios
             ddlIDtransporte.DataTextField = "Placa";
             ddlIDtransporte.DataValueField = "IdTransporte";
             ddlIDtransporte.DataBind();
+        }
+
+        private void getNombreCliente()
+        {
+            string query = "SELECT serviciocontratado.IdCliente as Id,if(persona.PersonaNatural=1," +
+                "concat(persona.PrimerNombre,' ',persona.SegundoNombre,' ',persona.PrimerApellido,' '," +
+                "persona.SegundoApellido),persona.NombreLegal) as Cliente,if(persona.PersonaNatural=1," +
+                "concat(persona.DireccionResidencia,', ',persona.MunicipioResidencia,', ',persona.DepartamentoResidencia)" +
+                ",concat(persona.Ubicacion,', ',persona.MunicipioCiudad,', ',persona.DepartamentoEstado)) as Direccion" +
+                " from contrato inner join serviciocontratado on contrato.IdServicio=serviciocontratado.Id inner join " +
+                "persona on serviciocontratado.IdCliente=persona.IdPersona where serviciocontratado.Id=" + IdServicio;
+            conexion.IniciarConexion();
+            conexion.RecibeQuery(query);
+            while (conexion.reg.Read())
+            {
+                IdCliente = conexion.reg.GetInt32(0);
+                lblCliente.Text = conexion.reg.GetString(1);
+                lblDireccion.Text = conexion.reg.GetString(2);
+            }
+            conexion.CerrarConexion();
+
         }
 
         //Función para llenar ajaxtoolkit-combobox
@@ -119,11 +146,11 @@ namespace ProyectoASPEmenic.Paginas.Servicios
                 conexion.EnviarQuery(query);
                 conexion.CerrarConexion();
                 ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Se ha insertado con exito.')", true);
-                if (String.IsNullOrEmpty(VarSer))
+                if (String.IsNullOrEmpty(VarServicio))
                 {
                     Response.Redirect("~/Paginas/Clientes/ListadoClientes.aspx");
                 }
-                Response.Redirect("~/Paginas/Servicios/ServicioContratado.aspx?ser=" + VarSer);
+                Response.Redirect("~/Paginas/Servicios/ActulizarContrato.aspx?srv=" + IdServicio);
             }
         }
     }
