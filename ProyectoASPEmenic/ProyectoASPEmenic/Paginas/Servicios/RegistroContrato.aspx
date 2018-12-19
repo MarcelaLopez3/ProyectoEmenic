@@ -6,6 +6,23 @@
     <center><h1><asp:Label runat="server" ID="lbContratos" Text="Registro de Contrato" style="color:black; font-family:Verdana"></asp:Label></h1></center>
     <br />
     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+    <asp:HiddenField ID="hfCliente" runat="server" />
+    <asp:HiddenField ID="hfServicio" runat="server" />    
+    <div class="card border-primary mb-3">  
+       <div class="card-header"><h4>Información</h4></div>  
+       <div class="card-body text-primary">
+           <div class="form-row">
+               <div class="form-group col-md-6">
+                   <asp:Label ID="lblforCliente" runat="server" Text="Cliente:" style="color:black"></asp:Label>
+                   <asp:Label ID="lblCliente" runat="server" CssClass="form-control"></asp:Label>
+                </div>
+               <div class="form-group col-md-6">
+                   <asp:Label ID="lblforDireccion" runat="server" Text="Dirección:" style="color:black"></asp:Label>
+                   <asp:Label ID="lblDireccion" runat="server" CssClass="form-control"></asp:Label>
+                </div>
+               </div>
+           </div>
+        </div>
     <div class="card border-primary mb-3">
         <div class="card-header">
             <h4>Datos</h4>
@@ -42,8 +59,6 @@
                 <div class="form-group col-md-4">
                     <asp:Label runat="server" ID="lbfechaemision" Text="Fecha de emision:" Style="color: black"></asp:Label>
                     <asp:TextBox runat="server" ID="txtfechaemision" CssClass="form-control" Text="yyyy-mm-dd" TextMode="Date" /><br />
-                    <asp:RequiredFieldValidator ID="RFV_fechaemision" Display="Dynamic" SetFocusOnError="True"
-                        CssClass="alert-text" runat="server" ControlToValidate="txtcantidadmeses" ErrorMessage="* Valor Requerido"></asp:RequiredFieldValidator>
                     <asp:RegularExpressionValidator ID="REV_Fecha" runat="server" CssClass="alert-text"
                         ErrorMessage="* Fecha invalida" Display="Dynamic" SetFocusOnError="True" ControlToValidate="txtfechaemision" ValidationExpression="^\d{4}\-(0?[1-9]|1[012])\-(0?[1-9]|[12][0-9]|3[01])$"></asp:RegularExpressionValidator>
                 </div>

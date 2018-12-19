@@ -24,13 +24,40 @@ namespace ProyectoASPEmenic.Paginas.Servicios
             }
         }
 
+        public int IdServicio
+        {
+            set
+            {
+                hfServicio.Value = value.ToString();
+            }
+            get
+            {
+                return int.Parse(hfServicio.Value);
+            }
+        }
+
+        public int IdCliente
+        {
+            set
+            {
+                hfIdCliente.Value = value.ToString();
+            }
+            get
+            {
+                return int.Parse(hfIdCliente.Value);
+            }
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-                LlenarddlIDtransporte();
-                //LlenarddlIDservicio();
                 string VarAct = Request.QueryString["srv"];
+                IdServicio = int.Parse(VarAct);
+                MVContrato.SetActiveView(VActualizar);
+                LlenarddlIDtransporte();
+                getNombreCliente();
+                //LlenarddlIDservicio();                
                 string query = "SELECT `transporte`.`IdTransporte`, `contrato`.`FechaEmision`, `contrato`.`CantidadMeses` " +
                     "FROM `contrato` " +
                     "INNER JOIN `transporte` ON `contrato`.`IdTransporte` = `transporte`.`IdTransporte` " +
@@ -88,6 +115,27 @@ namespace ProyectoASPEmenic.Paginas.Servicios
             ddlIDtransporte.DataBind();
         }
 
+        private void getNombreCliente()
+        {
+            string query = "SELECT serviciocontratado.IdCliente as Id,if(persona.PersonaNatural=1," +
+                "concat(persona.PrimerNombre,' ',persona.SegundoNombre,' ',persona.PrimerApellido,' '," +
+                "persona.SegundoApellido),persona.NombreLegal) as Cliente,if(persona.PersonaNatural=1," +
+                "concat(persona.DireccionResidencia,', ',persona.MunicipioResidencia,', ',persona.DepartamentoResidencia)" +
+                ",concat(persona.Ubicacion,', ',persona.MunicipioCiudad,', ',persona.DepartamentoEstado)) as Direccion" +
+                " from contrato inner join serviciocontratado on contrato.IdServicio=serviciocontratado.Id inner join " +
+                "persona on serviciocontratado.IdCliente=persona.IdPersona where serviciocontratado.Id=" + IdServicio;
+            conexion.IniciarConexion();
+            conexion.RecibeQuery(query);
+            while (conexion.reg.Read())
+            {
+                IdCliente = conexion.reg.GetInt32(0);
+                lblCliente.Text = conexion.reg.GetString(1);
+                lblDireccion.Text = conexion.reg.GetString(2);
+            }
+            conexion.CerrarConexion();
+
+        }
+
         //Función para llenar ajaxtoolkit-combobox
         //private void LlenarddlIDservicio()
         //{
@@ -111,7 +159,7 @@ namespace ProyectoASPEmenic.Paginas.Servicios
             int IdTransporte = string.IsNullOrEmpty(ddlIDtransporte.SelectedValue) ? IdPlaca : Int32.Parse(ddlIDtransporte.SelectedValue);
             //int IdServicio = Int32.Parse(ddlIDservicio.SelectedValue);
             int CantidadMeses = Int32.Parse(txtcantidadmeses.Text);
-            string FechaEmision = txtfechaemision.Text;
+            string FechaEmision = FormatoFecha(txtfechaemision.Text);
 
             //consulta que se ingresa a la base de datos
             string query = "UPDATE `contrato` " +
@@ -125,21 +173,17 @@ namespace ProyectoASPEmenic.Paginas.Servicios
             conexion.CerrarConexion();
 
             ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Se ha actualizado con exito.')", true);
-            if (String.IsNullOrEmpty(VarSer))
-            {
-                Response.Redirect("~/Paginas/Clientes/ListadoClientes.aspx");
-            }
-            Response.Redirect("~/Paginas/Clientes/ListadoClientes.aspx");
+            MVContrato.SetActiveView(VActualizar);
         }
 
         protected void btnRegresar_Click(object sender, EventArgs e)
         {
-            string VarSer = Request.QueryString["ser"];
-            if (String.IsNullOrEmpty(VarSer))
-            {
-                Response.Redirect("~/Paginas/Clientes/ListadoClientes.aspx");
-            }
-            Response.Redirect("~/Paginas/Clientes/ListadoClientes.aspx");
+            //string VarSer = Request.QueryString["srv"];
+            //if (String.IsNullOrEmpty(VarSer))
+            //{
+            //    Response.Redirect("~/Paginas/Clientes/ListadoClientes.aspx");
+            //}
+            Response.Redirect("~/Paginas/Servicios/ServicioContratado.aspx?ser="+IdCliente);
         }
 
         protected string FormatoFecha(string fecha)
@@ -149,6 +193,16 @@ namespace ProyectoASPEmenic.Paginas.Servicios
             string[] words = nueva2.Split('/');
             string devuelve = words[2] + "-" + words[1] + "-" + words[0];
             return devuelve;
+        }
+
+        protected void btnModificarContrato_Click(object sender, EventArgs e)
+        {
+            MVContrato.SetActiveView(VActualizar);
+        }
+
+        protected void btnGenerarContrato_Click(object sender, EventArgs e)
+        {
+            MVContrato.SetActiveView(VContrato);
         }
     }
 }

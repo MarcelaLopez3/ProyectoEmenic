@@ -101,7 +101,7 @@ namespace ProyectoASPEmenic.Paginas.Servicios
         {
             if (btnAgregarServicioContra.Text == "Agregar")
             {
-                if (!string.IsNullOrEmpty(ddlDestinoConsignatario.SelectedValue))
+                if (!string.IsNullOrEmpty(ddlDestinoConsignatario.SelectedValue) || (string.IsNullOrWhiteSpace(ddlDestinoConsignatario.SelectedValue) && checkAlquiler.Checked) )
                 {
                     //recuperando el IdCliente
                     string VarSer = Request.QueryString["ser"];
@@ -114,7 +114,7 @@ namespace ProyectoASPEmenic.Paginas.Servicios
                     string Descripcion = txtDescripcion.Text;
                     string PeriodoCobro = txtperiodocobro.Text;
                     bool Retorno = checkRetorno.Checked;
-                    int IdConsigatario = Int32.Parse(ddlDestinoConsignatario.SelectedValue);
+                    int IdConsigatario = string.IsNullOrWhiteSpace(ddlDestinoConsignatario.SelectedValue)? 1:Int32.Parse(ddlDestinoConsignatario.SelectedValue);
                     string PagoEmpresa = txtpagoempresa.Text;
                     string PagoEstadia = txtpagoestadia.Text;
                     string PagoGuardia = txtpagoguardia.Text;

@@ -166,7 +166,7 @@ namespace ProyectoASPEmenic.Paginas.Servicios
                     cn.IniciarConexion();
                     cn.EnviarQuery(query);
                     cn.CerrarConexion();
-                    Response.Redirect("~/Paginas/Servicios/ServicioContratado.aspx?ser=" + IdCliente);
+                    Response.Redirect("~/Paginas/Servicios/ActualizarCartaPorte.aspx?srv=" + IdServicio);
                     mensaje("Se ha insertado el registro con éxito");
                 }
                 catch (Exception ex)

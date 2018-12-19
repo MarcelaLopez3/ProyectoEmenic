@@ -1,11 +1,44 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="ActulizarContrato.aspx.cs" Inherits="ProyectoASPEmenic.Paginas.Servicios.ActulizarContrato" %>
+<%@ Register assembly="Microsoft.ReportViewer.WebForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" namespace="Microsoft.Reporting.WebForms" tagprefix="rsweb" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <center><h1><asp:Label runat="server" ID="lbContratos" Text="Actualizar Contratos" style="color:black; font-family:Verdana"></asp:Label></h1></center>
     <br />
     <asp:HiddenField ID="hfIdPlaca" runat="server" />
+    <asp:HiddenField ID="hfServicio" runat="server" />
+    <asp:HiddenField ID="hfIdCliente" runat="server" />
     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+    <center>
+       <div class="container">
+          <div class="form-row">
+             <div class="col">
+                <asp:Button runat="server" type="button" ID="btnModificarContrato" Text="Modificar Contrato" CssClass="btn btn-info btn-block" style="color:white; background-color:red; border-color:red; width:auto" OnClick="btnModificarContrato_Click" ></asp:Button>
+               </div>
+              <div class="col">
+                 <asp:Button runat="server" type="button" ID="btnGenerarContrato" Text="Generar Contrato" CssClass="btn btn-info btn-block" style="color:white; background-color:red; border-color:red; width:auto" OnClick="btnGenerarContrato_Click"  ></asp:Button>
+               </div>                
+              </div>
+           </div>
+        </center>
+    <br />
+    <div class="card border-primary mb-3">  
+       <div class="card-header"><h4>Información</h4></div>  
+       <div class="card-body text-primary">
+           <div class="form-row">
+               <div class="form-group col-md-6">
+                   <asp:Label ID="lblforCliente" runat="server" Text="Cliente:" style="color:black"></asp:Label>
+                   <asp:Label ID="lblCliente" runat="server" CssClass="form-control"></asp:Label>
+                </div>
+               <div class="form-group col-md-6">
+                   <asp:Label ID="lblforDireccion" runat="server" Text="Dirección:" style="color:black"></asp:Label>
+                   <asp:Label ID="lblDireccion" runat="server" CssClass="form-control"></asp:Label>
+                </div>
+               </div>
+           </div>
+        </div>
+    <asp:MultiView runat="server" ID="MVContrato">        
+        <asp:View ID="VActualizar" runat="server">         
     <div class="card border-primary mb-3">
         <div class="card-header">
             <h4>Actualizar Registro Contrato</h4>
@@ -40,13 +73,13 @@
 
                 <div class="form-group col-md-4">
                     <asp:Label runat="server" ID="lbfechaemision" Text="Fecha de emision:" Style="color: black"></asp:Label>
-                    <asp:TextBox runat="server" ID="txtfechaemision" CssClass="form-control"  /><br />
-                    <asp:RequiredFieldValidator ID="RFV_fechaemision" Display="Dynamic" SetFocusOnError="True"
-                        CssClass="alert-text" runat="server" ControlToValidate="txtcantidadmeses" ErrorMessage="* Valor Requerido"></asp:RequiredFieldValidator>
-                    <asp:RegularExpressionValidator ID="REV_Fecha" runat="server" CssClass="alert-text"
-                        ErrorMessage="* Fecha invalida" Display="Dynamic" SetFocusOnError="True" ControlToValidate="txtfechaemision" ValidationExpression="^\d{4}\-(0?[1-9]|1[012])\-(0?[1-9]|[12][0-9]|3[01])$"></asp:RegularExpressionValidator>
+                    <asp:TextBox runat="server" ID="txtfechaemision" CssClass="form-control" /><br />
+                    <ajaxToolkit:CalendarExtender ID="CalendarExtender1" runat="server"  TargetControlID="txtfechaemision" Format="dd/MM/yyyy"/>
+                    <asp:RegularExpressionValidator ID="RegularExpressionValidator6" runat="server" CssClass="alert-text"
+                            ErrorMessage="* Fecha invalida" Display="Dynamic" SetFocusOnError="True" ControlToValidate="txtfechaemision" ValidationExpression="^[0-9]{1,2}/[0-9]{1,2}/[0-9]{4}$"></asp:RegularExpressionValidator>
                 </div>
             </div>
+        </div>
         </div>
         <br />  
         <div style="align-content: center">
@@ -59,6 +92,12 @@
             </div>
         </div>
         <br />
+            </asp:View>
+        <asp:View ID="VContrato" runat="server">
+            <rsweb:ReportViewer ID="ReportViewer1" runat="server" Width="1043px" style="margin-right: 15px">
+            </rsweb:ReportViewer>
+            </asp:View>
+        </asp:MultiView>
     <script src="../../vendor/jquery/jquery.min.js"></script>
     <script src="../../js/sb-admin.min.js"></script>
     <script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
