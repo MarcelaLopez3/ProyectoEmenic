@@ -159,7 +159,7 @@ namespace ProyectoASPEmenic.Paginas.Servicios
             int IdTransporte = string.IsNullOrEmpty(ddlIDtransporte.SelectedValue) ? IdPlaca : Int32.Parse(ddlIDtransporte.SelectedValue);
             //int IdServicio = Int32.Parse(ddlIDservicio.SelectedValue);
             int CantidadMeses = Int32.Parse(txtcantidadmeses.Text);
-            string FechaEmision = txtfechaemision.Text;
+            string FechaEmision = FormatoFecha(txtfechaemision.Text);
 
             //consulta que se ingresa a la base de datos
             string query = "UPDATE `contrato` " +

@@ -211,22 +211,22 @@ namespace ProyectoASPEmenic.Paginas.Servicios {
         protected global::System.Web.UI.WebControls.TextBox txtfechaemision;
         
         /// <summary>
-        /// Control RFV_fechaemision.
+        /// Control CalendarExtender1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFV_fechaemision;
+        protected global::AjaxControlToolkit.CalendarExtender CalendarExtender1;
         
         /// <summary>
-        /// Control REV_Fecha.
+        /// Control RegularExpressionValidator6.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator REV_Fecha;
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator6;
         
         /// <summary>
         /// Control btnActualizarContrato.

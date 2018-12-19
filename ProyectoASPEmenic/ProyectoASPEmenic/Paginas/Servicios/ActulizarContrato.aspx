@@ -73,11 +73,10 @@
 
                 <div class="form-group col-md-4">
                     <asp:Label runat="server" ID="lbfechaemision" Text="Fecha de emision:" Style="color: black"></asp:Label>
-                    <asp:TextBox runat="server" ID="txtfechaemision" CssClass="form-control" TextMode="Date" /><br />
-                    <asp:RequiredFieldValidator ID="RFV_fechaemision" Display="Dynamic" SetFocusOnError="True"
-                        CssClass="alert-text" runat="server" ControlToValidate="txtcantidadmeses" ErrorMessage="* Valor Requerido"></asp:RequiredFieldValidator>
-                    <asp:RegularExpressionValidator ID="REV_Fecha" runat="server" CssClass="alert-text"
-                        ErrorMessage="* Fecha invalida" Display="Dynamic" SetFocusOnError="True" ControlToValidate="txtfechaemision" ValidationExpression="^\d{4}\-(0?[1-9]|1[012])\-(0?[1-9]|[12][0-9]|3[01])$"></asp:RegularExpressionValidator>
+                    <asp:TextBox runat="server" ID="txtfechaemision" CssClass="form-control" /><br />
+                    <ajaxToolkit:CalendarExtender ID="CalendarExtender1" runat="server"  TargetControlID="txtfechaemision" Format="dd/MM/yyyy"/>
+                    <asp:RegularExpressionValidator ID="RegularExpressionValidator6" runat="server" CssClass="alert-text"
+                            ErrorMessage="* Fecha invalida" Display="Dynamic" SetFocusOnError="True" ControlToValidate="txtfechaemision" ValidationExpression="^[0-9]{1,2}/[0-9]{1,2}/[0-9]{4}$"></asp:RegularExpressionValidator>
                 </div>
             </div>
         </div>
