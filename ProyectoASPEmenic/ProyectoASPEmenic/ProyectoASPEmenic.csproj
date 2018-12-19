@@ -560,6 +560,7 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="RContrato.rdlc" />
     <EmbeddedResource Include="ReportCP.rdlc" />
   </ItemGroup>
   <PropertyGroup>
