@@ -1002,6 +1002,10 @@ namespace ProyectoASPEmenic {
             
             private global::System.Data.DataColumn columnDescripcion;
             
+            private global::System.Data.DataColumn columnMeses;
+            
+            private global::System.Data.DataColumn columnTipo;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public ContratoDataTable() {
@@ -1117,6 +1121,22 @@ namespace ProyectoASPEmenic {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn MesesColumn {
+                get {
+                    return this.columnMeses;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn TipoColumn {
+                get {
+                    return this.columnTipo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1152,7 +1172,7 @@ namespace ProyectoASPEmenic {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ContratoRow AddContratoRow(string Telefonos, string Correo, string Direccion, string Cliente, string DireccionCliente, string NIT, string TelefonoCliente, string Equipo, string Placa, string Descripcion) {
+            public ContratoRow AddContratoRow(string Telefonos, string Correo, string Direccion, string Cliente, string DireccionCliente, string NIT, string TelefonoCliente, string Equipo, string Placa, string Descripcion, int Meses, string Tipo) {
                 ContratoRow rowContratoRow = ((ContratoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Telefonos,
@@ -1164,7 +1184,9 @@ namespace ProyectoASPEmenic {
                         TelefonoCliente,
                         Equipo,
                         Placa,
-                        Descripcion};
+                        Descripcion,
+                        Meses,
+                        Tipo};
                 rowContratoRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowContratoRow);
                 return rowContratoRow;
@@ -1197,6 +1219,8 @@ namespace ProyectoASPEmenic {
                 this.columnEquipo = base.Columns["Equipo"];
                 this.columnPlaca = base.Columns["Placa"];
                 this.columnDescripcion = base.Columns["Descripcion"];
+                this.columnMeses = base.Columns["Meses"];
+                this.columnTipo = base.Columns["Tipo"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1222,6 +1246,10 @@ namespace ProyectoASPEmenic {
                 base.Columns.Add(this.columnPlaca);
                 this.columnDescripcion = new global::System.Data.DataColumn("Descripcion", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDescripcion);
+                this.columnMeses = new global::System.Data.DataColumn("Meses", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMeses);
+                this.columnTipo = new global::System.Data.DataColumn("Tipo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTipo);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2351,6 +2379,38 @@ namespace ProyectoASPEmenic {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int Meses {
+                get {
+                    try {
+                        return ((int)(this[this.tableContrato.MesesColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Meses\' de la tabla \'Contrato\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableContrato.MesesColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Tipo {
+                get {
+                    try {
+                        return ((string)(this[this.tableContrato.TipoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Tipo\' de la tabla \'Contrato\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableContrato.TipoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsTelefonosNull() {
                 return this.IsNull(this.tableContrato.TelefonosColumn);
             }
@@ -2467,6 +2527,30 @@ namespace ProyectoASPEmenic {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetDescripcionNull() {
                 this[this.tableContrato.DescripcionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsMesesNull() {
+                return this.IsNull(this.tableContrato.MesesColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetMesesNull() {
+                this[this.tableContrato.MesesColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsTipoNull() {
+                return this.IsNull(this.tableContrato.TipoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetTipoNull() {
+                this[this.tableContrato.TipoColumn] = global::System.Convert.DBNull;
             }
         }
         

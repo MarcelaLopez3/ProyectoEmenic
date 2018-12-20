@@ -22,7 +22,10 @@
            </div>
         </center>
     <br />
-    <div class="card border-primary mb-3">  
+    
+    <asp:MultiView runat="server" ID="MVContrato">        
+        <asp:View ID="VActualizar" runat="server"> 
+            <div class="card border-primary mb-3">  
        <div class="card-header"><h4>Información</h4></div>  
        <div class="card-body text-primary">
            <div class="form-row">
@@ -36,9 +39,7 @@
                 </div>
                </div>
            </div>
-        </div>
-    <asp:MultiView runat="server" ID="MVContrato">        
-        <asp:View ID="VActualizar" runat="server">         
+        </div>        
     <div class="card border-primary mb-3">
         <div class="card-header">
             <h4>Actualizar Registro Contrato</h4>
@@ -94,8 +95,10 @@
         <br />
             </asp:View>
         <asp:View ID="VContrato" runat="server">
-            <rsweb:ReportViewer ID="ReportViewer1" runat="server" Width="1043px" style="margin-right: 15px">
+            <center>
+            <rsweb:ReportViewer ID="ReportViewer1" runat="server" Width="705px" style="margin-right: 15px">
             </rsweb:ReportViewer>
+                </center>
             </asp:View>
         </asp:MultiView>
     <script src="../../vendor/jquery/jquery.min.js"></script>
