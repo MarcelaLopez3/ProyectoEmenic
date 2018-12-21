@@ -259,7 +259,7 @@
                 </Style>
               </TextRun>
               <TextRun>
-                <Value> como arrendatario.</Value>
+                <Value> como arrendatario</Value>
                 <Style>
                   <FontStyle>Normal</FontStyle>
                   <FontSize>12pt</FontSize>
@@ -1886,6 +1886,66 @@
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
+  <Code>Function GetText(text As String, width As Integer) As String
+        Dim palabras As String() = text.Split(" "c)  'text--&gt;palabras
+        Dim sb1 As New System.Text.StringBuilder()
+        Dim sb2 As New System.Text.StringBuilder()
+        Dim length As Integer = palabras.Length     'palabras
+        Dim resultado As New System.Collections.Generic.List(Of String)()
+        Dim i As Integer = 0
+        While i &lt; length
+            sb1.AppendFormat("{0} ", palabras(i))   'palabras
+            If sb1.ToString().Length &gt; width Then
+                resultado.Add(sb2.ToString())
+                sb1 = New System.Text.StringBuilder()
+                sb2 = New System.Text.StringBuilder()
+                System.Math.Max(System.Threading.Interlocked.Decrement(i), i + 1)
+            Else
+                sb2.AppendFormat("{0} ", palabras(i))
+            End If
+            System.Math.Max(System.Threading.Interlocked.Increment(i), i - 1)
+        End While
+        resultado.Add(sb2.ToString())               'resultado
+
+        Dim resultado2 As New System.Collections.Generic.List(Of String)()
+        Dim temp As String
+
+        Dim index1 As Integer, index2 As Integer, salto As Integer
+        Dim target As String
+        Dim limite As Integer = resultado.Count     'resultado
+        For Each item As String In resultado        'resultado
+            target = " "
+            temp = item.ToString().Trim()
+            index1 = 0
+            index2 = 0
+            salto = 2
+
+            If limite &lt;= 1 Then
+                resultado2.Add(temp)
+                Exit For
+            End If
+            While temp.Length &lt;= width
+                If temp.IndexOf(target, index2) &lt; 0 Then
+                    index1 = 0
+                    index2 = 0
+                    target = target + " "
+                    System.Math.Max(System.Threading.Interlocked.Increment(salto), salto - 1)
+                End If
+                index1 = temp.IndexOf(target, index2)
+                temp = temp.Insert(temp.IndexOf(target, index2), " ")
+
+                index2 = index1 + salto
+            End While
+            System.Math.Max(System.Threading.Interlocked.Decrement(limite), limite + 1)
+            resultado2.Add(temp)
+        Next
+
+        Dim builder As New System.Text.StringBuilder()
+        For Each item As String In resultado2
+            builder.Append(item).Append(chr(10))
+       Next
+        Return builder.ToString()
+    End Function</Code>
   <EmbeddedImages>
     <EmbeddedImage Name="Logo_emenic_2">
       <MIMEType>image/png</MIMEType>
