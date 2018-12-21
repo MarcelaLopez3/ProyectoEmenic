@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Reporting.WebForms;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -84,7 +85,7 @@ namespace ProyectoASPEmenic.Paginas.Servicios
                     if (conexion.reg.GetString(1) != null || conexion.reg.GetString(1) != "")
                     {
                         string fecha = conexion.reg.GetString(1);
-                        txtfechaemision.Text = FormatoFecha(fecha);
+                        txtfechaemision.Text = DateTime.Parse(fecha).ToShortDateString();
                     }
                     else
                         txtfechaemision.Text = "";
@@ -202,6 +203,14 @@ namespace ProyectoASPEmenic.Paginas.Servicios
 
         protected void btnGenerarContrato_Click(object sender, EventArgs e)
         {
+            ReportViewer1.ProcessingMode = ProcessingMode.Local;
+            ReportViewer1.LocalReport.ReportPath = Server.MapPath("~/RContrato.rdlc");
+            //Se utiliza el mismo reporte para manifiesto de carga
+            DSEmenic ds = conexion.call_spGetContrato(IdServicio, "Contrato");
+            ReportDataSource source = new ReportDataSource("DataSet1", ds.Tables[1]);
+            ReportViewer1.LocalReport.DataSources.Clear();
+            ReportViewer1.LocalReport.DataSources.Add(source);
+            ReportViewer1.LocalReport.Refresh();
             MVContrato.SetActiveView(VContrato);
         }
     }

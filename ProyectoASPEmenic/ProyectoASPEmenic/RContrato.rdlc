@@ -1,0 +1,1996 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <Body>
+    <ReportItems>
+      <Textbox Name="Textbox21">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>CONTRATO DE ALQUILER DE EQUIPO DE TRANSPORTE</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox21</rd:DefaultName>
+        <Top>0.79057cm</Top>
+        <Left>0.52599cm</Left>
+        <Height>0.67938cm</Height>
+        <Width>12.3425cm</Width>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox22">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>EMENIC S.A. DE C.V.</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox22</rd:DefaultName>
+        <Top>1.64634cm</Top>
+        <Left>0.52599cm</Left>
+        <Height>0.6cm</Height>
+        <Width>5.22521cm</Width>
+        <ZIndex>1</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Image Name="Image2">
+        <Source>Embedded</Source>
+        <Value>Logo_emenic_2</Value>
+        <Sizing>FitProportional</Sizing>
+        <Top>0.79057cm</Top>
+        <Left>13.21861cm</Left>
+        <Height>3.22021cm</Height>
+        <Width>3.14238cm</Width>
+        <ZIndex>2</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Image>
+      <Textbox Name="Telefonos">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!Telefonos.Value, "DataSet1")</Value>
+                <Style>
+                  <FontSize>12pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Telefonos</rd:DefaultName>
+        <Top>2.42273cm</Top>
+        <Left>0.52599cm</Left>
+        <Height>0.70583cm</Height>
+        <Width>9.74958cm</Width>
+        <ZIndex>3</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Correo">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!Correo.Value, "DataSet1")</Value>
+                <Style>
+                  <FontSize>12pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Correo</rd:DefaultName>
+        <Top>3.30495cm</Top>
+        <Left>0.52599cm</Left>
+        <Height>0.70584cm</Height>
+        <Width>9.74958cm</Width>
+        <ZIndex>4</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox25">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>EMENIC, S.A. DE C.V., cuyos giros son servicio de transporte de carga internacional y alquiler de equipo de transporte, con domicilio en </Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>=Fields!Direccion.Value</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value> como arrendador. Y señores </Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>=Fields!Cliente.Value</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value> con domicilio en </Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>=Fields!DireccionCliente.Value</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value> con NIT </Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>=Fields!NIT.Value</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value> y teléfono </Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>=Fields!TelefonoCliente.Value</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value> como arrendatario</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox25</rd:DefaultName>
+        <Top>4.78578cm</Top>
+        <Left>0.52599cm</Left>
+        <Height>3.32521cm</Height>
+        <Width>15.835cm</Width>
+        <ZIndex>5</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox26">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>ACUERDAN EL ALQUILER DE EQUIPO DE TRANSPORTE</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox26</rd:DefaultName>
+        <Top>8.56933cm</Top>
+        <Left>0.52599cm</Left>
+        <Height>0.6cm</Height>
+        <Width>11.94562cm</Width>
+        <ZIndex>6</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox27">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Equipo: </Value>
+                <Style>
+                  <FontSize>12pt</FontSize>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>=Fields!Equipo.Value</Value>
+                <Style>
+                  <FontSize>12pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Placa: </Value>
+                <Style>
+                  <FontSize>12pt</FontSize>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>=Fields!Placa.Value</Value>
+                <Style>
+                  <FontSize>12pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Descripción: </Value>
+                <Style>
+                  <FontSize>12pt</FontSize>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>=Fields!Descripcion.Value</Value>
+                <Style>
+                  <FontSize>12pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox27</rd:DefaultName>
+        <Top>9.78641cm</Top>
+        <Left>0.52599cm</Left>
+        <Height>2.16104cm</Height>
+        <Width>15.835cm</Width>
+        <ZIndex>7</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox28">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Por la otra parte como arrendatario, se ha convenido el siguiente contrato de arriendo sobre equipo de transporte:</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox28</rd:DefaultName>
+        <Top>12.43224cm</Top>
+        <Left>0.52599cm</Left>
+        <Height>1.18208cm</Height>
+        <Width>15.835cm</Width>
+        <ZIndex>8</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox29">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>PRIMERO: EMENIC, S.A. DE C.V. es único y exclusivo propietario del equipo de transporte que se está arrendando, siendo un </Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>=Fields!Tipo.Value</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value xml:space="preserve"> </Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>=Fields!Descripcion.Value</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>.</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox29</rd:DefaultName>
+        <Top>14.20495cm</Top>
+        <Left>0.52599cm</Left>
+        <Height>2.00229cm</Height>
+        <Width>15.835cm</Width>
+        <ZIndex>9</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox30">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>SEGUNDO: el arrendatario declara recibirse del equipo de transporte en buen estado mecánico y de carrocería, funcionando, con sus equipos y accesorios.</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Dejan las partes constancia que se ha verificado por el arrendatario el buen funcionamiento especialmente del sistema de frenos, luces de estacionamiento de freno, de tránsito y de viraje.</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <LeftIndent>0cm</LeftIndent>
+            <RightIndent>0cm</RightIndent>
+            <Style>
+              <TextAlign>Left</TextAlign>
+              <LineHeight>12pt</LineHeight>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox30</rd:DefaultName>
+        <Top>16.69203cm</Top>
+        <Left>0.52599cm</Left>
+        <Height>3.29875cm</Height>
+        <Width>15.835cm</Width>
+        <ZIndex>10</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox31">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>TERCERO: el presente contrato tendrá una duración de </Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>=Fields!Meses.Value</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value> meses a partir de la fecha pactada. Al término del arrendamiento, el arrendatario deberá devolver el equipo de transporte en el estado que lo recibió. Así mismo, cuenta con la opción de decidir si renovar el contrato de arrendamiento con la sociedad EMENIC, S.A de C.V.</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>El atraso en la devolución del equipo de transporte hará incurrir al arrendatario en una multa de $10.00 por cada día de retardo.</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <LeftIndent>0cm</LeftIndent>
+            <RightIndent>0cm</RightIndent>
+            <Style>
+              <TextAlign>Left</TextAlign>
+              <LineHeight>12pt</LineHeight>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox31</rd:DefaultName>
+        <Top>20.50203cm</Top>
+        <Left>0.52599cm</Left>
+        <Height>3.66917cm</Height>
+        <Width>15.835cm</Width>
+        <ZIndex>11</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox32">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>CUARTO: el precio del alquiler se establece en un total de $400.00 + IVA dólares de los Estados Unidos de América. La forma de pago del alquiler será cancelada ya sea efectivo, cheque o transferencia bancaria entregado en los primeros cinco días hábiles de cada mes a nombre de EMENIC, S.A. de C.V.</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <LeftIndent>0cm</LeftIndent>
+            <RightIndent>0cm</RightIndent>
+            <Style>
+              <TextAlign>Left</TextAlign>
+              <LineHeight>12pt</LineHeight>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>QUINTO: el equipo de transporte es de uso exclusivo de la empresa a la cual se está arrendando.</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <LeftIndent>0cm</LeftIndent>
+            <RightIndent>0cm</RightIndent>
+            <Style>
+              <TextAlign>Left</TextAlign>
+              <LineHeight>12pt</LineHeight>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <LeftIndent>0cm</LeftIndent>
+            <RightIndent>0cm</RightIndent>
+            <Style>
+              <TextAlign>Left</TextAlign>
+              <LineHeight>12pt</LineHeight>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>SEXTO: EMENIC, S.A. DE C.V. no se hace responsable por el mal uso de traslado de ilícitos. Además, el arrendatario no podrá efectuar en el equipo de transporte modificaciones tanto en su aspecto exterior o interior.</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <LeftIndent>0cm</LeftIndent>
+            <RightIndent>0cm</RightIndent>
+            <Style>
+              <TextAlign>Left</TextAlign>
+              <LineHeight>12pt</LineHeight>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <LeftIndent>0cm</LeftIndent>
+            <RightIndent>0cm</RightIndent>
+            <Style>
+              <TextAlign>Left</TextAlign>
+              <LineHeight>12pt</LineHeight>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>SÉPTIMO: el presente contrato se rige por las condiciones generales y particulares reflejadas en el mismo. El arrendatario declara haber leído y entendido estas condiciones y está de acuerdo en firmar los términos del presente contrato.</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <LeftIndent>0cm</LeftIndent>
+            <RightIndent>0cm</RightIndent>
+            <Style>
+              <TextAlign>Left</TextAlign>
+              <LineHeight>12pt</LineHeight>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <LeftIndent>0cm</LeftIndent>
+            <RightIndent>0cm</RightIndent>
+            <Style>
+              <TextAlign>Left</TextAlign>
+              <LineHeight>12pt</LineHeight>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>OCTAVO: el equipo de transporte no podrá ser destinado a un uso diferente para el que ha sido diseñado de fábrica o en labores peligrosas o ilícitas. Tampoco deberá ser conducido bajo la influencia del alcohol o en estado de ebriedad o bajo la influencia de sedantes, somníferos o drogas. Además, el conductor del equipo de transporte deberá portar al momento de la conducción todos sus documentos de identificación personal y de conductor.</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <LeftIndent>0cm</LeftIndent>
+            <RightIndent>0cm</RightIndent>
+            <Style>
+              <TextAlign>Left</TextAlign>
+              <LineHeight>12pt</LineHeight>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <LeftIndent>0cm</LeftIndent>
+            <RightIndent>0cm</RightIndent>
+            <Style>
+              <TextAlign>Left</TextAlign>
+              <LineHeight>12pt</LineHeight>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>El arrendador hace entrega al arrendatario de la siguiente documentación del vehículo: tarjeta de circulación vigente.</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <LeftIndent>0cm</LeftIndent>
+            <RightIndent>0cm</RightIndent>
+            <Style>
+              <TextAlign>Left</TextAlign>
+              <LineHeight>12pt</LineHeight>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <LeftIndent>0cm</LeftIndent>
+            <RightIndent>0cm</RightIndent>
+            <Style>
+              <TextAlign>Left</TextAlign>
+              <LineHeight>12pt</LineHeight>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>NOVENO: el arrendatario se hace responsable de todo daño, perjuicio, lesión o muerte causada a tercero, sus bienes o enseres con ocasión o por causa de conducción descuidada, culpable o dolosa.</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <LeftIndent>0cm</LeftIndent>
+            <RightIndent>0cm</RightIndent>
+            <Style>
+              <TextAlign>Left</TextAlign>
+              <LineHeight>12pt</LineHeight>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <LeftIndent>0cm</LeftIndent>
+            <RightIndent>0cm</RightIndent>
+            <Style>
+              <TextAlign>Left</TextAlign>
+              <LineHeight>12pt</LineHeight>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>DECIMO: son de cargo del arrendatario: a) los daños ocasionados al equipo de transporte o sus accesorios, por si o por un tercero, aun por caso fortuito; b) los daños que se causen a terceros, c) los perjuicios que pueda experimentar por causa de robo, d) etc.</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <LeftIndent>0cm</LeftIndent>
+            <RightIndent>0cm</RightIndent>
+            <Style>
+              <TextAlign>Left</TextAlign>
+              <LineHeight>12pt</LineHeight>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <LeftIndent>0cm</LeftIndent>
+            <RightIndent>0cm</RightIndent>
+            <Style>
+              <TextAlign>Left</TextAlign>
+              <LineHeight>12pt</LineHeight>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <LeftIndent>0cm</LeftIndent>
+            <RightIndent>0cm</RightIndent>
+            <Style>
+              <TextAlign>Left</TextAlign>
+              <LineHeight>12pt</LineHeight>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>UTILIZACION DEL VEHICULO</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <LeftIndent>0cm</LeftIndent>
+            <RightIndent>0cm</RightIndent>
+            <Style>
+              <TextAlign>Left</TextAlign>
+              <LineHeight>12pt</LineHeight>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <LeftIndent>0cm</LeftIndent>
+            <RightIndent>0cm</RightIndent>
+            <Style>
+              <TextAlign>Left</TextAlign>
+              <LineHeight>12pt</LineHeight>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>El arrendatario recibe en alquiler el equipo de transporte descrito anteriormente, en perfectas condiciones de funcionamiento, con todos los documentos, neumáticos, herramientas y accesorios y se compromete a conservarlos y conducir el equipo de transporte según las normas del Código de Circulación. Quedando expresamente prohibido:</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <LeftIndent>0cm</LeftIndent>
+            <RightIndent>0cm</RightIndent>
+            <Style>
+              <TextAlign>Left</TextAlign>
+              <LineHeight>12pt</LineHeight>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <LeftIndent>0cm</LeftIndent>
+            <RightIndent>0cm</RightIndent>
+            <Style>
+              <TextAlign>Left</TextAlign>
+              <LineHeight>12pt</LineHeight>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Conducir el equipo de transporte en inferioridad de condiciones físicas, motivadas por el alcohol, drogas, fatiga o enfermedad.</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <LeftIndent>0cm</LeftIndent>
+            <RightIndent>0cm</RightIndent>
+            <ListStyle>Bulleted</ListStyle>
+            <ListLevel>1</ListLevel>
+            <Style>
+              <TextAlign>Left</TextAlign>
+              <LineHeight>12pt</LineHeight>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <LeftIndent>0cm</LeftIndent>
+            <RightIndent>0cm</RightIndent>
+            <ListLevel>1</ListLevel>
+            <Style>
+              <TextAlign>Left</TextAlign>
+              <LineHeight>12pt</LineHeight>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Participar con el equipo de transporte en carreras, concursos deportivos, etc.</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <LeftIndent>0cm</LeftIndent>
+            <RightIndent>0cm</RightIndent>
+            <ListStyle>Bulleted</ListStyle>
+            <ListLevel>1</ListLevel>
+            <Style>
+              <TextAlign>Left</TextAlign>
+              <LineHeight>12pt</LineHeight>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <LeftIndent>0cm</LeftIndent>
+            <RightIndent>0cm</RightIndent>
+            <ListLevel>1</ListLevel>
+            <Style>
+              <TextAlign>Left</TextAlign>
+              <LineHeight>12pt</LineHeight>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Tener el equipo de transporte mal estacionado o mal custodiado cuando no se utilice.</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <LeftIndent>0cm</LeftIndent>
+            <RightIndent>0cm</RightIndent>
+            <ListStyle>Bulleted</ListStyle>
+            <ListLevel>1</ListLevel>
+            <Style>
+              <TextAlign>Left</TextAlign>
+              <LineHeight>12pt</LineHeight>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox32</rd:DefaultName>
+        <Top>24.5237cm</Top>
+        <Left>0.52599cm</Left>
+        <Height>24.7209cm</Height>
+        <Width>15.835cm</Width>
+        <ZIndex>12</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox33">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Transitar fuera de la red vial nacional o cualquier terreno no adecuado, quedando expresamente excluidos de las coberturas de seguro los daños en los bajos del equipo de transporte o componentes mecánicos que se estropeen como consecuencia de una mala conducción, así como los daños producidos por la circulación de zonas restringidas de la red de carreteras.</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <ListStyle>Bulleted</ListStyle>
+            <ListLevel>1</ListLevel>
+            <Style />
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <ListLevel>1</ListLevel>
+            <Style />
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>No detener el equipo de transporte lo antes posible, cuando se ilumine o suene cualquier testigo o alarma que indique anomalía en el funcionamiento del equipo de transporte o se detecte ésta por el arrendatario, debiendo contactar con el arrendador para que este disponga lo conveniente o con la compañía de asistencia del seguro. No se abonará ninguna reparación o asistencia distinta a la suministrada sin previa autorización del arrendador.</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <LeftIndent>0cm</LeftIndent>
+            <RightIndent>0cm</RightIndent>
+            <ListStyle>Bulleted</ListStyle>
+            <ListLevel>1</ListLevel>
+            <Style>
+              <TextAlign>Left</TextAlign>
+              <LineHeight>12pt</LineHeight>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <LeftIndent>0cm</LeftIndent>
+            <RightIndent>0cm</RightIndent>
+            <ListLevel>1</ListLevel>
+            <Style>
+              <TextAlign>Left</TextAlign>
+              <LineHeight>12pt</LineHeight>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Conducir el equipo de transporte a otro país sin haberlo comunicado al arrendador en el momento de formalizar el contrato o posteriormente, sin que EMENIC, S.A. DE C.V. otorgue su consentimiento por cualquier medio de los que quede constancia de este.</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <LeftIndent>0cm</LeftIndent>
+            <RightIndent>0cm</RightIndent>
+            <ListStyle>Bulleted</ListStyle>
+            <ListLevel>1</ListLevel>
+            <Style>
+              <TextAlign>Left</TextAlign>
+              <LineHeight>12pt</LineHeight>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <LeftIndent>0cm</LeftIndent>
+            <RightIndent>0cm</RightIndent>
+            <ListLevel>1</ListLevel>
+            <Style>
+              <TextAlign>Left</TextAlign>
+              <LineHeight>12pt</LineHeight>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Variar cualquier característica técnica del equipo de transporte, las herramientas y/o accesorios. En el caso de incumplir este articulo el arrendatario deberá correr con los gastos, debidamente justificados, de reacondicionamiento del equipo de transporte a su estado original, así como abonar una cantidad en concepto de inmovilización del equipo de transporte.</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <LeftIndent>0cm</LeftIndent>
+            <RightIndent>0cm</RightIndent>
+            <ListStyle>Bulleted</ListStyle>
+            <ListLevel>1</ListLevel>
+            <Style>
+              <TextAlign>Left</TextAlign>
+              <LineHeight>12pt</LineHeight>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <LeftIndent>0cm</LeftIndent>
+            <RightIndent>0cm</RightIndent>
+            <ListLevel>1</ListLevel>
+            <Style>
+              <TextAlign>Left</TextAlign>
+              <LineHeight>12pt</LineHeight>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Ceder, alquilar, hipotecar, pignorar, vender o cualquier otra forma de dar en garantía.</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <LeftIndent>0cm</LeftIndent>
+            <RightIndent>0cm</RightIndent>
+            <ListStyle>Bulleted</ListStyle>
+            <ListLevel>1</ListLevel>
+            <Style>
+              <TextAlign>Left</TextAlign>
+              <LineHeight>12pt</LineHeight>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox33</rd:DefaultName>
+        <Top>49.65912cm</Top>
+        <Left>0.52599cm</Left>
+        <Height>12.71792cm</Height>
+        <Width>15.835cm</Width>
+        <ZIndex>13</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Direccion">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>En comprobante previa lectura ratifican, firman y sellan:</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <LeftIndent>0cm</LeftIndent>
+            <RightIndent>0cm</RightIndent>
+            <Style>
+              <TextAlign>Left</TextAlign>
+              <LineHeight>12pt</LineHeight>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <LeftIndent>0cm</LeftIndent>
+            <RightIndent>0cm</RightIndent>
+            <Style>
+              <TextAlign>Left</TextAlign>
+              <LineHeight>12pt</LineHeight>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <LeftIndent>0cm</LeftIndent>
+            <RightIndent>0cm</RightIndent>
+            <Style>
+              <TextAlign>Left</TextAlign>
+              <LineHeight>12pt</LineHeight>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <LeftIndent>0cm</LeftIndent>
+            <RightIndent>0cm</RightIndent>
+            <Style>
+              <TextAlign>Left</TextAlign>
+              <LineHeight>12pt</LineHeight>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <LeftIndent>0cm</LeftIndent>
+            <RightIndent>0cm</RightIndent>
+            <Style>
+              <TextAlign>Left</TextAlign>
+              <LineHeight>12pt</LineHeight>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <LeftIndent>0cm</LeftIndent>
+            <RightIndent>0cm</RightIndent>
+            <Style>
+              <TextAlign>Left</TextAlign>
+              <LineHeight>12pt</LineHeight>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <LeftIndent>0cm</LeftIndent>
+            <RightIndent>0cm</RightIndent>
+            <Style>
+              <TextAlign>Left</TextAlign>
+              <LineHeight>12pt</LineHeight>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>________________________                             _________________________</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <LeftIndent>0cm</LeftIndent>
+            <RightIndent>0cm</RightIndent>
+            <Style>
+              <TextAlign>Left</TextAlign>
+              <LineHeight>12pt</LineHeight>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>ARRENDADOR                                                     ARRENDATARIO</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <LeftIndent>0cm</LeftIndent>
+            <RightIndent>0cm</RightIndent>
+            <Style>
+              <TextAlign>Left</TextAlign>
+              <LineHeight>12pt</LineHeight>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <LeftIndent>0cm</LeftIndent>
+            <RightIndent>0cm</RightIndent>
+            <Style>
+              <TextAlign>Left</TextAlign>
+              <LineHeight>12pt</LineHeight>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <LeftIndent>0cm</LeftIndent>
+            <RightIndent>0cm</RightIndent>
+            <Style>
+              <TextAlign>Left</TextAlign>
+              <LineHeight>12pt</LineHeight>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <LeftIndent>0cm</LeftIndent>
+            <RightIndent>0cm</RightIndent>
+            <Style>
+              <TextAlign>Left</TextAlign>
+              <LineHeight>12pt</LineHeight>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <LeftIndent>0cm</LeftIndent>
+            <RightIndent>0cm</RightIndent>
+            <Style>
+              <TextAlign>Left</TextAlign>
+              <LineHeight>12pt</LineHeight>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <LeftIndent>0cm</LeftIndent>
+            <RightIndent>0cm</RightIndent>
+            <Style>
+              <TextAlign>Left</TextAlign>
+              <LineHeight>12pt</LineHeight>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <LeftIndent>0cm</LeftIndent>
+            <RightIndent>0cm</RightIndent>
+            <Style>
+              <TextAlign>Left</TextAlign>
+              <LineHeight>12pt</LineHeight>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <LeftIndent>0cm</LeftIndent>
+            <RightIndent>0cm</RightIndent>
+            <Style>
+              <TextAlign>Left</TextAlign>
+              <LineHeight>12pt</LineHeight>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Firmado y sellado en el departamento de _____________________________ a los ___ días del mes de ___________________ del año 20___.</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <LeftIndent>0cm</LeftIndent>
+            <RightIndent>0cm</RightIndent>
+            <Style>
+              <TextAlign>Left</TextAlign>
+              <LineHeight>12pt</LineHeight>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Direccion</rd:DefaultName>
+        <Top>70.13787cm</Top>
+        <Left>0.52599cm</Left>
+        <Height>9.78104cm</Height>
+        <Width>15.835cm</Width>
+        <ZIndex>14</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+    </ReportItems>
+    <Height>31.70292in</Height>
+    <Style />
+  </Body>
+  <Width>6.66583in</Width>
+  <Page>
+    <PageHeight>29.7cm</PageHeight>
+    <PageWidth>21cm</PageWidth>
+    <LeftMargin>2cm</LeftMargin>
+    <RightMargin>2cm</RightMargin>
+    <TopMargin>2cm</TopMargin>
+    <BottomMargin>2cm</BottomMargin>
+    <ColumnSpacing>0.13cm</ColumnSpacing>
+    <Style />
+  </Page>
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DSEmenic">
+      <ConnectionProperties>
+        <DataProvider>System.Data.DataSet</DataProvider>
+        <ConnectString>/* Local Connection */</ConnectString>
+      </ConnectionProperties>
+      <rd:DataSourceID>e90b6c24-75aa-41c8-b5ce-a5dec98c9374</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="DataSet1">
+      <Query>
+        <DataSourceName>DSEmenic</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="Telefonos">
+          <DataField>Telefonos</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Correo">
+          <DataField>Correo</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Direccion">
+          <DataField>Direccion</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Cliente">
+          <DataField>Cliente</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DireccionCliente">
+          <DataField>DireccionCliente</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="NIT">
+          <DataField>NIT</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TelefonoCliente">
+          <DataField>TelefonoCliente</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Equipo">
+          <DataField>Equipo</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Placa">
+          <DataField>Placa</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Descripcion">
+          <DataField>Descripcion</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Meses">
+          <DataField>Meses</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Tipo">
+          <DataField>Tipo</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <rd:DataSetInfo>
+        <rd:DataSetName>DSEmenic</rd:DataSetName>
+        <rd:SchemaPath>C:\Users\Susan\Source\Repos\ProyectoEmenic\ProyectoASPEmenic\ProyectoASPEmenic\DSEmenic.xsd</rd:SchemaPath>
+        <rd:TableName>Contrato</rd:TableName>
+        <rd:TableAdapterFillMethod />
+        <rd:TableAdapterGetDataMethod />
+        <rd:TableAdapterName />
+      </rd:DataSetInfo>
+    </DataSet>
+  </DataSets>
+  <Code>Function GetText(text As String, width As Integer) As String
+        Dim palabras As String() = text.Split(" "c)  'text--&gt;palabras
+        Dim sb1 As New System.Text.StringBuilder()
+        Dim sb2 As New System.Text.StringBuilder()
+        Dim length As Integer = palabras.Length     'palabras
+        Dim resultado As New System.Collections.Generic.List(Of String)()
+        Dim i As Integer = 0
+        While i &lt; length
+            sb1.AppendFormat("{0} ", palabras(i))   'palabras
+            If sb1.ToString().Length &gt; width Then
+                resultado.Add(sb2.ToString())
+                sb1 = New System.Text.StringBuilder()
+                sb2 = New System.Text.StringBuilder()
+                System.Math.Max(System.Threading.Interlocked.Decrement(i), i + 1)
+            Else
+                sb2.AppendFormat("{0} ", palabras(i))
+            End If
+            System.Math.Max(System.Threading.Interlocked.Increment(i), i - 1)
+        End While
+        resultado.Add(sb2.ToString())               'resultado
+
+        Dim resultado2 As New System.Collections.Generic.List(Of String)()
+        Dim temp As String
+
+        Dim index1 As Integer, index2 As Integer, salto As Integer
+        Dim target As String
+        Dim limite As Integer = resultado.Count     'resultado
+        For Each item As String In resultado        'resultado
+            target = " "
+            temp = item.ToString().Trim()
+            index1 = 0
+            index2 = 0
+            salto = 2
+
+            If limite &lt;= 1 Then
+                resultado2.Add(temp)
+                Exit For
+            End If
+            While temp.Length &lt;= width
+                If temp.IndexOf(target, index2) &lt; 0 Then
+                    index1 = 0
+                    index2 = 0
+                    target = target + " "
+                    System.Math.Max(System.Threading.Interlocked.Increment(salto), salto - 1)
+                End If
+                index1 = temp.IndexOf(target, index2)
+                temp = temp.Insert(temp.IndexOf(target, index2), " ")
+
+                index2 = index1 + salto
+            End While
+            System.Math.Max(System.Threading.Interlocked.Decrement(limite), limite + 1)
+            resultado2.Add(temp)
+        Next
+
+        Dim builder As New System.Text.StringBuilder()
+        For Each item As String In resultado2
+            builder.Append(item).Append(chr(10))
+       Next
+        Return builder.ToString()
+    End Function</Code>
+  <EmbeddedImages>
+    <EmbeddedImage Name="Logo_emenic_2">
+      <MIMEType>image/png</MIMEType>
+      <ImageData>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</ImageData>
+    </EmbeddedImage>
+  </EmbeddedImages>
+  <rd:ReportUnitType>Cm</rd:ReportUnitType>
+  <rd:ReportID>5ff5734b-ffc6-4c92-8ce5-f5dc687f3c58</rd:ReportID>
+</Report>

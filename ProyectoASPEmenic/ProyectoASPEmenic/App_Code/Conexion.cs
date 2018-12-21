@@ -92,7 +92,7 @@ namespace ProyectoASPEmenic
             return ds;
         }
 
-        //Función prueba para llena dataset con stored procedure
+        //Función para llenar dataset con stored procedure - CARTA PORTE
         public DSEmenic call_sp(int id, int opcion, string dt)
         {
             MySqlDataAdapter da = new MySqlDataAdapter();
@@ -107,6 +107,24 @@ namespace ProyectoASPEmenic
             cmd.Parameters.AddWithValue("@Opcion", opcion);
             da.SelectCommand = cmd;
             da.Fill(ds,dt);
+            CerrarConexion();
+            return ds;
+        }
+
+        //Función para llenar stored procedure - CONTRATO
+        public DSEmenic call_spGetContrato(int servicio,string dt)
+        {
+            MySqlDataAdapter da = new MySqlDataAdapter();
+            DSEmenic ds = new DSEmenic();
+            MySqlCommand cmd = new MySqlCommand();
+            IniciarConexion();
+            EnviarQuery("SET lc_time_names = 'es_ES'");
+            cmd.Connection = cnn;
+            cmd.CommandText = "sp_getContrato";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@Servicio", servicio);
+            da.SelectCommand = cmd;
+            da.Fill(ds, dt);
             CerrarConexion();
             return ds;
         }
