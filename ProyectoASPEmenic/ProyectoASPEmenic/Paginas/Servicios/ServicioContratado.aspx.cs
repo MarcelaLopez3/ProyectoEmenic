@@ -469,6 +469,9 @@ namespace ProyectoASPEmenic.Paginas.Servicios
             txtpagoestadia.Text = "";
             txtpagoguardia.Text = "";
             txtviaticos.Text = "";
+            txtGastosVarios.Text = "";
+            txtPagoMotorista.Text = "";
+            txtPrecioCombustible.Text = "";
         }
     }
 }
