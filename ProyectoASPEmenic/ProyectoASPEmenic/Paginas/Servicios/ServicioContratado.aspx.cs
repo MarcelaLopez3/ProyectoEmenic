@@ -120,6 +120,9 @@ namespace ProyectoASPEmenic.Paginas.Servicios
                     string PagoGuardia = txtpagoguardia.Text;
                     string Galones = txtgalones.Text;
                     string ViaticosMotorista = txtviaticos.Text;
+                    float PagoMotorista = string.IsNullOrEmpty(txtPagoMotorista.Text) ? 0 : float.Parse(txtPagoMotorista.Text);
+                    float PrecioCombustible = string.IsNullOrEmpty(txtPrecioCombustible.Text) ? 0 : float.Parse(txtPrecioCombustible.Text);
+                    float GastosVarios = string.IsNullOrEmpty(txtGastosVarios.Text) ? 0 : float.Parse(txtGastosVarios.Text);
 
                     //Verificar que haya 1 bandera activa (transporte o alquiler) pero que no esten vacias y que no esten ambas
                     if (Transporte == true && Alquiler == true)
@@ -177,10 +180,11 @@ namespace ProyectoASPEmenic.Paginas.Servicios
                     {
                         query = "INSERT INTO serviciocontratado(IdCliente,IdConsignatorio,Transporte,Alquiler," +
                             "FechaAdquisicion,Descripcion,PeriodoCobro,Retorno,FechaVencimiento,PagoEmpresa," +
-                            "PagoEstadia,PagoGuardia,ViaticosMotorista,Galones) VALUES (" + VarSer + "," + IdConsigatario +
+                            "PagoEstadia,PagoGuardia,ViaticosMotorista,Galones,PrecioCombustible,PagoMotorista,GastosVarios) VALUES (" + VarSer + "," + IdConsigatario +
                             "," + Transporte + "," + Alquiler + ",'" + FechaAdquisicion + "','" + Descripcion + "','" + PeriodoCobro +
                             "'," + Retorno + ",'" + FechaVencimiento + "'," + PagoEmpresa + "," + PagoEstadia +
-                            "," + PagoGuardia + "," + ViaticosMotorista + "," + Galones + ")";
+                            "," + PagoGuardia + "," + ViaticosMotorista + "," + Galones + "," + PrecioCombustible + "," + PagoMotorista +
+                            "," + GastosVarios + ")";
                         //enviar consulta a Mysql
                         conexion.IniciarConexion();
                         conexion.EnviarQuery(query);
@@ -214,6 +218,9 @@ namespace ProyectoASPEmenic.Paginas.Servicios
                 string PagoGuardia = txtpagoguardia.Text;
                 string Galones = txtgalones.Text;
                 string ViaticosMotorista = txtviaticos.Text;
+                float PagoMotorista = string.IsNullOrEmpty(txtPagoMotorista.Text) ? 0 : float.Parse(txtPagoMotorista.Text);
+                float PrecioCombustible = string.IsNullOrEmpty(txtPrecioCombustible.Text) ? 0 : float.Parse(txtPrecioCombustible.Text);
+                float GastosVarios = string.IsNullOrEmpty(txtGastosVarios.Text) ? 0 : float.Parse(txtGastosVarios.Text);
 
                 //Verificar que haya 1 bandera activa (transporte o alquiler) pero que no esten vacias y que no esten ambas
                 if (Transporte == true && Alquiler == true)

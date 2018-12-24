@@ -86,6 +86,20 @@
                             
                         </div>
                     </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-3">
+                            <asp:Label ID="lblPagoMotorista" runat="server" style="color:black;" Text="Pago de motorista:"></asp:Label>
+                            <asp:TextBox ID="txtPagoMotorista" runat="server" CssClass="form-control" onkeypress="return isNumberKey(event,this)"></asp:TextBox>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <asp:Label ID="lblPrecioCombustible" runat="server" style="color:black;" Text="Precio Combustible:"></asp:Label>
+                            <asp:TextBox ID="txtPrecioCombustible" runat="server" CssClass="form-control" onkeypress="return isNumberKey(event,this)"></asp:TextBox>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <asp:Label ID="lblGastosVarios" runat="server" style="color:black;" Text="Gastos Varios:"></asp:Label>
+                            <asp:TextBox ID="txtGastosVarios" runat="server" CssClass="form-control" onkeypress="return isNumberKey(event,this)"></asp:TextBox>
+                        </div>
+                    </div>
                 </div>
                 <div>
                     <center>
