@@ -120,6 +120,9 @@ namespace ProyectoASPEmenic.Paginas.Servicios
                     string PagoGuardia = txtpagoguardia.Text;
                     string Galones = txtgalones.Text;
                     string ViaticosMotorista = txtviaticos.Text;
+                    float PagoMotorista = string.IsNullOrEmpty(txtPagoMotorista.Text) ? 0 : float.Parse(txtPagoMotorista.Text);
+                    float PrecioCombustible = string.IsNullOrEmpty(txtPrecioCombustible.Text) ? 0 : float.Parse(txtPrecioCombustible.Text);
+                    float GastosVarios = string.IsNullOrEmpty(txtGastosVarios.Text) ? 0 : float.Parse(txtGastosVarios.Text);
 
                     //Verificar que haya 1 bandera activa (transporte o alquiler) pero que no esten vacias y que no esten ambas
                     if (Transporte == true && Alquiler == true)
@@ -177,10 +180,11 @@ namespace ProyectoASPEmenic.Paginas.Servicios
                     {
                         query = "INSERT INTO serviciocontratado(IdCliente,IdConsignatorio,Transporte,Alquiler," +
                             "FechaAdquisicion,Descripcion,PeriodoCobro,Retorno,FechaVencimiento,PagoEmpresa," +
-                            "PagoEstadia,PagoGuardia,ViaticosMotorista,Galones) VALUES (" + VarSer + "," + IdConsigatario +
+                            "PagoEstadia,PagoGuardia,ViaticosMotorista,Galones,PrecioCombustible,PagoMotorista,GastosVarios) VALUES (" + VarSer + "," + IdConsigatario +
                             "," + Transporte + "," + Alquiler + ",'" + FechaAdquisicion + "','" + Descripcion + "','" + PeriodoCobro +
                             "'," + Retorno + ",'" + FechaVencimiento + "'," + PagoEmpresa + "," + PagoEstadia +
-                            "," + PagoGuardia + "," + ViaticosMotorista + "," + Galones + ")";
+                            "," + PagoGuardia + "," + ViaticosMotorista + "," + Galones + "," + PrecioCombustible + "," + PagoMotorista +
+                            "," + GastosVarios + ")";
                         //enviar consulta a Mysql
                         conexion.IniciarConexion();
                         conexion.EnviarQuery(query);
@@ -214,6 +218,9 @@ namespace ProyectoASPEmenic.Paginas.Servicios
                 string PagoGuardia = txtpagoguardia.Text;
                 string Galones = txtgalones.Text;
                 string ViaticosMotorista = txtviaticos.Text;
+                float PagoMotorista = string.IsNullOrEmpty(txtPagoMotorista.Text) ? 0 : float.Parse(txtPagoMotorista.Text);
+                float PrecioCombustible = string.IsNullOrEmpty(txtPrecioCombustible.Text) ? 0 : float.Parse(txtPrecioCombustible.Text);
+                float GastosVarios = string.IsNullOrEmpty(txtGastosVarios.Text) ? 0 : float.Parse(txtGastosVarios.Text);
 
                 //Verificar que haya 1 bandera activa (transporte o alquiler) pero que no esten vacias y que no esten ambas
                 if (Transporte == true && Alquiler == true)
@@ -274,7 +281,8 @@ namespace ProyectoASPEmenic.Paginas.Servicios
                         "', Descripcion = '" + Descripcion + "', PeriodoCobro = '" + PeriodoCobro + "', Retorno = " +
                         Retorno + ", IdConsignatorio = " + IdConsigatario + ", PagoEmpresa = " + PagoEmpresa +
                         ", PagoEstadia = " + PagoEstadia + ", PagoGuardia = " + PagoGuardia + ", Galones = '" +
-                        Galones + "', ViaticosMotorista = " + ViaticosMotorista + " WHERE Id = " + HFUpdateId.Value;
+                        Galones + "', ViaticosMotorista = " + ViaticosMotorista + ",PrecioCombustible=" + PrecioCombustible +
+                        ",PagoMotorista=" + PagoMotorista + ",GastosVarios=" + GastosVarios + " WHERE Id = " + HFUpdateId.Value;
 
                     conexion.IniciarConexion();
                     conexion.EnviarQuery(query);
@@ -298,7 +306,7 @@ namespace ProyectoASPEmenic.Paginas.Servicios
                 //Inicio de update del servicio
                 query = "SELECT IdConsignatorio,Transporte,Alquiler,FechaAdquisicion,Descripcion,"+
                     "PeriodoCobro,Retorno,FechaVencimiento,PagoEmpresa,PagoEstadia,PagoGuardia,"+
-                    "ViaticosMotorista,Galones,Id FROM serviciocontratado WHERE Id = " + e.CommandArgument;
+                    "ViaticosMotorista,Galones,Id,PrecioCombustible,PagoMotorista,GastosVarios FROM serviciocontratado WHERE Id = " + e.CommandArgument;
 
                 conexion.IniciarConexion();
                 conexion.RecibeQuery(query);
@@ -367,6 +375,21 @@ namespace ProyectoASPEmenic.Paginas.Servicios
                         txtgalones.Text = conexion.reg.GetValue(12).ToString();
                     else
                         txtgalones.Text = "";
+
+                    if (conexion.reg.GetValue(14) != null || conexion.reg.GetValue(14).ToString() != "")
+                        txtPrecioCombustible.Text = conexion.reg.GetValue(14).ToString();
+                    else
+                        txtPrecioCombustible.Text = "";
+
+                    if (conexion.reg.GetValue(15) != null || conexion.reg.GetValue(15).ToString() != "")
+                        txtPagoMotorista.Text = conexion.reg.GetValue(15).ToString();
+                    else
+                        txtPagoMotorista.Text = "";
+
+                    if (conexion.reg.GetValue(16) != null || conexion.reg.GetValue(16).ToString() != "")
+                        txtGastosVarios.Text = conexion.reg.GetValue(16).ToString();
+                    else
+                        txtGastosVarios.Text = "";
 
                     HFUpdateId.Value = conexion.reg.GetValue(13).ToString();
 
@@ -446,6 +469,9 @@ namespace ProyectoASPEmenic.Paginas.Servicios
             txtpagoestadia.Text = "";
             txtpagoguardia.Text = "";
             txtviaticos.Text = "";
+            txtGastosVarios.Text = "";
+            txtPagoMotorista.Text = "";
+            txtPrecioCombustible.Text = "";
         }
     }
 }

@@ -319,6 +319,60 @@ namespace ProyectoASPEmenic.Paginas.Servicios {
         protected global::System.Web.UI.WebControls.TextBox txtviaticos;
         
         /// <summary>
+        /// Control lblPagoMotorista.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblPagoMotorista;
+        
+        /// <summary>
+        /// Control txtPagoMotorista.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtPagoMotorista;
+        
+        /// <summary>
+        /// Control lblPrecioCombustible.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblPrecioCombustible;
+        
+        /// <summary>
+        /// Control txtPrecioCombustible.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtPrecioCombustible;
+        
+        /// <summary>
+        /// Control lblGastosVarios.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblGastosVarios;
+        
+        /// <summary>
+        /// Control txtGastosVarios.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtGastosVarios;
+        
+        /// <summary>
         /// Control btnAgregarServicioContra.
         /// </summary>
         /// <remarks>
