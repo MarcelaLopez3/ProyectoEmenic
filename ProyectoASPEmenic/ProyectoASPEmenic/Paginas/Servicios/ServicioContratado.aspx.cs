@@ -281,7 +281,8 @@ namespace ProyectoASPEmenic.Paginas.Servicios
                         "', Descripcion = '" + Descripcion + "', PeriodoCobro = '" + PeriodoCobro + "', Retorno = " +
                         Retorno + ", IdConsignatorio = " + IdConsigatario + ", PagoEmpresa = " + PagoEmpresa +
                         ", PagoEstadia = " + PagoEstadia + ", PagoGuardia = " + PagoGuardia + ", Galones = '" +
-                        Galones + "', ViaticosMotorista = " + ViaticosMotorista + " WHERE Id = " + HFUpdateId.Value;
+                        Galones + "', ViaticosMotorista = " + ViaticosMotorista + ",PrecioCombustible=" + PrecioCombustible +
+                        ",PagoMotorista=" + PagoMotorista + ",GastosVarios=" + GastosVarios + " WHERE Id = " + HFUpdateId.Value;
 
                     conexion.IniciarConexion();
                     conexion.EnviarQuery(query);
