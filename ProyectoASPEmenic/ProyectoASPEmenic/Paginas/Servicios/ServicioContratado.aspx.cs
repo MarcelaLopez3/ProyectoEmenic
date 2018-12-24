@@ -305,7 +305,7 @@ namespace ProyectoASPEmenic.Paginas.Servicios
                 //Inicio de update del servicio
                 query = "SELECT IdConsignatorio,Transporte,Alquiler,FechaAdquisicion,Descripcion,"+
                     "PeriodoCobro,Retorno,FechaVencimiento,PagoEmpresa,PagoEstadia,PagoGuardia,"+
-                    "ViaticosMotorista,Galones,Id FROM serviciocontratado WHERE Id = " + e.CommandArgument;
+                    "ViaticosMotorista,Galones,Id,PrecioCombustible,PagoMotorista,GastosVarios FROM serviciocontratado WHERE Id = " + e.CommandArgument;
 
                 conexion.IniciarConexion();
                 conexion.RecibeQuery(query);
@@ -374,6 +374,21 @@ namespace ProyectoASPEmenic.Paginas.Servicios
                         txtgalones.Text = conexion.reg.GetValue(12).ToString();
                     else
                         txtgalones.Text = "";
+
+                    if (conexion.reg.GetValue(14) != null || conexion.reg.GetValue(14).ToString() != "")
+                        txtPrecioCombustible.Text = conexion.reg.GetValue(14).ToString();
+                    else
+                        txtPrecioCombustible.Text = "";
+
+                    if (conexion.reg.GetValue(15) != null || conexion.reg.GetValue(15).ToString() != "")
+                        txtPagoMotorista.Text = conexion.reg.GetValue(15).ToString();
+                    else
+                        txtPagoMotorista.Text = "";
+
+                    if (conexion.reg.GetValue(16) != null || conexion.reg.GetValue(16).ToString() != "")
+                        txtGastosVarios.Text = conexion.reg.GetValue(16).ToString();
+                    else
+                        txtGastosVarios.Text = "";
 
                     HFUpdateId.Value = conexion.reg.GetValue(13).ToString();
 
