@@ -5,7 +5,7 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
+    <div class="text-center"><img src="../Imagenes/Logo_emenic_2.png" alt="IMG" class="rounded mx-auto d-block"/></div>
     <!-- Breadcrumbs-->
           <ol class="breadcrumb">
             <li class="breadcrumb-item">
@@ -80,8 +80,7 @@
             </div>
           </div>
     <br />
-    <div>
-        <center><img src="../Imagenes/Logo_emenic_2.png" alt="IMG"/></center>
+    <div>        
         <br />
         <div class="row">
         <div class="col-xl-6 col-sm-6 mb-6">
