@@ -42,7 +42,7 @@
         <Top>0.29489cm</Top>
         <Left>3.31303cm</Left>
         <Height>0.9175cm</Height>
-        <Width>16.1484cm</Width>
+        <Width>14.19787cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -78,9 +78,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox22</rd:DefaultName>
         <Top>1.38878cm</Top>
-        <Left>3.34831cm</Left>
+        <Left>3.27775cm</Left>
         <Height>0.6cm</Height>
-        <Width>16.11312cm</Width>
+        <Width>14.23315cm</Width>
         <ZIndex>2</ZIndex>
         <Style>
           <Border>
@@ -146,9 +146,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox22</rd:DefaultName>
         <Top>2.16517cm</Top>
-        <Left>3.34831cm</Left>
+        <Left>3.27775cm</Left>
         <Height>0.70583cm</Height>
-        <Width>16.11312cm</Width>
+        <Width>14.23315cm</Width>
         <ZIndex>3</ZIndex>
         <Style>
           <Border>
@@ -164,19 +164,19 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>3.53187cm</Width>
+              <Width>2.90426cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>5.9925cm</Width>
+              <Width>5.25167cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.87583cm</Width>
+              <Width>3.71708cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.32021cm</Width>
+              <Width>2.89688cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.17009cm</Width>
+              <Width>2.47336cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -752,9 +752,9 @@
         </TablixRowHierarchy>
         <DataSetName>DSEmenic</DataSetName>
         <Top>3.62162cm</Top>
-        <Left>0.26766cm</Left>
+        <Left>0.37349cm</Left>
         <Height>1.8cm</Height>
-        <Width>19.8905cm</Width>
+        <Width>17.24324cm</Width>
         <ZIndex>4</ZIndex>
         <Style>
           <Border>
@@ -766,12 +766,12 @@
     <Height>2.39833in</Height>
     <Style />
   </Body>
-  <Width>8.07208in</Width>
+  <Width>7.05125in</Width>
   <Page>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>
-    <LeftMargin>2cm</LeftMargin>
-    <RightMargin>2cm</RightMargin>
+    <LeftMargin>1cm</LeftMargin>
+    <RightMargin>1cm</RightMargin>
     <TopMargin>2cm</TopMargin>
     <BottomMargin>2cm</BottomMargin>
     <ColumnSpacing>0.13cm</ColumnSpacing>
@@ -874,7 +874,7 @@ wRs1amSVm5YeIDj4JlxHc3EvggMQMq/MCBYai+uYUFQ6voX/xHdJNyYgjjrvIW00NphjAM3EfYMHD7b/
 wSdvLhRMBj1cyVHiW5QgQ0Qrxggl1itQgaCEzxLO/4Jkf9Uub7z6algdQ4F58UWJE/CtYvk0oXFhcdJzCSKkD/uB33hDECiO8DzR6+EzJnSYTXrOqFYNSTnheIlFtmn+5KOP5MgjjmC7CX00WLqcQQ8URBBoVnA6SoSiBLlCtMIQfJvofl7BaHm30C5Ktkz22WeeCatrgM2//y6p99wt8VEjJR5OpNSH0gYpiVVlRxUAjmiFsioQPjEQUqc6deIhElu9OhHWB6xX4Zys/hJr0j0dmWgJ6A6lzkqOEqEoQYEAO9x7w6hUY5WI2+QVzyujCQytdnjOlrrOmzdPPk8KGm3xrLRyx885W+JdOgeOv95vYY769JLUhRdJ7J130gnDD99+K1dedpns3rlz9LtRISUNkF/HXMR0is6JKvEpSlDoiLa8GQkMhLaxrR6StQxCc9ppp8lrxKfCCc8A7731lsy98EILPcQz/ry+C5OJ367F/Dr0nNKxSr41GSgRiBJsdSSbKj2VmGn8tVK0ApvJg9CEPUgJocFPIGwQv/18kjCYD6Tk9zCec4sSvXDJAhsd+ylBCYodaLWjLTdhVoncQYC8jUpeySHXBByjv6P3IGgI3L5KbI7qKDGZSrDdIFloQGOlSUp3KzHpD+I357gWRUbPl6AE2zXQAMkmUUbnSlCCEpSgBCUowTaC//u//wdV7uGPILp++AAAAABJRU5ErkJggg==</ImageData>
     </EmbeddedImage>
   </EmbeddedImages>
-  <Language>es-ES</Language>
+  <Language>es-SV</Language>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
   <rd:ReportID>35556851-52f1-4620-9ba4-a43139bb6ab3</rd:ReportID>
 </Report>
