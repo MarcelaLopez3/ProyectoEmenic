@@ -204,7 +204,7 @@ namespace ProyectoASPEmenic.Paginas.Servicios
         protected void btnGenerarContrato_Click(object sender, EventArgs e)
         {
             ReportViewer1.ProcessingMode = ProcessingMode.Local;
-            ReportViewer1.LocalReport.ReportPath = Server.MapPath("~/RContrato.rdlc");
+            ReportViewer1.LocalReport.ReportPath = Server.MapPath("~/Reportes/RContrato.rdlc");
             //Se utiliza el mismo reporte para manifiesto de carga
             DSEmenic ds = conexion.call_spGetContrato(IdServicio, "Contrato");
             ReportDataSource source = new ReportDataSource("DataSet1", ds.Tables[1]);
