@@ -128,5 +128,22 @@ namespace ProyectoASPEmenic
             CerrarConexion();
             return ds;
         }
+
+        //Función para llenar stored procedure de Ventas Mensuales de Emenic
+        public DSEmenic call_spGetVentasMensuales(int year,string dt)
+        {
+            MySqlDataAdapter da = new MySqlDataAdapter();
+            DSEmenic ds = new DSEmenic();
+            MySqlCommand cmd = new MySqlCommand();
+            IniciarConexion();
+            cmd.Connection = cnn;
+            cmd.CommandText = "sp_getVentasMensuales";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@Anio", year);
+            da.SelectCommand = cmd;
+            da.Fill(ds, dt);
+            CerrarConexion();
+            return ds;
+        }
     }
 }

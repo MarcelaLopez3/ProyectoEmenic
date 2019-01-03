@@ -106,6 +106,13 @@
             <span>Usuarios</span>
             </asp:HyperLink>
         </li>
+
+          <li class="nav-item ">
+            <asp:HyperLink NavigateUrl="~/Paginas/Reportes/Reportes.aspx" runat="server" CssClass="nav-link">
+            <i class="fas fa-file-invoice"></i>
+            <span>Informes</span>
+            </asp:HyperLink>
+        </li>
       </ul>
           
       <div id="content-wrapper">

@@ -7,7 +7,7 @@
         <Value>Logo_emenic_2</Value>
         <Sizing>FitProportional</Sizing>
         <Top>0.29489cm</Top>
-        <Left>0.26766cm</Left>
+        <Left>0.58516cm</Left>
         <Height>2.57611cm</Height>
         <Width>2.58676cm</Width>
         <Style>
@@ -40,9 +40,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox51</rd:DefaultName>
         <Top>0.29489cm</Top>
-        <Left>3.03081cm</Left>
+        <Left>3.31303cm</Left>
         <Height>0.9175cm</Height>
-        <Width>17.47132cm</Width>
+        <Width>16.1484cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -78,9 +78,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox22</rd:DefaultName>
         <Top>1.38878cm</Top>
-        <Left>3.03081cm</Left>
+        <Left>3.34831cm</Left>
         <Height>0.6cm</Height>
-        <Width>17.47132cm</Width>
+        <Width>16.11312cm</Width>
         <ZIndex>2</ZIndex>
         <Style>
           <Border>
@@ -146,9 +146,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox22</rd:DefaultName>
         <Top>2.16517cm</Top>
-        <Left>3.03081cm</Left>
+        <Left>3.34831cm</Left>
         <Height>0.70583cm</Height>
-        <Width>17.47132cm</Width>
+        <Width>16.11312cm</Width>
         <ZIndex>3</ZIndex>
         <Style>
           <Border>
@@ -176,7 +176,7 @@
               <Width>3.32021cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.51404cm</Width>
+              <Width>3.17009cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -387,6 +387,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -584,7 +585,7 @@
                               <Value>=Sum(Fields!Ganancias.Value)</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
-                                <Format>#,0.00;(#,0.00);'-'</Format>
+                                <Format>'$'#,0.00;('$'#,0.00);'-'</Format>
                                 <Color>White</Color>
                               </Style>
                             </TextRun>
@@ -605,6 +606,7 @@
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>2pt</PaddingBottom>
+                        <rd:FormatSymbolCulture>es-SV</rd:FormatSymbolCulture>
                       </Style>
                     </Textbox>
                   </CellContents>
@@ -753,7 +755,7 @@
         <Top>3.62162cm</Top>
         <Left>0.26766cm</Left>
         <Height>1.8cm</Height>
-        <Width>20.23446cm</Width>
+        <Width>19.8905cm</Width>
         <ZIndex>4</ZIndex>
         <Style>
           <Border>
@@ -762,10 +764,10 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>11.69in</Height>
+    <Height>2.39833in</Height>
     <Style />
   </Body>
-  <Width>8.27in</Width>
+  <Width>8.07208in</Width>
   <Page>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>
