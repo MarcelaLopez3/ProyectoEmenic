@@ -35,7 +35,7 @@
         </asp:View>
         <asp:View runat="server" ID="vVentas">
             <center>
-            <rsweb:ReportViewer ID="ReportViewer1" runat="server" Width="705px" style="margin-right: 15px">
+            <rsweb:ReportViewer ID="ReportViewer1" runat="server" Width="805px" style="margin-right: 15px">
             </rsweb:ReportViewer>
                 </center>
         </asp:View>

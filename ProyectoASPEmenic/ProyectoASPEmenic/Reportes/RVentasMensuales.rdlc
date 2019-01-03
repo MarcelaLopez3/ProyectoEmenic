@@ -367,7 +367,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=MonthName(Month(Fields!mm.Value))</Value>
+                              <Value>=UCase(MonthName(Fields!mm.Value))</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -387,7 +387,6 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -801,7 +800,7 @@
         </Field>
         <Field Name="mm">
           <DataField>mm</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
+          <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
         <Field Name="Ganancias">
           <DataField>Ganancias</DataField>
@@ -875,6 +874,7 @@ wRs1amSVm5YeIDj4JlxHc3EvggMQMq/MCBYai+uYUFQ6voX/xHdJNyYgjjrvIW00NphjAM3EfYMHD7b/
 wSdvLhRMBj1cyVHiW5QgQ0Qrxggl1itQgaCEzxLO/4Jkf9Uub7z6algdQ4F58UWJE/CtYvk0oXFhcdJzCSKkD/uB33hDECiO8DzR6+EzJnSYTXrOqFYNSTnheIlFtmn+5KOP5MgjjmC7CX00WLqcQQ8URBBoVnA6SoSiBLlCtMIQfJvofl7BaHm30C5Ktkz22WeeCatrgM2//y6p99wt8VEjJR5OpNSH0gYpiVVlRxUAjmiFsioQPjEQUqc6deIhElu9OhHWB6xX4Zys/hJr0j0dmWgJ6A6lzkqOEqEoQYEAO9x7w6hUY5WI2+QVzyujCQytdnjOlrrOmzdPPk8KGm3xrLRyx885W+JdOgeOv95vYY769JLUhRdJ7J130gnDD99+K1dedpns3rlz9LtRISUNkF/HXMR0is6JKvEpSlDoiLa8GQkMhLaxrR6StQxCc9ppp8lrxKfCCc8A7731lsy98EILPcQz/ry+C5OJ367F/Dr0nNKxSr41GSgRiBJsdSSbKj2VmGn8tVK0ApvJg9CEPUgJocFPIGwQv/18kjCYD6Tk9zCec4sSvXDJAhsd+ylBCYodaLWjLTdhVoncQYC8jUpeySHXBByjv6P3IGgI3L5KbI7qKDGZSrDdIFloQGOlSUp3KzHpD+I357gWRUbPl6AE2zXQAMkmUUbnSlCCEpSgBCUowTaC//u//wdV7uGPILp++AAAAABJRU5ErkJggg==</ImageData>
     </EmbeddedImage>
   </EmbeddedImages>
+  <Language>es-ES</Language>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
   <rd:ReportID>35556851-52f1-4620-9ba4-a43139bb6ab3</rd:ReportID>
 </Report>

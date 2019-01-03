@@ -1548,7 +1548,7 @@ namespace ProyectoASPEmenic {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public VentasMensualesRow AddVentasMensualesRow(string AnioReporte, string mm, decimal Ganancias, decimal Combustible, decimal Pago, decimal Gastos) {
+            public VentasMensualesRow AddVentasMensualesRow(string AnioReporte, int mm, decimal Ganancias, decimal Combustible, decimal Pago, decimal Gastos) {
                 VentasMensualesRow rowVentasMensualesRow = ((VentasMensualesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         AnioReporte,
@@ -1592,7 +1592,7 @@ namespace ProyectoASPEmenic {
             private void InitClass() {
                 this.columnAnioReporte = new global::System.Data.DataColumn("AnioReporte", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAnioReporte);
-                this.columnmm = new global::System.Data.DataColumn("mm", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnmm = new global::System.Data.DataColumn("mm", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnmm);
                 this.columnGanancias = new global::System.Data.DataColumn("Ganancias", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnGanancias);
@@ -2938,10 +2938,10 @@ namespace ProyectoASPEmenic {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string mm {
+            public int mm {
                 get {
                     try {
-                        return ((string)(this[this.tableVentasMensuales.mmColumn]));
+                        return ((int)(this[this.tableVentasMensuales.mmColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'mm\' de la tabla \'VentasMensuales\' es DBNull.", e);
