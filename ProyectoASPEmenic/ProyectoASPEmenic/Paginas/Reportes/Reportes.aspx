@@ -20,10 +20,10 @@
     <div class="container">
           <div class="form-row">
              <div class="col">
-                <asp:Button runat="server" type="button" ID="btnGenerarRegistros" Text="Reporte Registro de Actividades" CssClass="btn btn-info btn-block" style="color:white; background-color:red; border-color:red; width:auto" ></asp:Button>
+                <asp:Button runat="server" type="button" ID="btnGenerarRegistros" Text="Registro de Actividades" CssClass="btn btn-info btn-block" style="color:white; background-color:red; border-color:red; width:auto" OnClick="btnGenerarRegistros_Click" ></asp:Button>
                </div>
               <div class="col">
-                 <asp:Button runat="server" type="button" ID="btnGenerarVentas" Text="Reporte Ventas Mensuales" CssClass="btn btn-info btn-block" style="color:white; background-color:red; border-color:red; width:auto" OnClick="btnGenerarVentas_Click" ></asp:Button>
+                 <asp:Button runat="server" type="button" ID="btnGenerarVentas" Text="Reporte de Ventas Mensuales" CssClass="btn btn-info btn-block" style="color:white; background-color:red; border-color:red; width:auto" OnClick="btnGenerarVentas_Click" ></asp:Button>
                </div>                
               </div>
            </div>
@@ -31,11 +31,14 @@
     <br />     
     <asp:MultiView runat="server" ID="mvReport">
         <asp:View runat="server" ID="vRegistro">
-            
+            <center>
+                <rsweb:ReportViewer ID="ReportViewer2" runat="server" Width="1055px" style="margin-right: 15px">
+            </rsweb:ReportViewer>
+            </center>
         </asp:View>
         <asp:View runat="server" ID="vVentas">
             <center>
-            <rsweb:ReportViewer ID="ReportViewer1" runat="server" Width="805px" style="margin-right: 15px">
+            <rsweb:ReportViewer ID="ReportViewer1" runat="server" Width="705px" style="margin-right: 15px">
             </rsweb:ReportViewer>
                 </center>
         </asp:View>

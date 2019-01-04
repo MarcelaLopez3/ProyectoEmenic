@@ -554,6 +554,7 @@
   <ItemGroup>
     <EmbeddedResource Include="Reportes\RContrato.rdlc" />
     <EmbeddedResource Include="Reportes\ReportCP.rdlc" />
+    <EmbeddedResource Include="Reportes\RRegistroActividades.rdlc" />
     <EmbeddedResource Include="Reportes\RVentasMensuales.rdlc" />
   </ItemGroup>
   <PropertyGroup>
