@@ -37,5 +37,17 @@ namespace ProyectoASPEmenic.Paginas.Reportes
             ReportViewer1.LocalReport.Refresh();
             mvReport.SetActiveView(vVentas);
         }
+
+        protected void btnGenerarRegistros_Click(object sender, EventArgs e)
+        {
+            ReportViewer2.ProcessingMode = ProcessingMode.Local;
+            ReportViewer2.LocalReport.ReportPath = Server.MapPath("~/Reportes/RRegistroActividades.rdlc");
+            DSEmenic ds = cn.call_spGetRegistroActividades(int.Parse(ddlYear.SelectedValue), "RegistroActividades");
+            ReportDataSource source = new ReportDataSource("DataSet1", ds.Tables[3]);
+            ReportViewer2.LocalReport.DataSources.Clear();
+            ReportViewer2.LocalReport.DataSources.Add(source);
+            ReportViewer2.LocalReport.Refresh();
+            mvReport.SetActiveView(vRegistro);
+        }
     }
 }

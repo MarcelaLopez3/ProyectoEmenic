@@ -76,6 +76,15 @@ namespace ProyectoASPEmenic.Paginas.Reportes {
         protected global::System.Web.UI.WebControls.View vRegistro;
         
         /// <summary>
+        /// Control ReportViewer2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::Microsoft.Reporting.WebForms.ReportViewer ReportViewer2;
+        
+        /// <summary>
         /// Control vVentas.
         /// </summary>
         /// <remarks>

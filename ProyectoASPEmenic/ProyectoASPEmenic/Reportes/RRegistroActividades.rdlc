@@ -932,7 +932,6 @@
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>2pt</PaddingBottom>
-                        <rd:FormatSymbolCulture>es-SV</rd:FormatSymbolCulture>
                       </Style>
                     </Textbox>
                   </CellContents>
@@ -946,7 +945,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=IIf(IsNumeric(Fields!Estadia.Value),FormatCurrency(Fields!Estadia.Value,"en-US", 2),Fields!Estadia.Value)</Value>
+                              <Value>=IIf(IsNumeric(Fields!Estadia.Value),FormatCurrency(iif(IsNumeric(Fields!Estadia.Value),Fields!Estadia.Value,0),2),Fields!Estadia.Value)</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -971,15 +970,17 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox34">
+                    <Textbox Name="PagoGuardia">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=IIf(IsNumeric(Fields!PagoGuardia.Value),FormatCurrency(Fields!PagoGuardia.Value,"en-US", 2),Fields!PagoGuardia.Value)</Value>
-                              <Style />
+                              <Value>=IIf(IsNumeric(Fields!PagoGuardia.Value),FormatCurrency(iif(IsNumeric(Fields!PagoGuardia.Value),Fields!PagoGuardia.Value,0),2),Fields!PagoGuardia.Value)</Value>
+                              <Style>
+                                <Format>'$'#,0.00;('$'#,0.00);'-'</Format>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -987,7 +988,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox34</rd:DefaultName>
+                      <rd:DefaultName>PagoGuardia</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -997,6 +998,7 @@
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>2pt</PaddingBottom>
+                        <rd:FormatSymbolCulture>es-SV</rd:FormatSymbolCulture>
                       </Style>
                     </Textbox>
                   </CellContents>
@@ -1010,7 +1012,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=IIf(IsNumeric(Fields!PagoMotorista.Value),FormatCurrency(Fields!PagoMotorista.Value,"en-US", 2),Fields!PagoMotorista.Value)</Value>
+                              <Value>=IIf(IsNumeric(Fields!PagoMotorista.Value),FormatCurrency(iif(IsNumeric(Fields!PagoMotorista.Value),Fields!PagoMotorista.Value,0),2),Fields!PagoMotorista.Value)</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -1042,7 +1044,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=IIf(IsNumeric(Fields!ViaticosMotorista.Value),FormatCurrency(Fields!ViaticosMotorista.Value,"en-US", 2),Fields!ViaticosMotorista.Value)</Value>
+                              <Value>=IIf(IsNumeric(Fields!ViaticosMotorista.Value),FormatCurrency(iif(IsNumeric(Fields!ViaticosMotorista.Value),Fields!ViaticosMotorista.Value,0),2),Fields!ViaticosMotorista.Value)</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -1063,6 +1065,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -1317,10 +1320,10 @@
     </PageHeader>
     <PageHeight>21cm</PageHeight>
     <PageWidth>29.7cm</PageWidth>
-    <LeftMargin>0cm</LeftMargin>
-    <RightMargin>0cm</RightMargin>
-    <TopMargin>0cm</TopMargin>
-    <BottomMargin>0cm</BottomMargin>
+    <LeftMargin>2cm</LeftMargin>
+    <RightMargin>2cm</RightMargin>
+    <TopMargin>1cm</TopMargin>
+    <BottomMargin>1cm</BottomMargin>
     <ColumnSpacing>0.13cm</ColumnSpacing>
     <Style />
   </Page>

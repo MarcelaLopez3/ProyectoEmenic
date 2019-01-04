@@ -145,5 +145,23 @@ namespace ProyectoASPEmenic
             CerrarConexion();
             return ds;
         }
+
+        //Función para obtener datos de bitácora de Emenic
+        public DSEmenic call_spGetRegistroActividades(int year, string dt)
+        {
+            MySqlDataAdapter da = new MySqlDataAdapter();
+            DSEmenic ds = new DSEmenic();
+            MySqlCommand cmd = new MySqlCommand();
+            IniciarConexion();
+            EnviarQuery("SET lc_time_names = 'es_ES'");
+            cmd.Connection = cnn;
+            cmd.CommandText = "sp_getRegistroActividades";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@Anio", year);
+            da.SelectCommand = cmd;
+            da.Fill(ds, dt);
+            CerrarConexion();
+            return ds;
+        }
     }
 }
