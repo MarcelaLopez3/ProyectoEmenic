@@ -1800,6 +1800,12 @@ namespace ProyectoASPEmenic {
             
             private global::System.Data.DataColumn columnGalones;
             
+            private global::System.Data.DataColumn columnAnio;
+            
+            private global::System.Data.DataColumn columnEstadia;
+            
+            private global::System.Data.DataColumn columnPagoGuardia;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public RegistroActividadesDataTable() {
@@ -1955,6 +1961,30 @@ namespace ProyectoASPEmenic {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn AnioColumn {
+                get {
+                    return this.columnAnio;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn EstadiaColumn {
+                get {
+                    return this.columnEstadia;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn PagoGuardiaColumn {
+                get {
+                    return this.columnPagoGuardia;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1990,7 +2020,25 @@ namespace ProyectoASPEmenic {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public RegistroActividadesRow AddRegistroActividadesRow(int Id, string Salida, string Destino, string Servicio, string Retorno, string Fecha, string PeriodoCobro, string FechaVencimiento, string Cabezal, string Furgon, string Motorista, decimal PagoEmpresa, string PagoMotorista, string ViaticosMotorista, string Galones) {
+            public RegistroActividadesRow AddRegistroActividadesRow(
+                        int Id, 
+                        string Salida, 
+                        string Destino, 
+                        string Servicio, 
+                        string Retorno, 
+                        string Fecha, 
+                        string PeriodoCobro, 
+                        string FechaVencimiento, 
+                        string Cabezal, 
+                        string Furgon, 
+                        string Motorista, 
+                        decimal PagoEmpresa, 
+                        string PagoMotorista, 
+                        string ViaticosMotorista, 
+                        string Galones, 
+                        string Anio, 
+                        string Estadia, 
+                        string PagoGuardia) {
                 RegistroActividadesRow rowRegistroActividadesRow = ((RegistroActividadesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Id,
@@ -2007,7 +2055,10 @@ namespace ProyectoASPEmenic {
                         PagoEmpresa,
                         PagoMotorista,
                         ViaticosMotorista,
-                        Galones};
+                        Galones,
+                        Anio,
+                        Estadia,
+                        PagoGuardia};
                 rowRegistroActividadesRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowRegistroActividadesRow);
                 return rowRegistroActividadesRow;
@@ -2045,6 +2096,9 @@ namespace ProyectoASPEmenic {
                 this.columnPagoMotorista = base.Columns["PagoMotorista"];
                 this.columnViaticosMotorista = base.Columns["ViaticosMotorista"];
                 this.columnGalones = base.Columns["Galones"];
+                this.columnAnio = base.Columns["Anio"];
+                this.columnEstadia = base.Columns["Estadia"];
+                this.columnPagoGuardia = base.Columns["PagoGuardia"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2080,6 +2134,12 @@ namespace ProyectoASPEmenic {
                 base.Columns.Add(this.columnViaticosMotorista);
                 this.columnGalones = new global::System.Data.DataColumn("Galones", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnGalones);
+                this.columnAnio = new global::System.Data.DataColumn("Anio", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAnio);
+                this.columnEstadia = new global::System.Data.DataColumn("Estadia", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEstadia);
+                this.columnPagoGuardia = new global::System.Data.DataColumn("PagoGuardia", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPagoGuardia);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3828,6 +3888,55 @@ namespace ProyectoASPEmenic {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Anio {
+                get {
+                    try {
+                        return ((string)(this[this.tableRegistroActividades.AnioColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Anio\' de la tabla \'RegistroActividades\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableRegistroActividades.AnioColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Estadia {
+                get {
+                    try {
+                        return ((string)(this[this.tableRegistroActividades.EstadiaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Estadia\' de la tabla \'RegistroActividades\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableRegistroActividades.EstadiaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string PagoGuardia {
+                get {
+                    try {
+                        return ((string)(this[this.tableRegistroActividades.PagoGuardiaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'PagoGuardia\' de la tabla \'RegistroActividades\' es DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tableRegistroActividades.PagoGuardiaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsIdNull() {
                 return this.IsNull(this.tableRegistroActividades.IdColumn);
             }
@@ -4004,6 +4113,42 @@ namespace ProyectoASPEmenic {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetGalonesNull() {
                 this[this.tableRegistroActividades.GalonesColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsAnioNull() {
+                return this.IsNull(this.tableRegistroActividades.AnioColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetAnioNull() {
+                this[this.tableRegistroActividades.AnioColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsEstadiaNull() {
+                return this.IsNull(this.tableRegistroActividades.EstadiaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetEstadiaNull() {
+                this[this.tableRegistroActividades.EstadiaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsPagoGuardiaNull() {
+                return this.IsNull(this.tableRegistroActividades.PagoGuardiaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetPagoGuardiaNull() {
+                this[this.tableRegistroActividades.PagoGuardiaColumn] = global::System.Convert.DBNull;
             }
         }
         

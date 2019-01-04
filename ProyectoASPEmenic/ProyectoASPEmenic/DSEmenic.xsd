@@ -95,6 +95,9 @@
               <xs:element name="PagoMotorista" msprop:Generator_ColumnVarNameInTable="columnPagoMotorista" msprop:Generator_ColumnPropNameInRow="PagoMotorista" msprop:Generator_ColumnPropNameInTable="PagoMotoristaColumn" msprop:Generator_UserColumnName="PagoMotorista" type="xs:string" minOccurs="0" />
               <xs:element name="ViaticosMotorista" msprop:Generator_ColumnVarNameInTable="columnViaticosMotorista" msprop:Generator_ColumnPropNameInRow="ViaticosMotorista" msprop:Generator_ColumnPropNameInTable="ViaticosMotoristaColumn" msprop:Generator_UserColumnName="ViaticosMotorista" type="xs:string" minOccurs="0" />
               <xs:element name="Galones" msprop:Generator_ColumnVarNameInTable="columnGalones" msprop:Generator_ColumnPropNameInRow="Galones" msprop:Generator_ColumnPropNameInTable="GalonesColumn" msprop:Generator_UserColumnName="Galones" type="xs:string" minOccurs="0" />
+              <xs:element name="Anio" msprop:Generator_ColumnVarNameInTable="columnAnio" msprop:Generator_ColumnPropNameInRow="Anio" msprop:Generator_ColumnPropNameInTable="AnioColumn" msprop:Generator_UserColumnName="Anio" type="xs:string" minOccurs="0" />
+              <xs:element name="Estadia" msprop:Generator_ColumnVarNameInTable="columnEstadia" msprop:Generator_ColumnPropNameInRow="Estadia" msprop:Generator_ColumnPropNameInTable="EstadiaColumn" msprop:Generator_UserColumnName="Estadia" type="xs:string" minOccurs="0" />
+              <xs:element name="PagoGuardia" msprop:Generator_ColumnVarNameInTable="columnPagoGuardia" msprop:Generator_ColumnPropNameInRow="PagoGuardia" msprop:Generator_ColumnPropNameInTable="PagoGuardiaColumn" msprop:Generator_UserColumnName="PagoGuardia" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
