@@ -54,7 +54,7 @@
                   </div>
                   <div class="mr-5"><b><asp:Label ID="lblServicios" runat="server"></asp:Label></b> Servicios Contratados</div>
                 </div>
-                <a class="card-footer text-white clearfix small z-1" href="#">
+                <a class="card-footer text-white clearfix small z-1" href="Reportes/Reportes.aspx">
                   <span class="float-left">Ver Listado</span>
                   <span class="float-right">
                     <i class="fas fa-angle-right"></i>
@@ -68,7 +68,7 @@
                   <div class="card-body-icon">
                     <i class="fas fa-users"></i>
                   </div>
-                  <div class="mr-5"><b><asp:Label ID="lblUsuarios" runat="server"></asp:Label></b> Usuarios</div>
+                  <div class="mr-5"><b><asp:Label ID="lblUsuarios" runat="server"></asp:Label></b> Usuarios Activos</div>
                 </div>
                 <a class="card-footer text-white clearfix small z-1" href="Usuarios/ListadoUsuarios.aspx">
                   <span class="float-left">Ver Listado</span>
