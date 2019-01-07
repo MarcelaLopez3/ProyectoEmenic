@@ -81,8 +81,18 @@
           </div>
     <br />
     <div>        
-        <br />
-        <div class="row">
+        <div class="col-lg-12">
+              <div class="card mb-3">
+                <div class="card-header">
+                  <i class="fas fa-chart-bar"></i>
+                  Ventas, costos y utilidades anuales</div>
+                <div class="card-body">
+                  <canvas id="myBarChart" width="100%" height="50"></canvas>
+                </div>
+                <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+              </div>
+            </div>
+        <%--<div class="row">
         <div class="col-xl-6 col-sm-6 mb-6">
               <div class="card text-white bg-danger o-hidden h-100">
                 <div class="card-body">
@@ -120,7 +130,70 @@
                 </div>
               </div>
             </div>
-        </div>
+        </div>--%>
         <br />   
     </div>
+    <script src="../vendor/chart/Chart.min.js"></script>
+    <script type="text/javascript" >
+        // Set new default font family and font color to mimic Bootstrap's default styling
+        Chart.defaults.global.defaultFontFamily = '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
+        Chart.defaults.global.defaultFontColor = '#292b2c';
+
+        // Bar Chart Example
+        var ctx = document.getElementById("myBarChart");
+        var myLineChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"],
+                datasets: [{
+                    label: "Ventas",
+                    backgroundColor: "rgba(46, 134, 193)",
+                    borderColor: "rgba(46, 134, 193)",
+                    data: [4215, 5312, 6251, 7841, 9821, 14984,352,128,7845,12563,1475,360],
+                }, {
+                    label: "Costos",
+                    backgroundColor: "rgba(203, 67, 53)",
+                    borderColor: "rgba(203, 67, 53)",
+                    data: [4215, 5312, 6251, 7841, 9821, 14984, 352, 128, 7845, 12563, 1475, 360],
+                },
+                {
+                    label: "Utilidad",
+                    backgroundColor: "rgba(46, 204, 113)",
+                    borderColor: "rgba(46, 204, 113)",
+                    data: [4215, 5312, 6251, 7841, 9821, 14984, 352, 128, 7845, 12563, 1475, 360],
+                }
+                ],
+
+            },
+            options: {
+                scales: {
+                    xAxes: [{
+                        time: {
+                            unit: 'month'
+                        },
+                        gridLines: {
+                            display: false
+                        },
+                        ticks: {
+                            maxTicksLimit: 12
+                        }
+                    }],
+                    yAxes: [{
+                        ticks: {
+                            min: 0,
+                            max: 15000,
+                            maxTicksLimit: 5
+                        },
+                        gridLines: {
+                            display: true
+                        }
+                    }],
+                },
+                legend: {
+                    display: false
+                }
+            }
+        });
+        
+        </script>
 </asp:Content>
