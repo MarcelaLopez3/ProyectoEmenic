@@ -88,7 +88,9 @@
                   Ventas, costos y utilidades anuales
                     <div class="form-inline float-right">
                     <asp:Label ID="lblYear" runat="server" Text="Año: " Font-Bold="true"></asp:Label>&nbsp;&nbsp;                        
-                        <asp:DropDownList ID="ddlYear" runat="server" CssClass="form-control" Width="100px"></asp:DropDownList>
+                        <asp:DropDownList ID="ddlYear" runat="server" CssClass="form-control" Width="100px">
+
+                        </asp:DropDownList>
                         </div>
                 </div>                       
                 <div class="card-body">
@@ -143,190 +145,112 @@
  
     <script src="../vendor/chart/Chart.min.js"></script>
     <script type="text/javascript" >
-        var initialLoad = true;
         $(document).ready(function () {
-            initialLoad = false;
-            //Dropdownlist Selectedchange event
-            if (!initialLoad) {
-                $.ajax({
-                    type: 'POST',
-                    url: 'Dashboard.aspx/GraphBar', // llamando al servicio web para obtener datos
-                    contentType: "application/json; charset=utf-8",
-                    dataType: 'json',
-                    data: { /*year: $("#ddlYear").val()*/ },   //pasando el parametro de unidad
+                      
+            $(window).load(function () {
+                Senddata = { "year": $("#ContentPlaceHolder1_ddlYear :selected").val() };
+                showGraph(Senddata);
+            });
 
-                    success: function (response) {                        
-                        var xmlDoc = $.parseXML(response.d);
-                        var xml = $(xmlDoc);
-                        var datas = xml.find("Data");
-                        var d1 = [];
-                        var d2 = [];
-                        var d3 = [];
-                        var count = 0;
-                        $(datas).each(function () {
-                            d1.push([$(this).find("Ventas").text()]);
-                            d2.push([$(this).find("Costos").text()]);
-                            d3.push([$(this).find("Utilidad").text()]);
-                            count++;                            
-                        });
-                        
-                        // Set new default font family and font color to mimic Bootstrap's default styling
-                        Chart.defaults.global.defaultFontFamily = '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
-                        Chart.defaults.global.defaultFontColor = '#292b2c';
 
-                        // Bar Chart Example
-                        var ctx = document.getElementById("myBarChart");
-                        var myLineChart = new Chart(ctx, {
-                            type: 'bar',
-                            data: {
-                                labels: ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"],
-                                datasets: [{
-                                    label: "Ventas",
-                                    backgroundColor: "rgba(46, 134, 193)",
-                                    borderColor: "rgba(46, 134, 193)",
-                                    data: d1,
-                                }, {
-                                    label: "Costos",
-                                    backgroundColor: "rgba(203, 67, 53)",
-                                    borderColor: "rgba(203, 67, 53)",
-                                    data: d2,
-                                },
-                                {
-                                    label: "Utilidad",
-                                    backgroundColor: "rgba(46, 204, 113)",
-                                    borderColor: "rgba(46, 204, 113)",
-                                    data: d3,
-                                }
-                                ],
-
-                            },
-                            options: {
-                                scales: {
-                                    xAxes: [{
-                                        time: {
-                                            unit: 'month'
-                                        },
-                                        gridLines: {
-                                            display: false
-                                        },
-                                        ticks: {
-                                            maxTicksLimit: 12
-                                        }
-                                    }],
-                                    yAxes: [{
-                                        ticks: {
-                                            min: 0,
-                                            max: 15000,
-                                            maxTicksLimit: 5
-                                        },
-                                        gridLines: {
-                                            display: true
-                                        }
-                                    }],
-                                },
-                                legend: {
-                                    display: false
-                                }
-                            }
-                        });
-                    },
-                    error: function (ex) {
-                        alert('Failed to retrieve states.' + ex);
-                    }
-                });
-
-            }
-
-            $("#ddlYear").change(function () {
-                $.ajax({
-                    type: 'POST',
-                    url: 'Dashboard.aspx/GraphBar', // llamando al servicio web para obtener daros
-                    dataType: 'json',
-                    data: { year: $("#ddlYear").val() },   //pasando el parametro de unidad
-
-                    success: function (response) {
-                        var xmlDoc = $.parseXML(response.d);
-                        var xml = $(xmlDoc);
-                        var datas = xml.find("Data");
-                        var d1 = [];
-                        var d2 = [];
-                        var d3 = [];
-                        var count = 0;
-                        $(datas).each(function () {
-                            d1.push([count, $(this).find("Ventas").text()]);
-                            d2.push([count, $(this).find("Costos").text()]);
-                            d3.push([count, $(this).find("Utilidad").text()]);
-                            count++;
-                        });
-                        // Set new default font family and font color to mimic Bootstrap's default styling
-                        Chart.defaults.global.defaultFontFamily = '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
-                        Chart.defaults.global.defaultFontColor = '#292b2c';
-
-                        // Bar Chart Example
-                        var ctx = document.getElementById("myBarChart");
-                        var myLineChart = new Chart(ctx, {
-                            type: 'bar',
-                            data: {
-                                labels: ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"],
-                                datasets: [{
-                                    label: "Ventas",
-                                    backgroundColor: "rgba(46, 134, 193)",
-                                    borderColor: "rgba(46, 134, 193)",
-                                    data: d1,
-                                }, {
-                                    label: "Costos",
-                                    backgroundColor: "rgba(203, 67, 53)",
-                                    borderColor: "rgba(203, 67, 53)",
-                                    data: d2,
-                                },
-                                {
-                                    label: "Utilidad",
-                                    backgroundColor: "rgba(46, 204, 113)",
-                                    borderColor: "rgba(46, 204, 113)",
-                                    data: d3,
-                                }
-                                ],
-
-                            },
-                            options: {
-                                scales: {
-                                    xAxes: [{
-                                        time: {
-                                            unit: 'month'
-                                        },
-                                        gridLines: {
-                                            display: false
-                                        },
-                                        ticks: {
-                                            maxTicksLimit: 12
-                                        }
-                                    }],
-                                    yAxes: [{
-                                        ticks: {
-                                            min: 0,
-                                            max: 15000,
-                                            maxTicksLimit: 5
-                                        },
-                                        gridLines: {
-                                            display: true
-                                        }
-                                    }],
-                                },
-                                legend: {
-                                    display: false
-                                }
-                            }
-                        });
-                    },
-                    error: function (ex) {
-                        alert('Failed to retrieve states.' + ex);
-                    }
-                });
-                return false;
-            })
+            $("#ContentPlaceHolder1_ddlYear").change(function () {
+                Senddata = { "year": $(this).val() };
+                showGraph(Senddata);
+            });
         }
 
         );
+
+        function showGraph(Senddata) {
+            $.ajax({
+                type: 'POST',
+                url: 'Dashboard.aspx/GraphBar', // llamando al servicio web para obtener datos
+                contentType: "application/json; charset=utf-8",
+                dataType: 'json',
+                data: JSON.stringify(Senddata),   //pasando el parametro de unidad                  
+
+                success: function (response) {
+                    var xmlDoc = $.parseXML(response.d);
+                    var xml = $(xmlDoc);
+                    var datas = xml.find("Data");
+                    var d1 = [];
+                    var d2 = [];
+                    var d3 = [];
+                    var count = 0;
+                    $(datas).each(function () {
+                        d1.push([$(this).find("Ventas").text()]);
+                        d2.push([$(this).find("Costos").text()]);
+                        d3.push([$(this).find("Utilidad").text()]);
+                        count++;
+                    });
+
+                    // Set new default font family and font color to mimic Bootstrap's default styling
+                    Chart.defaults.global.defaultFontFamily = '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
+                    Chart.defaults.global.defaultFontColor = '#292b2c';
+
+                    // Bar Chart Example
+                    var ctx = document.getElementById("myBarChart");
+                    var myLineChart = new Chart(ctx, {
+                        type: 'bar',
+                        data: {
+                            labels: ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"],
+                            datasets: [{
+                                label: "Ventas",
+                                backgroundColor: "rgba(46, 134, 193)",
+                                borderColor: "rgba(46, 134, 193)",
+                                data: d1,
+                            }, {
+                                label: "Costos",
+                                backgroundColor: "rgba(203, 67, 53)",
+                                borderColor: "rgba(203, 67, 53)",
+                                data: d2,
+                            },
+                            {
+                                label: "Utilidad",
+                                backgroundColor: "rgba(46, 204, 113)",
+                                borderColor: "rgba(46, 204, 113)",
+                                data: d3,
+                            }
+                            ],
+
+                        },
+                        options: {
+                            scales: {
+                                xAxes: [{
+                                    time: {
+                                        unit: 'month'
+                                    },
+                                    gridLines: {
+                                        display: false
+                                    },
+                                    ticks: {
+                                        maxTicksLimit: 12
+                                    }
+                                }],
+                                yAxes: [{
+                                    ticks: {
+                                        min: 0,
+                                        max: 15000,
+                                        maxTicksLimit: 5
+                                    },
+                                    gridLines: {
+                                        display: true
+                                    }
+                                }],
+                            },
+                            legend: {
+                                display: false
+                            }
+                            
+                        }
+                    }); 
+                } ,
+                error: function (ex) {
+                    alert('No hay registro de ventas')
+                    console.log(JSON.stringify(ex));
+                }
+            });
+        }
         
         </script>
 </asp:Content>

@@ -17,7 +17,7 @@ namespace ProyectoASPEmenic.Paginas
         protected void Page_Load(object sender, EventArgs e)
         {
             if(!IsPostBack)
-            {
+            {                
                 loadCards();
                 loadYears();
             }
@@ -71,9 +71,8 @@ namespace ProyectoASPEmenic.Paginas
 
         [WebMethod]
         [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
-        public static string GraphBar()
+        public static string GraphBar(string year)
         {
-            string year = "2018";
             DataTable dt = new DataTable("Data");
             Conexion cnn = new Conexion();
             //Agregar columnas al datatable
