@@ -60,7 +60,9 @@ namespace ProyectoASPEmenic.Paginas
         //Función para cargar los años de ventas
         private void loadYears()
         {
-            string query = "SELECT year(serviciocontratado.FechaVencimiento) as year from serviciocontratado GROUP by year(serviciocontratado.FechaVencimiento)";
+            string query = "SELECT year(serviciocontratado.FechaVencimiento)"+
+                " as year from serviciocontratado GROUP by year(serviciocontratado.FechaVencimiento) "+
+                "order by year(serviciocontratado.FechaVencimiento) desc";
             cn.IniciarConexion();
             ddlYear.DataSource = cn.llena(query);
             cn.CerrarConexion();
@@ -90,7 +92,7 @@ namespace ProyectoASPEmenic.Paginas
                 " AND sc.FechaVencimiento < concat(" + year + ",'-01-01') + INTERVAL ( i.mm + 0 ) MONTH group by i.mm";
             cnn.IniciarConexion();
             cnn.RecibeQuery(query);
-            while(cnn.reg.Read())
+            while (cnn.reg.Read())
             {
                 //Pasar datos al datatable
                 dt.Rows.Add(cnn.reg.GetValue(1), cnn.reg.GetValue(2), cnn.reg.GetValue(3));
@@ -98,6 +100,41 @@ namespace ProyectoASPEmenic.Paginas
             cnn.CerrarConexion();
             DataSet ds = new DataSet();
             ds.Tables.Add(dt);
+
+            //Get max and min values
+            double maxVentas = (double)dt.Compute("MAX(Ventas)", "");
+            double minVentas = (double)dt.Compute("MIN(Ventas)", "");
+            double maxCostos = (double)dt.Compute("MAX(Costos)", "");
+            double minCostos = (double)dt.Compute("MIN(Costos)", "");
+            double maxUtilidad = (double)dt.Compute("MAX(Utilidad)", "");
+            double minUtilidad = (double)dt.Compute("MIN(Utilidad)", "");
+
+            //Variables de máximo y mínimo
+            double max = 0, min = 0;
+            if (maxVentas > maxCostos)
+            {
+                max = maxVentas;
+                min = maxCostos;
+            }
+            else
+            {
+                max = maxCostos;
+                min = maxVentas;
+            }
+            if(maxUtilidad > max)
+            {
+                max = maxUtilidad;
+            }
+            if(minUtilidad < min)
+            {
+                min = minUtilidad;
+            }
+            DataTable dtm = new DataTable("MaxMin");
+            dtm.Columns.Add("Max", typeof(double));
+            dtm.Columns.Add("Min", typeof(double));
+            dtm.Rows.Add(max, min);
+            ds.Tables.Add(dtm);
+
             return ds.GetXml();
         }
     }
