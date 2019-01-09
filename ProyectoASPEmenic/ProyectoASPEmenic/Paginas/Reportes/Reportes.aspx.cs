@@ -16,7 +16,9 @@ namespace ProyectoASPEmenic.Paginas.Reportes
         {
             if(!IsPostBack)
             {
-                string query = "SELECT year(serviciocontratado.FechaVencimiento) as year from serviciocontratado GROUP by year(serviciocontratado.FechaVencimiento)";
+                string query = "SELECT year(serviciocontratado.FechaVencimiento)" +
+                " as year from serviciocontratado GROUP by year(serviciocontratado.FechaVencimiento) " +
+                "order by year(serviciocontratado.FechaVencimiento) desc";
                 cn.IniciarConexion();
                 ddlYear.DataSource = cn.llena(query);
                 cn.CerrarConexion();

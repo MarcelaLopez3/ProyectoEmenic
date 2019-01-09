@@ -141,8 +141,12 @@
         <br />   
     </div>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <!-- Core plugin JavaScript-->    
+     <script src="../js/jquery-2.2.3.min.js"></script>
+    <script src="../js/sb-admin.min.js"></script>
+    <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- Core plugin JavaScript-->
- 
+    <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
     <script src="../vendor/chart/Chart.min.js"></script>
     <script type="text/javascript" >
         $(document).ready(function () {
@@ -183,7 +187,14 @@
                         d3.push([$(this).find("Utilidad").text()]);
                         count++;
                     });
-
+                    var data2 = xml.find("MaxMin");
+                    var maxValue = 0;
+                    var minValue = 0;
+                    $(data2).each(function () {
+                        maxValue = parseInt($(this).find("Max").text());
+                        minValue = parseInt($(this).find("Min").text());
+                    });
+                    
                     // Set new default font family and font color to mimic Bootstrap's default styling
                     Chart.defaults.global.defaultFontFamily = '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
                     Chart.defaults.global.defaultFontColor = '#292b2c';
@@ -229,9 +240,9 @@
                                 }],
                                 yAxes: [{
                                     ticks: {
-                                        min: 0,
-                                        max: 15000,
-                                        maxTicksLimit: 5
+                                        min: minValue,
+                                        max: maxValue,
+                                        maxTicksLimit: 10
                                     },
                                     gridLines: {
                                         display: true
