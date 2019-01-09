@@ -182,9 +182,9 @@
                     var d3 = [];
                     var count = 0;
                     $(datas).each(function () {
-                        d1.push([$(this).find("Ventas").text()]);
-                        d2.push([$(this).find("Costos").text()]);
-                        d3.push([$(this).find("Utilidad").text()]);
+                        d1.push([parseFloat($(this).find("Ventas").text()).toFixed(2)]);
+                        d2.push([parseFloat($(this).find("Costos").text()).toFixed(2)]);
+                        d3.push([parseFloat($(this).find("Utilidad").text()).toFixed(2)]);
                         count++;
                     });
                     var data2 = xml.find("MaxMin");
@@ -226,6 +226,7 @@
 
                         },
                         options: {
+
                             scales: {
                                 xAxes: [{
                                     time: {
@@ -242,11 +243,30 @@
                                     ticks: {
                                         min: minValue,
                                         max: maxValue,
-                                        maxTicksLimit: 10
+                                        maxTicksLimit: 10,
+                                        callback: function (value, index, values) {
+                                            if (parseInt(value) > 999) {
+                                                return '$' + value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                                            } else if (parseInt(value) < -999) {
+                                                return '-$' + Math.abs(value).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                                            } else {
+                                                return '$' + value;
+                                            }
+                                        }
+
                                     },
                                     gridLines: {
                                         display: true
-                                    }
+                                    },
+                                    
+                                    tooltips: {
+                                        callbacks: {
+                                        label: function(tooltipItem, chart){
+                                            var datasetLabel = chart.datasets[tooltipItem.datasetIndex].label || '';
+                                            return datasetLabel + ': $ ' + number_format(tooltipItem.yLabel, 2);
+                                        }
+                    }
+            }
                                 }],
                             },
                             legend: {
@@ -262,6 +282,7 @@
                 }
             });
         }
+
         
         </script>
 </asp:Content>
