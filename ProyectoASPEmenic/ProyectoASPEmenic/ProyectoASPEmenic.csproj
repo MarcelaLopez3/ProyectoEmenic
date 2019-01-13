@@ -173,6 +173,7 @@
     <Content Include="css\flexslider.css" />
     <Content Include="css\fontawesome-all.css" />
     <Content Include="css\popup-box.css" />
+    <Content Include="css\sb-admin.css" />
     <Content Include="css\simpleLightbox.css" />
     <Content Include="css\style.css" />
     <Content Include="Default.aspx" />
@@ -234,6 +235,7 @@
     <Content Include="js\jquery.magnific-popup.js" />
     <Content Include="js\jquery.waypoints.min.js" />
     <Content Include="js\move-top.js" />
+    <Content Include="js\sb-admin.min.js" />
     <Content Include="js\simpleLightbox.js" />
     <Content Include="js\SmoothScroll.min.js" />
     <Content Include="Login.aspx" />
@@ -261,6 +263,7 @@
     <Content Include="DSEmenic.xss">
       <DependentUpon>DSEmenic.xsd</DependentUpon>
     </Content>
+    <None Include="Properties\PublishProfiles\EMENIC.com.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Imagenes\Logo_emenic.png" />
     <Content Include="Paginas\Clientes\ListadoClientes.aspx" />
@@ -322,7 +325,24 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <None Include="Scripts\_references.js" />
+    <Content Include="vendor\bootstrap\css\bootstrap-grid.css" />
+    <Content Include="vendor\bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="vendor\bootstrap\css\bootstrap-reboot.css" />
+    <Content Include="vendor\bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="vendor\bootstrap\css\bootstrap.css" />
+    <Content Include="vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="vendor\bootstrap\js\bootstrap.bundle.js" />
+    <Content Include="vendor\bootstrap\js\bootstrap.bundle.min.js" />
+    <Content Include="vendor\bootstrap\js\bootstrap.js" />
+    <Content Include="vendor\bootstrap\js\bootstrap.min.js" />
     <Content Include="vendor\chart\Chart.min.js" />
+    <Content Include="vendor\jquery-easing\jquery.easing.compatibility.js" />
+    <Content Include="vendor\jquery-easing\jquery.easing.js" />
+    <Content Include="vendor\jquery-easing\jquery.easing.min.js" />
+    <Content Include="vendor\jquery\jquery.js" />
+    <Content Include="vendor\jquery\jquery.min.js" />
+    <Content Include="vendor\jquery\jquery.slim.js" />
+    <Content Include="vendor\jquery\jquery.slim.min.js" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -331,6 +351,14 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="vendor\jquery\jquery.min.map" />
+    <Content Include="vendor\jquery\jquery.slim.min.map" />
+    <Content Include="vendor\bootstrap\css\bootstrap.css.map" />
+    <Content Include="vendor\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="vendor\bootstrap\js\bootstrap.bundle.js.map" />
+    <Content Include="vendor\bootstrap\js\bootstrap.bundle.min.js.map" />
+    <Content Include="vendor\bootstrap\js\bootstrap.js.map" />
+    <Content Include="vendor\bootstrap\js\bootstrap.min.js.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

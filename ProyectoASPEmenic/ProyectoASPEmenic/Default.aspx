@@ -15,13 +15,14 @@
 			window.scrollTo(0, 1);
 		}
     </script>
-    <link rel="stylesheet" href="../../css/bootstrap.css">
+    <link rel="stylesheet" href="~/css/bootstrap.css">
     <!-- Bootstrap-Core-CSS -->
 
-    <link href="/css/style.css" rel='stylesheet' type='text/css' />
-    <link href="/css/simpleLightbox.css" rel='stylesheet' type='text/css' />
-    <link href="/css/popup-box.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="~/css/style.css" rel='stylesheet' type='text/css' />
+    <link href="~/css/simpleLightbox.css" rel='stylesheet' type='text/css' />
+    <link href="~/css/popup-box.css" rel="stylesheet" type="text/css" media="all" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link href="emenic.ico" rel="Shorcut Icon" type="image/x-icon" />
     <%--    <link href="../../css/fontawesome-all.css" rel="stylesheet">--%>
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
@@ -64,7 +65,7 @@
                     <div>
                         <ul class="navbar-nav mr-auto">
                           <li class="nav-item">
-                            <a class="fas fa-user" href="Login.aspx"> Login</a>
+                            <a class="fas fa-user" href="Login.aspx" style="color:white;"> Login</a>
                         </li>
                             </ul>
                     </div>
@@ -286,7 +287,7 @@
     <!-- //services-main -->
     
     <!--/Projects-->
-    <section class="services  py-5" id="works">
+    <%--<section class="services  py-5" id="works">
         <div class="container  py-md-3">
             <div class="w3-head-all  mb-5">
                 <h3>Our Works</h3>
@@ -400,7 +401,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section>--%>
     <!--//Projects-->
     <!--main pricing table
     <div class="main  py-5" id="pricing">
@@ -546,18 +547,21 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title text-uppercase" id="exampleModalLongTitle">Transload</h5>
+                    <h5 class="modal-title text-uppercase" id="exampleModalLongTitle">Información</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
                     <asp:Image ID="imageModal" runat="server" ImageUrl="~/Imagenes/modal.jpg" AlternateText="Modal Image" CssClass="img-fluid mb-4" />
-                    Vivamus eget est in odio tempor interdum. Mauris maximus fermentum arcu, ac finibus ante. Sed mattis risus at ipsum elementum, ut auctor turpis cursus. Sed sed odio pharetra, aliquet velit cursus, vehicula enim. Mauris porta aliquet magna, eget laoreet ligula.
+                    EMENIC S.A. de C.V. es una empresa salvadoreña, fundada el 29 de mayo de 2017, cuyo rubro es el transporte, sus giros son:
+                    <ul>
+                        <li>El servicio de transporte (incluye el equipo de cabezal y furgón con motorista a empresas) </li> 
+                        <li>Alquiler de furgones.</li>
+                    </ul>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
                 </div>
             </div>
         </div>

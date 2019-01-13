@@ -11,11 +11,11 @@
     <meta name="author" content=""/>
     <title>.:: EMENIC | Login ::.</title>
     <!-- Bootstrap core CSS-->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="~/css/bootstrap.css" rel="stylesheet"/>
     <!-- Custom fonts for this template-->
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css"/>
+    <%--<link href="~/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css"/>--%>
     <!-- Custom styles for this template-->
-    <link href="css/sb-admin.css" rel="stylesheet"/>
+    <link href="~/css/sb-admin.css" rel="stylesheet"/>
     <link href="emenic.ico" rel="Shorcut Icon" type="image/x-icon" />
 </head>
 <body class="bg-dark">
@@ -46,10 +46,10 @@
     </div>             
 
     <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <link href="~/vendor/jquery/jquery.min.js" rel="script"/>
+    <link href="~/vendor/bootstrap/js/bootstrap.bundle.min.js" rel="script"/>
     <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <link href="~/vendor/jquery-easing/jquery.easing.min.js" rel="script"/>
     </form>
 </body>
 </html>
