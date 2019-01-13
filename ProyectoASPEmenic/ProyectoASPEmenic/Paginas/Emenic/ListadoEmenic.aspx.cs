@@ -84,7 +84,12 @@ namespace ProyectoASPEmenic.Paginas.Emenic
         {
             //tabla emenic
             //Ir a formulario de Ver informacion logistica de emenic
-            ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Ver informacion logistica de Emenic.')", true);
+            //ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Ver informacion logistica de Emenic.')", true);
+            if (e.CommandName == "Actualizar")
+            {
+                //Envia IdPersona emenic a formulario de actualizar   
+                Response.Redirect("~/Paginas/Emenic/ActualizarEmenicLogistica.aspx?act=" + e.CommandArgument);
+            }
         }
     }
 }

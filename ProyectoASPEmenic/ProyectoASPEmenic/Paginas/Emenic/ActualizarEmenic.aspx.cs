@@ -29,7 +29,7 @@ namespace ProyectoASPEmenic.Paginas.Emenic
         {
             if (!IsPostBack)
             {
-                MetodoBloquear();
+
                 string VarAct = Request.QueryString["act"];
 
                 string query = "SELECT NombreLegal,NombreComercial,Giro,Tamano,Ubicacion,MunicipioCiudad," +
@@ -200,10 +200,6 @@ namespace ProyectoASPEmenic.Paginas.Emenic
             return devuelve;
         }
 
-        protected void MetodoBloquear()
-        {
-
-        }
 
         protected void btnActualizarEmenic_Click(object sender, EventArgs e)
         {

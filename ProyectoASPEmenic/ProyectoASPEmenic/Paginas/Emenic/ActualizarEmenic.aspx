@@ -5,7 +5,7 @@
     <center><h1><asp:Label runat="server" ID="lblemenic" Text=" Actualizar Datos EMENIC" style="color:black; font-family:Verdana"></asp:Label></h1></center>
      </br>
     <div class="card border-primary mb-3">        
-        <div class="card-header"><h4>Datos Como Persona Juridica</h4></div>        
+        <div class="card-header"><h4>Datos EMENIC S.A de C.V</h4></div>        
         <div class="card-body text-primary">
             <hr />
             <div class="form-row">
