@@ -268,6 +268,7 @@
     <Content Include="Imagenes\Logo_emenic.png" />
     <Content Include="Paginas\Clientes\ListadoClientes.aspx" />
     <Content Include="Paginas\Emenic\ActualizarEmenic.aspx" />
+    <Content Include="Paginas\Emenic\ActualizarEmenicLogistica.aspx" />
     <Content Include="Paginas\Emenic\ListadoEmenic.aspx" />
     <Content Include="Paginas\Personas\ActualizarJuridicos.aspx" />
     <Content Include="Paginas\Personas\ActualizarNaturales.aspx" />
@@ -387,6 +388,13 @@
     </Compile>
     <Compile Include="Paginas\Emenic\ActualizarEmenic.aspx.designer.cs">
       <DependentUpon>ActualizarEmenic.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\Emenic\ActualizarEmenicLogistica.aspx.cs">
+      <DependentUpon>ActualizarEmenicLogistica.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Emenic\ActualizarEmenicLogistica.aspx.designer.cs">
+      <DependentUpon>ActualizarEmenicLogistica.aspx</DependentUpon>
     </Compile>
     <Compile Include="Paginas\Emenic\ListadoEmenic.aspx.cs">
       <DependentUpon>ListadoEmenic.aspx</DependentUpon>
