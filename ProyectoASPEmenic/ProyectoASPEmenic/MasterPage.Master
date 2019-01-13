@@ -175,8 +175,13 @@
     <script src="../vendor/datatables/jquery.dataTables.js"></script>
     <script src="../vendor/datatables/dataTables.bootstrap4.js"></script>
     <!-- Custom scripts for all pages-->--%>
+        <link href="~/vendor/jquery/jquery.min.js" rel="script"/>
+    <link href="~/vendor/bootstrap/js/bootstrap.bundle.min.js" rel="script"/>
 
-        <link href="~/js/jquery-2.2.3.min.js" rel="script"/>
+    <!-- Core plugin JavaScript-->
+    <link href="~/vendor/jquery-easing/jquery.easing.min.js" rel="script"/>
+
+        <%--<link href="~/js/jquery-2.2.3.min.js" rel="script"/>--%>
     <link href="~/js/sb-admin.min.js" rel="script"/>
         <link href="~/vendor/chart/Chart.min.js" rel="script"/>
         <!-- Core plugin JavaScript-->    
