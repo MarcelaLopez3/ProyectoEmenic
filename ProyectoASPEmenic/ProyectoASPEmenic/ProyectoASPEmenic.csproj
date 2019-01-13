@@ -173,6 +173,7 @@
     <Content Include="css\flexslider.css" />
     <Content Include="css\fontawesome-all.css" />
     <Content Include="css\popup-box.css" />
+    <Content Include="css\sb-admin.css" />
     <Content Include="css\simpleLightbox.css" />
     <Content Include="css\style.css" />
     <Content Include="Default.aspx" />
@@ -234,6 +235,7 @@
     <Content Include="js\jquery.magnific-popup.js" />
     <Content Include="js\jquery.waypoints.min.js" />
     <Content Include="js\move-top.js" />
+    <Content Include="js\sb-admin.min.js" />
     <Content Include="js\simpleLightbox.js" />
     <Content Include="js\SmoothScroll.min.js" />
     <Content Include="Login.aspx" />
@@ -261,6 +263,7 @@
     <Content Include="DSEmenic.xss">
       <DependentUpon>DSEmenic.xsd</DependentUpon>
     </Content>
+    <None Include="Properties\PublishProfiles\EMENIC.com.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Imagenes\Logo_emenic.png" />
     <Content Include="Paginas\Clientes\ListadoClientes.aspx" />
