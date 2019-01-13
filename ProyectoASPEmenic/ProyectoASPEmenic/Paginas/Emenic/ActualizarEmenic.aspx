@@ -3,9 +3,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <center><h1><asp:Label runat="server" ID="lblemenic" Text=" Actualizar Datos EMENIC" style="color:black; font-family:Verdana"></asp:Label></h1></center>
-    <br />
-    <asp:Button runat="server" ID="Button1" Text="Desbloquear Texto" CssClass="btn btn-info btn-block" style="color:white; background-color:red; border-color:red; width:auto"></asp:Button>
-    </br>
+     </br>
     <div class="card border-primary mb-3">        
         <div class="card-header"><h4>Datos Como Persona Juridica</h4></div>        
         <div class="card-body text-primary">
@@ -20,6 +18,8 @@
                 <div class="form-group col-md-3">    
                     <asp:Label runat="server" ID="lblnombrecomercial" Text="Nombre Comercial:" style="color:black"></asp:Label>
                     <asp:TextBox runat="server" ID="txtnombrecomercial" CssClass="form-control" /> 
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator7"  Display="Dynamic" SetFocusOnError="True" 
+                    CssClass="alert-text" runat="server" ControlToValidate="txtnombrecomercial" ErrorMessage="* Valor Requerido"></asp:RequiredFieldValidator>
                </div>
                 <div class="form-group col-md-3">
                     <asp:Label runat="server" ID="lblgiroactividadeconomica" Text="Giro/Actividad Economica:" style="color:black"></asp:Label>
@@ -46,12 +46,16 @@
             <div class="form-group col-md-3">
                 <asp:Label runat="server" ID="Label2" Text="Municipio/Ciudad:" style="color:black"></asp:Label>
                 <asp:TextBox runat="server" ID="txtmunicipiociudad" CssClass="form-control"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator8"  Display="Dynamic" SetFocusOnError="True" 
+                    CssClass="alert-text" runat="server" ControlToValidate="txtmunicipiociudad" ErrorMessage="* Valor Requerido"></asp:RequiredFieldValidator>
                 <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" CssClass="alert-text"
                 ErrorMessage="* Solo letras" Display="Dynamic" SetFocusOnError="True" ControlToValidate="txtmunicipiociudad" ValidationExpression="[A-Za-z ]*"></asp:RegularExpressionValidator>
             </div>
             <div class="form-group col-md-3">
                 <asp:Label runat="server" ID="Label1" Text="Departamento/Estado:" style="color:black"></asp:Label>
                 <asp:TextBox runat="server" ID="txtdepartamentoestado" CssClass="form-control"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator9"  Display="Dynamic" SetFocusOnError="True" 
+                    CssClass="alert-text" runat="server" ControlToValidate="txtdepartamentoestado" ErrorMessage="* Valor Requerido"></asp:RequiredFieldValidator>
                 <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" CssClass="alert-text"
                 ErrorMessage="* Solo letras" Display="Dynamic" SetFocusOnError="True" ControlToValidate="txtdepartamentoestado" ValidationExpression="[A-Za-z ]*"></asp:RegularExpressionValidator> 
             </div>
@@ -116,32 +120,44 @@
                 <div class="form-group col-md-3">
                     <asp:Label runat="server" ID="Label5" Text="NIT:" style="color:black"></asp:Label>
                     <asp:TextBox runat="server" ID="txtNIT" CssClass="form-control"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator10"  Display="Dynamic" SetFocusOnError="True" 
+                    CssClass="alert-text" runat="server" ControlToValidate="txtNIT" ErrorMessage="* Valor Requerido"></asp:RequiredFieldValidator>
                 </div>
                 <div class="form-group col-md-3">
                     <asp:Label runat="server" ID="Label6" Text="Fecha expedición NIT:" style="color:black"></asp:Label>
                     <asp:TextBox runat="server" ID="txtfechaexpedicionNIT" CssClass="form-control" ></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator11"  Display="Dynamic" SetFocusOnError="True" 
+                    CssClass="alert-text" runat="server" ControlToValidate="txtfechaexpedicionNIT" ErrorMessage="* Valor Requerido"></asp:RequiredFieldValidator>
                     <asp:RegularExpressionValidator ID="RegularExpressionValidator11" runat="server" CssClass="alert-text"
                     ErrorMessage="* Fecha invalida" Display="Dynamic" SetFocusOnError="True" ControlToValidate="txtfechaexpedicionNIT" ValidationExpression="^\d{4}\-(0?[1-9]|1[012])\-(0?[1-9]|[12][0-9]|3[01])$"></asp:RegularExpressionValidator>
                 </div>
                 <div class="form-group col-md-6">
                     <asp:Label runat="server" ID="Label7" Text="Nombre según NIT:" style="color:black"></asp:Label>
                     <asp:TextBox runat="server" ID="txtnombreNIT" CssClass="form-control"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator12"  Display="Dynamic" SetFocusOnError="True" 
+                    CssClass="alert-text" runat="server" ControlToValidate="txtnombreNIT" ErrorMessage="* Valor Requerido"></asp:RequiredFieldValidator>
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-3">
                     <asp:Label runat="server" ID="Label8" Text="NRC:" style="color:black"></asp:Label>
                     <asp:TextBox runat="server" ID="txtNRC" CssClass="form-control"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator13"  Display="Dynamic" SetFocusOnError="True" 
+                    CssClass="alert-text" runat="server" ControlToValidate="txtNRC" ErrorMessage="* Valor Requerido"></asp:RequiredFieldValidator>
                 </div>
                 <div class="form-group col-md-3">
                     <asp:Label runat="server" ID="Label9" Text="Fecha expedición NRC:" style="color:black"></asp:Label>
                     <asp:TextBox runat="server" ID="txtfechaexpedicionNRC" CssClass="form-control" ></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator14"  Display="Dynamic" SetFocusOnError="True" 
+                    CssClass="alert-text" runat="server" ControlToValidate="txtfechaexpedicionNRC" ErrorMessage="* Valor Requerido"></asp:RequiredFieldValidator>
                     <asp:RegularExpressionValidator ID="RegularExpressionValidator5" runat="server" CssClass="alert-text"
                 ErrorMessage="* Fecha invalida" Display="Dynamic" SetFocusOnError="True" ControlToValidate="txtfechaexpedicionNRC" ValidationExpression="^\d{4}\-(0?[1-9]|1[012])\-(0?[1-9]|[12][0-9]|3[01])$"></asp:RegularExpressionValidator>
                 </div>
                 <div class="form-group col-md-6">
                     <asp:Label runat="server" ID="Label10" Text="Nombre según NRC:" style="color:black"></asp:Label>
                     <asp:TextBox runat="server" ID="txtnombreNRC" CssClass="form-control"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator15"  Display="Dynamic" SetFocusOnError="True" 
+                    CssClass="alert-text" runat="server" ControlToValidate="txtnombreNRC" ErrorMessage="* Valor Requerido"></asp:RequiredFieldValidator>
                 </div>
             </div>
         </div>
@@ -155,7 +171,7 @@
                     <asp:Label runat="server" ID="Label16" Text="Nombre Completo:" style="color:black"></asp:Label> 
                     <asp:TextBox runat="server" ID="txtnombrecontacto" CssClass="form-control"  ></asp:TextBox>                                      <!-- [A-Za-z ]*-->
                     <asp:RegularExpressionValidator ID="RegularExpressionValidator8" runat="server" CssClass="alert-text"
-                    ErrorMessage="* Solo letras" Display="Dynamic" SetFocusOnError="True" ControlToValidate="txtnombrecontacto" ValidationExpression="[a-zA-ZñÑáéíóúÁÉÍÓÚ\ ]"></asp:RegularExpressionValidator>            
+                    ErrorMessage="* Solo letras" Display="Dynamic" SetFocusOnError="True" ControlToValidate="txtnombrecontacto" ValidationExpression="[A-Za-z ]+"></asp:RegularExpressionValidator>            
                 </div>
                 <div class="form-group col-md-3">
                     <asp:Label runat="server" ID="Label17" Text="DUI:" style="color:black"></asp:Label>
@@ -200,7 +216,7 @@
     <div style="align-content:center">    
         <div class="form-row">
         <div class="form-group col-md-12">          
-            <center><asp:Button runat="server" ID="btnActualizarEmenic" Text="Actualizar" CssClass="btn btn-info btn-block" style="color:white; background-color:red; border-color:red; width:auto"></asp:Button></center>             
+            <center><asp:Button runat="server" ID="btnActualizarEmenic" Text="Actualizar" CssClass="btn btn-info btn-block" style="color:white; background-color:red; border-color:red; width:auto" OnClick="btnActualizarEmenic_Click"></asp:Button></center>             
        </div>
        </div>
     </div>

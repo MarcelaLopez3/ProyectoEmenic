@@ -15,6 +15,16 @@ namespace ProyectoASPEmenic.Paginas.Emenic
         string query = "";
         DateTime Hoy = DateTime.Today;
 
+        //bandera del contacto
+        bool bandera_dui_c = false, bandera_nit_c = false;
+        //bandera de la empresa
+        bool bandera_nrc_e = false, bandera_nit_e = false;
+
+        //contenidos del contacto
+        bool contenido_c = false, contenido_dui_c = false, contenido_nit_c = false, contenido_email_c = false, contenido_telefono_c = false, contenido_celular_c = false;
+        //contenidos de la empresa
+        bool contenido_nrc_e = false, contenido_nit_e = false;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -194,5 +204,111 @@ namespace ProyectoASPEmenic.Paginas.Emenic
         {
 
         }
+
+        protected void btnActualizarEmenic_Click(object sender, EventArgs e)
+        {
+            //boton para actualizar los registros de emenic
+            string VarAct = Request.QueryString["act"];
+
+            //recuperando entradas
+            string NombreLegal = txtnombrelegal.Text;
+            string NombreComercial = txtnombrecomercial.Text;
+            string Giro = txtgiroactividadeconomica.Text;
+            string Tamano = ddltamanoempresa.SelectedValue;
+            string DireccionUbicacion = txtdireccionubicacion.Text;
+            string MunicipioCiudad = txtmunicipiociudad.Text;
+            string DepartamentoEstado = txtdepartamentoestado.Text;
+            string Pais = txtpais.Text;
+            string Telefono1 = txttelefono1.Text;
+            string Telefono2 = txttelefono2.Text;
+            string Telefono3 = txttelefono3.Text;
+            string Fax = txtFax.Text;
+            string Email1 = txtcorreo1.Text;
+            string Email2 = txtcorreo2.Text;
+            string CodigoPostal = txtcodigopostal.Text;
+            string NIT = txtNIT.Text;
+            string FechaExpedicionNIT = txtfechaexpedicionNIT.Text;
+            string NombreSegunNIT = txtnombreNIT.Text;
+            string NRC = txtNRC.Text;
+            string FechaExpedicionNRC = txtfechaexpedicionNRC.Text;
+            string NombreSegunNRC = txtnombreNRC.Text;
+            string NombreContacto = txtnombrecontacto.Text;
+            string DUIContacto = txtDUIcontacto.Text;
+            string NITContacto = txtNITcontacto.Text;
+            string EmailContacto = txtemailcontacto.Text;
+            string TelefonoContacto = txttelefonocontacto.Text;
+            string CelularContacto = txtcelularcontacto.Text;
+            string Observaciones = txtobservaciones.Text;
+
+            if(NombreContacto.Length > 0 && NombreContacto != " ")
+            {
+                contenido_c = true;
+                //verificar si hay contenidos o no en las siguientes variables
+                if (TelefonoContacto.Length > 0 && TelefonoContacto != " ")
+                {
+                    contenido_telefono_c = true;
+                }
+                if (EmailContacto.Length > 0 && EmailContacto != " ")
+                {
+                    contenido_email_c = true;
+                }
+                if (CelularContacto.Length > 0 && TelefonoContacto != " ")
+                {
+                    contenido_celular_c = true;
+                }
+
+                //verificar que haya alguna de esas variables esta en true
+                if (contenido_telefono_c == false && contenido_email_c == false && contenido_celular_c == false)
+                {
+                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Ingresar Telefono, Email o Celular del la Persona de contacto.')", true);
+                }
+
+                if (DUIContacto.Length > 0 && DUIContacto != " ")
+                {
+                    if (validacion.EsDui(DUIContacto) == false)
+                    {
+                        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Dui de Persona de contacto NO Valido')", true);
+                    }
+                }
+            }
+
+            //verificar fechas de NIT y NRC
+            if (FechaExpedicionNIT == "" || FechaExpedicionNIT == " ")
+            {
+                FechaExpedicionNIT = FormatoFecha(Hoy.ToShortDateString());
+            }
+
+            if (FechaExpedicionNRC == "" || FechaExpedicionNRC == " ")
+            {
+                FechaExpedicionNRC = FormatoFecha(Hoy.ToShortDateString());
+            }
+
+            //inicia el update del registro
+            try
+            { 
+                //consulta que se ingresa a la base de datos
+                query = "UPDATE persona  SET NombreLegal ='" + NombreLegal + "',NombreComercial = '" + NombreComercial +
+                "', Giro = '" + Giro + "', Tamano = '" + Tamano + "', Ubicacion = '" + DireccionUbicacion + "', MunicipioCiudad = '" +
+                MunicipioCiudad + "', DepartamentoEstado = '" + DepartamentoEstado + "', Pais = '" + Pais + "', Telefono1 = '" +
+                Telefono1 + "', Telefono2 = '" + Telefono2 + "', Telefono3 = '" + Telefono3 + "', Fax = '" + Fax + "', Email1 = '" +
+                Email1 + "', Email2 = '" + Email2 + "', CodigoPostal = '" + CodigoPostal + "', NIT = '" + NIT + "', FechaExpedicionNIT = '" +
+                FechaExpedicionNIT + "', NombreSegunNIT = '" + NombreSegunNIT + "', NRC = '" + NRC + "', FechaExpedicionNRC = '" +
+                FechaExpedicionNRC + "', NombreSegunNRC = '" + NombreSegunNRC + "', NombreContacto = '" + NombreContacto +
+                "', DUIContacto = '" + DUIContacto + "', NITContacto = '" + NITContacto + "', EmailContacto = '" + EmailContacto +
+                "', TelefonoContacto = '" + TelefonoContacto + "', CelularContacto = '" + CelularContacto + "', Observaciones = '" +
+                Observaciones + "'  WHERE IdPersona like " + VarAct;
+
+                //enviar consulta a Mysql
+                conexion.IniciarConexion();
+                conexion.EnviarQuery(query);
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Se ha actualizado con exito.')", true);
+                conexion.CerrarConexion();
+            }
+            catch 
+            {
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('No se ha podido actualizar los datos.')", true);
+            }
+
+       }
     }
 }
