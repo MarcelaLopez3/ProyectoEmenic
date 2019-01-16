@@ -17,7 +17,7 @@
         <asp:HiddenField runat="server" ID="HFIdTransporte"/>
         
 
-        <asp:GridView ID="GridListadoTransporte" runat="server" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal" OnSelectedIndexChanged="GridListadoTransporte_SelectedIndexChanged" OnRowDeleting="GridListadoTransporte_Eliminar" AutoGenerateColumns = "false">
+        <asp:GridView ID="GridListadoTransporte" runat="server" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal" OnSelectedIndexChanged="GridListadoTransporte_SelectedIndexChanged" OnRowDeleting="GridListadoTransporte_Eliminar" AutoGenerateColumns = "false" OnRowCommand="GridListadoTransporte_RowCommand">
             <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
             <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
             <PagerStyle BackColor="White" ForeColor="Black" HorizontalAlign="Right" />
