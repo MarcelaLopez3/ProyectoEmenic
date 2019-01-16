@@ -89,5 +89,14 @@ namespace ProyectoASPEmenic.Paginas.Servicios
 
             HFIdTransporte.Value = "";
         }
+
+        protected void GridListadoTransporte_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            if (e.CommandName == "Actualizar")
+            {
+                string ID = e.CommandArgument.ToString();
+                Response.Redirect("~/Paginas/Transporte/ActualizarTransporte.aspx?act=" + ID);
+            }
+        }
     }
 }
