@@ -76,7 +76,7 @@ namespace ProyectoASPEmenic.Paginas.Servicios
                 "persona.SegundoApellido),persona.NombreLegal) as Cliente,if(persona.PersonaNatural=1," +
                 "concat(persona.DireccionResidencia,', ',persona.MunicipioResidencia,', ',persona.DepartamentoResidencia)" +
                 ",concat(persona.Ubicacion,', ',persona.MunicipioCiudad,', ',persona.DepartamentoEstado)) as Direccion" +
-                " from contrato inner join serviciocontratado on contrato.IdServicio=serviciocontratado.Id inner join " +
+                " from serviciocontratado inner join " +
                 "persona on serviciocontratado.IdCliente=persona.IdPersona where serviciocontratado.Id=" + IdServicio;
             conexion.IniciarConexion();
             conexion.RecibeQuery(query);
